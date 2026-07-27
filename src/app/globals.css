@@ -736,6 +736,70 @@ footer {
   }
 }
 
+.our-journey-page-banner {
+  height: 100vh;
+  width: 100%;
+  background-image: url(/img/our-journey-banner.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 5% 0;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+
+  .intro-itm {
+    text-align: center;
+    color: #fff;
+
+    h1 {
+      text-transform: uppercase;
+      margin-bottom: .5rem;
+      font-weight: 700;
+      line-height: 2rem;
+    }
+  }
+}
+
+.our-journey-sec {
+  text-align: start;
+  background-color: #000;
+  padding-bottom: 3rem;
+
+  .intro-itm {
+    color: #fff;
+
+    .sub-page-title h3::before {
+      background-color: transparent;
+      margin-right: 0;
+    }
+
+    h2 {
+      margin-top: 2.5rem;
+      text-transform: uppercase;
+      margin-bottom: .5rem;
+      font-weight: 700;
+      line-height: 2rem;
+    }
+
+    h3 {
+      text-transform: uppercase;
+    }
+
+    p {
+      color: #737373;
+    }
+  }
+
+  .img-cont {
+    img {
+      object-fit: cover;
+      align-items: end;
+      justify-content: end;
+    }
+  }
+}
+
 @media (min-width: 768px) {
   .facility-carousel-cont {
     .facility-embla-carousel {
