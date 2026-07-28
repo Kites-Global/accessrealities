@@ -52,7 +52,7 @@ export default function Navbar() {
                                 <ul className="dropdown-menu">
 
                                     <li><Link className="dropdown-item" href="/about-us/our-journey">Our Journey</Link></li>
-                                    <li><Link className="dropdown-item" href="#">Careers</Link></li>
+                                    <li><Link className="dropdown-item" href="/about-us/careers">Careers</Link></li>
 
                                 </ul>
                             </li>
@@ -67,7 +67,7 @@ export default function Navbar() {
                                 </ul>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" href="#">Contact</Link>
+                                <Link className="nav-link" href="/contact">Contact</Link>
                             </li>
                             <li className="nav-item portal-link">
                                 <Link className="nav-link" href="#">Tenant Portal</Link>
