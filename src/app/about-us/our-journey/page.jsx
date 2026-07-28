@@ -36,11 +36,11 @@ export default function OurJourney() {
 
                     <div className="row intro-itm">
                         <div className="col-md-1"></div>
-                        <div className="col-md-5">
+                        <div className="col-md-5 px-3">
                             <h2>Our Vision</h2>
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's Body Type sheets. It has survived not only many decades, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
                         </div>
-                        <div className="col-md-5 mx-5">
+                        <div className="col-md-5 px-3">
                             <h2>Mission</h2>
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's Body Type sheets.</p>
                         </div>
