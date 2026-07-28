@@ -46,13 +46,14 @@ export default function Navbar() {
                                 </ul>
                             </li>
                             <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <Link className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     About Us
-                                </a>
+                                </Link>
                                 <ul className="dropdown-menu">
-                                    <li><Link className="dropdown-item" href="#">Action</Link></li>
-                                    <li><Link className="dropdown-item" href="#">Another action</Link></li>
-                                    <li><Link className="dropdown-item" href="#">Something else here</Link></li>
+
+                                    <li><Link className="dropdown-item" href="/about-us/our-journey">Our Journey</Link></li>
+                                    <li><Link className="dropdown-item" href="#">Careers</Link></li>
+
                                 </ul>
                             </li>
                             <li className="nav-item dropdown">
