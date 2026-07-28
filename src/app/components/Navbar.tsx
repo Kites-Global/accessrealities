@@ -15,33 +15,33 @@ export default function Navbar() {
         <header>
             <nav className="navbar navbar-expand-lg">
                 <div className="container-fluid">
-                    <a className="navbar-brand" href="/">
+                    <Link className="navbar-brand" href="/">
                         <img src="/img/logo.png" alt="" className="img-fluid" />
-                    </a>
+                    </Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <a href="/" className={`nav-link ${pathname === "/" ? "active" : ""}`}>Home</a>
+                                <Link href="/" className={`nav-link ${pathname === "/" ? "active" : ""}`}>Home</Link>
                             </li>
                             <li className="nav-item dropdown">
-                                <a className={`nav-link dropdown-toggle ${isAccessTowersActive ? "active" : ""}`} href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <Link className={`nav-link dropdown-toggle ${isAccessTowersActive ? "active" : ""}`} href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Access Towers
-                                </a>
+                                </Link>
                                 <ul className="dropdown-menu">
                                     <li>
-                                        <a href="/access-towers/north-tower" className="dropdown-item">North Tower</a>
+                                        <Link href="/access-towers/north-tower" className="dropdown-item">North Tower</Link>
                                     </li>
                                     <li>
-                                        <a href="/access-towers/south-tower" className="dropdown-item">South Tower</a>
+                                        <Link href="/access-towers/south-tower" className="dropdown-item">South Tower</Link>
                                     </li>
                                     <li>
-                                        <a href="/access-towers/experiences" className="dropdown-item">Experiences</a>
+                                        <Link href="/access-towers/experiences" className="dropdown-item">Experiences</Link>
                                     </li>
                                     <li>
-                                        <a href="/access-towers/facilities" className="dropdown-item">Facilities</a>
+                                        <Link href="/access-towers/facilities" className="dropdown-item">Facilities</Link>
                                     </li>
                                 </ul>
                             </li>
@@ -50,9 +50,9 @@ export default function Navbar() {
                                     Our Journey
                                 </a>
                                 <ul className="dropdown-menu">
-                                    <li><a className="dropdown-item" href="#">Action</a></li>
-                                    <li><a className="dropdown-item" href="#">Another action</a></li>
-                                    <li><a className="dropdown-item" href="#">Something else here</a></li>
+                                    <li><Link className="dropdown-item" href="#">Action</Link></li>
+                                    <li><Link className="dropdown-item" href="#">Another action</Link></li>
+                                    <li><Link className="dropdown-item" href="#">Something else here</Link></li>
                                 </ul>
                             </li>
                             <li className="nav-item dropdown">
@@ -60,17 +60,16 @@ export default function Navbar() {
                                     Media
                                 </a>
                                 <ul className="dropdown-menu">
-                                    <li><a className="dropdown-item" href="#">Action</a></li>
-                                    <li><a className="dropdown-item" href="#">Another action</a></li>
-
-                                    <li><a className="dropdown-item" href="#">Something else here</a></li>
+                                    <li><Link className="dropdown-item" href="#">Action</Link></li>
+                                    <li><Link className="dropdown-item" href="#">Another action</Link></li>
+                                    <li><Link className="dropdown-item" href="#">Something else here</Link></li>
                                 </ul>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">Contact</a>
+                                <Link className="nav-link" href="#">Contact</Link>
                             </li>
                             <li className="nav-item portal-link">
-                                <a className="nav-link" href="#">Tenant Portal</a>
+                                <Link className="nav-link" href="#">Tenant Portal</Link>
                             </li>
                         </ul>
                     </div>
