@@ -1,5 +1,5 @@
 import Link from "next/link"
-
+import { OfficeInquiryForm, FacilitiesInquiryForm } from "@/app/components/PopupForms"
 
 function Careers() {
 
@@ -61,6 +61,8 @@ function Careers() {
                                         <p>Marketing Executive</p>
                                         <span>View</span>
                                     </Link>
+                                    <OfficeInquiryForm />
+                                    <FacilitiesInquiryForm />
                                 </div>
                             </div>
                         </div>

@@ -892,12 +892,100 @@ footer {
       span {
         font-weight: 600;
       }
-       transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
     }
 
     .vacancy-itm:hover {
       background-color: var(--primary-color-hover);
       transition: all 0.3s ease-in-out;
+    }
+  }
+}
+
+.modal {
+  .modal-content {
+    background-color: transparent;
+    border: 0;
+    .modal-header {
+      border-bottom: 0;
+      text-align: center;
+      justify-content: center;
+      color: white;
+      .modal-title {
+        font-size: 1.8rem;
+      }
+    }
+    .modal-dialog {
+      background-color: var(--primary-color);
+      border-radius: 2rem;
+      padding: 2rem;
+      .modal-body {
+        input,
+        textarea,
+        select {
+          width: 100%;
+          margin-bottom: 0.7rem;
+          border: 0.5px solid #929292;
+          color: white;
+          padding: 0.4rem 0.5rem;
+          border-radius: 3rem;
+          background-color: transparent;
+        }
+
+        textarea {
+          border-radius: 1.5rem;
+        }
+
+        textarea::placeholder {
+          color: #ffffff7a;
+        }
+
+        label {
+          color: white;
+          text-align: start;
+          font-size: 0.9rem;
+          width: 100%;
+          margin-bottom: 0.5rem;
+        }
+
+        button {
+          font-weight: 500;
+          margin: 0.5rem 0;
+          background-color: white;
+          color: var(--primary-color);
+          border: none;
+          border-radius: 0.8rem;
+          padding: 0.5rem 2.5rem;
+        }
+
+        button:hover {
+          background-color: var(--primary-color-hover);
+          color: white;
+        }
+
+        input::placeholder {
+          color: #ffffff7a;
+        }
+
+        .checkbox {
+          display: flex;
+          align-items: start;
+          gap: 0.5rem;
+          margin-bottom: 0.5rem;
+
+          input[type="checkbox"] {
+            width: 1rem;
+            height: 1rem;
+          }
+
+          label {
+            font-size: 0.8rem;
+            color: white;
+            text-align: start;
+            margin-bottom: 0;
+          }
+        }
+      }
     }
   }
 }
@@ -937,7 +1025,7 @@ footer {
 
     h1 {
       text-transform: uppercase;
-      margin-bottom: .5rem;
+      margin-bottom: 0.5rem;
       font-weight: 700;
       line-height: 2rem;
     }
@@ -960,7 +1048,7 @@ footer {
     h2 {
       margin-top: 2.5rem;
       text-transform: uppercase;
-      margin-bottom: .5rem;
+      margin-bottom: 0.5rem;
       font-weight: 700;
       line-height: 2rem;
     }
