@@ -170,7 +170,8 @@ export default function Home() {
           <div className="intro-cont">
             <h2>Facilities</h2>
             <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+              Whatever your business needs, our modern facilities are designed to provide the right space, setting and
+              support for every occasion.
             </p>
           </div>
         </div>
