@@ -57,18 +57,14 @@ header {
   left: 0;
   z-index: 1030;
 
-  background: -webkit-linear-gradient(
-    0deg,
-    rgba(139, 27, 63, 0) 0%,
-    rgba(139, 27, 63, 0.16) 16%,
-    rgb(139, 27, 63) 100%
-  );
-  background: linear-gradient(
-    0deg,
-    rgba(139, 27, 63, 0) 0%,
-    rgba(139, 27, 63, 0.16) 16%,
-    rgb(139, 27, 63) 100%
-  );
+  background: -webkit-linear-gradient(0deg,
+      rgba(139, 27, 63, 0) 0%,
+      rgba(139, 27, 63, 0.16) 16%,
+      rgb(139, 27, 63) 100%);
+  background: linear-gradient(0deg,
+      rgba(139, 27, 63, 0) 0%,
+      rgba(139, 27, 63, 0.16) 16%,
+      rgb(139, 27, 63) 100%);
 
   .navbar {
     .navbar-brand {
@@ -225,7 +221,7 @@ header {
 }
 
 .milestornes-sec {
-  background-color: #fff;
+  background-color: #000;
   background-image: url("/img/milestornes-bg.jpg");
   background-size: cover;
   background-position: center bottom;
@@ -234,13 +230,53 @@ header {
   border-bottom: 4px solid var(--primary-color);
   padding: 2rem;
 
-  h2 {
+  >h2 {
     color: #fff;
     text-transform: uppercase;
   }
 
   .milestones-row {
     margin-top: 2rem;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 1.5rem;
+    gap: 1.5rem;
+    scroll-behavior: smooth;
+
+    /* Add mask for fading edges */
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+
+    /* Fix to prevent first and last items from being faded when fully scrolled to the edges */
+    &::before,
+    &::after {
+      content: "";
+      flex: 0 0 2%;
+    }
+
+    &::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: rgba(255, 255, 255, 0.5);
+    }
+
+    .col-md-3 {
+      flex: 0 0 320px;
+      max-width: 320px;
+    }
 
     h2 {
       color: #fff;
@@ -253,17 +289,18 @@ header {
         height: 10px;
         margin-right: 0.5rem;
         border-radius: 50%;
+        background-color: var(--primary-color);
       }
     }
 
     p {
       font-size: 0.9rem;
       color: #ffffff66;
-      line-height: 1rem;
+      line-height: 1.2rem;
     }
 
-    div:nth-child(even) {
-      margin-top: 3rem;
+    .col-md-3:nth-child(even) {
+      margin-top: 5rem;
     }
   }
 }
@@ -313,11 +350,9 @@ header {
               width: 100%;
               height: 100%;
               background: #000000;
-              background: linear-gradient(
-                0deg,
-                rgba(0, 0, 0, 0.42) 20%,
-                rgba(10, 10, 10, 0.93) 90%
-              );
+              background: linear-gradient(0deg,
+                  rgba(0, 0, 0, 0.42) 20%,
+                  rgba(10, 10, 10, 0.93) 90%);
               display: flex;
               flex-direction: column;
               justify-content: end;
@@ -344,6 +379,7 @@ header {
       }
 
       .embla__nav {
+
         .embla__prev,
         .embla__next {
           position: absolute;
@@ -663,6 +699,7 @@ footer {
         }
 
         .embla__nav {
+
           .embla__prev,
           .embla__next {
             position: absolute;
@@ -742,6 +779,7 @@ footer {
 .contact-page-banner {
   background-image: url(/img/contact-banner-bg.jpg);
 }
+
 .careers-page-banner {
   background-image: url(/img/careers-banner-bg.jpg);
 }
@@ -788,6 +826,7 @@ footer {
     .file-upload {
       position: relative;
       width: fit-content;
+
       label {
         display: inline-block;
         padding: 0.3rem 2rem;
@@ -797,6 +836,7 @@ footer {
         border-radius: 2rem;
         cursor: pointer;
       }
+
       input[type="file"] {
         position: absolute;
 
@@ -807,6 +847,7 @@ footer {
 
       margin: 0.5rem 0;
     }
+
     .file-upload-info {
       font-size: 0.8rem;
     }
@@ -818,6 +859,7 @@ footer {
       background-position: right 15px center;
       background-size: 15px;
     }
+
     p {
       font-weight: 300;
     }
@@ -825,6 +867,7 @@ footer {
 
   .contact-detail-cont {
     margin-left: 3rem;
+
     h3 {
       text-transform: uppercase;
       font-weight: 600;
@@ -889,10 +932,12 @@ footer {
       p {
         margin-bottom: 0;
       }
+
       span {
         font-weight: 600;
       }
-       transition: all 0.3s ease-in-out;
+
+      transition: all 0.3s ease-in-out;
     }
 
     .vacancy-itm:hover {
@@ -1032,6 +1077,7 @@ footer {
   }
 
   .south-north-tower-sec {
+
     .south-cont,
     .north-cont {
       margin-bottom: 0;
