@@ -4,7 +4,7 @@ export default function TenantPortal() {
       <div className="container">
         <div className="form-itm">
           <div className="img-cont">
-            <img src="/img/logo.png" alt="Access Realties" className="img-fluid" />
+            <img src="/img/logo-red.png" alt="Access Realties" className="img-fluid" />
           </div>
           <h2>Portal</h2>
           <p>Login to your account</p>
