@@ -81,6 +81,11 @@ header {
           color: #fff;
           padding-right: 1rem;
           padding-left: 1rem;
+          border-bottom: 2px solid transparent;
+        }
+
+        .nav-link.active {
+          border-bottom-color: #fff;
         }
       }
     }
@@ -858,6 +863,103 @@ footer {
       .contact-list-itm:hover {
         text-decoration: underline;
       }
+    }
+  }
+}
+
+.tenant-portal-sec {
+  background-image: url(/img/contact-form-bg.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7rem 1rem 3rem;
+
+  .form-itm {
+    max-width: 28rem;
+    margin: 0 auto;
+    text-align: center;
+    padding: 3rem 2.5rem;
+
+    .img-cont {
+      margin-bottom: 0.5rem;
+
+      /* img {
+        max-width: 10rem;
+        margin: 0 auto;
+        filter: brightness(0) saturate(100%) invert(14%) sepia(60%) saturate(2500%)
+          hue-rotate(320deg) brightness(90%) contrast(95%);
+      } */
+    }
+
+    h2 {
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.15rem;
+    }
+
+    h2::before {
+      display: none;
+    }
+
+    p {
+      color: #4a4a4a;
+      font-weight: 500;
+      margin-bottom: 1.25rem;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      border: 1px solid #bdbdbd;
+      border-radius: 0.5rem;
+      background-color: transparent;
+      padding: 0.65rem 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .checkbox {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
+      text-align: left;
+
+      input[type="checkbox"] {
+        width: 1rem;
+        height: 1rem;
+        margin-bottom: 0;
+        border-radius: 0.2rem;
+      }
+
+      label {
+        font-size: 0.9rem;
+        color: #6a5f5d;
+        margin-bottom: 0;
+        font-weight: 400;
+      }
+    }
+
+    .btn-theme1 {
+      width: 100%;
+      border-radius: 0.5rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 0.05rem;
+      margin-bottom: 1.25rem;
+    }
+
+    a {
+      color: #4a4a4a;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    a:hover {
+      color: var(--primary-color);
+      text-decoration: underline;
     }
   }
 }

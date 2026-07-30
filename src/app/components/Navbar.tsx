@@ -9,7 +9,8 @@ export default function Navbar() {
     const isActive = (path: string) =>
         pathname === path || pathname.startsWith(path + "/");
 
-    const isAccessTowersActive = isActive("/access-towers/north-tower") || isActive("/access-towers/south-tower");
+    const isAccessTowersActive = isActive("/access-towers");
+    const isAboutUsActive = isActive("/about-us");
 
     return (
         <header>
@@ -46,7 +47,7 @@ export default function Navbar() {
                                 </ul>
                             </li>
                             <li className="nav-item dropdown">
-                                <Link className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <Link className={`nav-link dropdown-toggle ${isAboutUsActive ? "active" : ""}`} href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     About Us
                                 </Link>
                                 <ul className="dropdown-menu">
@@ -67,10 +68,10 @@ export default function Navbar() {
                                 </ul>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" href="/contact">Contact</Link>
+                                <Link className={`nav-link ${pathname === "/contact" ? "active" : ""}`} href="/contact">Contact</Link>
                             </li>
                             <li className="nav-item portal-link">
-                                <Link className="nav-link" href="#">Tenant Portal</Link>
+                                <Link className={`nav-link ${pathname === "/tenant-portal" ? "active" : ""}`} href="/tenant-portal">Tenant Portal</Link>
                             </li>
                         </ul>
                     </div>
