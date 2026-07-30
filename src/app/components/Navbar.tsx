@@ -57,21 +57,16 @@ export default function Navbar() {
 
                                 </ul>
                             </li>
-                            <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Media
-                                </a>
-                                <ul className="dropdown-menu">
-                                    <li><Link className="dropdown-item" href="#">Action</Link></li>
-                                    <li><Link className="dropdown-item" href="#">Another action</Link></li>
-                                    <li><Link className="dropdown-item" href="#">Something else here</Link></li>
-                                </ul>
+                            <li className="nav-item">
+                                <Link className={`nav-link ${pathname === "/news-and-events" ? "active" : ""}`} href="/news-and-events">
+                                    News & Events
+                                </Link>
                             </li>
                             <li className="nav-item">
                                 <Link className={`nav-link ${pathname === "/contact" ? "active" : ""}`} href="/contact">Contact</Link>
                             </li>
-                            <li className="nav-item portal-link">
-                                <Link className={`nav-link ${pathname === "/tenant-portal" ? "active" : ""}`} href="/tenant-portal">Tenant Portal</Link>
+                            <li className="nav-item ">
+                                <Link className={`nav-link portal-link ${pathname === "/tenant-portal" ? "active" : ""}`} href="/tenant-portal">Tenant Portal</Link>
                             </li>
                         </ul>
                     </div>

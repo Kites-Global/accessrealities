@@ -1,5 +1,4 @@
 import Link from "next/link"
-import { OfficeInquiryForm, FacilitiesInquiryForm } from "@/app/components/PopupForms"
 
 function Careers() {
 
@@ -10,7 +9,10 @@ function Careers() {
                 <div className="intro-itm">
                     <div className="container">
                         <h1>Careers</h1>
-                        <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus iure distinctio magni placeat, maxime perferendis labore quae sequi dolorum provident eveniet animi ducimus numquam iste, tempore sunt. Ex, enim corrupti!</h6>
+                        <h6>Build your career with Access Realties, a fully owned subsidiary of Access Engineering PLC and
+                            part of the wider Access Group. Join a prestigious corporate environment where your work
+                            contributes to landmark commercial spaces, trusted property management and the continued
+                            growth of one of Sri Lanka’s recognized business names.</h6>
                     </div>
                 </div>
             </section>
@@ -61,8 +63,7 @@ function Careers() {
                                         <p>Marketing Executive</p>
                                         <span>View</span>
                                     </Link>
-                                    <OfficeInquiryForm />
-                                    <FacilitiesInquiryForm />
+
                                 </div>
                             </div>
                         </div>

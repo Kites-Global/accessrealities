@@ -23,10 +23,17 @@ export default function NorthTower() {
 
                             <div className="intro-itm">
                                 <h1>North Tower</h1>
-                                <h6>Creating Vibrant and Energetic Work Environments</h6>
+                                {/* <h6>Creating Vibrant and Energetic Work Environments</h6> */}
                                 <p>
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's Body Type sheets. It has survived not only many decades, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised thanks to these sheets and more recently with desktop publishing software including versions of Lorem Ipsum.
-                                </p>
+                                    Located in the heart of Union Place, Colombo 02, Access Towers I, known as the North Tower,
+                                    offers more than office space; it offers businesses a recognized corporate address with long
+                                    standing credibility. The 12-storey commercial office complex features approximately 120,000
+                                    sq. ft. of professionally managed workspace, supported by modern facilities, corporate
+                                    amenities and the trusted standards of Access Realties (Pvt) Ltd. Anchored by the presence of
+                                    Access Engineering PLC and complemented by a strong community of leading corporate
+                                    tenants, the North Tower continues to be a sought-after destination for companies looking for
+                                    premium office space in Colombo with the confidence, convenience and reputation of the
+                                    Access name.</p>
                             </div>
 
                         </div>
@@ -49,8 +56,8 @@ export default function NorthTower() {
                     <div className="intro-cont">
                         <h2>Amenities</h2>
                         <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                        </p>
+                            Designed around the demands of today’s workplace, our amenities provide the comfort,
+                            reliability and operational support businesses need to perform with confidence every day.</p>
                     </div>
                     <div className="row amenity-row">
                         <div className="col-md-3">
@@ -169,7 +176,7 @@ export default function NorthTower() {
                 </div>
             </section>
 
-            <section className="our-clients-sec">
+            {/* <section className="our-clients-sec">
                 <div className="container">
                     <h2>Our Clients</h2>
                     <div className="row">
@@ -241,7 +248,7 @@ export default function NorthTower() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> */}
         </>
     );
 }
