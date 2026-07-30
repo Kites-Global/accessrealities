@@ -249,7 +249,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="amenities-sec">
+      {/* <section className="amenities-sec">
         <div className="container">
           <div className="intro-cont">
             <h2>Amenities</h2>
@@ -372,7 +372,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="what-they-say">
         <div className="container">

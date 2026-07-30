@@ -75,14 +75,33 @@ header {
       .nav-item {
         .nav-link {
           color: #fff;
-          padding-right: 1rem;
-          padding-left: 1rem;
+          margin-right: 0.8rem;
+          margin-left: 0.8rem;
           border-bottom: 2px solid transparent;
         }
 
         .nav-link.active {
           border-bottom-color: #fff;
         }
+      }
+
+      .portal-link {
+        background-color: #8b1b3f;
+        color: #fff;
+        padding: 0.2rem 1rem;
+        border-radius: 1rem;
+        margin-top: 0.3rem;
+      }
+
+      .portal-link:hover {
+        background-color: var(--primary-color-hover);
+        color: #fff;
+      }
+
+      .portal-link.active {
+        background-color: var(--primary-color-hover);
+        color: #fff;
+        border-bottom: 0px;
       }
     }
   }
@@ -296,6 +315,10 @@ header {
         border-radius: 50%;
         background-color: var(--primary-color);
       }
+    }
+
+    h6 {
+      color: #a5a1a1;
     }
 
     p {
@@ -956,7 +979,7 @@ footer {
 
     input[type="text"],
     input[type="password"] {
-      border: 1px solid #bdbdbd;
+      border: 2px solid #bdbdbd;
       border-radius: 0.5rem;
       background-color: transparent;
       padding: 0.65rem 1rem;
@@ -1038,6 +1061,7 @@ footer {
       span {
         font-weight: 600;
       }
+
       transition: all 0.3s ease-in-out;
     }
 
@@ -1052,20 +1076,25 @@ footer {
   .modal-content {
     background-color: transparent;
     border: 0;
+
     .modal-header {
       border-bottom: 0;
       text-align: center;
       justify-content: center;
       color: white;
+
       .modal-title {
         font-size: 1.8rem;
       }
     }
+
     .modal-dialog {
       background-color: var(--primary-color);
       border-radius: 2rem;
       padding: 2rem;
+
       .modal-body {
+
         input,
         textarea,
         select {

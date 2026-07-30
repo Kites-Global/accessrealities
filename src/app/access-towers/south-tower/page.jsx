@@ -23,10 +23,17 @@ export default function NorthTower() {
 
                             <div className="intro-itm">
                                 <h1>South Tower</h1>
-                                <h6>Creating Vibrant and Energetic Work Environments</h6>
+                                {/* <h6>Creating Vibrant and Energetic Work Environments</h6> */}
                                 <p>
-                                    Lorem Ipsum has been the industry&apos;s standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's Body Type sheets. It has survived not only many decades, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised thanks to these sheets and more recently with desktop publishing software including versions of Lorem Ipsum.
-                                </p>
+                                    Set within one of Colombo’s most connected commercial corridors, Access Tower II gives
+                                    businesses a prestigious address with the convenience, visibility and daily accessibility modern
+                                    organizations expect. Known as the South Tower, this G+29-storey Grade-A commercial office
+                                    complex offers approximately 200,000 sq. ft. of state-of-the-art office space for companies
+                                    seeking a premium workplace in Colombo. Supported by contemporary amenities and
+                                    professional property management, Access Tower II creates an elevated corporate
+                                    environment where businesses can grow, connect and operate with confidence, while enjoying
+                                    sweeping city views that extend across Beira Lake, the Indian Ocean and Colombo’s dynamic
+                                    skyline.</p>
                             </div>
 
                         </div>
@@ -49,7 +56,8 @@ export default function NorthTower() {
                     <div className="intro-cont">
                         <h2>Amenities</h2>
                         <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                            Designed around the demands of today’s workplace, our amenities provide the comfort,
+                            reliability and operational support businesses need to perform with confidence every day.
                         </p>
                     </div>
                     <div className="row amenity-row">
@@ -169,7 +177,7 @@ export default function NorthTower() {
                 </div>
             </section>
 
-            <section className="our-clients-sec">
+            {/* <section className="our-clients-sec">
                 <div className="container">
                     <h2>Our Clients</h2>
                     <div className="row">
@@ -241,7 +249,7 @@ export default function NorthTower() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> */}
         </>
     );
 }
