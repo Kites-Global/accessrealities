@@ -9,10 +9,11 @@ export default function Home() {
 
         <div className="title-cont">
           <h6>Serviced Offices for Rent</h6>
-          <h1>
+          {/* <h1>
             Private Workspaces in the
             Heart of Colombo
-          </h1>
+          </h1> */}
+          <h1>Defining Colombo’s Corporate Skyline </h1>
           <a href="#" className="btn-theme1 btn">Inquire Now</a>
         </div>
 
@@ -24,9 +25,15 @@ export default function Home() {
             <div className="col-md-7 info-cont">
               <div className="info-itm">
                 <h2>Access Realties (Pvt) Ltd.</h2>
-                <h6>Creating Vibrant and Energetic Work Environments</h6>
+                <h6>Creating premium commercial spaces built for the way modern businesses work. </h6>
                 <p>
-                  Access Realties has been actively involved in the design and construction in one of Colombo's most impressive commercial buildings, hence adorning the busy metropolis’s cityscape with much urban splendor that’s contemporary, cutting-edge and downright captivating. Sincere dedication towards divulging nothing short of the very best, in conjunction to staying on par with today’s latest trends have been key attributes of Access Realties (Pvt) Ltd., while rising on top of the corporate ladder and reaching the ultimate benchmark in Sri Lanka's Commercial Building and Construction market sector!
+                  Access Realties (Pvt) Ltd has long been part of Colombo’s evolving commercial real estate story,
+                  contributing to the design, development and management of landmark business environments that
+                  bring energy, efficiency and prestige to the city. Guided by the strength of Access, a name synonymous
+                  with trust, quality and forward-thinking development in Sri Lanka, the company continues to create
+                  premium office spaces that reflect the expectations of modern organizations. From contemporary
+                  design to reliable facilities management, Access Realties remains focused on shaping vibrant, future
+                  ready commercial spaces in Colombo where businesses can work, grow and thrive.
                 </p>
               </div>
             </div>
@@ -48,10 +55,11 @@ export default function Home() {
       <section className="access-tower-sec">
         <div className="video-link-cont">
           <h3>
-            ACCESS Towers
+            ACCESS TOWERS
           </h3>
           <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            A closer look at premium commercial spaces built to support the way businesses work, connect and
+            grow.
           </p>
           <a href="#">
             <i className="bi bi-play-circle-fill"></i>
@@ -73,7 +81,8 @@ export default function Home() {
                 />
                 <h3>South Tower</h3>
                 <p>
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                  A refined business address where elegant interiors, smart spaces and everyday convenience
+                  come together.
                 </p>
                 <a href="#" className="btn">View gallery</a>
               </div>
@@ -89,7 +98,8 @@ export default function Home() {
                 />
                 <h3>North Tower</h3>
                 <p>
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry lorem Ipsum has beened.
+                  A contemporary corporate environment designed for seamless movement, modern work and
+                  elevated business presence.
                 </p>
                 <a href="#" className="btn">View gallery</a>
               </div>
@@ -99,32 +109,56 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="milestornes-sec">
+      <section className="milestornes-sec px-2">
         <div className="container-fluid">
-          <h2>Milestones</h2>
-          <div className="row milestones-row">
+          <h2 className="text-white">Milestones</h2>
+          <div className="milestones-row">
             <div className="col-md-3">
               <h2>1998</h2>
+              <h6>Access Tower I Completed</h6>
               <p>
-                Completed Access Tower I, a 12-storey commercial landmark spanning 120,000 sq. ft.
+                Access Realties completed Access Tower I, a 12-storey commercial office landmark in Union
+                Place, Colombo.
               </p>
             </div>
             <div className="col-md-3">
               <h2>2008</h2>
+              <h6>Joined Access Engineering PLC </h6>
               <p>
-                Completed Access Tower I, a 12-storey commercial landmark spanning 120,000 sq. ft.
+                Access Realties became a subsidiary of Access Engineering PLC, strengthening its commercial
+                real estate and property management presence in Sri Lanka.
               </p>
             </div>
             <div className="col-md-3">
-              <h2>1998</h2>
+              <h2>2014</h2>
+              <h6>Access Tower II Development Begins</h6>
               <p>
-                Completed Access Tower I, a 12-storey commercial landmark spanning 120,000 sq. ft.
+                Access Realties expanded its property portfolio with the development of Access Tower II, a
+                modern Grade-A office space in Colombo.
               </p>
             </div>
             <div className="col-md-3">
-              <h2>2008</h2>
+              <h2>2015/16</h2>
+              <h6>A Trusted Corporate Address</h6>
               <p>
-                Completed Access Tower I, a 12-storey commercial landmark spanning 120,000 sq. ft.
+                Access Towers achieved 100% occupancy, reflecting strong demand for premium, professionally
+                managed office space in Colombo.
+              </p>
+            </div>
+            <div className="col-md-3">
+              <h2>2017</h2>
+              <h6>Access Tower II Opens </h6>
+              <p>
+                Access Tower II commenced operations, adding Grade-A commercial office space to Colombo’s
+                growing corporate skyline.
+              </p>
+            </div>
+            <div className="col-md-3">
+              <h2>Present Day </h2>
+              <h6>A Landmark in Commercial Real Estate </h6>
+              <p>
+                Access Towers continues to be recognized as a premium business address for modern
+                organizations in the heart of Colombo.
               </p>
             </div>
           </div>
