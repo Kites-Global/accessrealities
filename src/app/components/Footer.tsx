@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
     return (
@@ -21,50 +22,50 @@ export default function Footer() {
                         <div className="quick-links">
                             <div className="row">
                                 <div className="col-md-2">
-                                    <a href="#">
+                                    <Link href="#">
                                         <h5>Home</h5>
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div className="col-md-2">
-                                    <a href="#">
+                                    <Link href="#">
                                         <h5>Access Towers</h5>
-                                    </a>
+                                    </Link>
                                     <ul>
-                                        <li><a href="#">North Tower</a></li>
-                                        <li><a href="#">South Tower</a></li>
-                                        <li><a href="#">Floor Plans</a></li>
-                                        <li><a href="#">Gallery</a></li>
-                                        <li><a href="#">Inquire Now</a></li>
+                                        <li><Link href="#">North Tower</Link></li>
+                                        <li><Link href="#">South Tower</Link></li>
+                                        <li><Link href="#">Floor Plans</Link></li>
+                                        <li><Link href="#">Gallery</Link></li>
+                                        <li><Link href="#">Inquire Now</Link></li>
                                     </ul>
                                 </div>
                                 <div className="col-md-2">
-                                    <a href="#">
+                                    <Link href="#">
                                         <h5>Our Journey</h5>
-                                    </a>
+                                    </Link>
                                     <ul>
-                                        <li><a href="#">Access Realties</a></li>
-                                        <li><a href="#">Vision & Mission</a></li>
-                                        <li><a href="#">Careers</a></li>
+                                        <li><Link href="#">Access Realties</Link></li>
+                                        <li><Link href="#">Vision & Mission</Link></li>
+                                        <li><Link href="#">Careers</Link></li>
                                     </ul>
                                 </div>
                                 <div className="col-md-2">
-                                    <a href="#">
+                                    <Link href="#">
                                         <h5>Media</h5>
-                                    </a>
+                                    </Link>
                                     <ul>
-                                        <li><a href="#">News</a></li>
-                                        <li><a href="#">Events</a></li>
+                                        <li><Link href="#">News</Link></li>
+                                        <li><Link href="#">Events</Link></li>
                                     </ul>
                                 </div>
                                 <div className="col-md-2">
-                                    <a href="#">
+                                    <Link href="#">
                                         <h5>Contact</h5>
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div className="col-md-2">
-                                    <a href="#">
+                                    <Link href="#">
                                         <h5>Tenant Portal</h5>
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -77,15 +78,15 @@ export default function Footer() {
                             <li>
                                 <i className="bi bi-telephone-fill"></i>
                                 <div>
-                                    <a href="#"> +94 774 055 682 </a><br />
-                                    <a href="#"> +94 112 302 302 </a>
+                                    <Link href="#"> +94 774 055 682 </Link><br />
+                                    <Link href="#"> +94 112 302 302 </Link>
                                 </div>
                             </li>
-                            <li><i className="bi bi-envelope-fill"></i><a href="#"> fme@accessrealities.com </a></li>
+                            <li><i className="bi bi-envelope-fill"></i><Link href="#"> fme@accessrealities.com </Link></li>
                         </ul>
                         <div className="socialies">
-                            <a href="#"><i className="bi bi-youtube"></i></a>
-                            <a href="#"><i className="bi bi-youtube"></i></a>
+                            <Link href="#"><i className="bi bi-youtube"></i></Link>
+                            <Link href="#"><i className="bi bi-youtube"></i></Link>
                         </div>
                     </div>
                 </div>
