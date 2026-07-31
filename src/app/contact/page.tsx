@@ -37,7 +37,7 @@ function Contact() {
                         </div>
                         <div className="col-lg-6">
                             <div className="contact-detail-cont">
-                                <h3>Contact us</h3>
+                                <h3 className="sub-page-title">Contact us</h3>
                                 <div className="contact-list">
                                     <a href="tel:+94774055682" className="contact-list-itm">
                                         <i className="bi bi-phone"></i>
