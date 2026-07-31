@@ -5,8 +5,9 @@ function Contact() {
             <section className="experiences-page-banner contact-page-banner">
                 <div className="intro-itm">
                     <div className="container">
-                        <h1 >Contact Us</h1>
-                        <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus iure distinctio magni placeat, maxime perferendis labore quae sequi dolorum provident eveniet animi ducimus numquam iste, tempore sunt. Ex, enim corrupti!</h6>
+                        <h1>Contact Us</h1>
+                        <h6>Connect with Access Realties for office space enquiries, tenant support, facility information or
+                            general assistance. Our team is here to help you find the right solution.</h6>
                     </div>
                 </div>
             </section>
@@ -71,7 +72,7 @@ function Contact() {
                     <h2>Location Finder</h2>
                 </div>
 
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11009.072403813067!2d79.85004280368794!3d6.918790003199182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae259135875f2bd%3A0x6aa0c62080ff01fc!2sAccess%20Towers%2C%20No%20278%20Union%20Pl%2C%20Colombo!5e1!3m2!1sen!2slk!4v1785147751057!5m2!1sen!2slk"  width="100%" height="450" allowFullScreen loading="lazy" referrerPolicy="strict-origin-when-cross-origin" ></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11009.072403813067!2d79.85004280368794!3d6.918790003199182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae259135875f2bd%3A0x6aa0c62080ff01fc!2sAccess%20Towers%2C%20No%20278%20Union%20Pl%2C%20Colombo!5e1!3m2!1sen!2slk!4v1785147751057!5m2!1sen!2slk" width="100%" height="450" allowFullScreen loading="lazy" referrerPolicy="strict-origin-when-cross-origin" ></iframe>
             </section>
         </>
     )
