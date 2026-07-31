@@ -1038,7 +1038,7 @@ footer {
 .careers-form-sec {
   background-image: url(/img/careers-form-bg.png);
 
-  .sub-page-title h3::before {
+  .sub-page-title::before {
     background-color: transparent;
     margin-right: 0;
   }
