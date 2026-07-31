@@ -895,6 +895,11 @@ footer {
 
   .contact-detail-cont {
     margin-left: 3rem;
+    
+    .sub-page-title::before {
+      background-color: transparent;
+      margin-right: 0;
+    }
 
     h3 {
       text-transform: uppercase;
@@ -1033,6 +1038,11 @@ footer {
 .careers-form-sec {
   background-image: url(/img/careers-form-bg.png);
 
+  .sub-page-title::before {
+    background-color: transparent;
+    margin-right: 0;
+  }
+  
   h3 {
     text-transform: uppercase;
     font-weight: 600;
