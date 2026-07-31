@@ -50,7 +50,7 @@ function Careers() {
                         </div>
                         <div className="col-lg-6">
                             <div className="vacancy-detail-cont">
-                                <h3>Available Vacancies</h3>
+                                <h3 className="sub-page-title">Available Vacancies</h3>
                                 <div className="vacancy-list">
                                     <Link href="#" className="vacancy-itm">
                                         <p>Marketing Executive</p>

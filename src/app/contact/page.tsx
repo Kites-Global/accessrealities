@@ -5,7 +5,7 @@ function Contact() {
             <section className="experiences-page-banner contact-page-banner">
                 <div className="intro-itm">
                     <div className="container">
-                        <h1>Contact Us</h1>
+                        <h1 >Contact Us</h1>
                         <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus iure distinctio magni placeat, maxime perferendis labore quae sequi dolorum provident eveniet animi ducimus numquam iste, tempore sunt. Ex, enim corrupti!</h6>
                     </div>
                 </div>
@@ -36,7 +36,7 @@ function Contact() {
                         </div>
                         <div className="col-lg-6">
                             <div className="contact-detail-cont">
-                                <h3>Contact us</h3>
+                                <h3 className="sub-page-title">Contact us</h3>
                                 <div className="contact-list">
                                     <a href="tel:+94774055682" className="contact-list-itm">
                                         <i className="bi bi-phone"></i>
