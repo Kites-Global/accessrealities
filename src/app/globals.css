@@ -254,13 +254,13 @@ header {
   border-bottom: 4px solid var(--primary-color);
   padding: 2rem;
 
-  >h2 {
+  h2 {
     color: #fff;
     text-transform: uppercase;
   }
 
   .milestones-row {
-    margin-top: 2rem;
+    margin-top: 3rem;
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
@@ -268,33 +268,10 @@ header {
     gap: 1.5rem;
     scroll-behavior: smooth;
 
-    /* Add mask for fading edges */
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
-    mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
-
-    /* Fix to prevent first and last items from being faded when fully scrolled to the edges */
     &::before,
     &::after {
       content: "";
-      flex: 0 0 2%;
-    }
-
-    &::-webkit-scrollbar {
-      height: 8px;
-    }
-
-    &::-webkit-scrollbar-track {
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 10px;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background: rgba(255, 255, 255, 0.3);
-      border-radius: 10px;
-    }
-
-    &::-webkit-scrollbar-thumb:hover {
-      background: rgba(255, 255, 255, 0.5);
+      /* flex: 0 0 5%; */
     }
 
     .col-md-3 {
@@ -305,6 +282,7 @@ header {
     h2 {
       color: #fff;
       text-transform: uppercase;
+      margin-bottom: 0;
 
       &::before {
         content: "";
@@ -318,7 +296,8 @@ header {
     }
 
     h6 {
-      color: #a5a1a1;
+      color: #d2d0d0;
+      font-weight: 400;
     }
 
     p {
@@ -331,6 +310,58 @@ header {
       margin-top: 5rem;
     }
   }
+}
+
+/* Custom Scrollbar Styles */
+.hide-native-scroll {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+.hide-native-scroll::-webkit-scrollbar {
+  display: none !important;
+}
+
+.custom-scrollbar-track {
+  position: relative;
+  width: 30%;
+  height: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-scrollbar-track::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-image: radial-gradient(circle, #ffffff66 40%, transparent 40%);
+  background-size: 10px 10px;
+  background-position: center;
+}
+
+.custom-scrollbar-thumb {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  /* box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2); */
+  transition: left 0.1s ease-out;
+  cursor: grab;
+  animation: pulse-glow 1.5s infinite;
+}
+
+.custom-scrollbar-thumb.dragging {
+  cursor: grabbing;
+  transition: none;
+  /* Stop animation and show solid ring while holding */
+  animation: none;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.3);
 }
 
 .facilities-sec {
@@ -952,13 +983,6 @@ footer {
 
     .img-cont {
       margin-bottom: 0.5rem;
-
-      /* img {
-        max-width: 10rem;
-        margin: 0 auto;
-        filter: brightness(0) saturate(100%) invert(14%) sepia(60%) saturate(2500%)
-          hue-rotate(320deg) brightness(90%) contrast(95%);
-      } */
     }
 
     h2 {
@@ -1178,7 +1202,6 @@ footer {
 
   iframe {
     filter: grayscale(200%);
-    /* -webkit-filter: grayscale(100%); */
   }
 }
 
@@ -1309,5 +1332,19 @@ footer {
   .milestornes-sec {
     padding: 0;
     height: 100vh;
+  }
+}
+
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.6);
+  }
+
+  70% {
+    box-shadow: 0 0 0 12px rgba(255, 255, 255, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
   }
 }

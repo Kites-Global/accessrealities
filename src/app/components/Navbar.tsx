@@ -48,11 +48,11 @@ export default function Navbar() {
                             </li>
                             <li className="nav-item dropdown">
                                 <Link className={`nav-link dropdown-toggle ${isAboutUsActive ? "active" : ""}`} href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    About Us
+                                    Our Journey
                                 </Link>
                                 <ul className="dropdown-menu">
 
-                                    <li><Link className="dropdown-item" href="/about-us/our-journey">Our Journey</Link></li>
+                                    <li><Link className="dropdown-item" href="/about-us/our-journey">Access Realties</Link></li>
                                     <li><Link className="dropdown-item" href="/about-us/careers">Careers</Link></li>
 
                                 </ul>

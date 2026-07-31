@@ -6,10 +6,12 @@ import Autoplay from "embla-carousel-autoplay";
 import { useCallback, useRef } from "react";
 
 const facilities = [
-    { image: "/img/facility-1.jpg", title: "Meeting Room" },
-    { image: "/img/facility-1.jpg", title: "Meeting Room" },
-    { image: "/img/facility-1.jpg", title: "Meeting Room" },
-    { image: "/img/facility-1.jpg", title: "Meeting Room" },
+    { image: "/img/home-facility-1.jpg", title: "Meeting Room" },
+    { image: "/img/home-facility-2.jpg", title: "Engagement Zones" },
+    { image: "/img/home-facility-3.jpg", title: "Elevate GYM" },
+    { image: "/img/home-facility-4.jpg", title: "Zen Garden" },
+    { image: "/img/home-facility-5.jpg", title: "Car Parking" },
+    { image: "/img/home-facility-6.jpg", title: "Advertising" },
 ];
 
 export default function EmblaCarousel() {

@@ -2,29 +2,44 @@ import Image from "next/image";
 import ExperienceGallery from "../../components/ExperienceGallery";
 
 const galleryImages1 = [
-    { src: "/img/experiences-img1.jpg", alt: "Members Lounge" },
-    { src: "/img/experiences-img2.jpg", alt: "Members Lounge" },
-    { src: "/img/experiences-img3.jpg", alt: "Members Lounge" },
-    { src: "/img/experiences-img4.jpg", alt: "Members Lounge" },
-    { src: "/img/experiences-img5.jpg", alt: "Members Lounge" },
-    { src: "/img/experiences-img6.jpg", alt: "Members Lounge" },
+    { src: "/img/experiences-lounge-1.jpg", alt: "Members Lounge" },
+    { src: "/img/experiences-lounge-2.jpg", alt: "Members Lounge" },
+    { src: "/img/experiences-lounge-3.jpg", alt: "Members Lounge" },
+    { src: "/img/experiences-lounge-4.jpg", alt: "Members Lounge" },
 ];
 const galleryImages2 = [
-    { src: "/img/experiences-img2.jpg", alt: "Members Lounge" },
-    { src: "/img/experiences-img3.jpg", alt: "Members Lounge" },
-    { src: "/img/experiences-img4.jpg", alt: "Members Lounge" },
-    { src: "/img/experiences-img5.jpg", alt: "Members Lounge" },
-    { src: "/img/experiences-img6.jpg", alt: "Members Lounge" },
-    { src: "/img/experiences-img1.jpg", alt: "Members Lounge" },
+    { src: "/img/experiences-grind-1.jpg", alt: "Grind" },
+    { src: "/img/experiences-grind-2.jpg", alt: "Grind" },
+    { src: "/img/experiences-grind-3.jpg", alt: "Grind" },
+    { src: "/img/experiences-grind-4.jpg", alt: "Grind" },
 ];
 const galleryImages3 = [
-    { src: "/img/experiences-img3.jpg", alt: "Members Lounge" },
-    { src: "/img/experiences-img4.jpg", alt: "Members Lounge" },
-    { src: "/img/experiences-img5.jpg", alt: "Members Lounge" },
-    { src: "/img/experiences-img6.jpg", alt: "Members Lounge" },
-    { src: "/img/experiences-img1.jpg", alt: "Members Lounge" },
-    { src: "/img/experiences-img2.jpg", alt: "Members Lounge" },
+    { src: "/img/experiences-virticle-1.jpg", alt: "Virticle by Jetwing" },
+    { src: "/img/experiences-virticle-2.jpg", alt: "Virticle by Jetwing" },
+    { src: "/img/experiences-virticle-3.jpg", alt: "Virticle by Jetwing" },
+    { src: "/img/experiences-virticle-4.jpg", alt: "Virticle by Jetwing" },
+    { src: "/img/experiences-virticle-5.jpg", alt: "Virticle by Jetwing" },
+    { src: "/img/experiences-virticle-6.jpg", alt: "Virticle by Jetwing" },
+    { src: "/img/experiences-virticle-7.jpg", alt: "Virticle by Jetwing" },
 ];
+
+const galleryImages4 = [
+    { src: "/img/experiences-kfc-1.jpg", alt: "KFC" },
+    { src: "/img/experiences-kfc-2.jpg", alt: "KFC" },
+    { src: "/img/experiences-kfc-3.jpg", alt: "KFC" },
+];
+
+const galleryImages5 = [
+    { src: "/img/experiences-pns-1.jpg", alt: "PNS" },
+    { src: "/img/experiences-pns-2.jpg", alt: "PNS" },
+    { src: "/img/experiences-pns-3.jpg", alt: "PNS" },
+];
+
+const galleryImages6 = [
+    { src: "/img/experiences-boc-1.jpg", alt: "BOC" },
+    { src: "/img/experiences-boc-2.jpg", alt: "BOC" },
+];
+
 
 export default function experiences() {
     return (
@@ -104,7 +119,7 @@ export default function experiences() {
                     </div>
                     <div className="row experience-itm">
                         <div className="col-md-5 experience-img-gal-cont order-md-last">
-                            <ExperienceGallery images={galleryImages2} />
+                            <ExperienceGallery images={galleryImages4} />
                         </div>
                         <div className="col-md-7 experience-info-cont order-md-first">
                             <div className="text-end">
@@ -122,7 +137,7 @@ export default function experiences() {
                     </div>
                     <div className="row experience-itm">
                         <div className="col-md-5 experience-img-gal-cont">
-                            <ExperienceGallery images={galleryImages3} />
+                            <ExperienceGallery images={galleryImages5} />
                         </div>
                         <div className="col-md-7 experience-info-cont">
                             <div>
@@ -141,7 +156,7 @@ export default function experiences() {
                     </div>
                     <div className="row experience-itm">
                         <div className="col-md-5 experience-img-gal-cont order-md-last">
-                            <ExperienceGallery images={galleryImages2} />
+                            <ExperienceGallery images={galleryImages6} />
                         </div>
                         <div className="col-md-7 experience-info-cont order-md-first">
                             <div className="text-end">
