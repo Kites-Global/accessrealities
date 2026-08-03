@@ -27,7 +27,7 @@ export default function NewsEvents({ data }: { data: NewsEventData }) {
     return (
         <div className="news-events-card">
             <Image src="/img/news-events-img.jpg" alt="News and Events" width={600} height={400} />
-            <p>{data.date}</p>
+            <p className="card-date">{data.date}</p>
             <h6>{data.title}</h6>
             <p
                 className="dynamic-clamp"
