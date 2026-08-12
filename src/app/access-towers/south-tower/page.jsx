@@ -1,7 +1,29 @@
 import Aminities from '../../components/Aminities';
 import Image from "next/image";
+import OurClient from "../../components/OurClients";
 
 export default function SouthTower() {
+
+    const ourClients = [
+        { id: 1, src: "/img/st-1.png" },
+        { id: 2, src: "/img/st-2.png" },
+        { id: 3, src: "/img/st-3.png" },
+        { id: 4, src: "/img/st-4.png" },
+        { id: 5, src: "/img/st-5.png" },
+        { id: 6, src: "/img/st-6.png" },
+        { id: 7, src: "/img/st-7.png" },
+        { id: 8, src: "/img/st-8.png" },
+        { id: 9, src: "/img/st-9.png" },
+        { id: 10, src: "/img/st-10.png" },
+        { id: 11, src: "/img/st-11.png" },
+        { id: 12, src: "/img/st-12.png" },
+        { id: 13, src: "/img/st-13.png" },
+        { id: 14, src: "/img/st-14.png" },
+        { id: 15, src: "/img/st-15.png" },
+        { id: 16, src: "/img/st-16.png" },
+        { id: 17, src: "/img/st-17.png" },
+    ];
+
     return (
         <>
             <section className="tower-page-banner">
@@ -54,79 +76,9 @@ export default function SouthTower() {
 
             <Aminities />
 
-            {/* <section className="our-clients-sec">
-                <div className="container">
-                    <h2>Our Clients</h2>
-                    <div className="row">
-                        <div className="col-md-2">
-                            <div className="client-itm">
-                                <Image
-                                    src="/img/client1.jpg"
-                                    alt="Air Conditioning"
-                                    className="img-fluid"
-                                    width={200}
-                                    height={130}
-                                />
-                            </div>
-                        </div>
-                        <div className="col-md-2">
-                            <div className="client-itm">
-                                <Image
-                                    src="/img/client1.jpg"
-                                    alt="Air Conditioning"
-                                    className="img-fluid"
-                                    width={200}
-                                    height={130}
-                                />
-                            </div>
-                        </div>
-                        <div className="col-md-2">
-                            <div className="client-itm">
-                                <Image
-                                    src="/img/client1.jpg"
-                                    alt="Air Conditioning"
-                                    className="img-fluid"
-                                    width={200}
-                                    height={130}
-                                />
-                            </div>
-                        </div>
-                        <div className="col-md-2">
-                            <div className="client-itm">
-                                <Image
-                                    src="/img/client1.jpg"
-                                    alt="Air Conditioning"
-                                    className="img-fluid"
-                                    width={200}
-                                    height={130}
-                                />
-                            </div>
-                        </div>
-                        <div className="col-md-2">
-                            <div className="client-itm">
-                                <Image
-                                    src="/img/client1.jpg"
-                                    alt="Air Conditioning"
-                                    className="img-fluid"
-                                    width={200}
-                                    height={130}
-                                />
-                            </div>
-                        </div>
-                        <div className="col-md-2">
-                            <div className="client-itm">
-                                <Image
-                                    src="/img/client1.jpg"
-                                    alt="Air Conditioning"
-                                    className="img-fluid"
-                                    width={200}
-                                    height={130}
-                                />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section> */}
+            <main>
+                <OurClient clients={ourClients} />
+            </main>
         </>
     );
 }

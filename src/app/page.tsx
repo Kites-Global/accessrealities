@@ -55,7 +55,7 @@ export default function Home() {
       <section className="hero-sec">
 
         <div className="title-cont">
-          <h6>Serviced Offices for Rent</h6>
+          {/* <h6>Serviced Offices for Rent</h6> */}
           {/* <h1>
             Private Workspaces in the
             Heart of Colombo
