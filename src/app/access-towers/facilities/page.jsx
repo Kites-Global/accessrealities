@@ -2,28 +2,46 @@ import Image from "next/image";
 import ExperienceGallery from "../../components/ExperienceGallery";
 
 const galleryImages1 = [
-    { src: "/img/experiences-img1.jpg", alt: "Members Lounge" },
-    { src: "/img/experiences-img2.jpg", alt: "Members Lounge" },
-    { src: "/img/experiences-img3.jpg", alt: "Members Lounge" },
-    { src: "/img/experiences-img4.jpg", alt: "Members Lounge" },
-    { src: "/img/experiences-img5.jpg", alt: "Members Lounge" },
-    { src: "/img/experiences-img6.jpg", alt: "Members Lounge" },
+    { src: "/img/facility-meet-room-1.jpg", alt: "Members Lounge" },
+    { src: "/img/facility-meet-room-2.jpg", alt: "Members Lounge" },
+    { src: "/img/facility-meet-room-3.jpg", alt: "Members Lounge" },
+    { src: "/img/facility-meet-room-4.jpg", alt: "Members Lounge" },
+    { src: "/img/facility-meet-room-5.jpg", alt: "Members Lounge" },
+    { src: "/img/facility-meet-room-6.jpg", alt: "Members Lounge" },
 ];
 const galleryImages2 = [
-    { src: "/img/experiences-img2.jpg", alt: "Members Lounge" },
-    { src: "/img/experiences-img3.jpg", alt: "Members Lounge" },
-    { src: "/img/experiences-img4.jpg", alt: "Members Lounge" },
-    { src: "/img/experiences-img5.jpg", alt: "Members Lounge" },
-    { src: "/img/experiences-img6.jpg", alt: "Members Lounge" },
-    { src: "/img/experiences-img1.jpg", alt: "Members Lounge" },
+    { src: "/img/facility-engagement-1.jpg", alt: "Engagement Zones" },
+    { src: "/img/facility-engagement-2.jpg", alt: "Engagement Zones" },
+    { src: "/img/facility-engagement-3.jpg", alt: "Engagement Zones" },
+    { src: "/img/facility-engagement-4.jpg", alt: "Engagement Zones" },
+    { src: "/img/facility-engagement-5.jpg", alt: "Engagement Zones" },
 ];
 const galleryImages3 = [
-    { src: "/img/experiences-img3.jpg", alt: "Members Lounge" },
-    { src: "/img/experiences-img4.jpg", alt: "Members Lounge" },
-    { src: "/img/experiences-img5.jpg", alt: "Members Lounge" },
-    { src: "/img/experiences-img6.jpg", alt: "Members Lounge" },
-    { src: "/img/experiences-img1.jpg", alt: "Members Lounge" },
-    { src: "/img/experiences-img2.jpg", alt: "Members Lounge" },
+    { src: "/img/facility-gym-1.jpg", alt: "Elevate GYM" },
+    { src: "/img/facility-gym-2.jpg", alt: "Elevate GYM" },
+    { src: "/img/facility-gym-3.jpg", alt: "Elevate GYM" },
+    { src: "/img/facility-gym-4.jpg", alt: "Elevate GYM" },
+    { src: "/img/facility-gym-5.jpg", alt: "Elevate GYM" },
+    { src: "/img/facility-gym-6.jpg", alt: "Elevate GYM" },
+];
+
+const galleryImages4 = [
+    { src: "/img/facility-garden-1.jpg", alt: "Zen Garden" },
+    { src: "/img/facility-garden-2.jpg", alt: "Zen Garden" },
+    { src: "/img/facility-garden-3.jpg", alt: "Zen Garden" },
+    { src: "/img/facility-garden-4.jpg", alt: "Zen Garden" },
+];
+
+const galleryImages5 = [
+    { src: "/img/facility-car-1.jpg", alt: "Car Parking" },
+    { src: "/img/facility-car-2.jpg", alt: "Car Parking" },
+    { src: "/img/facility-car-3.jpg", alt: "Car Parking" },
+];
+
+const galleryImages6 = [
+    { src: "/img/facility-advertising-1.jpg", alt: "Advertising" },
+    { src: "/img/facility-advertising-2.jpg", alt: "Advertising" },
+    { src: "/img/facility-advertising-3.jpg", alt: "Advertising" },
 ];
 
 export default function experiences() {
@@ -103,7 +121,7 @@ export default function experiences() {
                     </div>
                     <div className="row experience-itm">
                         <div className="col-md-5 experience-img-gal-cont order-md-last">
-                            <ExperienceGallery images={galleryImages2} />
+                            <ExperienceGallery images={galleryImages4} />
                         </div>
                         <div className="col-md-7 experience-info-cont order-md-first">
                             <div className="text-end">
@@ -121,7 +139,7 @@ export default function experiences() {
                     </div>
                     <div className="row experience-itm">
                         <div className="col-md-5 experience-img-gal-cont">
-                            <ExperienceGallery images={galleryImages3} />
+                            <ExperienceGallery images={galleryImages5} />
                         </div>
                         <div className="col-md-7 experience-info-cont">
                             <div>
@@ -136,6 +154,22 @@ export default function experiences() {
                                     recognized commercial office destinations, it helps make arrivals smoother, meetings easier
                                     and the workday seamless.
                                 </p>
+                                <p>
+                                    For enquiries: Call <a href="#"> +94 774 055 682</a> or email <a href="#">fme@accessrealties.com</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row experience-itm">
+                        <div className="col-md-5 experience-img-gal-cont order-md-last">
+                            <ExperienceGallery images={galleryImages6} />
+                        </div>
+                        <div className="col-md-7 experience-info-cont order-md-first">
+                            <div className="text-end">
+                                <h2>
+                                    Advertising
+                                </h2>
+                                <p>Access Towers offers digital advertising options through TV screens placed across the premises, helping tenants, brands and business partners reach a premium corporate audience. Ideal for promotions, announcements, launches and business services, these digital screen placements provide targeted visibility within a recognised commercial office environment in Colombo.</p>
                                 <p>
                                     For enquiries: Call <a href="#"> +94 774 055 682</a> or email <a href="#">fme@accessrealties.com</a>
                                 </p>

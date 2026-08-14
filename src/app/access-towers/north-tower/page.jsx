@@ -1,6 +1,18 @@
 import Image from "next/image";
+import Aminities from '../../components/Aminities';
+import OurClient from "../../components/OurClients";
 
 export default function NorthTower() {
+
+    const ourClients = [
+        { id: 2, src: "/img/ob-2.jpg" },
+        { id: 3, src: "/img/ob-3.png" },
+        { id: 4, src: "/img/ob-4.png" },
+        { id: 5, src: "/img/ob-5.png" },
+        { id: 6, src: "/img/ob-6.png" },
+        { id: 1, src: "/img/ob-1.jpg" },
+    ];
+
     return (
         <>
             <section className="tower-page-banner">
@@ -35,12 +47,11 @@ export default function NorthTower() {
                                     premium office space in Colombo with the confidence, convenience and reputation of the
                                     Access name.</p>
                             </div>
-
                         </div>
                     </div>
                 </div>
             </section>
-
+            <Aminities />
             <section className="snapshot-banner-sec">
                 <Image
                     src="/img/north-tower-snap-banner.jpg"
@@ -50,205 +61,9 @@ export default function NorthTower() {
                     height={486}
                 />
             </section>
-
-            <section className="amenities-sec">
-                <div className="container">
-                    <div className="intro-cont">
-                        <h2>Amenities</h2>
-                        <p>
-                            Designed around the demands of today’s workplace, our amenities provide the comfort,
-                            reliability and operational support businesses need to perform with confidence every day.</p>
-                    </div>
-                    <div className="row amenity-row">
-                        <div className="col-md-3">
-                            <div className="amenity-itm">
-                                <div className="img-cont">
-                                    <Image
-                                        src="/img/aminities-icon1.jpg"
-                                        alt="Air Conditioning"
-                                        className="img-fluid"
-                                        width={150}
-                                        height={150}
-                                    />
-                                </div>
-                                <h5>Air Conditioning</h5>
-                            </div>
-                        </div>
-                        <div className="col-md-3">
-                            <div className="amenity-itm">
-                                <div className="img-cont">
-                                    <Image
-                                        src="/img/aminities-icon1.jpg"
-                                        alt="Air Conditioning"
-                                        className="img-fluid"
-                                        width={150}
-                                        height={150}
-                                    />
-                                </div>
-                                <h5>Air Conditioning</h5>
-                            </div>
-                        </div>
-                        <div className="col-md-3">
-                            <div className="amenity-itm">
-                                <div className="img-cont">
-                                    <Image
-                                        src="/img/aminities-icon1.jpg"
-                                        alt="Air Conditioning"
-                                        className="img-fluid"
-                                        width={150}
-                                        height={150}
-                                    />
-                                </div>
-                                <h5>Air Conditioning</h5>
-                            </div>
-                        </div>
-                        <div className="col-md-3">
-                            <div className="amenity-itm">
-                                <div className="img-cont">
-                                    <Image
-                                        src="/img/aminities-icon1.jpg"
-                                        alt="Air Conditioning"
-                                        className="img-fluid"
-                                        width={150}
-                                        height={150}
-                                    />
-                                </div>
-                                <h5>Air Conditioning</h5>
-                            </div>
-                        </div>
-                        <div className="col-md-3">
-                            <div className="amenity-itm">
-                                <div className="img-cont">
-                                    <Image
-                                        src="/img/aminities-icon1.jpg"
-                                        alt="Air Conditioning"
-                                        className="img-fluid"
-                                        width={150}
-                                        height={150}
-                                    />
-                                </div>
-                                <h5>Air Conditioning</h5>
-                            </div>
-                        </div>
-                        <div className="col-md-3">
-                            <div className="amenity-itm">
-                                <div className="img-cont">
-                                    <Image
-                                        src="/img/aminities-icon1.jpg"
-                                        alt="Air Conditioning"
-                                        className="img-fluid"
-                                        width={150}
-                                        height={150}
-                                    />
-                                </div>
-                                <h5>Air Conditioning</h5>
-                            </div>
-                        </div>
-                        <div className="col-md-3">
-                            <div className="amenity-itm">
-                                <div className="img-cont">
-                                    <Image
-                                        src="/img/aminities-icon1.jpg"
-                                        alt="Air Conditioning"
-                                        className="img-fluid"
-                                        width={150}
-                                        height={150}
-                                    />
-                                </div>
-                                <h5>Air Conditioning</h5>
-                            </div>
-                        </div>
-                        <div className="col-md-3">
-                            <div className="amenity-itm">
-                                <div className="img-cont">
-                                    <Image
-                                        src="/img/aminities-icon1.jpg"
-                                        alt="Air Conditioning"
-                                        className="img-fluid"
-                                        width={150}
-                                        height={150}
-                                    />
-                                </div>
-                                <h5>Air Conditioning</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* <section className="our-clients-sec">
-                <div className="container">
-                    <h2>Our Clients</h2>
-                    <div className="row">
-                        <div className="col-md-2">
-                            <div className="client-itm">
-                                <Image
-                                    src="/img/client1.jpg"
-                                    alt="Air Conditioning"
-                                    className="img-fluid"
-                                    width={200}
-                                    height={130}
-                                />
-                            </div>
-                        </div>
-                        <div className="col-md-2">
-                            <div className="client-itm">
-                                <Image
-                                    src="/img/client1.jpg"
-                                    alt="Air Conditioning"
-                                    className="img-fluid"
-                                    width={200}
-                                    height={130}
-                                />
-                            </div>
-                        </div>
-                        <div className="col-md-2">
-                            <div className="client-itm">
-                                <Image
-                                    src="/img/client1.jpg"
-                                    alt="Air Conditioning"
-                                    className="img-fluid"
-                                    width={200}
-                                    height={130}
-                                />
-                            </div>
-                        </div>
-                        <div className="col-md-2">
-                            <div className="client-itm">
-                                <Image
-                                    src="/img/client1.jpg"
-                                    alt="Air Conditioning"
-                                    className="img-fluid"
-                                    width={200}
-                                    height={130}
-                                />
-                            </div>
-                        </div>
-                        <div className="col-md-2">
-                            <div className="client-itm">
-                                <Image
-                                    src="/img/client1.jpg"
-                                    alt="Air Conditioning"
-                                    className="img-fluid"
-                                    width={200}
-                                    height={130}
-                                />
-                            </div>
-                        </div>
-                        <div className="col-md-2">
-                            <div className="client-itm">
-                                <Image
-                                    src="/img/client1.jpg"
-                                    alt="Air Conditioning"
-                                    className="img-fluid"
-                                    width={200}
-                                    height={130}
-                                />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section> */}
+            <main>
+                <OurClient clients={ourClients} />
+            </main>
         </>
     );
 }

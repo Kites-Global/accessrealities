@@ -1,19 +1,67 @@
+"use client";
+import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "./page.module.css";
 import EmblaCarousel from "./components/EmblaCarousel";
 
 export default function Home() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [startScrollLeft, setStartScrollLeft] = useState(0);
+
+  const handleScroll = () => {
+    if (scrollRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+      const maxScroll = scrollWidth - clientWidth;
+      const progress = maxScroll > 0 ? (scrollLeft / maxScroll) * 100 : 0;
+      setScrollProgress(progress);
+    }
+  };
+  // Dragging Logic
+  useEffect(() => {
+    const handlePointerMove = (e: PointerEvent) => {
+      if (!isDragging || !scrollRef.current || !trackRef.current) return;
+
+      const deltaX = e.clientX - startX;
+      const trackWidth = trackRef.current.clientWidth;
+      const maxScroll = scrollRef.current.scrollWidth - scrollRef.current.clientWidth;
+
+      // Calculate how much the container should scroll based on mouse movement
+      const scrollDelta = (deltaX / trackWidth) * maxScroll;
+      scrollRef.current.scrollLeft = startScrollLeft + scrollDelta;
+    };
+
+    const handlePointerUp = () => {
+      setIsDragging(false);
+    };
+
+    if (isDragging) {
+      window.addEventListener("pointermove", handlePointerMove);
+      window.addEventListener("pointerup", handlePointerUp);
+    }
+
+    return () => {
+      window.removeEventListener("pointermove", handlePointerMove);
+      window.removeEventListener("pointerup", handlePointerUp);
+    };
+  }, [isDragging, startX, startScrollLeft]);
+
   return (
     <div>
       <section className="hero-sec">
 
         <div className="title-cont">
-          <h6>Serviced Offices for Rent</h6>
+          {/* <h6>Serviced Offices for Rent</h6> */}
           {/* <h1>
             Private Workspaces in the
             Heart of Colombo
           </h1> */}
-          <h1>Defining Colombo’s Corporate Skyline </h1>
+          <h1>Private Workspaces in the
+            Heart of Colombo</h1>
           <a href="#" className="btn-theme1 btn">Inquire Now</a>
         </div>
 
@@ -24,7 +72,7 @@ export default function Home() {
           <div className="row">
             <div className="col-md-7 info-cont">
               <div className="info-itm">
-                <h2>Access Realties (Pvt) Ltd.</h2>
+                <h2>Defining Colombo’s Corporate Skyline</h2>
                 <h6>Creating premium commercial spaces built for the way modern businesses work. </h6>
                 <p>
                   Access Realties (Pvt) Ltd has long been part of Colombo’s evolving commercial real estate story,
@@ -73,7 +121,7 @@ export default function Home() {
             <div className="col-md-4">
               <div className="south-cont">
                 <Image
-                  src="/img/south-tower-bg.jpg"
+                  src="/img/home-south-tower.jpg"
                   alt="South Tower"
                   className="img-fluid"
                   width={800}
@@ -90,7 +138,7 @@ export default function Home() {
             <div className="col-md-4">
               <div className="north-cont">
                 <Image
-                  src="/img/north-tower-bg.jpg"
+                  src="/img/home-north-tower.jpg"
                   alt="North Tower"
                   className="img-fluid"
                   width={800}
@@ -110,9 +158,16 @@ export default function Home() {
       </section>
 
       <section className="milestornes-sec px-2">
-        <div className="container-fluid">
-          <h2 className="text-white">Milestones</h2>
-          <div className="milestones-row">
+        <div className="container">
+          <h2 className="text-white text-uppercase">Milestones</h2>
+
+          {/* COMBINED INTO A SINGLE DIV */}
+          <div
+            className="milestones-row hide-native-scroll"
+            ref={scrollRef}
+            onScroll={handleScroll}
+            style={{ scrollBehavior: isDragging ? "auto" : "smooth" }} /* <--- ADD THIS LINE */
+          >
             <div className="col-md-3">
               <h2>1998</h2>
               <h6>Access Tower I Completed</h6>
@@ -160,6 +215,23 @@ export default function Home() {
                 Access Towers continues to be recognized as a premium business address for modern
                 organizations in the heart of Colombo.
               </p>
+            </div>
+          </div>
+
+          {/* UPDATED TRACK AND THUMB WITH DRAG LOGIC */}
+          <div className="custom-scrollbar-track" ref={trackRef}>
+            <div
+              className={`custom-scrollbar-thumb ${isDragging ? "dragging" : ""}`}
+              style={{ left: `${scrollProgress}%` }}
+              onPointerDown={(e) => {
+                e.preventDefault();
+                setIsDragging(true);
+                setStartX(e.clientX);
+                if (scrollRef.current) {
+                  setStartScrollLeft(scrollRef.current.scrollLeft);
+                }
+              }}
+            >
             </div>
           </div>
         </div>
