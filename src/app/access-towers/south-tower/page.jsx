@@ -26,13 +26,13 @@ export default function SouthTower() {
 
     return (
         <>
-            <section className="tower-page-banner">
+            <section className="south-page tower-page-banner">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-3 order-md-last">
                             <div className="img-cont">
                                 <Image
-                                    src="/img/north-tower-fimg1.png"
+                                    src="/img/south-tower-fimg1.png"
                                     alt="Access Realties"
                                     className="img-fluid"
                                     width={600}

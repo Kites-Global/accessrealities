@@ -21,7 +21,7 @@ export default function NorthTower() {
 
     return (
         <>
-            <section className="tower-page-banner">
+            <section className="north-page tower-page-banner">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-3 order-md-last">
