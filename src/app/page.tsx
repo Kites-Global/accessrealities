@@ -13,6 +13,18 @@ export default function Home() {
   const [startX, setStartX] = useState(0);
   const [startScrollLeft, setStartScrollLeft] = useState(0);
 
+  const [showModal, setShowModal] = useState(false);
+  const [modalContent, setModalContent] = useState({});
+
+  const handleOpen = (img, text, author) => {
+    setModalContent({ img, text, author });
+    setShowModal(true);
+  };
+
+  const handleClose = () => setShowModal(false);
+
+  const [activeReview, setActiveReview] = useState(null);
+
   const handleScroll = () => {
     if (scrollRef.current) {
       const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
@@ -450,158 +462,112 @@ export default function Home() {
         <div className="container">
           <div className="intro-cont">
             <h2>What they Say</h2>
-            {/* <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-            </p> */}
           </div>
+
+          {/* Review 1 */}
           <div className="row wht-thy-say-row justify-content-start">
             <div className="col-md-6">
               <div className="wht-thy-say-itm">
                 <div className="img-cont">
-                  <Image
-                    src="/img/wht-thy-see-icon1.png"
-                    alt="Insee cement"
-                    className="img-fluid"
-                    width={150}
-                    height={150}
-                  />
+                  <Image src="/img/ob-4.png" alt="Insee cement" className="img-fluid" width={200} height={200} />
                 </div>
                 <div className="info-cont info-cont-left">
-                  <h5>“A premium business address in Colombo”</h5>
+                  <h5>“CMS has been a tenant at Access Towers since 2012, and we have consistently enjoyed an excellent experience.”</h5>
                   <p>
-                    Excellent location, modern facilities, and a highly professional environment that enhances our business presence.
+                    The premises, security, cleanliness, safety, and building management have always met our expectations, supported by a courteous and responsive team.
+                    <br />
+                    <button
+                      className="btn btn-link text-decoration-none text-danger p-0"
+                      onClick={() => handleOpen(
+                        "/img/ob-4.png",
+                        "CMS has been a tenant at Access Towers since 2012, and we have consistently enjoyed an excellent experience. The premises, security, cleanliness, safety, and building management have always met our expectations, supported by a courteous and responsive team. The central location at Union Place is a significant advantage for both our staff and, particularly, our international clients visiting our offices. We are happy to recommend Access Towers to other organizations.",
+                        "Roshan Jayalath - Director – CMS"
+                      )}
+                    >
+                      read more
+                    </button>
                   </p>
-                  <p>
-                    — Corporate Tenant, Financial Services
-                  </p>
+                  <p>— Roshan Jayalath - Director – CMS</p>
                 </div>
               </div>
             </div>
           </div>
+
+          {/* Review 2 */}
           <div className="row wht-thy-say-row justify-content-end">
             <div className="col-md-6">
               <div className="wht-thy-say-itm">
                 <div className="img-cont order-md-last">
-                  <Image
-                    src="/img/wht-thy-see-icon2.png"
-                    alt="Grant Thornto"
-                    className="img-fluid"
-                    width={150}
-                    height={150}
-                  />
+                  <Image src="/img/st-1.png" alt="Grant Thornton" className="img-fluid" width={200} height={200} />
                 </div>
                 <div className="info-cont info-cont-right order-md-first">
-                  <h5>“Smooth operations, great facility management”</h5>
+                  <h5>“We are very pleased with the office we have rented on the 24th floor at Access Tower 2.”</h5>
                   <p>
-                    Reliable infrastructure, strong security, and responsive management make daily operations seamless.
+                    The building is perfectly located in the city, with easy access to multiple restaurants and shops.
+                    <br />
+                    <button
+                      className="btn btn-link text-decoration-none text-danger p-0"
+                      onClick={() => handleOpen(
+                        "/img/st-1.png",
+                        "We are very pleased with the office we have rented on the 24th floor at Access Tower 2. The building is perfectly located in the city, with easy access to multiple restaurants and shops. The facility is well maintained and clean.Most importantly the administrative and maintenance staff are very flexible and accommodating with a service oriented approach. We wish you all the best.",
+                        "Ruchi Gunawardene – Director – Brand Finance"
+                      )}
+                    >
+                      read more
+                    </button>
                   </p>
-                  <p>
-                    — Regional Manager, Multinational Company
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="row wht-thy-say-row justify-content-start">
-            <div className="col-md-6">
-              <div className="wht-thy-say-itm">
-                <div className="img-cont">
-                  <Image
-                    src="/img/wht-thy-see-icon1.png"
-                    alt="Insee cement"
-                    className="img-fluid"
-                    width={150}
-                    height={150}
-                  />
-                </div>
-                <div className="info-cont info-cont-left">
-                  <h5>“A premium business address in Colombo”</h5>
-                  <p>
-                    Excellent location, modern facilities, and a highly professional environment that enhances our business presence.
-                  </p>
-                  <p>
-                    — Corporate Tenant, Financial Services
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="row wht-thy-say-row justify-content-end">
-            <div className="col-md-6">
-              <div className="wht-thy-say-itm">
-                <div className="img-cont order-md-last">
-                  <Image
-                    src="/img/wht-thy-see-icon2.png"
-                    alt="Grant Thornto"
-                    className="img-fluid"
-                    width={150}
-                    height={150}
-                  />
-                </div>
-                <div className="info-cont info-cont-right order-md-first">
-                  <h5>“Smooth operations, great facility management”</h5>
-                  <p>
-                    Reliable infrastructure, strong security, and responsive management make daily operations seamless.
-                  </p>
-                  <p>
-                    — Regional Manager, Multinational Company
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="row wht-thy-say-row justify-content-start">
-            <div className="col-md-6">
-              <div className="wht-thy-say-itm">
-                <div className="img-cont">
-                  <Image
-                    src="/img/wht-thy-see-icon1.png"
-                    alt="Insee cement"
-                    className="img-fluid"
-                    width={150}
-                    height={150}
-                  />
-                </div>
-                <div className="info-cont info-cont-left">
-                  <h5>“A premium business address in Colombo”</h5>
-                  <p>
-                    Excellent location, modern facilities, and a highly professional environment that enhances our business presence.
-                  </p>
-                  <p>
-                    — Corporate Tenant, Financial Services
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="row wht-thy-say-row justify-content-end">
-            <div className="col-md-6">
-              <div className="wht-thy-say-itm">
-                <div className="img-cont order-md-last">
-                  <Image
-                    src="/img/wht-thy-see-icon2.png"
-                    alt="Grant Thornto"
-                    className="img-fluid"
-                    width={150}
-                    height={150}
-                  />
-                </div>
-                <div className="info-cont info-cont-right order-md-first">
-                  <h5>“Smooth operations, great facility management”</h5>
-                  <p>
-                    Reliable infrastructure, strong security, and responsive management make daily operations seamless.
-                  </p>
-                  <p>
-                    — Regional Manager, Multinational Company
-                  </p>
+                  <p>— Ruchi Gunawardene – Director – Brand Finance</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
+      </section >
 
-      </section>
+      {/* User Review Modal */}
+      {
+        showModal && (
+          <div className="modal d-block custom-modal-backdrop" tabIndex="-1">
+            <div className="modal-dialog modal-lg modal-dialog-centered">
+              <div className="modal-content border-0 shadow-lg custom-modal-content">
+                <div className="modal-body p-5 position-relative">
+                  {/* Close Button */}
+                  <button
+                    type="button"
+                    className="btn-close btn-close-white position-absolute top-0 end-0 m-3"
+                    onClick={handleClose}
+                    aria-label="Close"
+                  ></button>
 
-    </div>
+                  {/* Modal Layout */}
+                  <div className="d-flex align-items-center mt-3">
+
+                    {/* Logo Area */}
+                    <div className="bg-white d-flex justify-content-center align-items-center rounded custom-modal-logo-box">
+                      <Image src={modalContent.img} alt="Logo" width={90} height={90} objectFit="contain" />
+                    </div>
+
+                    {/* Vertical Divider */}
+                    <div className="mx-4 custom-modal-divider"></div>
+
+                    {/* Text Content */}
+                    <div>
+                      <p className="mb-4 custom-modal-text">
+                        {modalContent.text}
+                      </p>
+                      <p className="mb-0 fw-bold custom-modal-author">
+                        - {modalContent.author}
+                      </p>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )
+      }
+
+    </div >
   );
 }
