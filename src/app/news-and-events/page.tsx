@@ -4,7 +4,7 @@ import { useState } from "react";
 import NewsAndEvents from "../components/NewsAndEvents";
 
 // Dummy data
-const mockData = Array.from({ length: 10 }).map((_, i) => ({
+const mockData = Array.from({ length: 5 }).map((_, i) => ({
     id: i + 1,
     title: `SED UT PERSPICIATIS UNDE OMNIS ${i + 1}`,
     date: "June 30, 2026",
@@ -14,7 +14,7 @@ const mockData = Array.from({ length: 10 }).map((_, i) => ({
 export default function Contact() {
 
     const [currentPage, setCurrentPage] = useState(1);
-    const itemsPerPage = 8;
+    const itemsPerPage = 4;
 
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;

@@ -66,7 +66,7 @@ export default function SouthTower() {
 
             <section className="snapshot-banner-sec">
                 <Image
-                    src="/img/north-tower-snap-banner.jpg"
+                    src="/img/north-south-tower-snap-banner.jpg"
                     alt="Access Realties"
                     className="img-fluid"
                     width={2000}

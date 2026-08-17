@@ -11,6 +11,12 @@ export default function NorthTower() {
         { id: 5, src: "/img/ob-5.png" },
         { id: 6, src: "/img/ob-6.png" },
         { id: 1, src: "/img/ob-1.jpg" },
+        { id: 7, src: "/img/ob-2.jpg" },
+        { id: 8, src: "/img/ob-3.png" },
+        { id: 9, src: "/img/ob-4.png" },
+        { id: 10, src: "/img/ob-5.png" },
+        { id: 11, src: "/img/ob-6.png" },
+        { id: 12, src: "/img/ob-1.jpg" },
     ];
 
     return (
@@ -54,7 +60,7 @@ export default function NorthTower() {
             <Aminities />
             <section className="snapshot-banner-sec">
                 <Image
-                    src="/img/north-tower-snap-banner.jpg"
+                    src="/img/north-south-tower-snap-banner.jpg"
                     alt="Access Realties"
                     className="img-fluid"
                     width={2000}
