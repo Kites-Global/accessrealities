@@ -469,7 +469,9 @@ export default function Home() {
             <div className="col-md-6">
               <div className="wht-thy-say-itm">
                 <div className="img-cont">
-                  <Image src="/img/ob-4.png" alt="Insee cement" className="img-fluid" width={200} height={200} />
+                  <div className="logo-box">
+                    <Image src="/img/ob-4.png" alt="Insee cement" className="img-fluid" width={200} height={200} />
+                  </div>
                 </div>
                 <div className="info-cont info-cont-left">
                   <h5>“CMS has been a tenant at Access Towers since 2012, and we have consistently enjoyed an excellent experience.”</h5>
@@ -498,7 +500,9 @@ export default function Home() {
             <div className="col-md-6">
               <div className="wht-thy-say-itm">
                 <div className="img-cont order-md-last">
-                  <Image src="/img/st-1.png" alt="Grant Thornton" className="img-fluid" width={200} height={200} />
+                  <div className="logo-box">
+                    <Image src="/img/st-1.png" alt="Grant Thornton" className="img-fluid" width={200} height={200} />
+                  </div>
                 </div>
                 <div className="info-cont info-cont-right order-md-first">
                   <h5>“We are very pleased with the office we have rented on the 24th floor at Access Tower 2.”</h5>
@@ -543,7 +547,7 @@ export default function Home() {
                   <div className="d-flex align-items-center mt-3">
 
                     {/* Logo Area */}
-                    <div className="bg-white d-flex justify-content-center align-items-center rounded custom-modal-logo-box">
+                    <div className="logo-box">
                       <Image src={modalContent.img} alt="Logo" width={90} height={90} objectFit="contain" />
                     </div>
 
