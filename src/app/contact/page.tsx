@@ -55,7 +55,7 @@ function Contact() {
                                         <i className="bi bi-globe"></i>
                                         <p>www.accessrealties.com</p>
                                     </a>
-                                    <div className="contact-list-itm">
+                                    <div className="contact-list-itm address-non">
                                         <i className="bi bi-geo-alt"></i>
                                         <p>Access Realties (Pvt) Ltd, Access Towers, No.278/4, <br />
                                             Union Place, Colombo 02.</p>

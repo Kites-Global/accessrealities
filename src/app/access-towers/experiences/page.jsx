@@ -1,5 +1,7 @@
 import Image from "next/image";
 import ExperienceGallery from "../../components/ExperienceGallery";
+import { FacilitiesInquiryForm } from "../../components/PopupForms";
+
 
 const galleryImages1 = [
     { src: "/img/experiences-lounge-1.jpg", alt: "Members Lounge" },
@@ -48,7 +50,8 @@ export default function experiences() {
                 <div className="intro-itm">
                     <h1>Experiences</h1>
                     {/* <h6>Everything you need, within one connected business address.</h6> */}
-                    <a href="#" className="btn-theme1 btn">Inquire Now</a>
+                    {/* <a href="/contact" className="btn-theme1 btn">Inquire Now</a> */}
+                    <FacilitiesInquiryForm />
                 </div>
             </section>
 
@@ -70,7 +73,7 @@ export default function experiences() {
                                     service and premium lifestyle amenities, creating a refined setting for business networking,
                                     corporate entertaining and relaxed moments above the city. </p>
                                 <p>
-                                    To discover membership privileges and exclusive inclusions, contact <a href="#">+94 70 627 5517</a> or email <a href="#">fnb.virticle@jetwinghotels.com</a>
+                                    To discover membership privileges and exclusive inclusions, contact <a href="tel:+94 70 627 5517">+94 70 627 5517</a> or email <a href="mailto:fnb.virticle@jetwinghotels.com">fnb.virticle@jetwinghotels.com</a>
                                 </p>
                             </div>
                         </div>
@@ -112,7 +115,7 @@ export default function experiences() {
                                     experience to Access Towers for tenants, visitors and guests seeking premium dining in
                                     Colombo.</p>
                                 <p>
-                                    For reservations and enquiries, call <a href="#"> +94 70 735 5355</a> or email <a href="#">fnb@virticlebyjetwing.com</a>
+                                    For reservations and enquiries, call <a href="tel:+94707355355"> +94 70 735 5355</a> or email <a href="mailto:fnb@virticlebyjetwing.com">fnb@virticlebyjetwing.com</a>
                                 </p>
                             </div>
                         </div>

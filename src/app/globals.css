@@ -996,6 +996,10 @@ footer {
       .contact-list-itm:hover {
         text-decoration: underline;
       }
+
+      .contact-list-itm.address-non:hover {
+        text-decoration: none;
+      }
     }
   }
 }

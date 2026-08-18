@@ -34,7 +34,7 @@ export default function NorthTower() {
                                     height={800}
                                 />
                                 <a href="#" className="btn-theme1 btn">Floor Plans</a>
-                                <a href="#" className="btn-theme1 btn">Inquire Now</a>
+                                <a href="/contact" className="btn-theme1 btn">Inquire Now</a>
                             </div>
                         </div>
                         <div className="col-md-9 intro-cont order-md-first">
@@ -58,7 +58,7 @@ export default function NorthTower() {
                 </div>
             </section>
             <Aminities />
-            <section className="snapshot-banner-sec">
+            <section className="snapshot-banner-sec" id="snapshot-banner-sec">
                 <Image
                     src="/img/north-south-tower-snap-banner.jpg"
                     alt="Access Realties"

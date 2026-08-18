@@ -4,6 +4,8 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import EmblaCarousel from "./components/EmblaCarousel";
 import { Modal } from "react-bootstrap"
+import Aminities from './components/Aminities';
+import { OfficeInquiryForm, VideoPopup } from "./components/PopupForms";
 
 export default function Home() {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -21,6 +23,8 @@ export default function Home() {
     setModalContent({ img, text, author });
     setShowModal(true);
   };
+
+  const [show, setShow] = useState(false);
 
   const handleClose = () => setShowModal(false);
 
@@ -75,7 +79,8 @@ export default function Home() {
           </h1> */}
           <h1>Private Workspaces in the
             Heart of Colombo</h1>
-          <a href="#" className="btn-theme1 btn">Inquire Now</a>
+          {/* <a href="#" className="btn-theme1 btn">Inquire Now</a> */}
+          <OfficeInquiryForm />
         </div>
 
       </section>
@@ -101,7 +106,7 @@ export default function Home() {
             <div className="col-md-5">
               <div className="img-cont">
                 <Image
-                  src="/img/about-access-sec-fimg.png"
+                  src="/img/about-access-sec-fimg.webp"
                   alt="Access Realties"
                   className="img-fluid"
                   width={600}
@@ -122,9 +127,7 @@ export default function Home() {
             A closer look at premium commercial spaces built to support the way businesses work, connect and
             grow.
           </p>
-          <a href="#">
-            <i className="bi bi-play-circle-fill"></i>
-          </a>
+          <VideoPopup videoUrl="https://www.youtube.com/embed/YOUR_REAL_VIDEO_LINK_HERE?autoplay=1" />
         </div>
       </section>
 
@@ -145,7 +148,7 @@ export default function Home() {
                   A refined business address where elegant interiors, smart spaces and everyday convenience
                   come together.
                 </p>
-                <a href="#" className="btn">View gallery</a>
+                <a href="/access-towers/south-tower" className="btn">View tower</a>
               </div>
             </div>
             <div className="col-md-4">
@@ -162,7 +165,7 @@ export default function Home() {
                   A contemporary corporate environment designed for seamless movement, modern work and
                   elevated business presence.
                 </p>
-                <a href="#" className="btn">View gallery</a>
+                <a href="/access-towers/north-tower" className="btn">View tower</a>
               </div>
             </div>
           </div>
@@ -333,6 +336,8 @@ export default function Home() {
 
         </div>
       </section>
+
+      <Aminities />
 
       {/* <section className="amenities-sec">
         <div className="container">
@@ -515,11 +520,11 @@ export default function Home() {
                     <button
                       className="btn btn-link text-decoration-none text-danger p-0"
                       onClick={() => handleOpen(
-                          {
-                            img: "/img/st-1.png",
-                            text: "We are very pleased with the office we have rented on the 24th floor at Access Tower 2. The building is perfectly located in the city, with easy access to multiple restaurants and shops. The facility is well maintained and clean.Most importantly the administrative and maintenance staff are very flexible and accommodating with a service oriented approach. We wish you all the best.",
-                            author: "Ruchi Gunawardene – Director – Brand Finance"
-                          }
+                        {
+                          img: "/img/st-1.png",
+                          text: "We are very pleased with the office we have rented on the 24th floor at Access Tower 2. The building is perfectly located in the city, with easy access to multiple restaurants and shops. The facility is well maintained and clean.Most importantly the administrative and maintenance staff are very flexible and accommodating with a service oriented approach. We wish you all the best.",
+                          author: "Ruchi Gunawardene – Director – Brand Finance"
+                        }
                       )}
                     >
                       read more

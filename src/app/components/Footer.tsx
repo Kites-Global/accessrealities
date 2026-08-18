@@ -22,43 +22,36 @@ export default function Footer() {
                         <div className="quick-links">
                             <div className="row">
                                 <div className="col-md-2">
-                                    <Link href="#">
+                                    <Link href="/">
                                         <h5>Home</h5>
                                     </Link>
                                 </div>
                                 <div className="col-md-2">
-                                    <Link href="#">
-                                        <h5>Access Towers</h5>
-                                    </Link>
+                                    <h5>Access Towers</h5>
                                     <ul>
-                                        <li><Link href="#">North Tower</Link></li>
-                                        <li><Link href="#">South Tower</Link></li>
+                                        <li><Link href="/access-towers/north-tower">North Tower</Link></li>
+                                        <li><Link href="/access-towers/south-tower">South Tower</Link></li>
                                         <li><Link href="#">Floor Plans</Link></li>
                                         <li><Link href="#">Gallery</Link></li>
                                         <li><Link href="#">Inquire Now</Link></li>
                                     </ul>
                                 </div>
                                 <div className="col-md-2">
-                                    <Link href="#">
+                                    <Link href="/about-us/our-journey">
                                         <h5>Our Journey</h5>
                                     </Link>
                                     <ul>
-                                        <li><Link href="#">Access Realties</Link></li>
-                                        <li><Link href="#">Vision & Mission</Link></li>
-                                        <li><Link href="#">Careers</Link></li>
+                                        <li><Link href="/about-us/our-journey">Access Realties</Link></li>
+                                        <li><Link href="/careers">Careers</Link></li>
                                     </ul>
                                 </div>
                                 <div className="col-md-2">
-                                    <Link href="#">
-                                        <h5>Media</h5>
+                                    <Link href="/news-and-events">
+                                        <h5>News & Events</h5>
                                     </Link>
-                                    <ul>
-                                        <li><Link href="#">News</Link></li>
-                                        <li><Link href="#">Events</Link></li>
-                                    </ul>
                                 </div>
                                 <div className="col-md-2">
-                                    <Link href="#">
+                                    <Link href="/contact">
                                         <h5>Contact</h5>
                                     </Link>
                                 </div>
@@ -78,11 +71,11 @@ export default function Footer() {
                             <li>
                                 <i className="bi bi-telephone-fill"></i>
                                 <div>
-                                    <Link href="#"> +94 774 055 682 </Link><br />
-                                    <Link href="#"> +94 112 302 302 </Link>
+                                    <Link href="tel:+94774055682"> +94 774 055 682 </Link><br />
+                                    <Link href="tel:+94112302302"> +94 112 302 302 </Link>
                                 </div>
                             </li>
-                            <li><i className="bi bi-envelope-fill"></i><Link href="#"> fme@accessrealities.com </Link></li>
+                            <li><i className="bi bi-envelope-fill"></i><Link href="mailto:fme@accessrealities.com"> fme@accessrealities.com </Link></li>
                         </ul>
                         <div className="socialies">
                             <Link href="#"><i className="bi bi-linkedin"></i></Link>
