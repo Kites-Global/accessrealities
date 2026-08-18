@@ -3,6 +3,7 @@ import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "./page.module.css";
 import EmblaCarousel from "./components/EmblaCarousel";
+import { Modal } from "react-bootstrap"
 
 export default function Home() {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -178,7 +179,7 @@ export default function Home() {
             className="milestones-row hide-native-scroll"
             ref={scrollRef}
             onScroll={handleScroll}
-            style={{ scrollBehavior: isDragging ? "auto" : "smooth" }} /* <--- ADD THIS LINE */
+            style={{ scrollBehavior: isDragging ? "auto" : "smooth" }}
           >
             <div className="col-md-3">
               <h2>1998</h2>
@@ -469,7 +470,9 @@ export default function Home() {
             <div className="col-md-6">
               <div className="wht-thy-say-itm">
                 <div className="img-cont">
-                  <Image src="/img/ob-4.png" alt="Insee cement" className="img-fluid" width={200} height={200} />
+                  <div className="logo-box">
+                    <Image src="/img/ob-4.png" alt="Insee cement" className="img-fluid" width={200} height={200} />
+                  </div>
                 </div>
                 <div className="info-cont info-cont-left">
                   <h5>“CMS has been a tenant at Access Towers since 2012, and we have consistently enjoyed an excellent experience.”</h5>
@@ -498,7 +501,9 @@ export default function Home() {
             <div className="col-md-6">
               <div className="wht-thy-say-itm">
                 <div className="img-cont order-md-last">
-                  <Image src="/img/st-1.png" alt="Grant Thornton" className="img-fluid" width={200} height={200} />
+                  <div className="logo-box">
+                    <Image src="/img/st-1.png" alt="Grant Thornton" className="img-fluid" width={200} height={200} />
+                  </div>
                 </div>
                 <div className="info-cont info-cont-right order-md-first">
                   <h5>“We are very pleased with the office we have rented on the 24th floor at Access Tower 2.”</h5>
@@ -522,51 +527,54 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section >
+      </section>
 
-      {/* User Review Modal */}
-      {
-        showModal && (
-          <div className="modal d-block custom-modal-backdrop" tabIndex="-1">
-            <div className="modal-dialog modal-lg modal-dialog-centered">
-              <div className="modal-content border-0 shadow-lg custom-modal-content">
-                <div className="modal-body p-5 position-relative">
-                  {/* Close Button */}
-                  <button
-                    type="button"
-                    className="btn-close btn-close-white position-absolute top-0 end-0 m-3"
-                    onClick={handleClose}
-                    aria-label="Close"
-                  ></button>
+      {/* 3. React Bootstrap Modal */}
+      <Modal
+        show={showModal}
+        onHide={handleClose}
+        size="lg"
+        centered
+        backdropClassName="custom-modal-backdrop"
+        contentClassName="border-0 shadow-lg custom-modal-content"
+      >
+        <Modal.Body className="p-5 position-relative">
+          {/* Close Button */}
+          <button
+            type="button"
+            className="btn-close btn-close-white position-absolute top-0 end-0 m-3"
+            onClick={handleClose}
+            aria-label="Close"
+          ></button>
 
-                  {/* Modal Layout */}
-                  <div className="d-flex align-items-center mt-3">
+          {/* Modal Layout */}
+          <div className="d-flex align-items-center mt-3">
+            {/* Logo Area */}
+            <div className="align-items-center logo-box custom-modal-logo-box">
+              <Image
+                src={modalContent.img}
+                alt="Logo"
+                width={90}
+                height={90}
+                style={{ objectFit: 'contain' }}
+              />
+            </div>
 
-                    {/* Logo Area */}
-                    <div className="bg-white d-flex justify-content-center align-items-center rounded custom-modal-logo-box">
-                      <Image src={modalContent.img} alt="Logo" width={90} height={90} objectFit="contain" />
-                    </div>
+            {/* Vertical Divider */}
+            <div className="mx-4 custom-modal-divider"></div>
 
-                    {/* Vertical Divider */}
-                    <div className="mx-4 custom-modal-divider"></div>
-
-                    {/* Text Content */}
-                    <div>
-                      <p className="mb-4 custom-modal-text">
-                        {modalContent.text}
-                      </p>
-                      <p className="mb-0 fw-bold custom-modal-author">
-                        - {modalContent.author}
-                      </p>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
+            {/* Text Content */}
+            <div>
+              <p className="mb-4 custom-modal-text">
+                {modalContent.text}
+              </p>
+              <p className="mb-0 fw-bold custom-modal-author">
+                - {modalContent.author}
+              </p>
             </div>
           </div>
-        )
-      }
+        </Modal.Body>
+      </Modal>
 
     </div >
   );
