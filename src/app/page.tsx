@@ -15,9 +15,9 @@ export default function Home() {
   const [startScrollLeft, setStartScrollLeft] = useState(0);
 
   const [showModal, setShowModal] = useState(false);
-  const [modalContent, setModalContent] = useState({});
+  const [modalContent, setModalContent] = useState<{ img: string; text: string; author: string }>({ img: "", text: "", author: "" });
 
-  const handleOpen = (img, text, author) => {
+  const handleOpen = ({ img, text, author }: { img: string; text: string; author: string }) => {
     setModalContent({ img, text, author });
     setShowModal(true);
   };
@@ -482,9 +482,11 @@ export default function Home() {
                     <button
                       className="btn btn-link text-decoration-none text-danger p-0"
                       onClick={() => handleOpen(
-                        "/img/ob-4.png",
-                        "CMS has been a tenant at Access Towers since 2012, and we have consistently enjoyed an excellent experience. The premises, security, cleanliness, safety, and building management have always met our expectations, supported by a courteous and responsive team. The central location at Union Place is a significant advantage for both our staff and, particularly, our international clients visiting our offices. We are happy to recommend Access Towers to other organizations.",
-                        "Roshan Jayalath - Director – CMS"
+                        {
+                          img: "/img/ob-4.png",
+                          text: "CMS has been a tenant at Access Towers since 2012, and we have consistently enjoyed an excellent experience. The premises, security, cleanliness, safety, and building management have always met our expectations, supported by a courteous and responsive team. The central location at Union Place is a significant advantage for both our staff and, particularly, our international clients visiting our offices. We are happy to recommend Access Towers to other organizations.",
+                          author: "Roshan Jayalath - Director – CMS"
+                        }
                       )}
                     >
                       read more
@@ -513,9 +515,11 @@ export default function Home() {
                     <button
                       className="btn btn-link text-decoration-none text-danger p-0"
                       onClick={() => handleOpen(
-                        "/img/st-1.png",
-                        "We are very pleased with the office we have rented on the 24th floor at Access Tower 2. The building is perfectly located in the city, with easy access to multiple restaurants and shops. The facility is well maintained and clean.Most importantly the administrative and maintenance staff are very flexible and accommodating with a service oriented approach. We wish you all the best.",
-                        "Ruchi Gunawardene – Director – Brand Finance"
+                          {
+                            img: "/img/st-1.png",
+                            text: "We are very pleased with the office we have rented on the 24th floor at Access Tower 2. The building is perfectly located in the city, with easy access to multiple restaurants and shops. The facility is well maintained and clean.Most importantly the administrative and maintenance staff are very flexible and accommodating with a service oriented approach. We wish you all the best.",
+                            author: "Ruchi Gunawardene – Director – Brand Finance"
+                          }
                       )}
                     >
                       read more
