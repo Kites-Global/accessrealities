@@ -562,6 +562,11 @@ header {
       }
     }
   }
+
+  h5 {
+    font-weight: 400;
+    font-size: 1.1rem;
+  }
 }
 
 .logo-box {
@@ -572,7 +577,6 @@ header {
   background-color: #fff;
   overflow: hidden;
   display: flex;
-  flex: 1;
   align-items: center;
   justify-content: center;
 }
@@ -1448,6 +1452,7 @@ footer {
 
 /* User Review Modal */
 .custom-modal-backdrop {
+  opacity: 1 !important;
   background-color: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(5px);
   z-index: 1050;
