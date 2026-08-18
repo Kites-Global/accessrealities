@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ExperienceGallery from "../../components/ExperienceGallery";
+import { FacilitiesInquiryForm } from "../../components/PopupForms";
 
 const galleryImages1 = [
     { src: "/img/facility-meet-room-1.jpg", alt: "Members Lounge" },
@@ -51,7 +52,8 @@ export default function experiences() {
                 <div className="intro-itm">
                     <h1>Facilities</h1>
                     {/* <h6>Everything you need, within one connected business address.</h6> */}
-                    <a href="#" className="btn-theme1 btn">Inquire Now</a>
+                    {/* <a href="/contact" className="btn-theme1 btn">Inquire Now</a> */}
+                    <FacilitiesInquiryForm />
                 </div>
             </section>
 
@@ -64,7 +66,7 @@ export default function experiences() {
                         <div className="col-md-7 experience-info-cont">
                             <div>
                                 <h2>
-                                    Meeting Room
+                                    Meeting Rooms
                                 </h2>
                                 <p>
                                     Designed for moments that need focus, privacy and professionalism, the meeting room at
@@ -72,7 +74,7 @@ export default function experiences() {
                                     business discussions. Located within a recognized commercial address in Colombo, it provides a
                                     convenient and reliable space for teams and professionals to meet with confidence. </p>
                                 <p>
-                                    For enquiries: Call <a href="#">+94 774 055 682</a> or email <a href="#">fme@accessrealties.com</a>
+                                    For enquiries: Call <a href="tel:+94 774 055 682">+94 774 055 682</a> or email <a href="mailto:fme@accessrealties.com">fme@accessrealties.com</a>
                                 </p>
                             </div>
                         </div>
@@ -92,7 +94,7 @@ export default function experiences() {
                                     promotions, sampling campaigns, brand activations and seasonal sales, these spaces create
                                     valuable visibility within a recognized commercial environment in Colombo. </p>
                                 <p>
-                                    For enquiries: Call <a href="#">+94 774 055 682</a> or email <a href="#">fme@accessrealties.com</a>
+                                    For enquiries: Call <a href="tel:+94774055682">+94 774 055 682</a> or email <a href="mailto:fme@accessrealties.com">fme@accessrealties.com</a>
                                 </p>
                             </div>
                         </div>
@@ -114,7 +116,7 @@ export default function experiences() {
                                     an active routine within Colombo’s modern corporate environment.  </p>
 
                                 <p>
-                                    For membership enquiries, call <a href="#"> +94 77 505 2342</a>
+                                    For membership enquiries, call <a href="tel:+94 77 505 2342"> +94 77 505 2342</a>
                                 </p>
                             </div>
                         </div>
@@ -155,7 +157,7 @@ export default function experiences() {
                                     and the workday seamless.
                                 </p>
                                 <p>
-                                    For enquiries: Call <a href="#"> +94 774 055 682</a> or email <a href="#">fme@accessrealties.com</a>
+                                    For enquiries: Call <a href="tel:+94 774 055 682"> +94 774 055 682</a> or email <a href="mailto:fme@accessrealties.com">fme@accessrealties.com</a>
                                 </p>
                             </div>
                         </div>
@@ -171,7 +173,7 @@ export default function experiences() {
                                 </h2>
                                 <p>Access Towers offers digital advertising options through TV screens placed across the premises, helping tenants, brands and business partners reach a premium corporate audience. Ideal for promotions, announcements, launches and business services, these digital screen placements provide targeted visibility within a recognised commercial office environment in Colombo.</p>
                                 <p>
-                                    For enquiries: Call <a href="#"> +94 774 055 682</a> or email <a href="#">fme@accessrealties.com</a>
+                                    For enquiries: Call <a href="tel:+94 774 055 682"> +94 774 055 682</a> or email <a href="mailto:fme@accessrealties.com">fme@accessrealties.com</a>
                                 </p>
                             </div>
                         </div>

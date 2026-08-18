@@ -46,7 +46,7 @@ export default function EmblaCarousel() {
                                 <div className="overlay">
                                     <div>
                                         <h5>{facility.title}</h5>
-                                        <a href="#" className="btn btn-theme1">Inquire now</a>
+                                        <a href="/contact" className="btn btn-theme1">Inquire now</a>
                                     </div>
                                 </div>
                             </div>

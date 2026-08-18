@@ -10,6 +10,8 @@ export function OfficeInquiryForm() {
 
     return (
         <>
+
+            {/* home page form */}
             <Modal className="modal" show={show} onHide={handleClose} tabIndex={-1}>
                 <Modal.Dialog className="modal-form">
                     <Modal.Header className="modal-header" >
@@ -42,8 +44,8 @@ export function OfficeInquiryForm() {
 
                 </Modal.Dialog>
             </Modal>
-            <button type="button" className="btn btn-theme1" onClick={() => handleOpen()}>
-                Launch demo modal
+            <button type="button" className="btn btn-theme1 text-uppercase" onClick={() => handleOpen()}>
+                Inquire Now
             </button>
         </>
     )
@@ -57,10 +59,11 @@ export function FacilitiesInquiryForm() {
 
     return (
         <>
+
             <Modal className="modal" show={show} onHide={handleClose} tabIndex={-1}>
                 <Modal.Dialog className="modal-form">
                     <Modal.Header className="modal-header" >
-                        <h5 className="modal-title">OFFICE RENTAL
+                        <h5 className="modal-title">FACILITIES & SERVICES
                             INQUIRY</h5>
 
                     </Modal.Header>
@@ -69,7 +72,7 @@ export function FacilitiesInquiryForm() {
                         <form action="">
                             <input type="text" name="name" placeholder="Your name*" required />
                             <input type="tel" name="phone" placeholder="Your mobile number*" required />
- 
+
                             <label htmlFor="size">Nature of your requirement*</label>
                             <select name="nature" id="size">
                                 <option defaultChecked value="office-space">Office Space</option>
@@ -78,17 +81,63 @@ export function FacilitiesInquiryForm() {
                             </select>
                             <input type="email" name="email" placeholder="Your email*" required />
                             <textarea name="requirements" id="" placeholder="Do you have specific requirements?" rows={6}></textarea>
-                           
+
                             <button className="btn btn-primary">Submit</button>
                         </form>
                     </Modal.Body>
 
                 </Modal.Dialog>
             </Modal>
-            <button type="button" className="btn btn-theme1" onClick={() => handleOpen()}>
-                Launch demo modal
+            <button type="button" className="btn btn-theme1 text-uppercase" onClick={() => handleOpen()}>
+                Inquire Now
             </button>
         </>
     )
+}
+
+export function VideoPopup({ videoUrl = "https://www.youtube.com/embed/YOUR_VIDEO_ID" }: { videoUrl?: string }) {
+    const [show, setShow] = useState(false);
+
+    const handleOpen = (e: React.MouseEvent) => {
+        e.preventDefault();
+        setShow(true);
+    };
+    const handleClose = () => setShow(false);
+
+    return (
+        <>
+            {/* The Play Button Trigger */}
+            <a href="#" onClick={handleOpen}>
+                <i className="bi bi-play-circle-fill"></i>
+            </a>
+
+            {/* The Video Modal */}
+            <Modal show={show} onHide={handleClose} size="lg" centered contentClassName="bg-transparent border-0">
+                <Modal.Header className="border-0 pb-0 mb-2 justify-content-end">
+                    <button
+                        type="button"
+                        className="btn-close btn-close-white"
+                        aria-label="Close"
+                        onClick={handleClose}
+                    />
+                </Modal.Header>
+                <Modal.Body className="p-0">
+                    <div style={{ position: "relative", paddingBottom: "56.25%", height: 0, overflow: "hidden" }}>
+                        {/* Conditionally render the iframe ONLY when the modal is open */}
+                        {show && (
+
+                            <iframe
+                                src={videoUrl}
+                                title="Video Player"
+                                style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", borderRadius: "8px" }}
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                            ></iframe>
+                        )}
+                    </div>
+                </Modal.Body>
+            </Modal>
+        </>
+    );
 }
 
