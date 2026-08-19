@@ -152,6 +152,10 @@ header {
     }
 
     h2 {
+      margin-left: 0.5rem;
+    }
+
+    h2 {
       display: flex;
       align-items: center;
       color: var(--primary-txt-color);
@@ -331,7 +335,7 @@ header {
 
 .custom-scrollbar-track {
   position: relative;
-  width: 30%;
+  width: 100%;
   height: 10px;
   display: flex;
   align-items: center;
@@ -366,14 +370,13 @@ header {
 .custom-scrollbar-thumb.dragging {
   cursor: grabbing;
   transition: none;
-  /* Stop animation and show solid ring while holding */
   animation: none;
   box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.3);
 }
 
 .facilities-sec {
   background-color: #000;
-  padding: 3rem 0;
+  padding-top: 3rem;
 
   .intro-cont {
     width: 100%;
@@ -429,14 +432,14 @@ header {
                 color: #fff;
                 font-weight: 500;
                 text-transform: uppercase;
-                font-size: 1.1rem;
+                font-size: 0.9rem;
                 margin-bottom: 0.2rem;
               }
 
               .btn-theme1 {
                 padding: 0.3rem 2.3rem;
                 border-radius: 1rem;
-                font-size: 0.8rem;
+                font-size: 0.55rem;
                 text-transform: uppercase;
               }
             }
@@ -475,6 +478,27 @@ header {
         }
       }
     }
+
+    .facility-embla-carousel .embla__dots {
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .facility-embla-carousel .embla__dot {
+      width: 0.55rem;
+      height: 0.55rem;
+      border-radius: 50%;
+      border: none;
+      background-color: #ffffff66;
+      cursor: pointer;
+      padding: 0;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .facility-embla-carousel .embla__dot.is-selected {
+      background-color: var(--primary-color);
+    }
   }
 }
 
@@ -489,6 +513,10 @@ header {
     h2 {
       text-transform: uppercase;
     }
+
+    /* h2::before {
+      height: 1.2rem;
+    } */
   }
 
   .amenity-row {
@@ -506,6 +534,7 @@ header {
         text-transform: uppercase;
         font-weight: 500;
         font-size: 1rem;
+        margin-top: 0.7rem;
       }
     }
   }
@@ -533,6 +562,10 @@ header {
       align-items: center;
       margin-bottom: 1rem;
 
+      .hide-mobile {
+        display: none;
+      }
+
       .info-cont {
         display: flex;
         flex-direction: column;
@@ -553,12 +586,6 @@ header {
       .info-cont-left {
         border-left: 1px solid #ffffff4c;
         padding: 0.5rem 0 0.5rem 1rem;
-      }
-
-      .info-cont-right {
-        border-right: 1px solid #ffffff4c;
-        padding: 0.5rem 1rem 0.5rem 0;
-        text-align: right;
       }
     }
   }
@@ -607,11 +634,16 @@ footer {
   }
 
   .quick-links {
+    .row {
+      margin-top: 2rem;
+    }
+
     padding: 0 2rem;
 
     h5 {
       font-size: 0.9rem;
       margin-bottom: 0.2rem;
+      line-height: 1.2rem;
     }
 
     ul {
@@ -625,6 +657,11 @@ footer {
         }
       }
     }
+  }
+
+  .footer-address {
+    padding-left: 2rem;
+    margin-top: 3rem;
   }
 
   .socialies {
@@ -1470,6 +1507,19 @@ footer {
   background-color: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(5px);
   z-index: 1050;
+
+}
+
+.custom-display {
+  display: block;
+
+  .fit-mobile {
+    margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    display: grid;
+  }
 }
 
 .custom-modal-content {
@@ -1522,11 +1572,33 @@ footer {
 }
 
 @media (min-width: 992px) {
+
+  h2:before {
+    height: 1.5rem;
+  }
+
+  .custom-display {
+    display: flex;
+  }
+
   header {
     .navbar {
       .navbar-brand {
         width: 10%;
       }
+    }
+  }
+
+  footer {
+    .quick-links {
+      .row {
+        margin-top: 0;
+      }
+    }
+
+    .footer-address {
+      margin-left: 0;
+      margin-top: 0;
     }
   }
 
@@ -1540,6 +1612,34 @@ footer {
       width: 45%;
       text-align: right;
       padding: 0 2rem 2rem 0;
+    }
+  }
+
+  .aminity-sec {
+    .aminity-row {
+      .amenity-itm img {
+        width: 150px;
+        height: 150px;
+      }
+    }
+  }
+
+  .what-they-say {
+    .wht-thy-say-row {
+      .wht-thy-say-itm {
+        .hide-mobile {
+          display: block;
+        }
+      }
+    }
+
+    .wht-thy-say-itm {
+      .info-cont-right {
+        border-right: 1px solid #ffffff4c;
+        border-left: none !important;
+        padding: 0.5rem 1rem 0.5rem 0 !important;
+        text-align: right;
+      }
     }
   }
 
@@ -1573,7 +1673,37 @@ footer {
     padding: 0;
     height: 100vh;
   }
+
+  .facilities-sec {
+    padding: 3rem 0;
+
+    .facility-carousel-cont {
+      .facility-embla-carousel {
+        .embla {
+          .embla__slide {
+            .item {
+              .overlay {
+                .btn-theme1 {
+                  font-size: 0.8rem;
+                }
+
+                h5 {
+                  font-size: 1.1rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .custom-scrollbar-track {
+    width: 30%;
+  }
 }
+
+
 
 @keyframes pulse-glow {
   0% {
