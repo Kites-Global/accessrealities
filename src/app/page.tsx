@@ -481,9 +481,10 @@ export default function Home() {
                 </div>
                 <div className="info-cont info-cont-left">
                   <h5>“CMS has been a tenant at Access Towers since 2012, and we have consistently enjoyed an excellent experience.”</h5>
-                  <p>
+                  <p className="hide-mobile">
                     The premises, security, cleanliness, safety, and building management have always met our expectations, supported by a courteous and responsive team.
-                    <br />
+                  </p>
+                  <p>
                     <button
                       className="btn btn-link text-decoration-none text-danger p-0"
                       onClick={() => handleOpen(
@@ -495,9 +496,8 @@ export default function Home() {
                       )}
                     >
                       read more
-                    </button>
-                  </p>
-                  <p>— Roshan Jayalath - Director – CMS</p>
+                    </button><br />
+                    — Roshan Jayalath - Director – CMS</p>
                 </div>
               </div>
             </div>
@@ -512,11 +512,12 @@ export default function Home() {
                     <Image src="/img/st-1.png" alt="Grant Thornton" className="img-fluid" width={200} height={200} />
                   </div>
                 </div>
-                <div className="info-cont info-cont-right order-md-first">
+                <div className="info-cont info-cont-right info-cont-left order-md-first">
                   <h5>“We are very pleased with the office we have rented on the 24th floor at Access Tower 2.”</h5>
-                  <p>
+                  <p className="hide-mobile">
                     The building is perfectly located in the city, with easy access to multiple restaurants and shops.
-                    <br />
+                  </p>
+                  <p>
                     <button
                       className="btn btn-link text-decoration-none text-danger p-0"
                       onClick={() => handleOpen(
@@ -528,18 +529,17 @@ export default function Home() {
                       )}
                     >
                       read more
-                    </button>
-                  </p>
-                  <p>— Ruchi Gunawardene – Director – Brand Finance</p>
+                    </button><br />
+                    — Ruchi Gunawardene – Director – Brand Finance</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* 3. React Bootstrap Modal */}
-      <Modal
+      < Modal
         show={showModal}
         onHide={handleClose}
         size="lg"
@@ -557,9 +557,9 @@ export default function Home() {
           ></button>
 
           {/* Modal Layout */}
-          <div className="d-flex align-items-center mt-3">
+          <div className="custom-display align-items-center mt-3">
             {/* Logo Area */}
-            <div className="align-items-center logo-box custom-modal-logo-box">
+            <div className="align-items-center logo-box custom-modal-logo-box fit-mobile">
               <Image
                 src={modalContent.img}
                 alt="Logo"
@@ -583,7 +583,7 @@ export default function Home() {
             </div>
           </div>
         </Modal.Body>
-      </Modal>
+      </Modal >
 
     </div >
   );

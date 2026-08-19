@@ -1,9 +1,8 @@
 "use client";
-
 import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
-import { useCallback, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 const facilities = [
     { image: "/img/home-facility-1.jpg", title: "Meeting Room" },
@@ -20,17 +19,30 @@ export default function EmblaCarousel() {
             delay: 3000,
         })
     );
-
     const [emblaRef, emblaApi] = useEmblaCarousel(
         { loop: true },
         [autoplay.current]
     );
 
+    const [selectedIndex, setSelectedIndex] = useState(0);
+
     const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
     const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
+    const scrollTo = useCallback((index: number) => emblaApi?.scrollTo(index), [emblaApi]);
+
+    // Track the active slide for the dots
+    useEffect(() => {
+        if (!emblaApi) return;
+        const onSelect = () => setSelectedIndex(emblaApi.selectedScrollSnap());
+        onSelect();
+        emblaApi.on("select", onSelect);
+        return () => {
+            emblaApi.off("select", onSelect);
+        };
+    }, [emblaApi]);
 
     return (
-        <div className="facility-embla-carousel">
+        <div className="facility-embla-carousel position-relative">
             <div className="embla" ref={emblaRef}>
                 <div className="embla__container">
                     {facilities.map((facility, index) => (
@@ -55,7 +67,8 @@ export default function EmblaCarousel() {
                 </div>
             </div>
 
-            <div className="embla__nav">
+            {/* Arrows: Hidden on mobile (d-none), visible on large screens (d-lg-block) */}
+            <div className="embla__nav d-none d-lg-block">
                 <button
                     type="button"
                     className="embla__prev"
@@ -72,6 +85,19 @@ export default function EmblaCarousel() {
                 >
                     <i className="bi bi-chevron-right"></i>
                 </button>
+            </div>
+
+            {/* Dots: Visible on mobile (d-flex), hidden on large screens (d-lg-none) */}
+            <div className="embla__dots d-flex d-lg-none">
+                {facilities.map((_, index) => (
+                    <button
+                        type="button"
+                        key={index}
+                        className={`embla__dot ${index === selectedIndex ? "is-selected" : ""}`}
+                        onClick={() => scrollTo(index)}
+                        aria-label={`Go to facility ${index + 1}`}
+                    ></button>
+                ))}
             </div>
         </div>
     );
