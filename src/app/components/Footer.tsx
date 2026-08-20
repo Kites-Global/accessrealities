@@ -56,7 +56,7 @@ export default function Footer() {
                                     </Link>
                                 </div>
                                 <div className="col-md-2 col-6">
-                                    <Link href="#">
+                                    <Link href="https://access-realties-access.odoo.com/web/login" target="_blank">
                                         <h5>Tenant Portal</h5>
                                     </Link>
                                 </div>
