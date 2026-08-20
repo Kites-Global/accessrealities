@@ -55,7 +55,7 @@ export default function Footer() {
                                         <h5>Contact</h5>
                                     </Link>
                                 </div>
-                                <div className="col-md-2 col-12">
+                                <div className="col-md-2 col-6">
                                     <Link href="#">
                                         <h5>Tenant Portal</h5>
                                     </Link>
@@ -64,23 +64,27 @@ export default function Footer() {
                         </div>
 
                     </div>
-                    <div className="col-md-2 footer-address">
-                        <h6>Access Realties (Pvt) Ltd</h6>
-                        <ul>
-                            <li><i className="bi bi-buildings"></i> Access Towers, No.278/4, Union Place, Colombo 02.</li>
-                            <li>
-                                <i className="bi bi-telephone-fill"></i>
-                                <div>
-                                    <Link href="tel:+94774055682"> +94 774 055 682 </Link><br />
-                                    <Link href="tel:+94112302302"> +94 112 302 302 </Link>
-                                </div>
-                            </li>
-                            <li><i className="bi bi-envelope-fill"></i><Link href="mailto:fme@accessrealities.com"> fme@accessrealities.com </Link></li>
-                        </ul>
-                        <div className="socialies">
-                            <Link href="#"><i className="bi bi-linkedin"></i></Link>
-                            <Link href="#"><i className="bi bi-youtube"></i></Link>
+                    <div className="col-md-2">
+                        <div className="footer-address">
+                            <h6>Access Realties (Pvt) Ltd</h6>
+                            <ul>
+                                <li><i className="bi bi-buildings"></i> Access Towers, No.278/4, Union Place, Colombo 02.</li>
+                                <li>
+                                    <i className="bi bi-telephone-fill"></i>
+                                    <div>
+                                        <Link href="tel:+94774055682"> +94 774 055 682 </Link><br />
+                                        <Link href="tel:+94112302302"> +94 112 302 302 </Link>
+                                    </div>
+                                </li>
+                                <li><i className="bi bi-envelope-fill"></i><Link href="mailto:fme@accessrealities.com"> fme@accessrealities.com </Link></li>
+                            </ul>
+                            <div className="socialies">
+                                <Link href="#"><i className="bi bi-linkedin"></i></Link>
+                                <Link href="#"><i className="bi bi-youtube"></i></Link>
+                            </div>
+
                         </div>
+
                     </div>
                 </div>
             </div>
