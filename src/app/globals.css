@@ -566,7 +566,7 @@ header {
       color: #fff;
       gap: 1rem;
       align-items: center;
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
 
       .hide-mobile {
         display: none;
@@ -794,7 +794,7 @@ footer {
     }
 
     h6 {
-      text-transform: uppercase;
+      /* text-transform: uppercase; */
       margin-bottom: 1.5rem;
       font-weight: 300;
     }
@@ -941,12 +941,13 @@ footer {
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 90vh;
-  padding: 3rem 0;
+  padding-top: 0;
 
   .form-itm {
     background-color: rgba(255, 255, 255, 0.753);
     padding: 5rem 3rem 2rem 3rem;
     border-radius: 3rem;
+    margin-bottom: 3rem;
 
     h2 {
       text-transform: uppercase;
@@ -1300,7 +1301,7 @@ footer {
 }
 
 .our-journey-page-banner {
-  height: 100vh;
+  height: 45vh;
   width: 100%;
   background-image: url(/img/our-journey-banner.jpg);
   background-repeat: no-repeat;
@@ -1310,6 +1311,10 @@ footer {
   display: flex;
   justify-content: center;
   align-items: end;
+
+  h1::before {
+    height: 1.4rem;
+  }
 
   .intro-itm {
     text-align: center;
@@ -1347,6 +1352,8 @@ footer {
 
     h3 {
       text-transform: uppercase;
+      font-size: 1.2rem;
+      color: #ffffffba;
     }
 
     p {
@@ -1387,7 +1394,7 @@ footer {
     }
 
     h6 {
-      text-transform: uppercase;
+      /* text-transform: uppercase; */
       margin-bottom: 1.5rem;
       font-weight: 300;
     }
@@ -1757,7 +1764,6 @@ footer {
       margin-top: 3rem;
     }
 
-
     .experience-itm {
       .experience-info-cont {
         margin-top: 0;
@@ -1769,18 +1775,38 @@ footer {
     }
   }
 
-
-
-  @keyframes pulse-glow {
-    0% {
-      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.6);
+  .our-journey-page-banner {
+    h1::before {
+      height: 1.8rem !important;
     }
 
-    70% {
-      box-shadow: 0 0 0 12px rgba(255, 255, 255, 0);
-    }
-
-    100% {
-      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    .sub-page-title {
+      h3 {
+        font-size: 1.5rem;
+      }
     }
   }
+
+  .careers-form-sec {
+    padding-top: 3rem;
+
+    .form-itm {
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.6);
+  }
+
+  70% {
+    box-shadow: 0 0 0 12px rgba(255, 255, 255, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
