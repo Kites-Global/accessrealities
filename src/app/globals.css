@@ -778,6 +778,10 @@ footer {
   justify-content: center;
   align-items: end;
 
+  h1:before {
+    height: 1.3rem;
+  }
+
   .intro-itm {
     text-align: center;
     color: #fff;
@@ -804,6 +808,7 @@ footer {
 }
 
 .experience-sec {
+
   background-color: #000;
 
   .experience-itm {
@@ -902,6 +907,10 @@ footer {
 
       h2 {
         text-transform: uppercase;
+      }
+
+      h2:before {
+        height: 1.14rem;
       }
 
       a {
@@ -1724,6 +1733,10 @@ footer {
   .experiences-page-banner {
     height: 100svh;
 
+    h1:before {
+      height: 1.8rem;
+    }
+
     .intro-itm {
       btn-theme1 {
         margin-bottom: 0;
@@ -1732,13 +1745,26 @@ footer {
   }
 
   .experience-sec {
+    .experience-itm:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .experience-itm:nth-child(even) .experience-info-cont {
+      text-align: end;
+    }
+
     h2 {
       margin-top: 3rem;
     }
 
+
     .experience-itm {
       .experience-info-cont {
         margin-top: 0;
+
+        h2:before {
+          height: 1.5rem;
+        }
       }
     }
   }
