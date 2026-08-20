@@ -80,11 +80,11 @@ export default function experiences() {
                         </div>
                     </div>
                     <div className="row experience-itm">
-                        <div className="col-md-5 experience-img-gal-cont order-md-last">
+                        <div className="col-md-5 experience-img-gal-cont">
                             <ExperienceGallery images={galleryImages2} />
                         </div>
-                        <div className="col-md-7 experience-info-cont order-md-first">
-                            <div className="text-end">
+                        <div className="col-md-7 experience-info-cont">
+                            <div>
                                 <h2>
                                     Engagement Zones
                                 </h2>
@@ -114,7 +114,6 @@ export default function experiences() {
                                     and balance. Operated and managed by ARL Elevate, the gym forms part of the tower’s
                                     premium lifestyle offering, giving members a dedicated space to train, recharge and maintain
                                     an active routine within Colombo’s modern corporate environment.  </p>
-
                                 <p>
                                     For membership enquiries, call <a href="tel:+94 77 505 2342"> +94 77 505 2342</a>
                                 </p>
@@ -122,11 +121,11 @@ export default function experiences() {
                         </div>
                     </div>
                     <div className="row experience-itm">
-                        <div className="col-md-5 experience-img-gal-cont order-md-last">
+                        <div className="col-md-5 experience-img-gal-cont">
                             <ExperienceGallery images={galleryImages4} />
                         </div>
-                        <div className="col-md-7 experience-info-cont order-md-first">
-                            <div className="text-end">
+                        <div className="col-md-7 experience-info-cont">
+                            <div>
                                 <h2>
                                     Zen Garden
                                 </h2>
@@ -163,11 +162,11 @@ export default function experiences() {
                         </div>
                     </div>
                     <div className="row experience-itm">
-                        <div className="col-md-5 experience-img-gal-cont order-md-last">
+                        <div className="col-md-5 experience-img-gal-cont">
                             <ExperienceGallery images={galleryImages6} />
                         </div>
-                        <div className="col-md-7 experience-info-cont order-md-first">
-                            <div className="text-end">
+                        <div className="col-md-7 experience-info-cont">
+                            <div>
                                 <h2>
                                     Advertising
                                 </h2>
@@ -179,7 +178,7 @@ export default function experiences() {
                         </div>
                     </div>
                 </div>
-            </section >
+            </section>
 
             {/* <section className="amenities-sec">
                 <div className="container">
