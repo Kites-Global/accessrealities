@@ -66,7 +66,7 @@ export default function Navbar() {
                                 <Link className={`nav-link ${pathname === "/contact" ? "active" : ""}`} href="/contact">Contact</Link>
                             </li>
                             <li className="nav-item ">
-                                <Link className={`nav-link portal-link ${pathname === "/tenant-portal" ? "active" : ""}`} href="/tenant-portal">Tenant Portal</Link>
+                                <Link className={`nav-link portal-link ${pathname === "/tenant-portal" ? "active" : ""}`} href="https://access-realties-access.odoo.com/web/login" target="_blank">Tenant Portal</Link>
                             </li>
                         </ul>
                     </div>
