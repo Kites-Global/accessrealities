@@ -36,7 +36,7 @@ h2::before {
   content: "";
   display: inline-block;
   width: 3px;
-  height: 1.5rem;
+  height: 1.2rem;
   margin-right: 0.5rem;
   background-color: var(--primary-color);
 }
