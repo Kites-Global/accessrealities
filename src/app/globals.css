@@ -532,6 +532,13 @@ header {
         margin-bottom: 0.5rem;
       }
 
+      .c-size {
+        display: block;
+        margin: 0 auto;
+        width: 80px;
+        height: auto;
+      }
+
       h5 {
         text-transform: uppercase;
         font-weight: 500;
@@ -1518,7 +1525,7 @@ img {
 }
 
 p {
-  color: #737373;
+  color: #ffffffcd;
   line-height: 1.2rem;
 
 }
@@ -1757,14 +1764,11 @@ h6 {
     }
   }
 
-  .aminity-sec {
+  .amenities-sec {
     padding: 3rem 0;
 
-    .aminity-row {
-      .amenity-itm img {
-        width: 150px;
-        height: 150px;
-      }
+    .amenity-row .amenity-itm .c-size {
+      width: 120px;
     }
   }
 

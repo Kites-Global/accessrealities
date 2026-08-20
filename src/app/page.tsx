@@ -92,7 +92,7 @@ export default function Home() {
               <div className="info-itm">
                 <h2>Defining Colombo’s Corporate Skyline</h2>
                 <h6>Creating premium commercial spaces built for the way modern businesses work. </h6>
-                <p>
+                <p className="text-black">
                   Access Realties (Pvt) Ltd has long been part of Colombo’s evolving commercial real estate story,
                   contributing to the design, development and management of landmark business environments that
                   bring energy, efficiency and prestige to the city. Guided by the strength of Access, a name synonymous
