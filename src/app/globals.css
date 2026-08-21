@@ -1696,7 +1696,7 @@ h6 {
   .facility-embla-carousel {
     .embla {
       .embla__slide {
-        flex: 0 0 50%;
+        flex: 0 0 33.3333%;
       }
     }
   }
@@ -1742,6 +1742,13 @@ h6 {
     color: #737373;
     font-weight: 300;
     line-height: 1.8;
+  }
+}
+
+@media (max-width: 767px) {
+  footer .col-md-2:first-child img {
+    width: 250px;
+    height: auto;
   }
 }
 
