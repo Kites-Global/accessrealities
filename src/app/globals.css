@@ -626,6 +626,11 @@ footer {
   color: var(--text-light);
   padding: 2rem 0 3rem 0;
 
+  .c-img-fluid {
+    max-width: 70%;
+    height: auto;
+  }
+
   a {
     color: var(--text-light);
     text-decoration: none;
@@ -1023,12 +1028,17 @@ footer {
   }
 
   .contact-detail-cont {
-    margin-left: 3rem;
+    margin-left: 0;
 
     h3 {
       text-transform: uppercase;
       font-weight: 600;
       color: white;
+      margin-bottom: 1rem;
+    }
+
+    h3::before {
+      height: 1.2rem;
     }
 
     .contact-list {
@@ -1298,7 +1308,7 @@ footer {
   h2 {
     color: #fff;
     text-transform: uppercase;
-    text-align: center;
+    text-align: start;
     margin-bottom: 2rem;
   }
 
@@ -1721,6 +1731,11 @@ h6 {
       }
     }
 
+    .c-img-fluid {
+      max-width: 100%;
+      height: auto;
+    }
+
     .footer-address {
       margin-left: 0;
       margin-top: 0;
@@ -1903,12 +1918,23 @@ h6 {
     }
   }
 
+  .form-sec .contact-detail-cont,
+  .careers-form-sec .contact-detail-cont {
+    margin-left: 3rem !important;
+  }
+
   .news-events-page-banner {
     height: 100svh;
   }
 
   .news-grid {
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  .location-sec {
+    h2 {
+      text-align: center;
+    }
   }
 }
 

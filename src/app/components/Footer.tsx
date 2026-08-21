@@ -13,7 +13,7 @@ export default function Footer() {
                         <Image
                             src="/img/logo.png"
                             alt="Logo"
-                            className="img-fluid"
+                            className="c-img-fluid"
                             width={250}
                             height={108}
                         />
