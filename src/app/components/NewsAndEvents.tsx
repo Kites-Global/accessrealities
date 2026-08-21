@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 type NewsEventData = {
+    id: string | number;
     date: string;
     title: string;
     desc: string;
@@ -36,7 +37,9 @@ export default function NewsEvents({ data }: { data: NewsEventData }) {
             >
                 {data.desc}
             </p>
-            <a href="#" className="btn-theme1 btn">read more</a>
+            <a href={`/news-and-events/${data.id}`} className="btn-theme1 btn">
+                read more
+            </a>
         </div>
     )
 }
