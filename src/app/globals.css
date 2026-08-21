@@ -749,6 +749,10 @@ footer {
         font-weight: 700;
       }
 
+      h1::before {
+        height: 1.3rem;
+      }
+
       h6 {
         margin-bottom: 1.5rem;
         text-transform: uppercase;
@@ -1169,6 +1173,10 @@ footer {
     text-transform: uppercase;
     font-weight: 600;
     color: white;
+  }
+
+  h3:before {
+    height: 1.11rem;
   }
 
   .vacancy-list {
@@ -1874,6 +1882,10 @@ h6 {
 
   .tower-page-banner .intro-cont .intro-itm {
     margin-top: 0;
+
+    h1::before {
+      height: 1.8rem;
+    }
   }
 
   .milestornes-sec {
@@ -1962,6 +1974,10 @@ h6 {
 
   .careers-form-sec {
     padding-top: 3rem;
+
+    h3:before {
+      height: 1.25rem;
+    }
 
     .form-itm {
       margin-bottom: 0;
