@@ -15,7 +15,7 @@ export default function Footer() {
                             alt="Logo"
                             className="img-fluid"
                             width={250}
-                            height={108}
+                            height={100}
                         />
                     </div>
                     <div className="col-md-8">
