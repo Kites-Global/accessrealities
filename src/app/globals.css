@@ -2029,6 +2029,8 @@ h6 {
   }
 
   .our-journey-page-banner {
+    height: 100vh;
+
     h1::before {
       height: 1.8rem !important;
     }
