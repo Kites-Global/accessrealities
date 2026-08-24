@@ -16,7 +16,7 @@ function Contact() {
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-6">
-                            <div className="form-itm">
+                            <div className="form-itm c-margin">
                                 <form action="">
                                     <div className="row">
                                         <div className="col-lg-4"><label>Name</label></div>

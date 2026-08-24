@@ -235,7 +235,9 @@ header {
   background-size: contain;
   background-position: center bottom;
   background-repeat: no-repeat;
-  height: 115dvh;
+  height: auto;
+  min-height: 100vh;
+  padding-bottom: 200px;
   padding-top: 3rem;
 
   .south-cont,
@@ -714,7 +716,9 @@ footer {
 
 .south-page {
   width: 100%;
-  height: 140dvh;
+  height: auto;
+  min-height: 100vh;
+  padding-bottom: 4rem;
   background-image: url(/img/south-tower-banner-bg.jpg);
   background-repeat: no-repeat;
   background-position: center;
@@ -724,7 +728,9 @@ footer {
 
 .north-page {
   width: 100%;
-  height: 140dvh;
+  height: auto;
+  min-height: 100vh;
+  padding-bottom: 4rem;
   background-image: url(/img/north-tower-banner-bg.jpg);
   background-repeat: no-repeat;
   background-position: center;
@@ -978,6 +984,15 @@ footer {
 
   .vacancy-detail-cont {
     padding-bottom: 3rem;
+  }
+
+  .contact-detail-cont {
+    margin-right: 1rem;
+  }
+
+  .c-margin {
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
 
   .form-itm {
