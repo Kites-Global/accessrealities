@@ -2,15 +2,26 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 
 export default function Navbar() {
     const pathname = usePathname();
+
+    useEffect(() => {
+        const navbarMenu = document.getElementById("navbarSupportedContent");
+        const navbarToggler = document.querySelector(".navbar-toggler") as HTMLElement;
+
+        if (navbarMenu?.classList.contains("show") && navbarToggler) {
+            navbarToggler.click();
+        }
+    }, [pathname]);
 
     const isActive = (path: string) =>
         pathname === path || pathname.startsWith(path + "/");
 
     const isAccessTowersActive = isActive("/access-towers");
     const isAboutUsActive = isActive("/about-us");
+
 
     return (
         <header>
@@ -65,7 +76,7 @@ export default function Navbar() {
                             <li className="nav-item">
                                 <Link className={`nav-link ${pathname === "/contact" ? "active" : ""}`} href="/contact">Contact</Link>
                             </li>
-                            <li className="nav-item ">
+                            <li className="nav-item c-tenet-portal">
                                 <Link className={`nav-link portal-link ${pathname === "/tenant-portal" ? "active" : ""}`} href="https://access-realties-access.odoo.com/web/login" target="_blank">Tenant Portal</Link>
                             </li>
                         </ul>

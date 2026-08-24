@@ -20,7 +20,7 @@ function Careers() {
             <section className="form-sec careers-form-sec">
                 <div className="container">
                     <div className="row">
-                        <div className="col-lg-6">
+                        <div className="col-lg-6 order-2 order-md-1">
                             <div className="form-itm">
                                 <form action="">
                                     <div className="row">
@@ -31,27 +31,23 @@ function Careers() {
                                         <div className="col-lg-4"><label>Email Address</label></div>
                                         <div className="col-lg-8"><input type="email" /></div>
                                         <div className="col-lg-4"><label>Position applied for</label></div>
-                                        <div className="col-lg-8">
-                                            <select>
-                                                <option>Position 1</option>
-                                                <option>Position 2</option>
-                                            </select>
-                                        </div>
-                                        <div className="col-lg-4"></div>
-                                        <div className="col-lg-8">
-                                            <div className="file-upload">
-                                                <input id="file-upload" type="file" accept=".pdf" />
-                                                <label>Choose file</label>
-                                            </div>
-                                            <span className="file-upload-info">Please upload your CV in PDF format only.</span>
-                                        </div>
-                                        <div className="col-lg-4"></div>
-                                        <div className="col-lg-8"><button type="submit" className="btn-theme1 btn">Submit</button></div>
+                                        <div className="col-lg-8"><input type="text" /></div>
                                     </div>
+                                    <div className="col-lg-4"></div>
+                                    <div className="col-lg-8">
+                                        <div className="file-upload">
+                                            <input id="file-upload" type="file" accept=".pdf" />
+                                            <label>Choose file</label>
+                                        </div>
+                                        <span className="file-upload-info">Please upload your CV in PDF format only.</span>
+                                    </div>
+                                    <div className="col-lg-4"></div>
+                                    <div className="col-lg-8"><button type="submit" className="btn-theme1 btn">Submit</button></div>
                                 </form>
+
                             </div>
                         </div>
-                        <div className="col-lg-6">
+                        <div className="col-lg-6 order-1 order-md-2">
                             <div className="vacancy-detail-cont">
                                 <h3 className="sub-page-title">Available Vacancies</h3>
                                 <div className="vacancy-list">
@@ -68,8 +64,8 @@ function Careers() {
                             </div>
                         </div>
                     </div>
-                </div>
-            </section></>
+                </div >
+            </section ></>
     )
 }
 
