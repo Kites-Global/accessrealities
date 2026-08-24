@@ -45,10 +45,10 @@ const galleryImages6 = [
     { src: "/img/facility-advertising-3.jpg", alt: "Advertising" },
 ];
 
-export default function experiences() {
+export default function facilities() {
     return (
         <>
-            <section className="experiences-page-banner">
+            <section className="facilities-page-banner">
                 <div className="intro-itm">
                     <h1>Facilities</h1>
                     {/* <h6>Everything you need, within one connected business address.</h6> */}

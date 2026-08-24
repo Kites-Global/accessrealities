@@ -51,7 +51,7 @@ h3::before {
 }
 
 header {
-  position: fixed;
+  position: sticky;
   top: 0;
   right: 0;
   left: 0;
@@ -386,7 +386,7 @@ header {
   top: 50%;
   transform: translate(-50%, -50%);
   /* box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2); */
-  transition: left 0.1s ease-out;
+  /* transition: left 0.1s ease-out; */
   cursor: grab;
   animation: pulse-glow 1.5s infinite;
 }
@@ -805,7 +805,8 @@ footer {
   }
 }
 
-.experiences-page-banner {
+.experiences-page-banner,
+.facilities-page-banner {
   width: 100%;
   height: 50svh;
   background-image: url(/img/experiences-banner-bg.jpg);
@@ -844,6 +845,10 @@ footer {
       margin-bottom: 2rem;
     }
   }
+}
+
+.facilities-page-banner {
+  background-image: url(/img/facilities-banner-bg.jpg) !important;
 }
 
 .experience-sec {
@@ -1814,6 +1819,7 @@ h6 {
   }
 
   header {
+    position: fixed;
     background: -webkit-linear-gradient(0deg,
         rgba(139, 27, 63, 0) 0%,
         rgba(139, 27, 63, 0.16) 16%,
@@ -1983,7 +1989,8 @@ h6 {
     width: 30%;
   }
 
-  .experiences-page-banner {
+  .experiences-page-banner,
+  .facilities-page-banner {
     height: 100svh;
 
     h1:before {
@@ -1991,7 +1998,7 @@ h6 {
     }
 
     .intro-itm {
-      btn-theme1 {
+      .btn-theme1 {
         margin-bottom: 0;
       }
     }
