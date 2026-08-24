@@ -56,19 +56,29 @@ header {
   right: 0;
   left: 0;
   z-index: 1030;
-
-  background: -webkit-linear-gradient(0deg,
-      rgba(139, 27, 63, 0) 0%,
-      rgba(139, 27, 63, 0.16) 16%,
-      rgb(139, 27, 63) 100%);
-  background: linear-gradient(0deg,
-      rgba(139, 27, 63, 0) 0%,
-      rgba(139, 27, 63, 0.16) 16%,
-      rgb(139, 27, 63) 100%);
+  background-color: var(--primary-color);
 
   .navbar {
+    .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+      background-image: url("/img/close.svg");
+    }
+
     .navbar-brand {
       width: 30%;
+    }
+
+    .navbar-toggler {
+      border: none;
+      box-shadow: none;
+
+      &:focus {
+        outline: none;
+        box-shadow: none;
+      }
+    }
+
+    .navbar-toggler-icon {
+      filter: brightness(0) invert(1);
     }
 
     .navbar-nav {
@@ -81,12 +91,23 @@ header {
         }
 
         .nav-link.active {
-          border-bottom-color: #fff;
+          border-bottom-color: none;
         }
       }
 
+      .navbar-nav {
+        .c-tenet-portal {
+          margin-left: 1rem;
+        }
+      }
+
+      .c-tenet-portal {
+        background-color: #6c0929;
+        padding-bottom: 0.2rem;
+        border-radius: 1rem;
+      }
+
       .portal-link {
-        background-color: #8b1b3f;
         color: #fff;
         padding: 0.2rem 1rem;
         border-radius: 1rem;
@@ -955,9 +976,13 @@ footer {
   min-height: 90vh;
   padding-top: 0;
 
+  .vacancy-detail-cont {
+    padding-bottom: 3rem;
+  }
+
   .form-itm {
     background-color: rgba(255, 255, 255, 0.753);
-    padding: 5rem 3rem 2rem 3rem;
+    padding: 2rem 3rem 2rem 3rem;
     border-radius: 3rem;
     margin-bottom: 3rem;
 
@@ -1029,7 +1054,7 @@ footer {
 
   .contact-detail-cont {
     margin-left: 3rem;
-    
+
     .sub-page-title::before {
       background-color: transparent;
       margin-right: 0;
@@ -1172,13 +1197,14 @@ footer {
 }
 
 .careers-form-sec {
+  padding: 1rem;
   background-image: url(/img/careers-form-bg.png);
 
   .sub-page-title::before {
     background-color: transparent;
     margin-right: 0;
   }
-  
+
   h3 {
     text-transform: uppercase;
     font-weight: 600;
@@ -1496,6 +1522,7 @@ footer {
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
+    display: none;
   }
 }
 
@@ -1553,15 +1580,6 @@ p {
 h6 {
   color: white;
   /* text-transform: uppercase; */
-}
-
-.dynamic-clamp {
-  flex-grow: 1;
-  min-height: 0;
-  overflow: hidden;
-
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
 }
 
 .news-grid {
@@ -1714,7 +1732,7 @@ h6 {
   .facility-embla-carousel {
     .embla {
       .embla__slide {
-        flex: 0 0 33.3333%;
+        flex: 0 0 50%;
       }
     }
   }
@@ -1781,12 +1799,30 @@ h6 {
   }
 
   header {
+    background: -webkit-linear-gradient(0deg,
+        rgba(139, 27, 63, 0) 0%,
+        rgba(139, 27, 63, 0.16) 16%,
+        rgb(139, 27, 63) 100%);
+    background: linear-gradient(0deg,
+        rgba(139, 27, 63, 0) 0%,
+        rgba(139, 27, 63, 0.16) 16%,
+        rgb(139, 27, 63) 100%);
+
     .navbar {
       .navbar-brand {
         width: 10%;
       }
-    }
 
+      .navbar-nav .c-tenet-portal {
+        background-color: #6c092800;
+        border-radius: 0;
+        padding-bottom: 0;
+      }
+
+      .portal-link {
+        background-color: var(--primary-color);
+      }
+    }
   }
 
   footer {
@@ -1994,6 +2030,11 @@ h6 {
     }
   }
 
+  .form-sec,
+  .careers-form-sec .form-itm {
+    padding-top: 3rem;
+  }
+
   .form-sec .contact-detail-cont,
   .careers-form-sec .contact-detail-cont {
     margin-left: 3rem !important;
@@ -2012,8 +2053,17 @@ h6 {
       text-align: center;
     }
   }
-}
 
+  .news-events-card {
+    .dynamic-clamp {
+      display: -webkit-box;
+    }
+  }
+
+  header .navbar .navbar-nav .nav-item .nav-link.active {
+    border-bottom-color: #fff;
+  }
+}
 
 @keyframes pulse-glow {
   0% {
