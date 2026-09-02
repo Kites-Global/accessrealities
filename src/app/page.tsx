@@ -127,7 +127,7 @@ export default function Home() {
             A closer look at premium commercial spaces built to support the way businesses work, connect and
             grow.
           </p>
-          <VideoPopup videoUrl="https://www.youtube.com/embed/YOUR_REAL_VIDEO_LINK_HERE?autoplay=1" />
+          <VideoPopup videoUrl="https://www.youtube.com/embed/-WmSyoYEJfs?si=eRs9DhYgizv0B9nE" />
         </div>
       </section>
 

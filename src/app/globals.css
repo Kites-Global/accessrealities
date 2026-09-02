@@ -188,6 +188,10 @@ header {
     h6 {
       color: var(--primary-txt-color);
       font-weight: 400;
+      margin-left: 0.4rem;
+    }
+    p{
+      margin-left: 0.4rem;
     }
   }
 }
