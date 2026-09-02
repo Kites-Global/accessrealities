@@ -80,7 +80,7 @@ export default function Footer() {
                             </ul>
                             <div className="socialies">
                                 <Link href="#"><i className="bi bi-linkedin"></i></Link>
-                                <Link href="#"><i className="bi bi-youtube"></i></Link>
+                                <Link href="https://www.youtube.com/@AccessHr"><i className="bi bi-youtube"></i></Link>
                             </div>
 
                         </div>
