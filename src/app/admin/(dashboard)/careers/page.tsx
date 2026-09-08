@@ -3,6 +3,7 @@ import { prisma } from "@/lib/admin/db";
 import { deleteVacancy, setVacancyStatus } from "@/lib/admin/actions/vacancies";
 import { buildQuery } from "@/lib/admin/search-params";
 import StatusToggle from "../components/StatusToggle";
+import DeleteButton from "../components/DeleteButton";
 
 export const dynamic = "force-dynamic";
 
@@ -142,11 +143,10 @@ export default async function AdminCareersListPage({
                         <Link href={`/admin/careers/${vacancy.id}/edit`} className="admin-btn admin-btn-secondary">
                           Edit
                         </Link>
-                        <form action={deleteVacancy.bind(null, vacancy.id)}>
-                          <button type="submit" className="admin-btn admin-btn-danger">
-                            Delete
-                          </button>
-                        </form>
+                        <DeleteButton
+                          action={deleteVacancy.bind(null, vacancy.id)}
+                          confirmMessage={`Delete "${vacancy.title}"? This cannot be undone.`}
+                        />
                       </div>
                     </td>
                   </tr>

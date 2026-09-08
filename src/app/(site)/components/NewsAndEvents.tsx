@@ -8,6 +8,7 @@ type NewsEventData = {
     date: string;
     title: string;
     desc: string;
+    imageUrl?: string | null;
 };
 
 export default function NewsEvents({ data }: { data: NewsEventData }) {
@@ -27,7 +28,7 @@ export default function NewsEvents({ data }: { data: NewsEventData }) {
 
     return (
         <div className="news-events-card">
-            <Image src="/img/news-events-img.jpg" alt="News and Events" width={600} height={400} />
+            <Image src={data.imageUrl || "/img/news-events-img.jpg"} alt={data.title} width={600} height={400} />
             <p className="card-date">{data.date}</p>
             <h6>{data.title}</h6>
             <p

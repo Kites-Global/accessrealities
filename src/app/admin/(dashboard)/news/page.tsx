@@ -3,6 +3,7 @@ import { prisma } from "@/lib/admin/db";
 import { deleteNews, setNewsStatus } from "@/lib/admin/actions/news";
 import { buildQuery } from "@/lib/admin/search-params";
 import StatusToggle from "../components/StatusToggle";
+import DeleteButton from "../components/DeleteButton";
 
 export const dynamic = "force-dynamic";
 
@@ -128,11 +129,10 @@ export default async function AdminNewsListPage({
                         <Link href={`/admin/news/${post.id}/edit`} className="admin-btn admin-btn-secondary">
                           Edit
                         </Link>
-                        <form action={deleteNews.bind(null, post.id)}>
-                          <button type="submit" className="admin-btn admin-btn-danger">
-                            Delete
-                          </button>
-                        </form>
+                        <DeleteButton
+                          action={deleteNews.bind(null, post.id)}
+                          confirmMessage={`Delete "${post.title}"? This cannot be undone.`}
+                        />
                       </div>
                     </td>
                   </tr>

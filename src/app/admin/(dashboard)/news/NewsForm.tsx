@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import RichTextEditor from "../components/RichTextEditor";
+import SubmitButton from "../components/SubmitButton";
 
 const MAX_THUMBNAIL_BYTES = 800 * 1024;
 const THUMBNAIL_WIDTH = 640;
@@ -21,37 +22,54 @@ type NewsFormProps = {
 
 export default function NewsForm({ action, defaultValues, submitLabel }: NewsFormProps) {
   const [imageError, setImageError] = useState<string | null>(null);
+  const [previewUrl, setPreviewUrl] = useState<string | null>(defaultValues?.imageUrl ?? null);
+  const objectUrlRef = useRef<string | null>(null);
+
+  function resetPreviewToDefault() {
+    if (objectUrlRef.current) {
+      URL.revokeObjectURL(objectUrlRef.current);
+      objectUrlRef.current = null;
+    }
+    setPreviewUrl(defaultValues?.imageUrl ?? null);
+  }
 
   function handleImageChange(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0];
     if (!file) {
       setImageError(null);
+      resetPreviewToDefault();
       return;
     }
 
     if (file.size > MAX_THUMBNAIL_BYTES) {
       setImageError("Thumbnail image must be under 800KB");
       e.target.value = "";
+      resetPreviewToDefault();
       return;
     }
 
     const objectUrl = URL.createObjectURL(file);
     const img = new Image();
     img.onload = () => {
-      URL.revokeObjectURL(objectUrl);
       if (img.naturalWidth !== THUMBNAIL_WIDTH || img.naturalHeight !== THUMBNAIL_HEIGHT) {
         setImageError(
           `Thumbnail image must be exactly ${THUMBNAIL_WIDTH}x${THUMBNAIL_HEIGHT} pixels (got ${img.naturalWidth}x${img.naturalHeight})`
         );
         e.target.value = "";
+        URL.revokeObjectURL(objectUrl);
+        resetPreviewToDefault();
       } else {
         setImageError(null);
+        if (objectUrlRef.current) URL.revokeObjectURL(objectUrlRef.current);
+        objectUrlRef.current = objectUrl;
+        setPreviewUrl(objectUrl);
       }
     };
     img.onerror = () => {
       URL.revokeObjectURL(objectUrl);
       setImageError("Couldn't read that image file");
       e.target.value = "";
+      resetPreviewToDefault();
     };
     img.src = objectUrl;
   }
@@ -75,8 +93,13 @@ export default function NewsForm({ action, defaultValues, submitLabel }: NewsFor
       <RichTextEditor name="content" defaultValue={defaultValues?.content} placeholder="Write the full story…" />
 
       <label htmlFor="image">Thumbnail image {defaultValues ? "(leave empty to keep current)" : ""}</label>
-      {defaultValues?.imageUrl && (
-        <p style={{ fontSize: "0.85rem", color: "#8a8a92" }}>Current: {defaultValues.imageUrl}</p>
+      {previewUrl && (
+        // eslint-disable-next-line @next/next/no-img-element -- previews a blob: URL before upload, next/image can't render that
+        <img
+          src={previewUrl}
+          alt="Thumbnail preview"
+          style={{ maxWidth: "240px", borderRadius: "0.4rem", display: "block", marginBottom: "0.5rem" }}
+        />
       )}
       <p style={{ fontSize: "0.85rem", color: "#8a8a92" }}>
         Must be exactly {THUMBNAIL_WIDTH}x{THUMBNAIL_HEIGHT}px and under 800KB.
@@ -90,9 +113,7 @@ export default function NewsForm({ action, defaultValues, submitLabel }: NewsFor
       </label>
 
       <div className="admin-form-actions">
-        <button type="submit" className="admin-btn" disabled={!!imageError}>
-          {submitLabel}
-        </button>
+        <SubmitButton disabled={!!imageError}>{submitLabel}</SubmitButton>
       </div>
     </form>
   );

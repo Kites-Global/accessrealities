@@ -1,4 +1,5 @@
 import RichTextEditor from "../components/RichTextEditor";
+import SubmitButton from "../components/SubmitButton";
 
 type VacancyFormProps = {
   action: (formData: FormData) => void | Promise<void>;
@@ -34,9 +35,7 @@ export default function VacancyForm({ action, defaultValues, submitLabel }: Vaca
       </label>
 
       <div className="admin-form-actions">
-        <button type="submit" className="admin-btn">
-          {submitLabel}
-        </button>
+        <SubmitButton>{submitLabel}</SubmitButton>
       </div>
     </form>
   );
