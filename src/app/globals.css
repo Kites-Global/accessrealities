@@ -714,6 +714,7 @@ footer {
   }
 }
 
+/* REFACTOR: same css classes has been repeated */
 .south-page {
   width: 100%;
   height: auto;
@@ -737,6 +738,7 @@ footer {
   background-size: cover;
   padding: 10% 0;
 }
+/* -- */
 
 /* Inner page styles */
 .tower-page-banner {
@@ -1801,12 +1803,14 @@ h6 {
   }
 }
 
+/* REFACTOR */
 @media (max-width: 767px) {
   footer .col-md-2:first-child img {
     width: 250px;
     height: auto;
   }
 }
+/* -- */
 
 @media (min-width: 992px) {
 

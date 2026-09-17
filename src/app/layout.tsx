@@ -2,8 +2,12 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./globals.css";
-import BootstrapClient from "./(site)/components/BootstrapClient";
+import BootstrapClient from "./_site/components/BootstrapClient";
 import { Roboto } from "next/font/google";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,11 +36,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${roboto.variable}`}>
       <BootstrapClient />
       <body>
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
