@@ -57,7 +57,7 @@ export default function NorthTower() {
                                     width={600}
                                     height={800}
                                 />
-                                <a href="#" className="btn-theme1 btn">Floor Plans</a>
+                                <a href="/pdf/6 FLOOR (North Tower Floor Plan).pdf" target="_blank" rel="noopener noreferrer" className="btn-theme1 btn">Floor Plans</a>
                                 <a href="/contact" className="btn-theme1 btn">Inquire Now</a>
                             </div>
                         </div>
