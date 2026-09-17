@@ -50,6 +50,9 @@ export default function Navbar() {
                                         <Link href="/access-towers/south-tower" className="dropdown-item">South Tower</Link>
                                     </li>
                                     <li>
+                                        <Link href="/access-towers/west-tower" className="dropdown-item">West Tower</Link>
+                                    </li>
+                                    <li>
                                         <Link href="/access-towers/experiences" className="dropdown-item">Experiences</Link>
                                     </li>
                                     <li>

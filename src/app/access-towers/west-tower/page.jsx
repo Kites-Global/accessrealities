@@ -4,14 +4,14 @@ import OurClient from "../../components/OurClients";
 import TowerCarousel from "../../components/TowerCarousel";
 
 const towerImages = [
-    { src: "/img/experiences-grind-1.jpg", alt: "Café Space" },
-    { src: "/img/experiences-lounge-1.jpg", alt: "Lounge Area" },
-    { src: "/img/facility-meet-room-1.jpg", alt: "Meeting Room" },
-    { src: "/img/experiences-virticle-1.jpg", alt: "Dining Space" },
-    { src: "/img/facility-gym-1.jpg", alt: "Elevate Gym" },
+    { src: "/img/experiences-grind-3.jpg", alt: "Café Space" },
+    { src: "/img/experiences-lounge-3.jpg", alt: "Lounge Area" },
+    { src: "/img/facility-meet-room-3.jpg", alt: "Meeting Rooms" },
+    { src: "/img/facility-garden-1.jpg", alt: "Zen Garden" },
+    { src: "/img/experiences-virticle-3.jpg", alt: "Dining" },
 ];
 
-export default function NorthTower() {
+export default function WestTower() {
     const ourClients = [
         { id: 2, src: "/img/ob-2.jpg" },
         { id: 3, src: "/img/ob-3.png" },
@@ -34,7 +34,7 @@ export default function NorthTower() {
                     <div className="row">
                         <div className="col-md-9 intro-cont">
                             <div className="intro-itm">
-                                <h1>North Tower</h1>
+                                <h1>West Tower</h1>
                                 <p>
                                     Located in the heart of Union Place, Colombo 02, Access Towers I, known as the North Tower,
                                     offers more than office space; it offers businesses a recognized corporate address with long
