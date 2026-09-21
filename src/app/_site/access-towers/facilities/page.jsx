@@ -1,0 +1,309 @@
+import Image from "next/image";
+import ExperienceGallery from "../../components/ExperienceGallery";
+import { FacilitiesInquiryForm } from "../../components/PopupForms";
+
+const galleryImages1 = [
+    { src: "/img/facility-meet-room-1.jpg", alt: "Members Lounge" },
+    { src: "/img/facility-meet-room-2.jpg", alt: "Members Lounge" },
+    { src: "/img/facility-meet-room-3.jpg", alt: "Members Lounge" },
+    { src: "/img/facility-meet-room-4.jpg", alt: "Members Lounge" },
+    { src: "/img/facility-meet-room-5.jpg", alt: "Members Lounge" },
+    { src: "/img/facility-meet-room-6.jpg", alt: "Members Lounge" },
+];
+const galleryImages2 = [
+    { src: "/img/facility-engagement-1.jpg", alt: "Engagement Zones" },
+    { src: "/img/facility-engagement-2.jpg", alt: "Engagement Zones" },
+    { src: "/img/facility-engagement-3.jpg", alt: "Engagement Zones" },
+    { src: "/img/facility-engagement-4.jpg", alt: "Engagement Zones" },
+    { src: "/img/facility-engagement-5.jpg", alt: "Engagement Zones" },
+];
+const galleryImages3 = [
+    { src: "/img/facility-gym-1.jpg", alt: "Elevate GYM" },
+    { src: "/img/facility-gym-2.jpg", alt: "Elevate GYM" },
+    { src: "/img/facility-gym-3.jpg", alt: "Elevate GYM" },
+    { src: "/img/facility-gym-4.jpg", alt: "Elevate GYM" },
+    { src: "/img/facility-gym-5.jpg", alt: "Elevate GYM" },
+    { src: "/img/facility-gym-6.jpg", alt: "Elevate GYM" },
+];
+
+const galleryImages4 = [
+    { src: "/img/facility-garden-1.jpg", alt: "Zen Garden" },
+    { src: "/img/facility-garden-2.jpg", alt: "Zen Garden" },
+    { src: "/img/facility-garden-3.jpg", alt: "Zen Garden" },
+    { src: "/img/facility-garden-4.jpg", alt: "Zen Garden" },
+];
+
+const galleryImages5 = [
+    { src: "/img/facility-car-1.jpg", alt: "Car Parking" },
+    { src: "/img/facility-car-2.jpg", alt: "Car Parking" },
+    { src: "/img/facility-car-3.jpg", alt: "Car Parking" },
+];
+
+const galleryImages6 = [
+    { src: "/img/facility-advertising-1.jpg", alt: "Advertising" },
+    { src: "/img/facility-advertising-2.jpg", alt: "Advertising" },
+    { src: "/img/facility-advertising-3.jpg", alt: "Advertising" },
+];
+
+export default function facilities() {
+    return (
+        <>
+            <section className="facilities-page-banner">
+                <div className="intro-itm">
+                    <h1>Facilities</h1>
+                    {/* <h6>Everything you need, within one connected business address.</h6> */}
+                    {/* <a href="/contact" className="btn-theme1 btn">Inquire Now</a> */}
+                    <FacilitiesInquiryForm />
+                </div>
+            </section>
+
+            <section className="experience-sec">
+                <div className="container">
+                    <div className="row experience-itm">
+                        <div className="col-md-5 experience-img-gal-cont">
+                            <ExperienceGallery images={galleryImages1} />
+                        </div>
+                        <div className="col-md-7 experience-info-cont">
+                            <div>
+                                <h2>
+                                    Meeting Rooms
+                                </h2>
+                                <p>
+                                    Designed for moments that need focus, privacy and professionalism, the meeting room at
+                                    Access Towers offers a polished setting for client meetings, presentations, interviews and
+                                    business discussions. Located within a recognized commercial address in Colombo, it provides a
+                                    convenient and reliable space for teams and professionals to meet with confidence. </p>
+                                <p>
+                                    For enquiries: Call <a href="tel:+94 774 055 682">+94 774 055 682</a> or email <a href="mailto:fme@accessrealties.com">fme@accessrealties.com</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row experience-itm">
+                        <div className="col-md-5 experience-img-gal-cont">
+                            <ExperienceGallery images={galleryImages2} />
+                        </div>
+                        <div className="col-md-7 experience-info-cont">
+                            <div>
+                                <h2>
+                                    Engagement Zones
+                                </h2>
+                                <p>
+                                    Located within the North Tower, the Engagement Zones offer vendors and brands a practical
+                                    open space to connect with a professional corporate audience. Ideal for pop-up stores, product
+                                    promotions, sampling campaigns, brand activations and seasonal sales, these spaces create
+                                    valuable visibility within a recognized commercial environment in Colombo. </p>
+                                <p>
+                                    For enquiries: Call <a href="tel:+94774055682">+94 774 055 682</a> or email <a href="mailto:fme@accessrealties.com">fme@accessrealties.com</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row experience-itm">
+                        <div className="col-md-5 experience-img-gal-cont">
+                            <ExperienceGallery images={galleryImages3} />
+                        </div>
+                        <div className="col-md-7 experience-info-cont">
+                            <div>
+                                <h2>
+                                    Elevate Gym
+                                </h2>
+                                <p>
+                                    Elevate Gym offers a refined fitness experience within Access Tower II, designed for
+                                    professionals, tenants and wellness-focused individuals who value convenience, performance
+                                    and balance. Operated and managed by ARL Elevate, the gym forms part of the tower’s
+                                    premium lifestyle offering, giving members a dedicated space to train, recharge and maintain
+                                    an active routine within Colombo’s modern corporate environment.  </p>
+                                <p>
+                                    For membership enquiries, call <a href="tel:+94 77 505 2342"> +94 77 505 2342</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row experience-itm">
+                        <div className="col-md-5 experience-img-gal-cont">
+                            <ExperienceGallery images={galleryImages4} />
+                        </div>
+                        <div className="col-md-7 experience-info-cont">
+                            <div>
+                                <h2>
+                                    Zen Garden
+                                </h2>
+                                <p>
+                                    The Zen Garden offers a refreshing breakaway space for tenants, professionals and visitors to
+                                    pause, reset and reconnect within a modern corporate environment. Designed to bring a sense
+                                    of calm to the busy business day, it adds a valuable lifestyle amenity to Access Towers,
+                                    supporting workplace wellbeing, informal conversations and moments of quiet reflection in the
+                                    heart of Colombo 02. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row experience-itm">
+                        <div className="col-md-5 experience-img-gal-cont">
+                            <ExperienceGallery images={galleryImages5} />
+                        </div>
+                        <div className="col-md-7 experience-info-cont">
+                            <div>
+                                <h2>
+                                    Car Parking
+                                </h2>
+                                <p>
+                                    Access Towers offers practical car parking facilities that add ease and efficiency to the daily
+                                    business experience in Colombo 02. Supported by dedicated parking levels within Access Tower
+                                    II and parking capacity for approximately 300 vehicles, the facility is designed to serve tenants,
+                                    visitors and corporate guests with greater convenience. Positioned within one of Colombo’s
+                                    recognized commercial office destinations, it helps make arrivals smoother, meetings easier
+                                    and the workday seamless.
+                                </p>
+                                <p>
+                                    For enquiries: Call <a href="tel:+94 774 055 682"> +94 774 055 682</a> or email <a href="mailto:fme@accessrealties.com">fme@accessrealties.com</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row experience-itm">
+                        <div className="col-md-5 experience-img-gal-cont">
+                            <ExperienceGallery images={galleryImages6} />
+                        </div>
+                        <div className="col-md-7 experience-info-cont">
+                            <div>
+                                <h2>
+                                    Advertising
+                                </h2>
+                                <p>Access Towers offers digital advertising options through TV screens placed across the premises, helping tenants, brands and business partners reach a premium corporate audience. Ideal for promotions, announcements, launches and business services, these digital screen placements provide targeted visibility within a recognised commercial office environment in Colombo.</p>
+                                <p>
+                                    For enquiries: Call <a href="tel:+94 774 055 682"> +94 774 055 682</a> or email <a href="mailto:fme@accessrealties.com">fme@accessrealties.com</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* <section className="amenities-sec">
+                <div className="container">
+                    <div className="intro-cont">
+                        <h2>Amenities</h2>
+                        <p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                        </p>
+                    </div>
+                    <div className="row amenity-row">
+                        <div className="col-md-3">
+                            <div className="amenity-itm">
+                                <div className="img-cont">
+                                    <Image
+                                        src="/img/aminities-icon1.jpg"
+                                        alt="Air Conditioning"
+                                        className="img-fluid"
+                                        width={150}
+                                        height={150}
+                                    />
+                                </div>
+                                <h5>Air Conditioning</h5>
+                            </div>
+                        </div>
+                        <div className="col-md-3">
+                            <div className="amenity-itm">
+                                <div className="img-cont">
+                                    <Image
+                                        src="/img/aminities-icon1.jpg"
+                                        alt="Air Conditioning"
+                                        className="img-fluid"
+                                        width={150}
+                                        height={150}
+                                    />
+                                </div>
+                                <h5>Air Conditioning</h5>
+                            </div>
+                        </div>
+                        <div className="col-md-3">
+                            <div className="amenity-itm">
+                                <div className="img-cont">
+                                    <Image
+                                        src="/img/aminities-icon1.jpg"
+                                        alt="Air Conditioning"
+                                        className="img-fluid"
+                                        width={150}
+                                        height={150}
+                                    />
+                                </div>
+                                <h5>Air Conditioning</h5>
+                            </div>
+                        </div>
+                        <div className="col-md-3">
+                            <div className="amenity-itm">
+                                <div className="img-cont">
+                                    <Image
+                                        src="/img/aminities-icon1.jpg"
+                                        alt="Air Conditioning"
+                                        className="img-fluid"
+                                        width={150}
+                                        height={150}
+                                    />
+                                </div>
+                                <h5>Air Conditioning</h5>
+                            </div>
+                        </div>
+                        <div className="col-md-3">
+                            <div className="amenity-itm">
+                                <div className="img-cont">
+                                    <Image
+                                        src="/img/aminities-icon1.jpg"
+                                        alt="Air Conditioning"
+                                        className="img-fluid"
+                                        width={150}
+                                        height={150}
+                                    />
+                                </div>
+                                <h5>Air Conditioning</h5>
+                            </div>
+                        </div>
+                        <div className="col-md-3">
+                            <div className="amenity-itm">
+                                <div className="img-cont">
+                                    <Image
+                                        src="/img/aminities-icon1.jpg"
+                                        alt="Air Conditioning"
+                                        className="img-fluid"
+                                        width={150}
+                                        height={150}
+                                    />
+                                </div>
+                                <h5>Air Conditioning</h5>
+                            </div>
+                        </div>
+                        <div className="col-md-3">
+                            <div className="amenity-itm">
+                                <div className="img-cont">
+                                    <Image
+                                        src="/img/aminities-icon1.jpg"
+                                        alt="Air Conditioning"
+                                        className="img-fluid"
+                                        width={150}
+                                        height={150}
+                                    />
+                                </div>
+                                <h5>Air Conditioning</h5>
+                            </div>
+                        </div>
+                        <div className="col-md-3">
+                            <div className="amenity-itm">
+                                <div className="img-cont">
+                                    <Image
+                                        src="/img/aminities-icon1.jpg"
+                                        alt="Air Conditioning"
+                                        className="img-fluid"
+                                        width={150}
+                                        height={150}
+                                    />
+                                </div>
+                                <h5>Air Conditioning</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section> */}
+        </>
+    );
+}

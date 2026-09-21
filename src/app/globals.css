@@ -136,10 +136,10 @@ header {
 }
 
 .hero-sec {
-  background-image: url("/img/hero.jpg");
+  background-image: url("/img/hero-banner-mb.jpeg");
   background-size: cover;
   background-position: center;
-  height: 70vh;
+  height: 45vh;
   display: flex;
   align-items: end;
   justify-content: left;
@@ -179,6 +179,7 @@ header {
       color: var(--primary-txt-color);
       font-weight: 600;
       margin-bottom: 0;
+      margin-top: 0;
     }
 
     h2::before {
@@ -718,29 +719,68 @@ footer {
   }
 }
 
-.south-page {
+/* REFACTOR: same css classes has been repeated */
+.south-page,
+.north-page,
+.west-page {
   width: 100%;
   height: auto;
   min-height: 100vh;
   padding-bottom: 4rem;
-  background-image: url(/img/south-tower-banner-bg.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   padding: 10% 0;
 }
 
-.north-page {
-  width: 100%;
-  height: auto;
-  min-height: 100vh;
-  padding-bottom: 4rem;
-  background-image: url(/img/north-tower-banner-bg.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  padding: 10% 0;
+.south-page {
+  background-image: url(/img/south-tower-banner-bg.jpg);
 }
+
+.north-page {
+  background-image: url(/img/north-tower-banner-bg.jpg);
+}
+
+.west-page {
+  background-image: url(/img/north-tower-banner-bg.jpg);
+
+}
+
+.west-tower-fearures {
+  padding: 3rem 0 1rem;
+  background-color: #000;
+  color: #fff;
+
+  h2 {
+    text-transform: uppercase;
+  }
+
+  .features-row {
+    margin-top: 3rem;
+    justify-content: center;
+
+    .feature-itm {
+      text-align: center;
+      margin-bottom: 5rem;
+
+      .c-size {
+        display: block;
+        margin: 0 auto;
+        width: 80px;
+        height: auto;
+      }
+
+      h5 {
+        text-transform: uppercase;
+        margin-top: .7rem;
+        font-size: 1rem;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+/* -- */
 
 /* Inner page styles */
 .tower-page-banner {
@@ -759,8 +799,13 @@ footer {
     }
 
     .btn-theme1 {
-      padding: 0.3rem 3.5rem;
+      padding: 0.3rem 3rem;
+      margin-top: 0.3rem;
       text-transform: uppercase;
+
+      i {
+        margin-left: 0.9rem;
+      }
     }
   }
 
@@ -856,7 +901,6 @@ footer {
 }
 
 .experience-sec {
-
   background-color: #000;
 
   .experience-itm {
@@ -1050,7 +1094,6 @@ footer {
 
       input[type="file"] {
         position: absolute;
-
         height: 100%;
         opacity: 0;
         cursor: pointer;
@@ -1273,6 +1316,11 @@ footer {
 }
 
 .modal {
+  &.show {
+    display: flex !important;
+    align-items: center;
+  }
+
   .modal-content {
     background-color: transparent;
     border: 0;
@@ -1284,7 +1332,7 @@ footer {
       color: white;
 
       .modal-title {
-        font-size: 1.8rem;
+        font-size: 1.2rem;
       }
     }
 
@@ -1292,6 +1340,7 @@ footer {
       background-color: var(--primary-color);
       border-radius: 2rem;
       padding: 2rem;
+      margin: 0 auto;
 
       .modal-body {
 
@@ -1318,7 +1367,7 @@ footer {
         label {
           color: white;
           text-align: start;
-          font-size: 0.9rem;
+          font-size: 0.7rem;
           width: 100%;
           margin-bottom: 0.5rem;
         }
@@ -1587,12 +1636,8 @@ img {
 .btn-theme1 {
   text-transform: uppercase;
   margin-top: auto;
-}
-
-p {
   color: #ffffffcd;
   line-height: 1.2rem;
-
 }
 
 .card-date {
@@ -1676,7 +1721,6 @@ h6 {
   background-color: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(5px);
   z-index: 1050;
-
 }
 
 .custom-display {
@@ -1718,6 +1762,91 @@ h6 {
   font-size: 14px;
 }
 
+.tower-banner-carousel {
+  width: 100%;
+  overflow: hidden;
+  background-color: #000;
+  border-bottom: 6px solid var(--primary-color);
+
+  .embla {
+    overflow: hidden;
+    position: relative;
+
+    .embla__container {
+      display: flex;
+    }
+
+    .embla__slide {
+      flex: 0 0 100%;
+      min-width: 0;
+      padding: 0;
+    }
+
+    /* NEW: Mobile Dots Styling */
+    .embla__dots {
+      position: absolute;
+      bottom: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      gap: 0.5rem;
+      z-index: 10;
+
+      .embla__dot {
+        width: 0.55rem;
+        height: 0.55rem;
+        border-radius: 50%;
+        border: none;
+        background-color: rgba(255, 255, 255, 0.4);
+        cursor: pointer;
+        padding: 0;
+        transition: all 0.3s ease-in-out;
+
+        &.is-selected {
+          background-color: var(--primary-color);
+        }
+      }
+    }
+  }
+
+  .banner-slide-item {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    border-right: 8px solid #000;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  .carousel-nav-btn {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 3rem;
+    width: 70px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.3s ease;
+
+    &.prev {
+      left: 0;
+    }
+
+    &.next {
+      right: 0;
+    }
+  }
+}
+
 @media (min-width: 768px) {
   .embla__slide {
     flex: 0 0 16.666%;
@@ -1743,6 +1872,14 @@ h6 {
   .news-events-card .btn-theme1 {
     padding: 0.5rem 2.5rem;
     font-size: 1rem;
+  }
+
+  .tower-banner-carousel {
+    .embla {
+      .embla__slide {
+        flex: 0 0 33.3333%;
+      }
+    }
   }
 }
 
@@ -1805,6 +1942,7 @@ h6 {
   }
 }
 
+/* REFACTOR */
 @media (max-width: 767px) {
   footer .col-md-2:first-child img {
     width: 250px;
@@ -1812,8 +1950,8 @@ h6 {
   }
 }
 
+/* -- */
 @media (min-width: 992px) {
-
   h2:before {
     height: 1.5rem;
   }
@@ -1864,6 +2002,7 @@ h6 {
   }
 
   .hero-sec {
+    background-image: url("/img/hero-banner.jpg");
     align-items: end;
     justify-content: right;
     height: 100vh;
@@ -1882,6 +2021,10 @@ h6 {
 
   .about-access-sec {
     .info-cont {
+      h2 {
+        margin-top: 3rem;
+      }
+
       .info-itm {
         h2:before {
           height: 1.5rem;
@@ -2091,6 +2234,13 @@ h6 {
   header .navbar .navbar-nav .nav-item .nav-link.active {
     border-bottom-color: #fff;
   }
+
+  .tower-banner-carousel {
+    .banner-slide-item {
+      height: 380px;
+    }
+  }
+
 }
 
 @keyframes pulse-glow {

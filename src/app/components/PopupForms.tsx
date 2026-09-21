@@ -141,3 +141,58 @@ export function VideoPopup({ videoUrl = "https://www.youtube.com/embed/YOUR_VIDE
     );
 }
 
+export function DownloadFloorPlanForm() {
+    const [show, setShow] = useState(false);
+
+    const handleOpen = (e: React.MouseEvent<HTMLAnchorElement>) => {
+        e.preventDefault();
+        setShow(true);
+    };
+
+    const handleClose = () => setShow(false);
+
+    return (
+        <>
+            <Modal
+                className="modal"
+                show={show}
+                onHide={handleClose}
+                tabIndex={-1}
+            >
+                <Modal.Dialog className="modal-form">
+                    <Modal.Header className="modal-header">
+                        <h5 className="modal-title">
+                            DOWNLOAD FLOOR PLAN
+                        </h5>
+                    </Modal.Header>
+
+                    <Modal.Body>
+                        <form action="">
+                            <input
+                                type="text"
+                                name="name"
+                                placeholder="Your name"
+                                required
+                            />
+
+                            <input
+                                type="email"
+                                name="email"
+                                placeholder="Your email"
+                                required
+                            />
+
+                            <button className="btn btn-primary">
+                                Submit
+                            </button>
+                        </form>
+                    </Modal.Body>
+                </Modal.Dialog>
+            </Modal>
+
+            <a href="#" onClick={handleOpen} className="btn-theme1 btn mt-2">
+                Floor Plans <i className="bi bi-cloud-download" aria-hidden="true"></i>
+            </a>
+        </>
+    );
+}
