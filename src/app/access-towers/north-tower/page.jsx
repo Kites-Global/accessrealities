@@ -2,13 +2,19 @@ import Image from "next/image";
 import Aminities from '../../components/Aminities';
 import OurClient from "../../components/OurClients";
 import TowerCarousel from "../../components/TowerCarousel";
+import { DownloadFloorPlanForm } from "../../components/PopupForms.tsx";
 
 const towerImages = [
-    { src: "/img/experiences-grind-1.jpg", alt: "Café Space" },
-    { src: "/img/experiences-lounge-1.jpg", alt: "Lounge Area" },
-    { src: "/img/facility-meet-room-1.jpg", alt: "Meeting Room" },
-    { src: "/img/experiences-virticle-1.jpg", alt: "Dining Space" },
-    { src: "/img/facility-gym-1.jpg", alt: "Elevate Gym" },
+    { src: "/img/gallary/1.jpg", alt: "1" },
+    { src: "/img/gallary/2.jpg", alt: "2" },
+    { src: "/img/gallary/3.jpg", alt: "3" },
+    { src: "/img/gallary/4.jpg", alt: "4" },
+    { src: "/img/gallary/5.jpg", alt: "5" },
+    { src: "/img/gallary/6.jpg", alt: "6" },
+    { src: "/img/gallary/7.jpg", alt: "7" },
+    { src: "/img/gallary/8.jpg", alt: "8" },
+    { src: "/img/gallary/9.jpg", alt: "9" },
+    { src: "/img/gallary/10.jpg", alt: "10" },
 ];
 
 export default function NorthTower() {
@@ -57,8 +63,11 @@ export default function NorthTower() {
                                     width={600}
                                     height={800}
                                 />
-                                <a href="/pdf/6 FLOOR (North Tower Floor Plan).pdf" target="_blank" rel="noopener noreferrer" className="btn-theme1 btn">Floor Plans</a>
-                                <a href="/contact" className="btn-theme1 btn">Inquire Now</a>
+                                <DownloadFloorPlanForm />
+                                {/* <a href="#" rel="noopener noreferrer" className="btn-theme1 btn">
+                                    Floor Plans <i className="bi bi-cloud-download" aria-hidden="true"></i>
+                                </a> */}
+                                {/* <a href="/contact" className="btn-theme1 btn">Inquire Now</a> */}
                             </div>
                         </div>
                     </div>

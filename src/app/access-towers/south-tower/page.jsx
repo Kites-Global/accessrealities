@@ -2,13 +2,20 @@ import Aminities from '../../components/Aminities';
 import Image from "next/image";
 import OurClient from "../../components/OurClients";
 import TowerCarousel from "../../components/TowerCarousel";
+import { DownloadFloorPlanForm } from "../../components/PopupForms.tsx";
 
 const towerImages = [
-    { src: "/img/experiences-grind-2.jpg", alt: "Café Space" },
-    { src: "/img/experiences-lounge-2.jpg", alt: "Lounge Area" },
-    { src: "/img/facility-meet-room-2.jpg", alt: "Conference Room" },
-    { src: "/img/experiences-virticle-2.jpg", alt: "Rooftop" },
-    { src: "/img/facility-gym-2.jpg", alt: "Elevate Gym" },
+    { src: "/img/gallary/1.jpg", alt: "1" },
+    { src: "/img/gallary/2.jpg", alt: "2" },
+    { src: "/img/gallary/3.jpg", alt: "3" },
+    { src: "/img/gallary/4.jpg", alt: "4" },
+    { src: "/img/gallary/5.jpg", alt: "5" },
+    { src: "/img/gallary/6.jpg", alt: "6" },
+    { src: "/img/gallary/7.jpg", alt: "7" },
+    { src: "/img/gallary/8.jpg", alt: "8" },
+    { src: "/img/gallary/9.jpg", alt: "9" },
+    { src: "/img/gallary/10.jpg", alt: "10" },
+
 ];
 
 export default function SouthTower() {
@@ -62,8 +69,9 @@ export default function SouthTower() {
                                     width={600}
                                     height={800}
                                 />
-                                <a href="/pdf/10 FLOOR T2 (South Tower Floor Plan).pdf" target="_blank" rel="noopener noreferrer" className="btn-theme1 btn">Floor Plans</a>
-                                <a href="/contact" className="btn-theme1 btn">Inquire Now</a>
+                                <DownloadFloorPlanForm />
+                                {/* <a href="/pdf/10 FLOOR T2 (South Tower Floor Plan).pdf" target="_blank" rel="noopener noreferrer" className="btn-theme1 btn">Floor Plans</a> */}
+                                {/* <a href="/contact" className="btn-theme1 btn">Inquire Now</a> */}
                             </div>
                         </div>
                     </div>

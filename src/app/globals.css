@@ -136,10 +136,10 @@ header {
 }
 
 .hero-sec {
-  background-image: url("/img/hero.jpg");
+  background-image: url("/img/hero-banner-mb.jpeg");
   background-size: cover;
   background-position: center;
-  height: 70vh;
+  height: 45vh;
   display: flex;
   align-items: end;
   justify-content: left;
@@ -179,6 +179,7 @@ header {
       color: var(--primary-txt-color);
       font-weight: 600;
       margin-bottom: 0;
+      margin-top: 0;
     }
 
     h2::before {
@@ -715,28 +716,64 @@ footer {
 }
 
 /* REFACTOR: same css classes has been repeated */
-.south-page {
+.south-page,
+.north-page,
+.west-page {
   width: 100%;
   height: auto;
   min-height: 100vh;
   padding-bottom: 4rem;
-  background-image: url(/img/south-tower-banner-bg.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   padding: 10% 0;
 }
 
+.south-page {
+  background-image: url(/img/south-tower-banner-bg.jpg);
+}
+
 .north-page {
-  width: 100%;
-  height: auto;
-  min-height: 100vh;
-  padding-bottom: 4rem;
   background-image: url(/img/north-tower-banner-bg.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  padding: 10% 0;
+}
+
+.west-page {
+  background-image: url(/img/north-tower-banner-bg.jpg);
+
+}
+
+.west-tower-fearures {
+  padding: 3rem 0 1rem;
+  background-color: #000;
+  color: #fff;
+
+  h2 {
+    text-transform: uppercase;
+  }
+
+  .features-row {
+    margin-top: 3rem;
+    justify-content: center;
+
+    .feature-itm {
+      text-align: center;
+      margin-bottom: 5rem;
+
+      .c-size {
+        display: block;
+        margin: 0 auto;
+        width: 80px;
+        height: auto;
+      }
+
+      h5 {
+        text-transform: uppercase;
+        margin-top: .7rem;
+        font-size: 1rem;
+        font-weight: 500;
+      }
+    }
+  }
 }
 
 /* -- */
@@ -759,7 +796,12 @@ footer {
 
     .btn-theme1 {
       padding: 0.3rem 3rem;
+      margin-top: 0.3rem;
       text-transform: uppercase;
+
+      i {
+        margin-left: 0.9rem;
+      }
     }
   }
 
@@ -1270,6 +1312,11 @@ footer {
 }
 
 .modal {
+  &.show {
+    display: flex !important;
+    align-items: center;
+  }
+
   .modal-content {
     background-color: transparent;
     border: 0;
@@ -1281,7 +1328,7 @@ footer {
       color: white;
 
       .modal-title {
-        font-size: 1.8rem;
+        font-size: 1.2rem;
       }
     }
 
@@ -1289,6 +1336,7 @@ footer {
       background-color: var(--primary-color);
       border-radius: 2rem;
       padding: 2rem;
+      margin: 0 auto;
 
       .modal-body {
 
@@ -1315,7 +1363,7 @@ footer {
         label {
           color: white;
           text-align: start;
-          font-size: 0.9rem;
+          font-size: 0.7rem;
           width: 100%;
           margin-bottom: 0.5rem;
         }
@@ -1728,10 +1776,6 @@ h6 {
       flex: 0 0 100%;
       min-width: 0;
       padding: 0;
-
-      @media (min-width: 768px) {
-        flex: 0 0 33.3333%;
-      }
     }
 
     /* NEW: Mobile Dots Styling */
@@ -1765,10 +1809,6 @@ h6 {
     width: 100%;
     height: 280px;
     border-right: 8px solid #000;
-
-    @media (min-width: 992px) {
-      height: 380px;
-    }
 
     img {
       width: 100%;
@@ -1828,6 +1868,14 @@ h6 {
   .news-events-card .btn-theme1 {
     padding: 0.5rem 2.5rem;
     font-size: 1rem;
+  }
+
+  .tower-banner-carousel {
+    .embla {
+      .embla__slide {
+        flex: 0 0 33.3333%;
+      }
+    }
   }
 }
 
@@ -1950,6 +1998,7 @@ h6 {
   }
 
   .hero-sec {
+    background-image: url("/img/hero-banner.jpg");
     align-items: end;
     justify-content: right;
     height: 100vh;
@@ -1968,6 +2017,10 @@ h6 {
 
   .about-access-sec {
     .info-cont {
+      h2 {
+        margin-top: 3rem;
+      }
+
       .info-itm {
         h2:before {
           height: 1.5rem;
@@ -2177,6 +2230,13 @@ h6 {
   header .navbar .navbar-nav .nav-item .nav-link.active {
     border-bottom-color: #fff;
   }
+
+  .tower-banner-carousel {
+    .banner-slide-item {
+      height: 380px;
+    }
+  }
+
 }
 
 @keyframes pulse-glow {

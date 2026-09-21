@@ -2,13 +2,15 @@ import Image from "next/image";
 import Aminities from '../../components/Aminities';
 import OurClient from "../../components/OurClients";
 import TowerCarousel from "../../components/TowerCarousel";
+import { DownloadFloorPlanForm } from "../../components/PopupForms.tsx";
 
 const towerImages = [
-    { src: "/img/experiences-grind-3.jpg", alt: "Café Space" },
-    { src: "/img/experiences-lounge-3.jpg", alt: "Lounge Area" },
-    { src: "/img/facility-meet-room-3.jpg", alt: "Meeting Rooms" },
-    { src: "/img/facility-garden-1.jpg", alt: "Zen Garden" },
-    { src: "/img/experiences-virticle-3.jpg", alt: "Dining" },
+    { src: "/img/facility-car-1.jpg", alt: "1" },
+    { src: "/img/facility-car-2.jpg", alt: "2" },
+    { src: "/img/facility-car-3.jpg", alt: "3" },
+    { src: "/img/facility-car-1.jpg", alt: "1" },
+    { src: "/img/facility-car-2.jpg", alt: "2" },
+    { src: "/img/facility-car-3.jpg", alt: "3" },
 ];
 
 export default function WestTower() {
@@ -29,36 +31,38 @@ export default function WestTower() {
 
     return (
         <>
-            <section className="north-page tower-page-banner">
+            <section className="west-page tower-page-banner">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-9 intro-cont">
                             <div className="intro-itm">
                                 <h1>West Tower</h1>
                                 <p>
-                                    Located in the heart of Union Place, Colombo 02, Access Towers I, known as the North Tower,
-                                    offers more than office space; it offers businesses a recognized corporate address with long
-                                    standing credibility. The 12-storey commercial office complex features approximately 120,000
-                                    sq. ft. of professionally managed workspace, supported by modern facilities, corporate
-                                    amenities and the trusted standards of Access Realties (Pvt) Ltd. Anchored by the presence of
-                                    Access Engineering PLC and complemented by a strong community of leading corporate
-                                    tenants, the North Tower continues to be a sought-after destination for companies looking for
-                                    premium office space in Colombo with the confidence, convenience and reputation of the
-                                    Access name.
+                                    Initiated in partnership with the Urban Development Authority (UDA), West Tower is an eight-storey commercial development by Access Engineering PLC, representing an investment of Rs. 1.4 billion. Located on Union Place, Colombo, the facility integrates parking capacity for up to 300 vehicles with over 20,000 sq. ft. of retail and office space, creating an extension of the Access Tower commercial ecosystem.
+                                </p>
+                                <p>
+                                    Operating under a Design-Build-Finance-Operate-Transfer (DBFOT) model, Access Engineering PLC will manage the facility during the agreed lease period before ownership is transferred to the UDA. The facility is operated and managed by Access Realties (Pvt) Ltd, with a shared maintenance framework connecting it to the wider Access Tower complex.
+                                </p>
+                                <p>
+                                    Located alongside the Access North and South Towers, West Tower provides additional parking and commercial infrastructure for the public and surrounding businesses, helping address parking demand and ease traffic congestion within one of Colombo's busiest commercial areas.
+                                </p>
+                                <p>
+                                    Designed with accessibility, security and convenience in mind, the facility offers a modern parking experience while providing direct pedestrian connectivity to the Access Tower complex. Its strategic location and integrated commercial spaces further strengthen the development as a contemporary urban destination in the heart of Colombo.
                                 </p>
                             </div>
                         </div>
                         <div className="col-md-3">
                             <div className="img-cont">
                                 <Image
-                                    src="/img/north-tower-fimg1.png"
+                                    src="/img/west-tower-img1.png"
                                     alt="Access Realties"
                                     className="img-fluid"
                                     width={600}
                                     height={800}
                                 />
-                                <a href="#" className="btn-theme1 btn">Floor Plans</a>
-                                <a href="/contact" className="btn-theme1 btn">Inquire Now</a>
+                                <DownloadFloorPlanForm />
+                                {/* <a href="#" className="btn-theme1 btn">Floor Plans</a> */}
+                                {/* <a href="/contact" className="btn-theme1 btn">Inquire Now</a> */}
                             </div>
                         </div>
                     </div>
@@ -68,7 +72,108 @@ export default function WestTower() {
             {/* Replaced Snapshot Banner */}
             <TowerCarousel images={towerImages} />
 
-            <Aminities />
+            <div className="west-tower-fearures">
+                <div className="container">
+                    <h2>West Tower Features</h2>
+                    <p>Modern Commercial and Parking Infrastructure in the Heart of Colombo.</p>
+
+                    <div className="row features-row">
+                        <div className="col-md-3 col-6">
+                            <div className="feature-itm">
+                                <Image
+                                    src="/img/feature-icon-1.png"
+                                    alt="Air Conditioning"
+                                    className="img-fluid c-size"
+                                    width={100}
+                                    height={100}
+                                />
+                                <h5>Parking Capacity
+                                    for <br />
+                                    300 Vehicles</h5>
+                            </div>
+                        </div>
+                        <div className="col-md-3 col-6">
+                            <div className="feature-itm">
+                                <Image
+                                    src="/img/feature-icon-2.png"
+                                    alt="Air Conditioning"
+                                    className="img-fluid c-size"
+                                    width={100}
+                                    height={100}
+                                />
+                                <h5>24/7 Monitored<br />
+                                    Security </h5>
+                            </div>
+                        </div>
+                        <div className="col-md-3 col-6">
+                            <div className="feature-itm">
+                                <Image
+                                    src="/img/feature-icon-3.png"
+                                    alt="Air Conditioning"
+                                    className="img-fluid c-size"
+                                    width={100}
+                                    height={100}
+                                />
+                                <h5>Wide Dual-Lane <br />
+                                    Entry & Exit  </h5>
+                            </div>
+                        </div>
+                        <div className="col-md-3 col-6">
+                            <div className="feature-itm">
+                                <Image
+                                    src="/img/feature-icon-4.png"
+                                    alt="Air Conditioning"
+                                    className="img-fluid c-size"
+                                    width={100}
+                                    height={100}
+                                />
+                                <h5>SUV & Commercial<br />
+                                    Vehicle Friendly </h5>
+                            </div>
+                        </div>
+                        <div className="col-md-3 col-6">
+                            <div className="feature-itm">
+                                <Image
+                                    src="/img/feature-icon-5.png"
+                                    alt="Air Conditioning"
+                                    className="img-fluid c-size"
+                                    width={100}
+                                    height={100}
+                                />
+                                <h5>Parking Availability<br />
+                                    Indicators</h5>
+                            </div>
+                        </div>
+                        <div className="col-md-3 col-6">
+                            <div className="feature-itm">
+                                <Image
+                                    src="/img/feature-icon-6.png"
+                                    alt="Air Conditioning"
+                                    className="img-fluid c-size"
+                                    width={100}
+                                    height={100}
+                                />
+                                <h5>Digital Parking<br />
+                                    Time-Stamping  </h5>
+                            </div>
+                        </div>
+                        <div className="col-md-3 col-6">
+                            <div className="feature-itm">
+                                <Image
+                                    src="/img/feature-icon-7.png"
+                                    alt="Air Conditioning"
+                                    className="img-fluid c-size"
+                                    width={100}
+                                    height={100}
+                                />
+                                <h5>Direct Elevator Access<br />
+                                    to Access Towers </h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <main>
                 <OurClient clients={ourClients} />
             </main>
