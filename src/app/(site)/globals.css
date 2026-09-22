@@ -629,6 +629,10 @@ header {
         border-left: 1px solid #ffffff4c;
         padding: 0.5rem 0 0.5rem 1rem;
       }
+
+      .wht-thy-say-itm:nth-child(even) {
+        justify-content: end;
+      }
     }
   }
 

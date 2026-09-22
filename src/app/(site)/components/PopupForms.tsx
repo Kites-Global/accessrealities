@@ -122,14 +122,14 @@ export function VideoPopup({ videoUrl = "https://www.youtube.com/embed/YOUR_VIDE
                     />
                 </Modal.Header>
                 <Modal.Body className="p-0">
-                    <div style={{ position: "relative", paddingBottom: "56.25%", height: 0, overflow: "hidden" }}>
+                    <div style={{ position: "relative", overflow: "hidden" }}>
                         {/* Conditionally render the iframe ONLY when the modal is open */}
                         {show && (
 
                             <iframe
                                 src={videoUrl}
                                 title="Video Player"
-                                style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", borderRadius: "8px" }}
+                                style={{ width: "100%", height: "450px",aspectRatio: "16/9", borderRadius: "8px" }}
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowFullScreen
                             ></iframe>

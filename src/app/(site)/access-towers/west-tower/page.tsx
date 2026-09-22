@@ -2,6 +2,81 @@ import Image from "next/image";
 import OurClient from "../../components/OurClients";
 import TowerCarousel from "../../components/TowerCarousel";
 import { DownloadFloorPlanForm } from "../../components/PopupForms";
+import { AmenityIcon } from "../../components/Aminities";
+
+const westTowerFeatures = [
+    {
+        icon: "/img/feature-icon-1.png",
+        title: (
+            <>
+                Parking Capacity
+                for <br />
+                300 Vehicles
+            </>
+        ),
+        alt: "Parking Capacity for 300 Vehicles",
+    },
+    {
+        icon: "/img/feature-icon-2.png",
+        title: (
+            <>
+                24/7 Monitored<br />
+                Security
+            </>
+        ),
+        alt: "24/7 Monitored Security",
+    },
+    {
+        icon: "/img/feature-icon-3.png",
+        title: (
+            <>
+                Wide Dual-Lane <br />
+                Entry & Exit
+            </>
+        ),
+        alt: "Wide Dual-Lane Entry & Exit",
+    },
+    {
+        icon: "/img/feature-icon-4.png",
+        title: (
+            <>
+                SUV & Commercial<br />
+                Vehicle Friendly
+            </>
+        ),
+        alt: "SUV & Commercial Vehicle Friendly",
+    },
+    {
+        icon: "/img/feature-icon-5.png",
+        title: (
+            <>
+                Parking Availability<br />
+                Indicators
+            </>
+        ),
+        alt: "Parking Availability Indicators",
+    },
+    {
+        icon: "/img/feature-icon-6.png",
+        title: (
+            <>
+                Digital Parking<br />
+                Time-Stamping
+            </>
+        ),
+        alt: "Digital Parking Time-Stamping",
+    },
+    {
+        icon: "/img/feature-icon-7.png",
+        title: (
+            <>
+                Direct Elevator Access<br />
+                to Access Towers
+            </>
+        ),
+        alt: "Direct Elevator Access to Access Towers",
+    },
+];
 
 const towerImages = [
     { src: "/img/facility-car-1.jpg", alt: "1" },
@@ -77,98 +152,14 @@ export default function WestTower() {
                     <p>Modern Commercial and Parking Infrastructure in the Heart of Colombo.</p>
 
                     <div className="row features-row">
-                        <div className="col-md-3 col-6">
-                            <div className="feature-itm">
-                                <Image
-                                    src="/img/feature-icon-1.png"
-                                    alt="Air Conditioning"
-                                    className="img-fluid c-size"
-                                    width={100}
-                                    height={100}
-                                />
-                                <h5>Parking Capacity
-                                    for <br />
-                                    300 Vehicles</h5>
-                            </div>
-                        </div>
-                        <div className="col-md-3 col-6">
-                            <div className="feature-itm">
-                                <Image
-                                    src="/img/feature-icon-2.png"
-                                    alt="Air Conditioning"
-                                    className="img-fluid c-size"
-                                    width={100}
-                                    height={100}
-                                />
-                                <h5>24/7 Monitored<br />
-                                    Security </h5>
-                            </div>
-                        </div>
-                        <div className="col-md-3 col-6">
-                            <div className="feature-itm">
-                                <Image
-                                    src="/img/feature-icon-3.png"
-                                    alt="Air Conditioning"
-                                    className="img-fluid c-size"
-                                    width={100}
-                                    height={100}
-                                />
-                                <h5>Wide Dual-Lane <br />
-                                    Entry & Exit  </h5>
-                            </div>
-                        </div>
-                        <div className="col-md-3 col-6">
-                            <div className="feature-itm">
-                                <Image
-                                    src="/img/feature-icon-4.png"
-                                    alt="Air Conditioning"
-                                    className="img-fluid c-size"
-                                    width={100}
-                                    height={100}
-                                />
-                                <h5>SUV & Commercial<br />
-                                    Vehicle Friendly </h5>
-                            </div>
-                        </div>
-                        <div className="col-md-3 col-6">
-                            <div className="feature-itm">
-                                <Image
-                                    src="/img/feature-icon-5.png"
-                                    alt="Air Conditioning"
-                                    className="img-fluid c-size"
-                                    width={100}
-                                    height={100}
-                                />
-                                <h5>Parking Availability<br />
-                                    Indicators</h5>
-                            </div>
-                        </div>
-                        <div className="col-md-3 col-6">
-                            <div className="feature-itm">
-                                <Image
-                                    src="/img/feature-icon-6.png"
-                                    alt="Air Conditioning"
-                                    className="img-fluid c-size"
-                                    width={100}
-                                    height={100}
-                                />
-                                <h5>Digital Parking<br />
-                                    Time-Stamping  </h5>
-                            </div>
-                        </div>
-                        <div className="col-md-3 col-6">
-                            <div className="feature-itm">
-                                <Image
-                                    src="/img/feature-icon-7.png"
-                                    alt="Air Conditioning"
-                                    className="img-fluid c-size"
-                                    width={100}
-                                    height={100}
-                                />
-                                <h5>Direct Elevator Access<br />
-                                    to Access Towers </h5>
-                            </div>
-                        </div>
+                        {westTowerFeatures.map((feature, index) => (
+                            <AmenityIcon
+                                key={index}
+                                icon={feature.icon}
+                                title={feature.title}
+                                alt={feature.alt}
+                            />
+                        ))}
                     </div>
                 </div>
             </div>

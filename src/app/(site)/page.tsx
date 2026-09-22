@@ -7,6 +7,61 @@ import { Modal } from "react-bootstrap"
 import Aminities from './components/Aminities';
 import { OfficeInquiryForm, VideoPopup } from "./components/PopupForms";
 
+type Milestone = {
+  year: string;
+  title: string;
+  description: string;
+};
+
+const milestones: Milestone[] = [
+  {
+    year: "1998",
+    title: "Access Tower I Completed",
+    description:
+      "Access Realties completed Access Tower I, a 12-storey commercial office landmark in Union Place, Colombo.",
+  },
+  {
+    year: "2008",
+    title: "Joined Access Engineering PLC",
+    description:
+      "Access Realties became a subsidiary of Access Engineering PLC, strengthening its commercial real estate and property management presence in Sri Lanka.",
+  },
+  {
+    year: "2014",
+    title: "Access Tower II Development Begins",
+    description:
+      "Access Realties expanded its property portfolio with the development of Access Tower II, a modern Grade-A office space in Colombo.",
+  },
+  {
+    year: "2015/16",
+    title: "A Trusted Corporate Address",
+    description:
+      "Access Towers achieved 100% occupancy, reflecting strong demand for premium, professionally managed office space in Colombo.",
+  },
+  {
+    year: "2017",
+    title: "Access Tower II Opens",
+    description:
+      "Access Tower II commenced operations, adding Grade-A commercial office space to Colombo’s growing corporate skyline.",
+  },
+  {
+    year: "Present Day",
+    title: "A Landmark in Commercial Real Estate",
+    description:
+      "Access Towers continues to be recognized as a premium business address for modern organizations in the heart of Colombo.",
+  },
+];
+
+function MilestoneItem({ year, title, description }: Milestone) {
+  return (
+    <div className="col-md-3">
+      <h2>{year}</h2>
+      <h6>{title}</h6>
+      <p>{description}</p>
+    </div>
+  );
+}
+
 export default function Home() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
@@ -184,54 +239,14 @@ export default function Home() {
             onScroll={handleScroll}
             style={{ scrollBehavior: isDragging ? "auto" : "smooth" }}
           >
-            <div className="col-md-3">
-              <h2>1998</h2>
-              <h6>Access Tower I Completed</h6>
-              <p>
-                Access Realties completed Access Tower I, a 12-storey commercial office landmark in Union
-                Place, Colombo.
-              </p>
-            </div>
-            <div className="col-md-3">
-              <h2>2008</h2>
-              <h6>Joined Access Engineering PLC </h6>
-              <p>
-                Access Realties became a subsidiary of Access Engineering PLC, strengthening its commercial
-                real estate and property management presence in Sri Lanka.
-              </p>
-            </div>
-            <div className="col-md-3">
-              <h2>2014</h2>
-              <h6>Access Tower II Development Begins</h6>
-              <p>
-                Access Realties expanded its property portfolio with the development of Access Tower II, a
-                modern Grade-A office space in Colombo.
-              </p>
-            </div>
-            <div className="col-md-3">
-              <h2>2015/16</h2>
-              <h6>A Trusted Corporate Address</h6>
-              <p>
-                Access Towers achieved 100% occupancy, reflecting strong demand for premium, professionally
-                managed office space in Colombo.
-              </p>
-            </div>
-            <div className="col-md-3">
-              <h2>2017</h2>
-              <h6>Access Tower II Opens </h6>
-              <p>
-                Access Tower II commenced operations, adding Grade-A commercial office space to Colombo’s
-                growing corporate skyline.
-              </p>
-            </div>
-            <div className="col-md-3">
-              <h2>Present Day </h2>
-              <h6>A Landmark in Commercial Real Estate </h6>
-              <p>
-                Access Towers continues to be recognized as a premium business address for modern
-                organizations in the heart of Colombo.
-              </p>
-            </div>
+            {milestones.map((milestone, index) => (
+              <MilestoneItem
+                key={index}
+                year={milestone.year}
+                title={milestone.title}
+                description={milestone.description}
+              />
+            ))}
           </div>
 
           {/* UPDATED TRACK AND THUMB WITH DRAG LOGIC */}
@@ -268,68 +283,7 @@ export default function Home() {
             <div className="col-md-11">
               <div className="facility-carousel-cont">
                 <EmblaCarousel />
-                {/* <div className="facility-owl-carousel owl-carousel owl-theme">
-                  <div className="item">
-                    <Image
-                      src="/img/facility-1.jpg"
-                      alt="Facility 1"
-                      className="img-fluid"
-                      width={800}
-                      height={700}
-                    />
-                    <div className="overlay">
-                      <div>
-                        <h5>Meeting Room</h5>
-                        <a href="#" className="btn btn-theme1">Inquire now</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="item">
-                    <Image
-                      src="/img/facility-1.jpg"
-                      alt="Facility 1"
-                      className="img-fluid"
-                      width={800}
-                      height={700}
-                    />
-                    <div className="overlay">
-                      <div>
-                        <h5>Meeting Room</h5>
-                        <a href="#" className="btn btn-theme1">Inquire now</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="item">
-                    <Image
-                      src="/img/facility-1.jpg"
-                      alt="Facility 1"
-                      className="img-fluid"
-                      width={800}
-                      height={700}
-                    />
-                    <div className="overlay">
-                      <div>
-                        <h5>Meeting Room</h5>
-                        <a href="#" className="btn btn-theme1">Inquire now</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="item">
-                    <Image
-                      src="/img/facility-1.jpg"
-                      alt="Facility 1"
-                      className="img-fluid"
-                      width={800}
-                      height={700}
-                    />
-                    <div className="overlay">
-                      <div>
-                        <h5>Meeting Room</h5>
-                        <a href="#" className="btn btn-theme1">Inquire now</a>
-                      </div>
-                    </div>
-                  </div>
-                </div> */}
+                
               </div>
             </div>
           </div>
@@ -339,130 +293,6 @@ export default function Home() {
 
       <Aminities />
 
-      {/* <section className="amenities-sec">
-        <div className="container">
-          <div className="intro-cont">
-            <h2>Amenities</h2>
-            <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-            </p>
-          </div>
-          <div className="row amenity-row">
-            <div className="col-md-3">
-              <div className="amenity-itm">
-                <div className="img-cont">
-                  <Image
-                    src="/img/aminities-icon1.jpg"
-                    alt="Air Conditioning"
-                    className="img-fluid"
-                    width={150}
-                    height={150}
-                  />
-                </div>
-                <h5>Air Conditioning</h5>
-              </div>
-            </div>
-            <div className="col-md-3">
-              <div className="amenity-itm">
-                <div className="img-cont">
-                  <Image
-                    src="/img/aminities-icon1.jpg"
-                    alt="Air Conditioning"
-                    className="img-fluid"
-                    width={150}
-                    height={150}
-                  />
-                </div>
-                <h5>Air Conditioning</h5>
-              </div>
-            </div>
-            <div className="col-md-3">
-              <div className="amenity-itm">
-                <div className="img-cont">
-                  <Image
-                    src="/img/aminities-icon1.jpg"
-                    alt="Air Conditioning"
-                    className="img-fluid"
-                    width={150}
-                    height={150}
-                  />
-                </div>
-                <h5>Air Conditioning</h5>
-              </div>
-            </div>
-            <div className="col-md-3">
-              <div className="amenity-itm">
-                <div className="img-cont">
-                  <Image
-                    src="/img/aminities-icon1.jpg"
-                    alt="Air Conditioning"
-                    className="img-fluid"
-                    width={150}
-                    height={150}
-                  />
-                </div>
-                <h5>Air Conditioning</h5>
-              </div>
-            </div>
-            <div className="col-md-3">
-              <div className="amenity-itm">
-                <div className="img-cont">
-                  <Image
-                    src="/img/aminities-icon1.jpg"
-                    alt="Air Conditioning"
-                    className="img-fluid"
-                    width={150}
-                    height={150}
-                  />
-                </div>
-                <h5>Air Conditioning</h5>
-              </div>
-            </div>
-            <div className="col-md-3">
-              <div className="amenity-itm">
-                <div className="img-cont">
-                  <Image
-                    src="/img/aminities-icon1.jpg"
-                    alt="Air Conditioning"
-                    className="img-fluid"
-                    width={150}
-                    height={150}
-                  />
-                </div>
-                <h5>Air Conditioning</h5>
-              </div>
-            </div>
-            <div className="col-md-3">
-              <div className="amenity-itm">
-                <div className="img-cont">
-                  <Image
-                    src="/img/aminities-icon1.jpg"
-                    alt="Air Conditioning"
-                    className="img-fluid"
-                    width={150}
-                    height={150}
-                  />
-                </div>
-                <h5>Air Conditioning</h5>
-              </div>
-            </div>
-            <div className="col-md-3">
-              <div className="amenity-itm">
-                <div className="img-cont">
-                  <Image
-                    src="/img/aminities-icon1.jpg"
-                    alt="Air Conditioning"
-                    className="img-fluid"
-                    width={150}
-                    height={150}
-                  />
-                </div>
-                <h5>Air Conditioning</h5>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
 
       <section className="what-they-say">
         <div className="container">
@@ -507,7 +337,7 @@ export default function Home() {
           <div className="row wht-thy-say-row justify-content-end">
             <div className="col-md-6">
               <div className="wht-thy-say-itm">
-                <div className="img-cont order-md-last">
+                <div className="img-cont ">
                   <div className="logo-box">
                     <Image src="/img/st-1.png" alt="Grant Thornton" className="img-fluid" width={200} height={200} />
                   </div>

@@ -5,16 +5,16 @@ import TowerCarousel from "../../components/TowerCarousel";
 import { DownloadFloorPlanForm } from "../../components/PopupForms";
 
 const towerImages = [
-    { src: "/img/gallary/1.jpg", alt: "1" },
-    { src: "/img/gallary/2.jpg", alt: "2" },
-    { src: "/img/gallary/3.jpg", alt: "3" },
-    { src: "/img/gallary/4.jpg", alt: "4" },
-    { src: "/img/gallary/5.jpg", alt: "5" },
-    { src: "/img/gallary/6.jpg", alt: "6" },
-    { src: "/img/gallary/7.jpg", alt: "7" },
-    { src: "/img/gallary/8.jpg", alt: "8" },
-    { src: "/img/gallary/9.jpg", alt: "9" },
-    { src: "/img/gallary/10.jpg", alt: "10" },
+    { src: "/img/gallery/1.jpg", alt: "1" },
+    { src: "/img/gallery/2.jpg", alt: "2" },
+    { src: "/img/gallery/3.jpg", alt: "3" },
+    { src: "/img/gallery/4.jpg", alt: "4" },
+    { src: "/img/gallery/5.jpg", alt: "5" },
+    { src: "/img/gallery/6.jpg", alt: "6" },
+    { src: "/img/gallery/7.jpg", alt: "7" },
+    { src: "/img/gallery/8.jpg", alt: "8" },
+    { src: "/img/gallery/9.jpg", alt: "9" },
+    { src: "/img/gallery/10.jpg", alt: "10" },
 
 ];
 
