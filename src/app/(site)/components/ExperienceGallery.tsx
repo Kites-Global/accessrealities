@@ -24,7 +24,9 @@ export default function ExperienceGallery({ images = [] }: {images: Image[]}) {
         onSelect();
         emblaApi.on("select", onSelect);
 
-        return () => emblaApi.off("select", onSelect);
+        return () => {
+            emblaApi.off("select", onSelect);
+        };
     }, [emblaApi]);
 
     return (
