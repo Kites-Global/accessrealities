@@ -1,4 +1,3 @@
-import Image from "next/image";
 import ExperienceGallery from "../../components/ExperienceGallery";
 import { FacilitiesInquiryForm } from "../../components/PopupForms";
 

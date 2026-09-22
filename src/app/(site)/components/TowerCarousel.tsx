@@ -5,7 +5,12 @@ import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { useCallback, useEffect, useRef, useState } from "react";
 
-export default function TowerCarousel({ images = [] }) {
+interface ImageTypes {
+    src: string;
+    alt: string | "";
+}
+
+export default function TowerCarousel({ images = [] }: { images: ImageTypes[] }) {
     const autoplay = useRef(
         Autoplay({ delay: 3500, stopOnInteraction: false })
     );
@@ -20,7 +25,7 @@ export default function TowerCarousel({ images = [] }) {
 
     const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
     const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
-    const scrollTo = useCallback((index) => emblaApi?.scrollTo(index), [emblaApi]);
+    const scrollTo = useCallback((index: number) => emblaApi?.scrollTo(index), [emblaApi]);
 
     // Update selected index when the carousel changes
     useEffect(() => {

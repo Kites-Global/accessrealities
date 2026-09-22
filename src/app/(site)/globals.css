@@ -191,7 +191,7 @@ header {
       font-weight: 400;
       margin-left: 0.4rem;
     }
-    p{
+    p {
       margin-left: 0.4rem;
     }
   }
@@ -449,9 +449,11 @@ header {
               width: 100%;
               height: 100%;
               background: #000000;
-              background: linear-gradient(0deg,
-                  rgba(0, 0, 0, 0.42) 20%,
-                  rgba(10, 10, 10, 0.93) 90%);
+              background: linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.42) 20%,
+                rgba(10, 10, 10, 0.93) 90%
+              );
               display: flex;
               flex-direction: column;
               justify-content: end;
@@ -478,7 +480,6 @@ header {
       }
 
       .embla__nav {
-
         .embla__prev,
         .embla__next {
           position: absolute;
@@ -743,7 +744,6 @@ footer {
 
 .west-page {
   background-image: url(/img/north-tower-banner-bg.jpg);
-
 }
 
 .west-tower-fearures {
@@ -772,7 +772,7 @@ footer {
 
       h5 {
         text-transform: uppercase;
-        margin-top: .7rem;
+        margin-top: 0.7rem;
         font-size: 1rem;
         font-weight: 500;
       }
@@ -935,7 +935,6 @@ footer {
         }
 
         .embla__nav {
-
           .embla__prev,
           .embla__next {
             position: absolute;
@@ -1343,7 +1342,6 @@ footer {
       margin: 0 auto;
 
       .modal-body {
-
         input,
         textarea,
         select {
@@ -1736,7 +1734,7 @@ h6 {
 }
 
 .custom-modal-content {
-  background-color: #9B4F67;
+  background-color: #9b4f67;
   border-radius: 24px;
   color: #fff;
 }
@@ -1962,14 +1960,18 @@ h6 {
 
   header {
     position: fixed;
-    background: -webkit-linear-gradient(0deg,
-        rgba(139, 27, 63, 0) 0%,
-        rgba(139, 27, 63, 0.16) 16%,
-        rgb(139, 27, 63) 100%);
-    background: linear-gradient(0deg,
-        rgba(139, 27, 63, 0) 0%,
-        rgba(139, 27, 63, 0.16) 16%,
-        rgb(139, 27, 63) 100%);
+    background: -webkit-linear-gradient(
+      0deg,
+      rgba(139, 27, 63, 0) 0%,
+      rgba(139, 27, 63, 0.16) 16%,
+      rgb(139, 27, 63) 100%
+    );
+    background: linear-gradient(
+      0deg,
+      rgba(139, 27, 63, 0) 0%,
+      rgba(139, 27, 63, 0.16) 16%,
+      rgb(139, 27, 63) 100%
+    );
 
     .navbar {
       .navbar-brand {
@@ -2079,7 +2081,6 @@ h6 {
   }
 
   .south-north-tower-sec {
-
     .south-cont,
     .north-cont {
       margin-bottom: 0;
@@ -2240,7 +2241,6 @@ h6 {
       height: 380px;
     }
   }
-
 }
 
 @keyframes pulse-glow {

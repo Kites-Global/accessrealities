@@ -1,8 +1,7 @@
 import Image from "next/image";
-import Aminities from '../../components/Aminities';
 import OurClient from "../../components/OurClients";
 import TowerCarousel from "../../components/TowerCarousel";
-import { DownloadFloorPlanForm } from "../../components/PopupForms.tsx";
+import { DownloadFloorPlanForm } from "../../components/PopupForms";
 
 const towerImages = [
     { src: "/img/facility-car-1.jpg", alt: "1" },
@@ -44,7 +43,7 @@ export default function WestTower() {
                                     Operating under a Design-Build-Finance-Operate-Transfer (DBFOT) model, Access Engineering PLC will manage the facility during the agreed lease period before ownership is transferred to the UDA. The facility is operated and managed by Access Realties (Pvt) Ltd, with a shared maintenance framework connecting it to the wider Access Tower complex.
                                 </p>
                                 <p>
-                                    Located alongside the Access North and South Towers, West Tower provides additional parking and commercial infrastructure for the public and surrounding businesses, helping address parking demand and ease traffic congestion within one of Colombo's busiest commercial areas.
+                                    Located alongside the Access North and South Towers, West Tower provides additional parking and commercial infrastructure for the public and surrounding businesses, helping address parking demand and ease traffic congestion within one of Colombo&apos;s busiest commercial areas.
                                 </p>
                                 <p>
                                     Designed with accessibility, security and convenience in mind, the facility offers a modern parking experience while providing direct pedestrian connectivity to the Access Tower complex. Its strategic location and integrated commercial spaces further strengthen the development as a contemporary urban destination in the heart of Colombo.

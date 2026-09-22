@@ -4,13 +4,18 @@ import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect, useState } from "react";
 
-export default function ExperienceGallery({ images = [] }) {
+interface Image {
+    src: string;
+    alt: string | "";
+}
+
+export default function ExperienceGallery({ images = [] }: {images: Image[]}) {
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
     const [selectedIndex, setSelectedIndex] = useState(0);
 
     const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
     const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
-    const scrollTo = useCallback((index) => emblaApi?.scrollTo(index), [emblaApi]);
+    const scrollTo = useCallback((index:number) => emblaApi?.scrollTo(index), [emblaApi]);
 
     useEffect(() => {
         if (!emblaApi) return;

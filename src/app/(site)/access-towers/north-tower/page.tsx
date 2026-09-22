@@ -2,7 +2,7 @@ import Image from "next/image";
 import Aminities from '../../components/Aminities';
 import OurClient from "../../components/OurClients";
 import TowerCarousel from "../../components/TowerCarousel";
-import { DownloadFloorPlanForm } from "../../components/PopupForms.tsx";
+import { DownloadFloorPlanForm } from "../../components/PopupForms";
 
 const towerImages = [
     { src: "/img/gallary/1.jpg", alt: "1" },
