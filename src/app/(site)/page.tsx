@@ -88,7 +88,7 @@ export default function Home() {
       <section className="about-access-sec">
         <div className="container">
           <div className="row">
-            <div className="col-md-7 info-cont">
+            <div className="col-md-8 info-cont">
               <div className="info-itm">
                 <h2>Defining Colombo’s Corporate Skyline</h2>
                 <h6>Creating premium commercial spaces built for the way modern businesses work. </h6>
@@ -103,7 +103,7 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="col-md-5">
+            <div className="col-md-4">
               <div className="img-cont">
                 <Image
                   src="/img/about-access-sec-fimg.webp"
@@ -127,7 +127,7 @@ export default function Home() {
             A closer look at premium commercial spaces built to support the way businesses work, connect and
             grow.
           </p>
-          <VideoPopup videoUrl="https://www.youtube.com/embed/YOUR_REAL_VIDEO_LINK_HERE?autoplay=1" />
+          <VideoPopup videoUrl="https://www.youtube.com/embed/-WmSyoYEJfs?si=eRs9DhYgizv0B9nE" />
         </div>
       </section>
 

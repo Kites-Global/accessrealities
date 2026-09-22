@@ -1,9 +1,24 @@
 import Aminities from '../../components/Aminities';
 import Image from "next/image";
 import OurClient from "../../components/OurClients";
+import TowerCarousel from "../../components/TowerCarousel";
+import { DownloadFloorPlanForm } from "../../components/PopupForms.tsx";
+
+const towerImages = [
+    { src: "/img/gallary/1.jpg", alt: "1" },
+    { src: "/img/gallary/2.jpg", alt: "2" },
+    { src: "/img/gallary/3.jpg", alt: "3" },
+    { src: "/img/gallary/4.jpg", alt: "4" },
+    { src: "/img/gallary/5.jpg", alt: "5" },
+    { src: "/img/gallary/6.jpg", alt: "6" },
+    { src: "/img/gallary/7.jpg", alt: "7" },
+    { src: "/img/gallary/8.jpg", alt: "8" },
+    { src: "/img/gallary/9.jpg", alt: "9" },
+    { src: "/img/gallary/10.jpg", alt: "10" },
+
+];
 
 export default function SouthTower() {
-
     const ourClients = [
         { id: 1, src: "/img/st-1.png" },
         { id: 2, src: "/img/st-2.png" },
@@ -29,24 +44,21 @@ export default function SouthTower() {
             <section className="south-page tower-page-banner">
                 <div className="container">
                     <div className="row">
-
                         <div className="col-md-9 intro-cont">
-
                             <div className="intro-itm">
                                 <h1>South Tower</h1>
-                                {/* <h6>Creating Vibrant and Energetic Work Environments</h6> */}
                                 <p>
-                                    Set within one of Colombo’s most connected commercial corridors, Access Tower II gives
+                                    Set within one of Colombo s most connected commercial corridors, Access Tower II gives
                                     businesses a prestigious address with the convenience, visibility and daily accessibility modern
                                     organizations expect. Known as the South Tower, this G+29-storey Grade-A commercial office
                                     complex offers approximately 200,000 sq. ft. of state-of-the-art office space for companies
                                     seeking a premium workplace in Colombo. Supported by contemporary amenities and
                                     professional property management, Access Tower II creates an elevated corporate
                                     environment where businesses can grow, connect and operate with confidence, while enjoying
-                                    sweeping city views that extend across Beira Lake, the Indian Ocean and Colombo’s dynamic
-                                    skyline.</p>
+                                    sweeping city views that extend across Beira Lake, the Indian Ocean and Colombo s dynamic
+                                    skyline.
+                                </p>
                             </div>
-
                         </div>
                         <div className="col-md-3">
                             <div className="img-cont">
@@ -57,34 +69,19 @@ export default function SouthTower() {
                                     width={600}
                                     height={800}
                                 />
-                                <a href="#" className="btn-theme1 btn">Floor Plans</a>
-                                <a href="/contact" className="btn-theme1 btn">Inquire Now</a>
+                                <DownloadFloorPlanForm />
+                                {/* <a href="/pdf/10 FLOOR T2 (South Tower Floor Plan).pdf" target="_blank" rel="noopener noreferrer" className="btn-theme1 btn">Floor Plans</a> */}
+                                {/* <a href="/contact" className="btn-theme1 btn">Inquire Now</a> */}
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section className="snapshot-banner-sec" id="snapshot-banner-sec">
-                <Image
-                    src="/img/north-south-tower-snap-banner.jpg"
-                    alt="Access Realties"
-                    className="img-fluid d-none d-md-block"
-                    width={2000}
-                    height={486}
-                />
-
-                <Image
-                    src="/img/north-south-tower-snap-banner-m.jpg"
-                    alt="Access Realties"
-                    className="img-fluid d-block d-md-none"
-                    width={800}
-                    height={600}
-                />
-            </section>
+            {/* Replaced Snapshot Banner */}
+            <TowerCarousel images={towerImages} />
 
             <Aminities />
-
             <main>
                 <OurClient clients={ourClients} />
             </main>
