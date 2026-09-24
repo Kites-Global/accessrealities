@@ -10,7 +10,6 @@ export function OfficeInquiryForm() {
 
     return (
         <>
-
             {/* home page form */}
             <Modal className="modal" show={show} onHide={handleClose} tabIndex={-1}>
                 <Modal.Dialog className="modal-form">
@@ -129,7 +128,7 @@ export function VideoPopup({ videoUrl = "https://www.youtube.com/embed/YOUR_VIDE
                             <iframe
                                 src={videoUrl}
                                 title="Video Player"
-                                style={{ width: "100%", height: "450px",aspectRatio: "16/9", borderRadius: "8px" }}
+                                style={{ width: "100%", height: "450px", aspectRatio: "16/9", borderRadius: "8px" }}
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowFullScreen
                             ></iframe>
@@ -195,4 +194,41 @@ export function DownloadFloorPlanForm() {
             </a>
         </>
     );
+}
+
+export function WestTowerInquiryForm() {
+    const [show, setShow] = useState(false);
+
+    const handleOpen = () => setShow(true);
+    const handleClose = () => setShow(false);
+
+    return (
+        <>
+
+            <Modal className="modal" show={show} onHide={handleClose} tabIndex={-1}>
+                <Modal.Dialog className="modal-form">
+                    <Modal.Header className="modal-header" >
+                        <h5 className="modal-title">WEST TOWER
+                            INQUIRY</h5>
+
+                    </Modal.Header>
+                    <Modal.Body >
+
+                        <form action="">
+                            <input type="text" name="name" placeholder="Your name*" required />
+                            <input type="tel" name="phone" placeholder="Your mobile number*" required />
+                            <input type="email" name="email" placeholder="Your email*" required />
+                            <textarea name="requirements" id="" placeholder="Do you have specific requirements?" rows={6}></textarea>
+
+                            <button className="btn btn-primary">Submit</button>
+                        </form>
+                    </Modal.Body>
+
+                </Modal.Dialog>
+            </Modal>
+            <button type="button" className="btn btn-theme1 text-uppercase" onClick={() => handleOpen()}>
+                Inquire Now
+            </button>
+        </>
+    )
 }

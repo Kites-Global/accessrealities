@@ -45,7 +45,19 @@ const milestones: Milestone[] = [
       "Access Tower II commenced operations, adding Grade-A commercial office space to Colombo’s growing corporate skyline.",
   },
   {
-    year: "Present Day",
+    year: "2021",
+    title: "Groundbreaking Ceremony – West Tower",
+    description:
+      "The beginning of a new chapter in Access’ Union Place development.",
+  },
+  {
+    year: "2023",
+    title: "Opening Ceremony – West Tower",
+    description:
+      "Adding 285 parking bays and integrated commercial space to Colombo’s urban landscape.",
+  },
+  {
+    year: "2026",
     title: "A Landmark in Commercial Real Estate",
     description:
       "Access Towers continues to be recognized as a premium business address for modern organizations in the heart of Colombo.",
@@ -283,7 +295,7 @@ export default function Home() {
             <div className="col-md-11">
               <div className="facility-carousel-cont">
                 <EmblaCarousel />
-                
+
               </div>
             </div>
           </div>
