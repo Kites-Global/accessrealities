@@ -84,7 +84,7 @@ const towerImages = [
     { src: "/img/west-3.jpg", alt: "3" },
     { src: "/img/west-4.jpg", alt: "4" },
     { src: "/img/west-5.jpg", alt: "5" },
-    { src: "/img/west-6.jpg", alt: "6" },
+    // { src: "/img/west-6.jpg", alt: "6" },
 ];
 
 export default function WestTower() {
