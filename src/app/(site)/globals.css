@@ -16,6 +16,7 @@ body {
   color: var(--text-light);
   padding: 0.5rem 2.5rem;
   border-radius: 1rem;
+  border: none;
 }
 
 .btn-theme1:hover {
