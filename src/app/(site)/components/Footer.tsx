@@ -79,8 +79,8 @@ export default function Footer() {
                                 <li><i className="bi bi-envelope-fill"></i><Link href="mailto:fme@accessrealities.com"> fme@accessrealities.com </Link></li>
                             </ul>
                             <div className="socialies">
-                                <Link href="#"><i className="bi bi-linkedin"></i></Link>
-                                <Link href="https://www.youtube.com/@AccessHr"><i className="bi bi-youtube"></i></Link>
+                                <Link href="https://www.linkedin.com/company/access-realties-pvt-org" target="_blank"><i className="bi bi-linkedin"></i></Link>
+                                <Link href="https://www.youtube.com/@AccessHr" target="_blank"><i className="bi bi-youtube"></i></Link>
                             </div>
 
                         </div>

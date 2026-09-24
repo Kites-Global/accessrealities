@@ -1,7 +1,7 @@
 import Image from "next/image";
 import OurClient from "../../components/OurClients";
 import TowerCarousel from "../../components/TowerCarousel";
-import { DownloadFloorPlanForm } from "../../components/PopupForms";
+import { WestTowerInquiryForm } from "../../components/PopupForms";
 import { AmenityIcon } from "../../components/Aminities";
 
 const westTowerFeatures = [
@@ -79,12 +79,12 @@ const westTowerFeatures = [
 ];
 
 const towerImages = [
-    { src: "/img/facility-car-1.jpg", alt: "1" },
-    { src: "/img/facility-car-2.jpg", alt: "2" },
-    { src: "/img/facility-car-3.jpg", alt: "3" },
-    { src: "/img/facility-car-1.jpg", alt: "1" },
-    { src: "/img/facility-car-2.jpg", alt: "2" },
-    { src: "/img/facility-car-3.jpg", alt: "3" },
+    { src: "/img/west-1.jpg", alt: "1" },
+    { src: "/img/west-2.jpg", alt: "2" },
+    { src: "/img/west-3.jpg", alt: "3" },
+    { src: "/img/west-4.jpg", alt: "4" },
+    { src: "/img/west-5.jpg", alt: "5" },
+    { src: "/img/west-6.jpg", alt: "6" },
 ];
 
 export default function WestTower() {
@@ -134,9 +134,9 @@ export default function WestTower() {
                                     width={600}
                                     height={800}
                                 />
-                                <DownloadFloorPlanForm />
                                 {/* <a href="#" className="btn-theme1 btn">Floor Plans</a> */}
-                                {/* <a href="/contact" className="btn-theme1 btn">Inquire Now</a> */}
+                                {/* <a href="#" className="btn-theme1 btn">Inquire Now</a> */}
+                                <WestTowerInquiryForm />
                             </div>
                         </div>
                     </div>

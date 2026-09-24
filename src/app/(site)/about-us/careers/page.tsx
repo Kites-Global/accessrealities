@@ -1,8 +1,12 @@
 import Link from "next/link"
 
+const careers = [
+    { id: 1, title: "Marketing Executive", location: "Colombo" },
+    { id: 2, title: "Sales Associate", location: "Kandy" },
+    { id: 3, title: "Customer Service Representative", location: "Galle" }
+]
+
 function Careers() {
-
-
     return (
         <>
             <section className="experiences-page-banner careers-page-banner">
@@ -51,14 +55,17 @@ function Careers() {
                             <div className="vacancy-detail-cont">
                                 <h3 className="sub-page-title">Available Vacancies</h3>
                                 <div className="vacancy-list">
-                                    <Link href="#" className="vacancy-itm">
+                                    {careers.length < 0 ? careers.map((career) => (
+                                        <Link href="#" key={career.id} className="vacancy-itm">
+                                            <p>{career.title}</p>
+                                            <span>View</span>
+                                        </Link>
+                                    )) : <p className="no-vacancy text-secondary mt-1">No vacancies available at the moment.</p>}
+
+                                    {/* <Link href="#" className="vacancy-itm">
                                         <p>Marketing Executive</p>
                                         <span>View</span>
-                                    </Link>
-                                    <Link href="#" className="vacancy-itm">
-                                        <p>Marketing Executive</p>
-                                        <span>View</span>
-                                    </Link>
+                                    </Link> */}
 
                                 </div>
                             </div>
