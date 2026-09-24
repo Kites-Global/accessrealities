@@ -189,7 +189,7 @@ export function DownloadFloorPlanForm() {
                 </Modal.Dialog>
             </Modal>
 
-            <a href="#" onClick={handleOpen} className="btn-theme1 btn mt-2">
+            <a href="#" onClick={handleOpen} className="btn-theme1 mt-2">
                 Floor Plans <i className="bi bi-cloud-download" aria-hidden="true"></i>
             </a>
         </>
@@ -226,7 +226,7 @@ export function WestTowerInquiryForm() {
 
                 </Modal.Dialog>
             </Modal>
-            <button type="button" className="btn btn-theme1 text-uppercase" onClick={() => handleOpen()}>
+            <button type="button" className="btn-theme1 text-uppercase" onClick={() => handleOpen()}>
                 Inquire Now
             </button>
         </>
