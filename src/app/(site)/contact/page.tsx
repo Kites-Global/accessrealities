@@ -1,3 +1,4 @@
+import ContactForm from "./ContactForm"
 
 function Contact() {
     return (
@@ -17,22 +18,7 @@ function Contact() {
                     <div className="row">
                         <div className="col-lg-6">
                             <div className="form-itm c-margin">
-                                <form action="">
-                                    <div className="row">
-                                        <div className="col-lg-4"><label>Name</label></div>
-                                        <div className="col-lg-8"><input type="text" /></div>
-                                        <div className="col-lg-4"><label>Phone</label></div>
-                                        <div className="col-lg-8"><input type="tel" /></div>
-                                        <div className="col-lg-4"><label>Email Address</label></div>
-                                        <div className="col-lg-8"><input type="email" /></div>
-                                        <div className="col-lg-4"><label>Company/Organization</label></div>
-                                        <div className="col-lg-8"><input type="text" /></div>
-                                        <div className="col-lg-4"><label>Message</label></div>
-                                        <div className="col-lg-8"><textarea rows={4}></textarea></div>
-                                        <div className="col-lg-4"></div>
-                                        <div className="col-lg-8"><button type="submit" className="btn-theme1 btn">Submit</button></div>
-                                    </div>
-                                </form>
+                                <ContactForm />
                             </div>
                         </div>
                         <div className="col-lg-6">

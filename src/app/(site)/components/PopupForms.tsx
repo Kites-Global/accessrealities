@@ -1,12 +1,58 @@
 "use client"
 import { Modal } from "react-bootstrap"
-import { useState } from "react"
+import { useRef, useState } from "react"
+import type ReCAPTCHA from "react-google-recaptcha"
+import { InquiryStatusMessage, RecaptchaField, submitInquiry, type InquiryStatus } from "./InquiryFormShared"
 
 export function OfficeInquiryForm() {
     const [show, setShow] = useState(false);
+    const [status, setStatus] = useState<InquiryStatus>("idle");
+    const [error, setError] = useState("");
+    const recaptchaRef = useRef<ReCAPTCHA>(null);
 
     const handleOpen = () => setShow(true);
-    const handleClose = () => setShow(false);
+    const handleClose = () => {
+        setShow(false);
+        setStatus("idle");
+        setError("");
+        recaptchaRef.current?.reset();
+    };
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        const token = recaptchaRef.current?.getValue();
+        if (!token) {
+            setStatus("error");
+            setError("Please complete the reCAPTCHA");
+            return;
+        }
+
+        const form = new FormData(e.currentTarget);
+        setStatus("submitting");
+        setError("");
+
+        const result = await submitInquiry({
+            type: "office",
+            businessName: form.get("business-name"),
+            name: form.get("name"),
+            phone: form.get("phone"),
+            natureOfBusiness: form.get("nature-of-business"),
+            email: form.get("email"),
+            size: form.get("size"),
+            requirements: form.get("requirements"),
+            downloadFloorPlan: form.get("form-type") === "download-floor-plan",
+            recaptchaToken: token,
+        });
+
+        recaptchaRef.current?.reset();
+        if (result.ok) {
+            setStatus("success");
+            e.currentTarget.reset();
+        } else {
+            setStatus("error");
+            setError(result.error);
+        }
+    };
 
     return (
         <>
@@ -20,7 +66,7 @@ export function OfficeInquiryForm() {
                     </Modal.Header>
                     <Modal.Body >
 
-                        <form action="">
+                        <form onSubmit={handleSubmit}>
                             <input type="text" name="business-name" placeholder="Name of your business*" required />
                             <input type="text" name="name" placeholder="Your name*" required />
                             <input type="tel" name="phone" placeholder="Your mobile number*" required />
@@ -37,7 +83,11 @@ export function OfficeInquiryForm() {
                                 <input type="checkbox" name="form-type" value="download-floor-plan" required />
                                 <label htmlFor="form-type">Download the floor plan pdf</label>
                             </div>
-                            <button className="btn btn-primary">Submit</button>
+                            <RecaptchaField recaptchaRef={recaptchaRef} />
+                            <InquiryStatusMessage status={status} error={error} />
+                            <button className="btn btn-primary" disabled={status === "submitting"}>
+                                {status === "submitting" ? "Sending..." : "Submit"}
+                            </button>
                         </form>
                     </Modal.Body>
 
@@ -52,9 +102,50 @@ export function OfficeInquiryForm() {
 
 export function FacilitiesInquiryForm() {
     const [show, setShow] = useState(false);
+    const [status, setStatus] = useState<InquiryStatus>("idle");
+    const [error, setError] = useState("");
+    const recaptchaRef = useRef<ReCAPTCHA>(null);
 
     const handleOpen = () => setShow(true);
-    const handleClose = () => setShow(false);
+    const handleClose = () => {
+        setShow(false);
+        setStatus("idle");
+        setError("");
+        recaptchaRef.current?.reset();
+    };
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        const token = recaptchaRef.current?.getValue();
+        if (!token) {
+            setStatus("error");
+            setError("Please complete the reCAPTCHA");
+            return;
+        }
+
+        const form = new FormData(e.currentTarget);
+        setStatus("submitting");
+        setError("");
+
+        const result = await submitInquiry({
+            type: "facilities",
+            name: form.get("name"),
+            phone: form.get("phone"),
+            nature: form.get("nature"),
+            email: form.get("email"),
+            requirements: form.get("requirements"),
+            recaptchaToken: token,
+        });
+
+        recaptchaRef.current?.reset();
+        if (result.ok) {
+            setStatus("success");
+            e.currentTarget.reset();
+        } else {
+            setStatus("error");
+            setError(result.error);
+        }
+    };
 
     return (
         <>
@@ -68,7 +159,7 @@ export function FacilitiesInquiryForm() {
                     </Modal.Header>
                     <Modal.Body >
 
-                        <form action="">
+                        <form onSubmit={handleSubmit}>
                             <input type="text" name="name" placeholder="Your name*" required />
                             <input type="tel" name="phone" placeholder="Your mobile number*" required />
 
@@ -81,7 +172,11 @@ export function FacilitiesInquiryForm() {
                             <input type="email" name="email" placeholder="Your email*" required />
                             <textarea name="requirements" id="" placeholder="Do you have specific requirements?" rows={6}></textarea>
 
-                            <button className="btn btn-primary">Submit</button>
+                            <RecaptchaField recaptchaRef={recaptchaRef} />
+                            <InquiryStatusMessage status={status} error={error} />
+                            <button className="btn btn-primary" disabled={status === "submitting"}>
+                                {status === "submitting" ? "Sending..." : "Submit"}
+                            </button>
                         </form>
                     </Modal.Body>
 
@@ -198,9 +293,49 @@ export function DownloadFloorPlanForm() {
 
 export function WestTowerInquiryForm() {
     const [show, setShow] = useState(false);
+    const [status, setStatus] = useState<InquiryStatus>("idle");
+    const [error, setError] = useState("");
+    const recaptchaRef = useRef<ReCAPTCHA>(null);
 
     const handleOpen = () => setShow(true);
-    const handleClose = () => setShow(false);
+    const handleClose = () => {
+        setShow(false);
+        setStatus("idle");
+        setError("");
+        recaptchaRef.current?.reset();
+    };
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        const token = recaptchaRef.current?.getValue();
+        if (!token) {
+            setStatus("error");
+            setError("Please complete the reCAPTCHA");
+            return;
+        }
+
+        const form = new FormData(e.currentTarget);
+        setStatus("submitting");
+        setError("");
+
+        const result = await submitInquiry({
+            type: "west-tower",
+            name: form.get("name"),
+            phone: form.get("phone"),
+            email: form.get("email"),
+            requirements: form.get("requirements"),
+            recaptchaToken: token,
+        });
+
+        recaptchaRef.current?.reset();
+        if (result.ok) {
+            setStatus("success");
+            e.currentTarget.reset();
+        } else {
+            setStatus("error");
+            setError(result.error);
+        }
+    };
 
     return (
         <>
@@ -214,13 +349,17 @@ export function WestTowerInquiryForm() {
                     </Modal.Header>
                     <Modal.Body >
 
-                        <form action="">
+                        <form onSubmit={handleSubmit}>
                             <input type="text" name="name" placeholder="Your name*" required />
                             <input type="tel" name="phone" placeholder="Your mobile number*" required />
                             <input type="email" name="email" placeholder="Your email*" required />
                             <textarea name="requirements" id="" placeholder="Do you have specific requirements?" rows={6}></textarea>
 
-                            <button className="btn btn-primary">Submit</button>
+                            <RecaptchaField recaptchaRef={recaptchaRef} />
+                            <InquiryStatusMessage status={status} error={error} />
+                            <button className="btn btn-primary" disabled={status === "submitting"}>
+                                {status === "submitting" ? "Sending..." : "Submit"}
+                            </button>
                         </form>
                     </Modal.Body>
 
