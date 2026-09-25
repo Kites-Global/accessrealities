@@ -1,7 +1,8 @@
-import { S3Client, PutObjectCommand, DeleteObjectCommand, GetObjectCommand } from "@aws-sdk/client-s3";
+import { S3Client, PutObjectCommand, DeleteObjectCommand, GetObjectCommand, HeadObjectCommand } from "@aws-sdk/client-s3";
 import path from "node:path";
 import { randomUUID } from "node:crypto";
 import { publicUrlFor, keyFromPublicUrl } from "./media";
+import { floorPlanKey, type Tower } from "@/lib/floorPlans";
 
 export type UploadFolder = "news" | "cv" | "content";
 
@@ -53,6 +54,31 @@ export async function saveUpload(file: File, folder: UploadFolder): Promise<stri
   );
 
   return publicUrlFor(key);
+}
+
+/** Overwrites the tower's floor plan PDF at its fixed key — one object per tower, no DB record. */
+export async function saveFloorPlan(file: File, tower: Tower): Promise<void> {
+  const bytes = Buffer.from(await file.arrayBuffer());
+  await getClient().send(
+    new PutObjectCommand({
+      Bucket: BUCKET,
+      Key: floorPlanKey(tower),
+      Body: bytes,
+      ContentType: "application/pdf",
+    }),
+  );
+}
+
+/** Whether a tower's floor plan PDF has been uploaded yet — used to show status in the admin UI. */
+export async function floorPlanExists(tower: Tower): Promise<boolean> {
+  try {
+    await getClient().send(new HeadObjectCommand({ Bucket: BUCKET, Key: floorPlanKey(tower) }));
+    return true;
+  } catch (error) {
+    const name = (error as { name?: string }).name;
+    if (name === "NotFound" || name === "NoSuchKey") return false;
+    throw error;
+  }
 }
 
 export type UploadObject = {

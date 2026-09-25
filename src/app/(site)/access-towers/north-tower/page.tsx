@@ -63,7 +63,7 @@ export default function NorthTower() {
                                     width={600}
                                     height={800}
                                 />
-                                <DownloadFloorPlanForm />
+                                <DownloadFloorPlanForm tower="north" />
                                 {/* <a href="#" rel="noopener noreferrer" className="btn-theme1 btn">
                                     Floor Plans <i className="bi bi-cloud-download" aria-hidden="true"></i>
                                 </a> */}

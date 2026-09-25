@@ -1,4 +1,5 @@
 import { SESClient, SendEmailCommand } from "@aws-sdk/client-ses";
+import { towerLabel, type Tower } from "@/lib/floorPlans";
 
 const REGION = process.env.AWS_REGION;
 const FROM_EMAIL = process.env.SES_FROM_EMAIL;
@@ -60,6 +61,34 @@ export async function sendInquiryEmail(options: {
         Body: {
           Html: { Data: `<table cellspacing="0" cellpadding="0">${rowsHtml}</table>`, Charset: "UTF-8" },
           Text: { Data: rowsText, Charset: "UTF-8" },
+        },
+      },
+    }),
+  );
+}
+
+/**
+ * Emails a visitor their temporary floor plan download link.
+ * Note: while the SES account is in sandbox mode, `to` must itself be a verified address.
+ */
+export async function sendFloorPlanLinkEmail(options: { to: string; tower: Tower; link: string }): Promise<void> {
+  if (!FROM_EMAIL) {
+    throw new Error("SES is not configured. Set SES_FROM_EMAIL.");
+  }
+
+  const label = towerLabel(options.tower);
+  const html = `<p>Thanks for your interest in ${escapeHtml(label)}.</p><p><a href="${escapeHtml(options.link)}">Download the floor plan (PDF)</a></p><p>This link expires in 30 minutes. If it has expired, please request a new one from the website.</p>`;
+  const text = `Thanks for your interest in ${label}.\n\nDownload the floor plan: ${options.link}\n\nThis link expires in 30 minutes. If it has expired, please request a new one from the website.`;
+
+  await getClient().send(
+    new SendEmailCommand({
+      Source: FROM_EMAIL,
+      Destination: { ToAddresses: [options.to] },
+      Message: {
+        Subject: { Data: `${label} Floor Plan — Download Link`, Charset: "UTF-8" },
+        Body: {
+          Html: { Data: html, Charset: "UTF-8" },
+          Text: { Data: text, Charset: "UTF-8" },
         },
       },
     }),

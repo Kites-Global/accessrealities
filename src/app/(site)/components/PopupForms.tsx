@@ -2,7 +2,8 @@
 import { Modal } from "react-bootstrap"
 import { useRef, useState } from "react"
 import type ReCAPTCHA from "react-google-recaptcha"
-import { InquiryStatusMessage, RecaptchaField, submitInquiry, type InquiryStatus } from "./InquiryFormShared"
+import { InquiryStatusMessage, RecaptchaField, submitInquiry, submitFloorPlanRequest, type InquiryStatus } from "./InquiryFormShared"
+import type { Tower } from "@/lib/floorPlans"
 
 export function OfficeInquiryForm() {
     const [show, setShow] = useState(false);
@@ -235,15 +236,53 @@ export function VideoPopup({ videoUrl = "https://www.youtube.com/embed/YOUR_VIDE
     );
 }
 
-export function DownloadFloorPlanForm() {
+export function DownloadFloorPlanForm({ tower }: { tower: Tower }) {
     const [show, setShow] = useState(false);
+    const [status, setStatus] = useState<InquiryStatus>("idle");
+    const [error, setError] = useState("");
+    const recaptchaRef = useRef<ReCAPTCHA>(null);
 
     const handleOpen = (e: React.MouseEvent<HTMLAnchorElement>) => {
         e.preventDefault();
         setShow(true);
     };
 
-    const handleClose = () => setShow(false);
+    const handleClose = () => {
+        setShow(false);
+        setStatus("idle");
+        setError("");
+        recaptchaRef.current?.reset();
+    };
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        const token = recaptchaRef.current?.getValue();
+        if (!token) {
+            setStatus("error");
+            setError("Please complete the reCAPTCHA");
+            return;
+        }
+
+        const form = new FormData(e.currentTarget);
+        setStatus("submitting");
+        setError("");
+
+        const result = await submitFloorPlanRequest({
+            tower,
+            name: form.get("name"),
+            email: form.get("email"),
+            recaptchaToken: token,
+        });
+
+        recaptchaRef.current?.reset();
+        if (result.ok) {
+            setStatus("success");
+            e.currentTarget.reset();
+        } else {
+            setStatus("error");
+            setError(result.error);
+        }
+    };
 
     return (
         <>
@@ -261,7 +300,7 @@ export function DownloadFloorPlanForm() {
                     </Modal.Header>
 
                     <Modal.Body>
-                        <form action="">
+                        <form onSubmit={handleSubmit}>
                             <input
                                 type="text"
                                 name="name"
@@ -276,8 +315,15 @@ export function DownloadFloorPlanForm() {
                                 required
                             />
 
-                            <button className="btn btn-primary">
-                                Submit
+                            <RecaptchaField recaptchaRef={recaptchaRef} />
+                            <InquiryStatusMessage
+                                status={status}
+                                error={error}
+                                successMessage="Check your email — we've sent you a link to download the floor plan. It expires in 30 minutes."
+                            />
+
+                            <button className="btn btn-primary" disabled={status === "submitting"}>
+                                {status === "submitting" ? "Sending..." : "Submit"}
                             </button>
                         </form>
                     </Modal.Body>

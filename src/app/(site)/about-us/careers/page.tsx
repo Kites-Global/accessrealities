@@ -78,7 +78,7 @@ export default async function Careers({
                                                 <input id="file-upload" name="cv" type="file" accept=".pdf,application/pdf" required />
                                                 <label htmlFor="file-upload">Choose file</label>
                                             </div>
-                                            <span className="file-upload-info">Please upload your CV in PDF format only.</span>
+                                            <span className="file-upload-info">Please upload your CV in PDF format only (max 5MB).</span>
                                         </div>
                                         <div className="col-lg-4"></div>
                                         <div className="col-lg-8"><button type="submit" className="btn-theme1 btn">Submit</button></div>

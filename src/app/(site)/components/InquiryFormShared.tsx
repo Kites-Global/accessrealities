@@ -5,10 +5,9 @@ export const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? 
 
 export type InquiryStatus = "idle" | "submitting" | "success" | "error";
 
-/** Posts an inquiry payload to the SES-backed API route. */
-export async function submitInquiry(payload: Record<string, unknown>): Promise<{ ok: true } | { ok: false; error: string }> {
+async function postJson(url: string, payload: Record<string, unknown>): Promise<{ ok: true } | { ok: false; error: string }> {
   try {
-    const res = await fetch("/api/inquiries", {
+    const res = await fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
@@ -23,9 +22,27 @@ export async function submitInquiry(payload: Record<string, unknown>): Promise<{
   }
 }
 
-export function InquiryStatusMessage({ status, error }: { status: InquiryStatus; error: string }) {
+/** Posts an inquiry payload to the SES-backed API route. */
+export function submitInquiry(payload: Record<string, unknown>) {
+  return postJson("/api/inquiries", payload);
+}
+
+/** Requests a temporary, emailed floor plan download link. */
+export function submitFloorPlanRequest(payload: Record<string, unknown>) {
+  return postJson("/api/floor-plans/request", payload);
+}
+
+export function InquiryStatusMessage({
+  status,
+  error,
+  successMessage = "Thank you — your inquiry has been sent. We’ll be in touch soon.",
+}: {
+  status: InquiryStatus;
+  error: string;
+  successMessage?: string;
+}) {
   if (status === "success") {
-    return <div className="alert alert-success mt-3">Thank you — your inquiry has been sent. We&apos;ll be in touch soon.</div>;
+    return <div className="alert alert-success mt-3">{successMessage}</div>;
   }
   if (status === "error") {
     return <div className="alert alert-danger mt-3">{error}</div>;

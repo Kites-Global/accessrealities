@@ -5,6 +5,8 @@ import { prisma } from "@/lib/admin/db";
 import { applicationSchema } from "@/lib/admin/validators";
 import { saveUpload } from "@/lib/admin/storage";
 
+const MAX_CV_BYTES = 5 * 1024 * 1024;
+
 export async function submitApplication(formData: FormData) {
   const parsed = applicationSchema.safeParse({
     vacancyId: formData.get("vacancyId"),
@@ -22,6 +24,9 @@ export async function submitApplication(formData: FormData) {
   }
   if (cv.type !== "application/pdf") {
     throw new Error("CV must be a PDF file");
+  }
+  if (cv.size > MAX_CV_BYTES) {
+    throw new Error(`CV must be under ${Math.round(MAX_CV_BYTES / (1024 * 1024))}MB`);
   }
 
   const cvUrl = await saveUpload(cv, "cv");

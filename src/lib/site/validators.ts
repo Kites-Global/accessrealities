@@ -52,3 +52,12 @@ export const inquirySchema = z.discriminatedUnion("type", [
 ]);
 
 export type InquiryInput = z.infer<typeof inquirySchema>;
+
+export const floorPlanRequestSchema = z.object({
+  tower: z.enum(["north", "south"]),
+  name: z.string().trim().min(1, "Your name is required"),
+  email: z.string().trim().email("Enter a valid email"),
+  recaptchaToken,
+});
+
+export type FloorPlanRequestInput = z.infer<typeof floorPlanRequestSchema>;
