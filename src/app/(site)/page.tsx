@@ -377,6 +377,30 @@ export default function Home() {
               </div>
             </div>
           </div>
+
+          {/* Review 3 */}
+          <div className="row wht-thy-say-row justify-content-start">
+            <div className="col-md-6">
+              <div className="wht-thy-say-itm">
+                <div className="img-cont">
+                  <div className="logo-box">
+                    <Image src="/img/t-1.jpg" alt="Insee cement" className="img-fluid" width={200} height={200} />
+                  </div>
+                </div>
+                <div className="info-cont info-cont-left">
+                  <h5>&ldquo;We are very pleased to secure a well-located office space at Access Towers
+                    <span className="inside-txt"> which has transformed our daily operations by boosting team productivity, reducing administrative burdens, and projecting a professional image.</span>
+                    &rdquo;</h5>
+                  {/* <p className="hide-mobile">
+                    Which has transformed our daily operations by boosting team productivity, reducing administrative burdens, and projecting a professional image.
+                  </p> */}
+                  <p>
+                    <br />
+                    — Ruwan Malawarage DGM - Human Resources & Administration</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section >
 
