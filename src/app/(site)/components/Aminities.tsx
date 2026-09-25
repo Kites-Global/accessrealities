@@ -105,7 +105,7 @@ export default function Aminities({ items = defaultAmenities }: AminitiesProps) 
         <section className="amenities-sec">
             <div className="container">
                 <div className="intro-cont">
-                    <h2>Amenities</h2>
+                    <h2>Features</h2>
                     <p>
                         Designed around the demands of today’s workplace, our amenities provide the comfort,
                         reliability and operational support businesses need to perform with confidence every day.

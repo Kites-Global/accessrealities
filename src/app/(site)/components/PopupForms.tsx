@@ -43,7 +43,7 @@ export function OfficeInquiryForm() {
 
                 </Modal.Dialog>
             </Modal>
-            <button type="button" className="btn btn-theme1 text-uppercase" onClick={() => handleOpen()}>
+            <button type="button" className="btn-theme1 text-uppercase" onClick={() => handleOpen()}>
                 Inquire Now
             </button>
         </>
@@ -87,7 +87,7 @@ export function FacilitiesInquiryForm() {
 
                 </Modal.Dialog>
             </Modal>
-            <button type="button" className="btn btn-theme1 text-uppercase" onClick={() => handleOpen()}>
+            <button type="button" className="btn-theme1 text-uppercase" onClick={() => handleOpen()}>
                 Inquire Now
             </button>
         </>

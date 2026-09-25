@@ -98,7 +98,7 @@ export default function facilities() {
       <section className="facilities-page-banner">
         <div className="intro-itm">
           <h1>Facilities</h1>
-          {/* <h6>Everything you need, within one connected business address.</h6> */}
+          <h6>Everything you need, within one connected business address.</h6>
           {/* <a href="/contact" className="btn-theme1 btn">Inquire Now</a> */}
           <FacilitiesInquiryForm />
         </div>
