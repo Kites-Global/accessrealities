@@ -30,7 +30,7 @@ function Contact() {
                                         <div className="col-lg-4"><label>Message</label></div>
                                         <div className="col-lg-8"><textarea rows={4}></textarea></div>
                                         <div className="col-lg-4"></div>
-                                        <div className="col-lg-8"><button type="submit" className="btn-theme1 btn">Submit</button></div>
+                                        <div className="col-lg-8"><button type="submit" className="btn-theme1">Submit</button></div>
                                     </div>
                                 </form>
                             </div>
