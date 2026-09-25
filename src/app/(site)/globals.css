@@ -592,6 +592,10 @@ header {
     padding-top: 2rem;
   }
 
+  .inside-txt {
+    font-weight: 100;
+  }
+
   .intro-cont {
     color: #fff;
     margin-bottom: 2rem;
