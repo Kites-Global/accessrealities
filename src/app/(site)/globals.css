@@ -1014,6 +1014,7 @@ footer {
       a {
         color: var(--primary-color);
         text-decoration: none;
+        font-weight: bold;
       }
 
       p {
@@ -2043,7 +2044,7 @@ h6 {
     padding: 3rem 0;
 
     .amenity-row .amenity-itm .c-size {
-      width: 120px;
+      width: 100px;
     }
   }
 

@@ -46,7 +46,7 @@ function Careers() {
                                         <span className="file-upload-info">Please upload your CV in PDF format only.</span>
                                     </div>
                                     <div className="col-lg-4"></div>
-                                    <div className="col-lg-8"><button type="submit" className="btn-theme1 btn">Submit</button></div>
+                                    <div className="col-lg-8"><button type="submit" className="btn-theme1">Submit</button></div>
                                 </form>
 
                             </div>

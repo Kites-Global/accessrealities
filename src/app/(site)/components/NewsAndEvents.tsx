@@ -37,7 +37,7 @@ export default function NewsEvents({ data }: { data: NewsEventData }) {
             >
                 {data.desc}
             </p>
-            <a href={`/news-and-events/${data.id}`} className="btn-theme1 btn">
+            <a href={`/news-and-events/${data.id}`} className="btn-theme1">
                 read more
             </a>
         </div>
