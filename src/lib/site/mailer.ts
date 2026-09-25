@@ -1,4 +1,5 @@
-import { SESClient, SendEmailCommand } from "@aws-sdk/client-ses";
+import { SESClient, SendEmailCommand, SendRawEmailCommand } from "@aws-sdk/client-ses";
+import { randomUUID } from "node:crypto";
 import { towerLabel, type Tower } from "@/lib/floorPlans";
 
 const REGION = process.env.AWS_REGION;
@@ -65,6 +66,61 @@ export async function sendInquiryEmail(options: {
       },
     }),
   );
+}
+
+function encodeHeaderValue(value: string): string {
+  // RFC 2047 encoded-word — needed since raw headers below aren't handled by SES the way
+  // SendEmailCommand's structured Subject field is.
+  return `=?UTF-8?B?${Buffer.from(value, "utf8").toString("base64")}?=`;
+}
+
+function base64Wrapped(data: Buffer | string): string {
+  const b64 = Buffer.isBuffer(data) ? data.toString("base64") : Buffer.from(data, "utf8").toString("base64");
+  return b64.replace(/(.{76})/g, "$1\r\n");
+}
+
+/**
+ * Sends a notification email with a file attached (e.g. a job application's CV).
+ * Uses SES's raw-message API since the structured SendEmailCommand has no attachment support.
+ */
+export async function sendEmailWithAttachment(options: {
+  subject: string;
+  fields: Array<{ label: string; value: string }>;
+  replyTo: string;
+  attachment: { filename: string; contentType: string; content: Buffer };
+}): Promise<void> {
+  if (!FROM_EMAIL || !TO_EMAIL) {
+    throw new Error("SES is not configured. Set SES_FROM_EMAIL and SES_TO_EMAIL.");
+  }
+
+  const bodyText = options.fields.map((f) => `${f.label}: ${f.value}`).join("\n");
+  const boundary = `----=_Part_${randomUUID()}`;
+  const safeFilename = options.attachment.filename.replace(/["\r\n]/g, "_");
+
+  const message = [
+    `From: ${FROM_EMAIL}`,
+    `To: ${TO_EMAIL}`,
+    `Reply-To: ${options.replyTo}`,
+    `Subject: ${encodeHeaderValue(options.subject)}`,
+    "MIME-Version: 1.0",
+    `Content-Type: multipart/mixed; boundary="${boundary}"`,
+    "",
+    `--${boundary}`,
+    "Content-Type: text/plain; charset=UTF-8",
+    "Content-Transfer-Encoding: base64",
+    "",
+    base64Wrapped(bodyText),
+    `--${boundary}`,
+    `Content-Type: ${options.attachment.contentType}; name="${safeFilename}"`,
+    "Content-Transfer-Encoding: base64",
+    `Content-Disposition: attachment; filename="${safeFilename}"`,
+    "",
+    base64Wrapped(options.attachment.content),
+    `--${boundary}--`,
+    "",
+  ].join("\r\n");
+
+  await getClient().send(new SendRawEmailCommand({ RawMessage: { Data: Buffer.from(message, "utf8") } }));
 }
 
 /**

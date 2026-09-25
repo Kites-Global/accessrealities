@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { prisma } from "@/lib/admin/db";
-import { submitApplication } from "@/lib/admin/actions/applications";
+import ApplicationForm from "./ApplicationForm";
 
 export const dynamic = "force-dynamic";
 
@@ -19,7 +19,7 @@ export default async function Careers({
     });
 
     // Only honor the preselect if it's actually one of the open vacancies.
-    const selectedVacancyId = vacancies.some((v) => v.id === vacancy) ? vacancy : "";
+    const selectedVacancyId = vacancies.some((v) => v.id === vacancy) ? vacancy! : "";
 
     return (
         <>
@@ -49,40 +49,7 @@ export default async function Careers({
                                         There are no open positions to apply for right now. Please check back later.
                                     </p>
                                 ) : (
-                                    <form action={submitApplication}>
-                                        <div className="row">
-                                            <div className="col-lg-4"><label>Name</label></div>
-                                            <div className="col-lg-8"><input name="name" type="text" required /></div>
-                                            <div className="col-lg-4"><label>Phone Number</label></div>
-                                            <div className="col-lg-8"><input name="phone" type="tel" required /></div>
-                                            <div className="col-lg-4"><label>Email Address</label></div>
-                                            <div className="col-lg-8"><input name="email" type="email" required /></div>
-                                            <div className="col-lg-4"><label>Position applied for</label></div>
-                                            <div className="col-lg-8">
-                                                <select name="vacancyId" defaultValue={selectedVacancyId} required>
-                                                    <option value="" disabled>
-                                                        Select a position
-                                                    </option>
-                                                    {vacancies.map((v) => (
-                                                        <option key={v.id} value={v.id}>
-                                                            {v.title}
-                                                            {v.location ? ` — ${v.location}` : ""}
-                                                        </option>
-                                                    ))}
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div className="col-lg-4"></div>
-                                        <div className="col-lg-8">
-                                            <div className="file-upload">
-                                                <input id="file-upload" name="cv" type="file" accept=".pdf,application/pdf" required />
-                                                <label htmlFor="file-upload">Choose file</label>
-                                            </div>
-                                            <span className="file-upload-info">Please upload your CV in PDF format only (max 5MB).</span>
-                                        </div>
-                                        <div className="col-lg-4"></div>
-                                        <div className="col-lg-8"><button type="submit" className="btn-theme1 btn">Submit</button></div>
-                                    </form>
+                                    <ApplicationForm vacancies={vacancies} selectedVacancyId={selectedVacancyId} />
                                 )}
                             </div>
                         </div>

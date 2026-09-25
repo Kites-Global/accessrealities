@@ -17,7 +17,8 @@ export default function ContactForm() {
             return;
         }
 
-        const form = new FormData(e.currentTarget);
+        const formEl = e.currentTarget;
+        const form = new FormData(formEl);
         setStatus("submitting");
         setError("");
 
@@ -34,7 +35,7 @@ export default function ContactForm() {
         recaptchaRef.current?.reset();
         if (result.ok) {
             setStatus("success");
-            e.currentTarget.reset();
+            formEl.reset();
         } else {
             setStatus("error");
             setError(result.error);

@@ -65,7 +65,6 @@ export default async function AdminCareersListPage({
       orderBy: vacancyOrderBy(sort, dir),
       skip: (page - 1) * PAGE_SIZE,
       take: PAGE_SIZE,
-      include: { _count: { select: { applications: true } } },
     }),
     prisma.vacancy.count({ where }),
   ]);
@@ -113,7 +112,6 @@ export default async function AdminCareersListPage({
                   <th>
                     <SortHeader label="Status" sortKey="isOpen" params={params} />
                   </th>
-                  <th>Applicants</th>
                   <th></th>
                 </tr>
               </thead>
@@ -132,11 +130,6 @@ export default async function AdminCareersListPage({
                         ]}
                         onChange={setVacancyStatus}
                       />
-                    </td>
-                    <td>
-                      <Link href={`/admin/careers/${vacancy.id}/applications`}>
-                        {vacancy._count.applications}
-                      </Link>
                     </td>
                     <td>
                       <div className="admin-actions">
