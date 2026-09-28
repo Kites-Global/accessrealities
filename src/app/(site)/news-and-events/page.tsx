@@ -28,7 +28,7 @@ export default async function NewsAndEventsPage() {
                 <div className="intro-itm">
                     <div className="container">
                         <h1>News & Events</h1>
-                        <h6>Connect with Access Realties for office space enquiries, tenant support, facility information or general assistance. Our team is here to help you find the right solution.</h6>
+                        <h6>Stay updated with the latest news, events and developments from Access Realties.</h6>
                     </div>
                 </div>
             </section>
