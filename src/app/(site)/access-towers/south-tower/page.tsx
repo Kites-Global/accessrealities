@@ -69,7 +69,7 @@ export default function SouthTower() {
                                     width={600}
                                     height={800}
                                 />
-                                <DownloadFloorPlanForm />
+                                <DownloadFloorPlanForm tower="south" />
                                 {/* <a href="/pdf/10 FLOOR T2 (South Tower Floor Plan).pdf" target="_blank" rel="noopener noreferrer" className="btn-theme1 btn">Floor Plans</a> */}
                                 {/* <a href="/contact" className="btn-theme1 btn">Inquire Now</a> */}
                             </div>

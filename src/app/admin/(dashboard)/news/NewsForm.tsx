@@ -17,10 +17,12 @@ type NewsFormProps = {
     published: boolean;
     imageUrl: string | null;
   };
+  /** Pre-filled <input type="date"> value (yyyy-mm-dd) — today's date for a new post. */
+  defaultPublishedAt: string;
   submitLabel: string;
 };
 
-export default function NewsForm({ action, defaultValues, submitLabel }: NewsFormProps) {
+export default function NewsForm({ action, defaultValues, defaultPublishedAt, submitLabel }: NewsFormProps) {
   const [imageError, setImageError] = useState<string | null>(null);
   const [previewUrl, setPreviewUrl] = useState<string | null>(defaultValues?.imageUrl ?? null);
   const objectUrlRef = useRef<string | null>(null);
@@ -78,6 +80,9 @@ export default function NewsForm({ action, defaultValues, submitLabel }: NewsFor
     <form action={action} className="admin-form">
       <label htmlFor="title">Title</label>
       <input id="title" name="title" type="text" defaultValue={defaultValues?.title} required />
+
+      <label htmlFor="publishedAt">Date</label>
+      <input id="publishedAt" name="publishedAt" type="date" defaultValue={defaultPublishedAt} required />
 
       <label htmlFor="excerpt">Excerpt</label>
       <textarea

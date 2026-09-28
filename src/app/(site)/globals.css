@@ -592,9 +592,11 @@ header {
     padding-top: 2rem;
   }
 
+
   .inside-txt {
     font-weight: 100;
   }
+
 
   .intro-cont {
     color: #fff;
@@ -1951,6 +1953,41 @@ h6 {
     font-weight: 300;
     line-height: 1.8;
   }
+
+
+  /* Rich-text body saved from the admin editor. */
+  .news-detail-content {
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 0.5rem;
+      margin: 1rem 0;
+    }
+
+    ul,
+    ol {
+      color: #737373;
+      font-weight: 300;
+      line-height: 1.8;
+      padding-left: 1.25rem;
+    }
+
+    a {
+      color: #c8202f;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: #fff;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+  }
+
 }
 
 /* REFACTOR */

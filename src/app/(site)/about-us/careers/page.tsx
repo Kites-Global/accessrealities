@@ -1,12 +1,26 @@
-import Link from "next/link"
+import Link from "next/link";
+import { prisma } from "@/lib/admin/db";
+import ApplicationForm from "./ApplicationForm";
 
-const careers = [
-    { id: 1, title: "Marketing Executive", location: "Colombo" },
-    { id: 2, title: "Sales Associate", location: "Kandy" },
-    { id: 3, title: "Customer Service Representative", location: "Galle" }
-]
+export const dynamic = "force-dynamic";
 
-function Careers() {
+type SearchParams = { vacancy?: string; applied?: string };
+
+export default async function Careers({
+    searchParams,
+}: {
+    searchParams: Promise<SearchParams>;
+}) {
+    const { vacancy, applied } = await searchParams;
+
+    const vacancies = await prisma.vacancy.findMany({
+        where: { isOpen: true },
+        orderBy: { createdAt: "desc" },
+    });
+
+    // Only honor the preselect if it's actually one of the open vacancies.
+    const selectedVacancyId = vacancies.some((v) => v.id === vacancy) ? vacancy! : "";
+
     return (
         <>
             <section className="experiences-page-banner careers-page-banner">
@@ -25,55 +39,36 @@ function Careers() {
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-6 order-2 order-md-1">
-                            <div className="form-itm">
-                                <form action="">
-                                    <div className="row">
-                                        <div className="col-lg-4"><label>Name</label></div>
-                                        <div className="col-lg-8"><input type="text" /></div>
-                                        <div className="col-lg-4"><label>Phone Number</label></div>
-                                        <div className="col-lg-8"><input type="tel" /></div>
-                                        <div className="col-lg-4"><label>Email Address</label></div>
-                                        <div className="col-lg-8"><input type="email" /></div>
-                                        <div className="col-lg-4"><label>Position applied for</label></div>
-                                        <div className="col-lg-8"><input type="text" /></div>
-                                    </div>
-                                    <div className="col-lg-4"></div>
-                                    <div className="col-lg-8">
-                                        <div className="file-upload">
-                                            <input id="file-upload" type="file" accept=".pdf" />
-                                            <label>Choose file</label>
-                                        </div>
-                                        <span className="file-upload-info">Please upload your CV in PDF format only.</span>
-                                    </div>
-                                    <div className="col-lg-4"></div>
-                                    <div className="col-lg-8"><button type="submit" className="btn-theme1">Submit</button></div>
-                                </form>
-
+                            <div className="form-itm" id="apply">
+                                {applied === "1" ? (
+                                    <p className="text-success mb-0">
+                                        Thanks for applying! We&apos;ve received your application and will be in touch.
+                                    </p>
+                                ) : vacancies.length === 0 ? (
+                                    <p className="mb-0">
+                                        There are no open positions to apply for right now. Please check back later.
+                                    </p>
+                                ) : (
+                                    <ApplicationForm vacancies={vacancies} selectedVacancyId={selectedVacancyId} />
+                                )}
                             </div>
                         </div>
                         <div className="col-lg-6 order-1 order-md-2">
                             <div className="vacancy-detail-cont">
                                 <h3 className="sub-page-title">Available Vacancies</h3>
                                 <div className="vacancy-list">
-                                    {careers.length < 0 ? careers.map((career) => (
-                                        <Link href="#" key={career.id} className="vacancy-itm">
-                                            <p>{career.title}</p>
+                                    {vacancies.length > 0 ? vacancies.map((v) => (
+                                        <Link href={`/about-us/careers?vacancy=${v.id}#apply`} key={v.id} className="vacancy-itm">
+                                            <p>{v.title}{v.location ? ` — ${v.location}` : ""}</p>
                                             <span>View</span>
                                         </Link>
                                     )) : <p className="no-vacancy text-secondary mt-1">No vacancies available at the moment.</p>}
-
-                                    {/* <Link href="#" className="vacancy-itm">
-                                        <p>Marketing Executive</p>
-                                        <span>View</span>
-                                    </Link> */}
-
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div >
-            </section ></>
-    )
+                </div>
+            </section>
+        </>
+    );
 }
-
-export default Careers

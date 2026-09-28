@@ -1,17 +1,31 @@
 import Image from "next/image";
 import Link from "next/link";
+import { notFound } from "next/navigation";
+import { prisma } from "@/lib/admin/db";
+import { mediaSrc } from "@/lib/admin/media";
 
-export default function NewsDetail({ params }: { params: { id: string } }) {
+export const dynamic = "force-dynamic";
+
+const FALLBACK_IMAGE = "/img/news-events-img.jpg";
+
+export default async function NewsDetail({ params }: { params: Promise<{ id: string }> }) {
+    // The listing links by slug, but an id still resolves for older/bookmarked links.
+    const { id } = await params;
+    const post = await prisma.newsPost.findFirst({
+        where: { published: true, OR: [{ slug: id }, { id }] },
+    });
+    if (!post) notFound();
+
+    const imageSrc = mediaSrc(post.imageUrl);
+
+    const date = post.publishedAt.toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+    });
+
     return (
         <>
-            {/* <section className="contact-page-banner">
-                <div className="intro-itm">
-                    <div className="container">
-                        <h1>News & Events</h1>
-                    </div>
-                </div>
-            </section> */}
-
             <section className="news-detail-sec">
                 <div className="container mt-5">
                     <Link href="/news-and-events" className="back-link">
@@ -20,27 +34,22 @@ export default function NewsDetail({ params }: { params: { id: string } }) {
 
                     <div className="row">
                         <div className="col-md-6 mb-4 mb-md-0">
-                            <Image src="/img/news-events-img.jpg" alt="News Image" className="img-fluid news-detail-img"
-                                width={800} height={600} />
+                            <Image
+                                src={imageSrc || FALLBACK_IMAGE}
+                                alt={post.title}
+                                className="img-fluid news-detail-img"
+                                width={imageSrc ? 640 : 850}
+                                height={imageSrc ? 427 : 567}
+                            />
                         </div>
 
                         <div className="col-md-6 px-md-4">
-                            <p className="news-detail-date">
-                                June 30, 2026
-                            </p>
-                            <h2>
-                                SED UT PERSPICIATIS UNDE OMNIS {params.id}
-                            </h2>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                laboris nisi ut aliquip ex ea commodo consequat.
-                            </p>
-                            <p>
-                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                                mollit anim id est laborum.
-                            </p>
+                            <p className="news-detail-date">{date}</p>
+                            <h2>{post.title}</h2>
+                            <div
+                                className="news-detail-content"
+                                dangerouslySetInnerHTML={{ __html: post.content }}
+                            />
                         </div>
                     </div>
                 </div>

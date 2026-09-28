@@ -20,11 +20,13 @@ const towerImages = [
 export default function NorthTower() {
     const ourClients = [
         { id: 2, src: "/img/ob-2.jpg" },
+        { id: 3, src: "/img/ob-3.png" },
         { id: 4, src: "/img/ob-4.png" },
         { id: 5, src: "/img/ob-5.png" },
         { id: 6, src: "/img/ob-6.png" },
         { id: 1, src: "/img/ob-1.jpg" },
         { id: 7, src: "/img/ob-2.jpg" },
+        { id: 8, src: "/img/ob-3.png" },
         { id: 9, src: "/img/ob-4.png" },
         { id: 10, src: "/img/ob-5.png" },
         { id: 11, src: "/img/ob-6.png" },
@@ -61,7 +63,7 @@ export default function NorthTower() {
                                     width={600}
                                     height={800}
                                 />
-                                <DownloadFloorPlanForm />
+                                <DownloadFloorPlanForm tower="north" />
                                 {/* <a href="#" rel="noopener noreferrer" className="btn-theme1 btn">
                                     Floor Plans <i className="bi bi-cloud-download" aria-hidden="true"></i>
                                 </a> */}
