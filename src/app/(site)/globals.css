@@ -12,10 +12,10 @@ body {
 }
 
 .btn-theme1 {
-  background-color: var(--primary-color);
-  color: var(--text-light);
-  padding: 0.5rem 2.5rem;
-  border-radius: 1rem;
+  background-color: var(--primary-color) !important;
+  color: var(--text-light) !important;
+  padding: 0.5rem 2.5rem !important;
+  border-radius: 1rem !important;
   border: none;
   text-decoration: none;
 }
