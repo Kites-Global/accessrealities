@@ -81,10 +81,10 @@ export function OfficeInquiryForm() {
                                 <option value="100-200">100-200 sqft</option>
                             </select>
                             <textarea name="requirements" id="" placeholder="Do you have specific requirements?" rows={6}></textarea>
-                            <div className="checkbox">
+                            {/* <div className="checkbox">
                                 <input type="checkbox" name="form-type" value="download-floor-plan" required />
                                 <label htmlFor="form-type">Download the floor plan pdf</label>
-                            </div>
+                            </div> */}
                             <RecaptchaField recaptchaRef={recaptchaRef} />
                             <InquiryStatusMessage status={status} error={error} />
                             <button className="btn btn-primary" disabled={status === "submitting"}>
