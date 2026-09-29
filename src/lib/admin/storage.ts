@@ -1,6 +1,8 @@
-import { S3Client, PutObjectCommand, DeleteObjectCommand } from "@aws-sdk/client-s3";
+import { S3Client, PutObjectCommand, DeleteObjectCommand, GetObjectCommand, HeadObjectCommand } from "@aws-sdk/client-s3";
 import path from "node:path";
 import { randomUUID } from "node:crypto";
+import { publicUrlFor, keyFromPublicUrl } from "./media";
+import { floorPlanKey, type Tower } from "@/lib/floorPlans";
 
 export type UploadFolder = "news" | "cv" | "content";
 
@@ -8,9 +10,6 @@ const REGION = process.env.AWS_REGION;
 const BUCKET = process.env.S3_BUCKET_NAME;
 // Optional: set for an S3-compatible provider (R2, MinIO, DigitalOcean Spaces, ...).
 const ENDPOINT = process.env.S3_ENDPOINT;
-// Optional: set to a CloudFront/CDN domain (e.g. "https://cdn.example.com") to serve
-// uploads through it instead of the raw S3 URL.
-const PUBLIC_URL_BASE = process.env.S3_PUBLIC_URL_BASE;
 
 let client: S3Client | null = null;
 
@@ -35,27 +34,10 @@ function getClient(): S3Client {
   return client;
 }
 
-function publicUrlFor(key: string): string {
-  if (PUBLIC_URL_BASE) return `${PUBLIC_URL_BASE.replace(/\/$/, "")}/${key}`;
-  return `https://${BUCKET}.s3.${REGION}.amazonaws.com/${key}`;
-}
-
-/** Extracts the S3 object key from a URL previously returned by saveUpload/publicUrlFor. */
-function keyFromPublicUrl(url: string): string | null {
-  if (PUBLIC_URL_BASE && url.startsWith(PUBLIC_URL_BASE)) {
-    return url.slice(PUBLIC_URL_BASE.replace(/\/$/, "").length + 1);
-  }
-  const s3HostPrefix = `https://${BUCKET}.s3.${REGION}.amazonaws.com/`;
-  if (url.startsWith(s3HostPrefix)) {
-    return url.slice(s3HostPrefix.length);
-  }
-  return null;
-}
-
 /**
- * Uploads a file to the S3 bucket under <folder>/ and returns its public URL.
- * The bucket must allow public reads for these URLs to resolve (either via a
- * bucket policy or by fronting the bucket with a CDN and setting S3_PUBLIC_URL_BASE).
+ * Uploads a file to the S3 bucket under <folder>/ and returns the URL to store.
+ * The bucket stays private: that URL points at /api/media, which streams the object
+ * back using these credentials. Set S3_PUBLIC_URL_BASE to serve via a CDN instead.
  */
 export async function saveUpload(file: File, folder: UploadFolder): Promise<string> {
   const bytes = Buffer.from(await file.arrayBuffer());
@@ -72,6 +54,56 @@ export async function saveUpload(file: File, folder: UploadFolder): Promise<stri
   );
 
   return publicUrlFor(key);
+}
+
+/** Overwrites the tower's floor plan PDF at its fixed key — one object per tower, no DB record. */
+export async function saveFloorPlan(file: File, tower: Tower): Promise<void> {
+  const bytes = Buffer.from(await file.arrayBuffer());
+  await getClient().send(
+    new PutObjectCommand({
+      Bucket: BUCKET,
+      Key: floorPlanKey(tower),
+      Body: bytes,
+      ContentType: "application/pdf",
+    }),
+  );
+}
+
+/** Whether a tower's floor plan PDF has been uploaded yet — used to show status in the admin UI. */
+export async function floorPlanExists(tower: Tower): Promise<boolean> {
+  try {
+    await getClient().send(new HeadObjectCommand({ Bucket: BUCKET, Key: floorPlanKey(tower) }));
+    return true;
+  } catch (error) {
+    const name = (error as { name?: string }).name;
+    if (name === "NotFound" || name === "NoSuchKey") return false;
+    throw error;
+  }
+}
+
+export type UploadObject = {
+  body: ReadableStream;
+  contentType: string;
+  contentLength?: number;
+  etag?: string;
+};
+
+/** Fetches an object for the /api/media route. Returns null when the key doesn't exist. */
+export async function getUpload(key: string): Promise<UploadObject | null> {
+  try {
+    const result = await getClient().send(new GetObjectCommand({ Bucket: BUCKET, Key: key }));
+    if (!result.Body) return null;
+    return {
+      body: result.Body.transformToWebStream(),
+      contentType: result.ContentType || "application/octet-stream",
+      contentLength: result.ContentLength,
+      etag: result.ETag,
+    };
+  } catch (error) {
+    const name = (error as { name?: string }).name;
+    if (name === "NoSuchKey" || name === "NotFound") return null;
+    throw error;
+  }
 }
 
 export async function deleteUpload(publicUrl: string | null | undefined): Promise<void> {

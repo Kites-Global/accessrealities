@@ -4,8 +4,22 @@ export const newsSchema = z.object({
   title: z.string().trim().min(1, "Title is required"),
   excerpt: z.string().trim().min(1, "Excerpt is required").max(500),
   content: z.string().trim().min(1, "Content is required"),
+  publishedAt: z
+    .string()
+    .trim()
+    .regex(/^\d{4}-\d{2}-\d{2}$/, "Date is required")
+    // Parsed without a timezone suffix so the stored day matches the day picked.
+    .transform((value) => new Date(`${value}T00:00:00`))
+    .refine((date) => !Number.isNaN(date.getTime()), "Enter a valid date"),
   published: z.boolean().default(true),
 });
+
+/** Formats a date for an <input type="date"> value (local time, not UTC). */
+export function toDateInputValue(date: Date): string {
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${date.getFullYear()}-${month}-${day}`;
+}
 
 export const vacancySchema = z.object({
   title: z.string().trim().min(1, "Title is required"),

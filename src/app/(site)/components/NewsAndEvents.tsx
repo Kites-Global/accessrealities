@@ -8,7 +8,10 @@ type NewsEventData = {
     date: string;
     title: string;
     desc: string;
+    imageUrl?: string | null;
 };
+
+const FALLBACK_IMAGE = "/img/news-events-img.jpg";
 
 export default function NewsEvents({ data }: { data: NewsEventData }) {
     const textRef = useRef<HTMLParagraphElement>(null);
@@ -27,7 +30,12 @@ export default function NewsEvents({ data }: { data: NewsEventData }) {
 
     return (
         <div className="news-events-card">
-            <Image src="/img/news-events-img.jpg" alt="News and Events" width={600} height={400} />
+            <Image
+                src={data.imageUrl || FALLBACK_IMAGE}
+                alt={data.title}
+                width={640}
+                height={427}
+            />
             <p className="card-date">{data.date}</p>
             <h6>{data.title}</h6>
             <p
@@ -37,7 +45,7 @@ export default function NewsEvents({ data }: { data: NewsEventData }) {
             >
                 {data.desc}
             </p>
-            <a href={`/news-and-events/${data.id}`} className="btn-theme1">
+            <a href={`/news-and-events/${data.id}`} className="btn-theme1 btn">
                 read more
             </a>
         </div>

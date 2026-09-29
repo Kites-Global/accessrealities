@@ -40,6 +40,7 @@ function parseNews(formData: FormData) {
     title: formData.get("title"),
     excerpt: formData.get("excerpt"),
     content: formData.get("content"),
+    publishedAt: formData.get("publishedAt"),
     published: formData.get("published") === "on",
   });
   if (!parsed.success) {

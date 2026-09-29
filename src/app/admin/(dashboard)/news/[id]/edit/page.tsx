@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
 import { prisma } from "@/lib/admin/db";
 import { updateNews } from "@/lib/admin/actions/news";
+import { toDateInputValue } from "@/lib/admin/validators";
+import { mediaSrc } from "@/lib/admin/media";
 import NewsForm from "../../NewsForm";
 
 export default async function EditNewsPage({ params }: { params: Promise<{ id: string }> }) {
@@ -21,8 +23,9 @@ export default async function EditNewsPage({ params }: { params: Promise<{ id: s
             excerpt: post.excerpt,
             content: post.content,
             published: post.published,
-            imageUrl: post.imageUrl,
+            imageUrl: mediaSrc(post.imageUrl),
           }}
+          defaultPublishedAt={toDateInputValue(post.publishedAt)}
           submitLabel="Save Changes"
         />
       </div>
