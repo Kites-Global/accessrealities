@@ -35,7 +35,10 @@ export async function POST(request: Request) {
   }
 
   const token = signFloorPlanToken(data.tower, data.email);
-  const link = `${new URL(request.url).origin}/api/floor-plans/download?token=${encodeURIComponent(token)}`;
+  // SITE_URL is authoritative when set — request.url's origin reflects whatever Host/proto a
+  // proxy or tunnel in front of this app claims, which can point somewhere the link can't reach.
+  const origin = process.env.SITE_URL || new URL(request.url).origin;
+  const link = `${origin}/api/floor-plans/download?token=${encodeURIComponent(token)}`;
 
   try {
     await sendFloorPlanLinkEmail({ to: data.email, tower: data.tower, link });
