@@ -10,7 +10,7 @@ export default async function Careers({
     searchParams,
 }: {
     searchParams: Promise<SearchParams>;
-}) {
+}) { 
     const { vacancy, applied } = await searchParams;
 
     const vacancies = await prisma.vacancy.findMany({
