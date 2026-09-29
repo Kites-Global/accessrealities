@@ -40,7 +40,7 @@ export default function Footer() {
                                     </Link>
                                     <ul>
                                         <li><Link href="/about-us/our-journey">Access Realties</Link></li>
-                                        <li><Link href="/careers">Careers</Link></li>
+                                        <li><Link href="/about-us/careers">Careers</Link></li>
                                     </ul>
                                 </div>
                                 <div className="col-md-2 col-12">

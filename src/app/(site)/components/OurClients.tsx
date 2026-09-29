@@ -16,7 +16,7 @@ type OurClientProps = {
     clients?: Client[];
 };
 
-export default function OurClient({ title = "PARTNERS", clients = [] }: OurClientProps) {
+export default function OurClient({ title = "OUR PARTNERS", clients = [] }: OurClientProps) {
     const autoplay = useRef(
         Autoplay({ delay: 2000, stopOnInteraction: false })
     );

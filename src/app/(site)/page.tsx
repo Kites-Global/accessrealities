@@ -440,10 +440,10 @@ export default function Home() {
 
             {/* Text Content */}
             <div>
-              <p className="mb-4 custom-modal-text">
+              <p className="mb-4 custom-modal-text text-white">
                 {modalContent.text}
               </p>
-              <p className="mb-0 fw-bold custom-modal-author">
+              <p className="mb-0 fw-bold custom-modal-author text-white">
                 - {modalContent.author}
               </p>
             </div>
