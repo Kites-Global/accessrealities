@@ -31,9 +31,7 @@ export default function Footer() {
                                     <ul>
                                         <li><Link href="/access-towers/north-tower">North Tower</Link></li>
                                         <li><Link href="/access-towers/south-tower">South Tower</Link></li>
-                                        <li><Link href="#">Floor Plans</Link></li>
-                                        <li><Link href="#">Gallery</Link></li>
-                                        <li><Link href="#">Inquire Now</Link></li>
+                                        <li><Link href="/access-towers/west-tower">West Tower</Link></li>
                                     </ul>
                                 </div>
                                 <div className="col-md-2 col-12">
@@ -42,7 +40,7 @@ export default function Footer() {
                                     </Link>
                                     <ul>
                                         <li><Link href="/about-us/our-journey">Access Realties</Link></li>
-                                        <li><Link href="/careers">Careers</Link></li>
+                                        <li><Link href="/about-us/careers">Careers</Link></li>
                                     </ul>
                                 </div>
                                 <div className="col-md-2 col-12">

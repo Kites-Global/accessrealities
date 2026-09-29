@@ -59,7 +59,7 @@ export function OfficeInquiryForm() {
     return (
         <>
             {/* home page form */}
-            <Modal className="modal" show={show} onHide={handleClose} tabIndex={-1}>
+            <Modal className="modal" size={"lg"} show={show} onHide={handleClose} tabIndex={-1}>
                 <Modal.Dialog className="modal-form">
                     <Modal.Header className="modal-header" >
                         <h5 className="modal-title">OFFICE RENTAL
@@ -68,28 +68,34 @@ export function OfficeInquiryForm() {
                     </Modal.Header>
                     <Modal.Body >
 
-                        <form onSubmit={handleSubmit}>
-                            <input type="text" name="business-name" placeholder="Name of your business*" required />
-                            <input type="text" name="name" placeholder="Your name*" required />
-                            <input type="tel" name="phone" placeholder="Your mobile number*" required />
-                            <input type="text" name="nature-of-business" placeholder="Nature of your business*" required />
-                            <input type="email" name="email" placeholder="Your email*" required />
-                            <label htmlFor="size">Tell us how much retail space you are looking for (in sq.ft)</label>
-                            <select name="size" id="size">
-                                <option defaultChecked value="300-500">300-500 sqft</option>
-                                <option value="200-300">200-300 sqft</option>
-                                <option value="100-200">100-200 sqft</option>
-                            </select>
-                            <textarea name="requirements" id="" placeholder="Do you have specific requirements?" rows={6}></textarea>
-                            <div className="checkbox">
+                        <form onSubmit={handleSubmit} className="row">
+                            <div className="col-md-6">
+                                <input type="text" name="business-name" placeholder="Name of your business*" required />
+                            </div>
+                            <div className="col-md-6"> <input type="text" name="name" placeholder="Your name*" required /></div>
+                            <div className="col-md-6"><input type="tel" name="phone" placeholder="Your mobile number*" required /></div>
+                            <div className="col-md-6"> <input type="email" name="email" placeholder="Your email*" required /></div>
+                            <div className="col-md-12"><input type="text" name="nature-of-business" placeholder="Nature of your business*" required /></div>
+                            <div className="col-md-12">
+                                <label htmlFor="size">Tell us how much retail space you are looking for (in sq.ft)</label>
+                                <select name="size" id="size">
+                                    <option defaultChecked value="900-1500">900-1500 sqft</option>
+                                    <option value="1500-3000">1500-3000 sqft</option>
+                                    <option value="3000-above">3000-above sqft</option>
+                                </select>
+                            </div>
+                            <div className="col-md-12"><textarea name="requirements" id="" placeholder="Do you have specific requirements?" rows={4}></textarea></div>
+                            {/* <div className="checkbox">
                                 <input type="checkbox" name="form-type" value="download-floor-plan" required />
                                 <label htmlFor="form-type">Download the floor plan pdf</label>
+                            </div> */}
+                            <div className="col-md-12">
+                                <RecaptchaField recaptchaRef={recaptchaRef} />
+                                <InquiryStatusMessage status={status} error={error} />
+                                <button className="btn btn-primary" disabled={status === "submitting"}>
+                                    {status === "submitting" ? "Sending..." : "Submit"}
+                                </button>
                             </div>
-                            <RecaptchaField recaptchaRef={recaptchaRef} />
-                            <InquiryStatusMessage status={status} error={error} />
-                            <button className="btn btn-primary" disabled={status === "submitting"}>
-                                {status === "submitting" ? "Sending..." : "Submit"}
-                            </button>
                         </form>
                     </Modal.Body>
 

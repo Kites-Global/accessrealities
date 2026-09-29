@@ -27,10 +27,7 @@ export default async function Careers({
                 <div className="intro-itm">
                     <div className="container">
                         <h1>Careers</h1>
-                        <h6>Build your career with Access Realties, a fully owned subsidiary of Access Engineering PLC and
-                            part of the wider Access Group. Join a prestigious corporate environment where your work
-                            contributes to landmark commercial spaces, trusted property management and the continued
-                            growth of one of Sri Lanka’s recognized business names.</h6>
+                        <h6>Build your career with Access Realties and be part of the Access Group, contributing to landmark commercial spaces and trusted property management.</h6>
                     </div>
                 </div>
             </section>

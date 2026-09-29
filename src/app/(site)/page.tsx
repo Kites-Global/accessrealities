@@ -155,11 +155,11 @@ export default function Home() {
       <section className="about-access-sec">
         <div className="container">
           <div className="row">
-            <div className="col-md-8 info-cont">
+            <div className="col-md-7 info-cont">
               <div className="info-itm">
                 <h2>Defining Colombo’s Corporate Skyline</h2>
                 <h6>Creating premium commercial spaces built for the way modern businesses work. </h6>
-                <p className="text-black">
+                <p className="text-black mt-3">
                   Access Realties (Pvt) Ltd has long been part of Colombo’s evolving commercial real estate story,
                   contributing to the design, development and management of landmark business environments that
                   bring energy, efficiency and prestige to the city. Guided by the strength of Access, a name synonymous
@@ -170,7 +170,7 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="col-md-4">
+            <div className="col-md-5">
               <div className="img-cont">
                 <Image
                   src="/img/about-access-sec-fimg.webp"
@@ -377,6 +377,30 @@ export default function Home() {
               </div>
             </div>
           </div>
+
+          {/* Review 3 */}
+          <div className="row wht-thy-say-row justify-content-start">
+            <div className="col-md-6">
+              <div className="wht-thy-say-itm">
+                <div className="img-cont">
+                  <div className="logo-box">
+                    <Image src="/img/t-1.jpg" alt="Insee cement" className="img-fluid" width={200} height={200} />
+                  </div>
+                </div>
+                <div className="info-cont info-cont-left">
+                  <h5>&ldquo;We are very pleased to secure a well-located office space at Access Towers
+                    <span className="inside-txt"> which has transformed our daily operations by boosting team productivity, reducing administrative burdens, and projecting a professional image.</span>
+                    &rdquo;</h5>
+                  {/* <p className="hide-mobile">
+                    Which has transformed our daily operations by boosting team productivity, reducing administrative burdens, and projecting a professional image.
+                  </p> */}
+                  <p>
+                    <br />
+                    — Ruwan Malawarage DGM - Human Resources & Administration</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section >
 
@@ -416,10 +440,10 @@ export default function Home() {
 
             {/* Text Content */}
             <div>
-              <p className="mb-4 custom-modal-text">
+              <p className="mb-4 custom-modal-text text-white">
                 {modalContent.text}
               </p>
-              <p className="mb-0 fw-bold custom-modal-author">
+              <p className="mb-0 fw-bold custom-modal-author text-white">
                 - {modalContent.author}
               </p>
             </div>
