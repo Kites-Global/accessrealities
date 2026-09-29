@@ -452,9 +452,11 @@ header {
               width: 100%;
               height: 100%;
               background: #000000;
-              background: linear-gradient(0deg,
-                  rgba(0, 0, 0, 0.42) 20%,
-                  rgba(10, 10, 10, 0.93) 90%);
+              background: linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.42) 20%,
+                rgba(10, 10, 10, 0.93) 90%
+              );
               display: flex;
               flex-direction: column;
               justify-content: end;
@@ -481,7 +483,6 @@ header {
       }
 
       .embla__nav {
-
         .embla__prev,
         .embla__next {
           position: absolute;
@@ -592,11 +593,9 @@ header {
     padding-top: 2rem;
   }
 
-
   .inside-txt {
     font-weight: 100;
   }
-
 
   .intro-cont {
     color: #fff;
@@ -948,7 +947,6 @@ footer {
         }
 
         .embla__nav {
-
           .embla__prev,
           .embla__next {
             position: absolute;
@@ -1357,7 +1355,6 @@ footer {
       margin: 0 auto;
 
       .modal-body {
-
         input,
         textarea,
         select {
@@ -1365,9 +1362,23 @@ footer {
           margin-bottom: 0.7rem;
           border: 0.5px solid #929292;
           color: white;
-          padding: 0.4rem 0.5rem;
-          border-radius: 3rem;
+          padding: 0.4rem 0.9rem;
+          border-radius: 2.5rem;
           background-color: transparent;
+        }
+
+        select {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+
+          background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' class='bi bi-chevron-down' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708'/></svg>");
+          background-repeat: no-repeat;
+
+          background-position: right 15px center;
+          background-size: 16px;
+
+          padding-right: 1rem;
         }
 
         textarea {
@@ -1470,8 +1481,6 @@ footer {
       font-weight: 700;
       line-height: 2rem;
     }
-
-    
   }
 }
 
@@ -1572,7 +1581,7 @@ footer {
   img {
     width: 100%;
     height: auto;
-    border-radius: 0.5rem;
+    border-radius: 0.2rem;
     object-fit: cover;
   }
 
@@ -1957,7 +1966,6 @@ h6 {
     line-height: 1.8;
   }
 
-
   /* Rich-text body saved from the admin editor. */
   .news-detail-content {
     img {
@@ -1990,7 +1998,79 @@ h6 {
       margin-bottom: 1rem;
     }
   }
+}
 
+.nf-page {
+  height: 100vh;
+  background-color: #fff;
+  background-image: url(/img/what-they-say-bg.jpg);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .nf-content {
+    max-width: 580px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: auto;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+  .access-logo {
+    width: 25%;
+    margin-bottom: 1rem;
+  }
+
+  .nf-code {
+    font-size: clamp(5rem, 15vw, 7.5rem);
+    font-weight: 800;
+    line-height: 1;
+    color: var(--primary-color);
+  }
+
+  .nf-title {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.85rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+  }
+
+  .nf-title::before {
+    content: "";
+    display: inline-block;
+    width: 4px;
+    height: 1.4rem;
+    margin-right: 0.6rem;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+  }
+
+  .nf-desc {
+    color: #737373;
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 440px;
+    margin: 0 auto 2.25rem;
+  }
+
+  .btn-theme1 {
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
 }
 
 /* REFACTOR */
@@ -2013,14 +2093,18 @@ h6 {
 
   header {
     position: fixed;
-    background: -webkit-linear-gradient(0deg,
-        rgba(139, 27, 63, 0) 0%,
-        rgba(139, 27, 63, 0.16) 16%,
-        rgb(139, 27, 63) 100%);
-    background: linear-gradient(0deg,
-        rgba(139, 27, 63, 0) 0%,
-        rgba(139, 27, 63, 0.16) 16%,
-        rgb(139, 27, 63) 100%);
+    background: -webkit-linear-gradient(
+      0deg,
+      rgba(139, 27, 63, 0) 0%,
+      rgba(139, 27, 63, 0.16) 16%,
+      rgb(139, 27, 63) 100%
+    );
+    background: linear-gradient(
+      0deg,
+      rgba(139, 27, 63, 0) 0%,
+      rgba(139, 27, 63, 0.16) 16%,
+      rgb(139, 27, 63) 100%
+    );
 
     .navbar {
       .navbar-brand {
@@ -2130,7 +2214,6 @@ h6 {
   }
 
   .south-north-tower-sec {
-
     .south-cont,
     .north-cont {
       margin-bottom: 0;

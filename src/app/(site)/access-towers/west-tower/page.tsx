@@ -128,7 +128,7 @@ export default function WestTower() {
                         <div className="col-md-3">
                             <div className="img-cont">
                                 <Image
-                                    src="/img/west-tower-img1.png"
+                                    src="/img/west-tower-img1.webp"
                                     alt="Access Realties"
                                     className="img-fluid"
                                     width={600}
