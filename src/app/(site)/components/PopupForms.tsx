@@ -61,8 +61,8 @@ export function OfficeInquiryForm() {
     return (
         <>
 
-            <Modal className="modal office-inquiry-modal" size={"lg"} centered scrollable show={show} onHide={handleClose} tabIndex={-1}>
-                <Modal.Dialog className="modal-form">
+            <Modal className="modal office-inquiry-modal" size={"lg"} centered  show={show} onHide={handleClose} tabIndex={-1}>
+                <Modal.Dialog className="modal-form" scrollable>
                     <Modal.Header className="modal-header" >
                         <CloseButton onClick={() => setShow(false)} />
                     </Modal.Header>
