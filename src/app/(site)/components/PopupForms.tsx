@@ -4,6 +4,8 @@ import { useRef, useState } from "react"
 import type ReCAPTCHA from "react-google-recaptcha"
 import { InquiryStatusMessage, RecaptchaField, submitInquiry, submitFloorPlanRequest, type InquiryStatus } from "./InquiryFormShared"
 import type { Tower } from "@/lib/floorPlans"
+import CloseButton from 'react-bootstrap/CloseButton';
+
 
 export function OfficeInquiryForm() {
     const [show, setShow] = useState(false);
@@ -58,15 +60,15 @@ export function OfficeInquiryForm() {
 
     return (
         <>
-            {/* home page form */}
-            <Modal className="modal" size={"lg"} show={show} onHide={handleClose} tabIndex={-1}>
-                <Modal.Dialog className="modal-form">
-                    <Modal.Header className="modal-header" >
-                        <h5 className="modal-title">OFFICE RENTAL
-                            INQUIRY</h5>
 
+            <Modal className="modal office-inquiry-modal" size={"lg"} centered show={show} onHide={handleClose} tabIndex={-1}>
+                <Modal.Dialog className="modal-form" scrollable>
+                    <Modal.Header className="modal-header" >
+                        <CloseButton onClick={handleClose} />
                     </Modal.Header>
                     <Modal.Body >
+                        <h5 className="modal-title">OFFICE RENTAL
+                            INQUIRY</h5>
 
                         <form onSubmit={handleSubmit} className="row">
                             <div className="col-md-6">
@@ -101,7 +103,7 @@ export function OfficeInquiryForm() {
 
                 </Modal.Dialog>
             </Modal>
-            <button type="button" className="btn btn-theme1 text-uppercase" onClick={() => handleOpen()}>
+            <button type="button" className="btn btn-theme1" onClick={() => handleOpen()}>
                 Inquire Now
             </button>
         </>
@@ -162,12 +164,11 @@ export function FacilitiesInquiryForm() {
             <Modal className="modal" show={show} onHide={handleClose} tabIndex={-1}>
                 <Modal.Dialog className="modal-form">
                     <Modal.Header className="modal-header" >
-                        <h5 className="modal-title">FACILITIES & SERVICES
-                            INQUIRY</h5>
-
+                        <CloseButton onClick={handleClose} />
                     </Modal.Header>
                     <Modal.Body >
-
+                        <h5 className="modal-title">FACILITIES & SERVICES
+                            INQUIRY</h5>
                         <form onSubmit={handleSubmit}>
                             <input type="text" name="name" placeholder="Your name*" required />
                             <input type="tel" name="phone" placeholder="Your mobile number*" required />
@@ -303,12 +304,13 @@ export function DownloadFloorPlanForm({ tower }: { tower: Tower }) {
             >
                 <Modal.Dialog className="modal-form">
                     <Modal.Header className="modal-header">
-                        <h5 className="modal-title">
-                            DOWNLOAD FLOOR PLAN
-                        </h5>
+                        <CloseButton onClick={handleClose} />
                     </Modal.Header>
 
                     <Modal.Body>
+                        <h5 className="modal-title">
+                            DOWNLOAD FLOOR PLAN
+                        </h5>
                         <form onSubmit={handleSubmit}>
                             <input
                                 type="text"
@@ -339,7 +341,7 @@ export function DownloadFloorPlanForm({ tower }: { tower: Tower }) {
                 </Modal.Dialog>
             </Modal>
 
-            <a href="#" onClick={handleOpen} className="btn-theme1 mt-2">
+            <a href="#" onClick={handleOpen} className="btn btn-theme1 mt-2">
                 Floor Plans <i className="bi bi-cloud-download" aria-hidden="true"></i>
             </a>
         </>
@@ -399,11 +401,11 @@ export function WestTowerInquiryForm() {
             <Modal className="modal" show={show} onHide={handleClose} tabIndex={-1}>
                 <Modal.Dialog className="modal-form">
                     <Modal.Header className="modal-header" >
-                        <h5 className="modal-title">WEST TOWER
-                            INQUIRY</h5>
-
+                        <CloseButton onClick={handleClose} />
                     </Modal.Header>
                     <Modal.Body >
+                        <h5 className="modal-title">WEST TOWER
+                            INQUIRY</h5>
 
                         <form onSubmit={handleSubmit}>
                             <input type="text" name="name" placeholder="Your name*" required />
@@ -421,7 +423,7 @@ export function WestTowerInquiryForm() {
 
                 </Modal.Dialog>
             </Modal>
-            <button type="button" className="btn-theme1 text-uppercase" onClick={() => handleOpen()}>
+            <button type="button" className="btn btn-theme1" onClick={() => handleOpen()}>
                 Inquire Now
             </button>
         </>

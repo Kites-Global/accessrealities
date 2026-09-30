@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+
 import { Geist, Geist_Mono } from "next/font/google";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./globals.css";
@@ -26,10 +26,10 @@ const roboto = Roboto(
   }
 )
 
-export const metadata: Metadata = {
-  title: "Access Realities",
-  description: "Access Realities",
-};
+// export const metadata: Metadata = {
+//   title: "Access Realities",
+//   description: "Access Realities",
+// };
 
 export default function RootLayout({
   children,

@@ -1,8 +1,14 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Aminities from '../../components/Aminities';
 import OurClient from "../../components/OurClients";
 import TowerCarousel from "../../components/TowerCarousel";
 import { DownloadFloorPlanForm } from "../../components/PopupForms";
+
+export const metadata: Metadata = {
+    title: "North Tower | Access Realties",
+    description: "Explore Access North Tower, offering premium commercial office space, modern amenities and a prestigious address in Colombo 02.",
+};
 
 const towerImages = [
     { src: "/img/gallery/1.jpg", alt: "1" },

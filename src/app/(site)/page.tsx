@@ -1,152 +1,28 @@
-"use client";
-import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
-import styles from "./page.module.css";
 import EmblaCarousel from "./components/EmblaCarousel";
-import { Modal } from "react-bootstrap"
 import Aminities from './components/Aminities';
 import { OfficeInquiryForm, VideoPopup } from "./components/PopupForms";
+import Milestones from "./components/Milestones";
+import ReviewModals from "./components/ReviewModals";
+import type { Metadata } from "next";
 
-type Milestone = {
-  year: string;
-  title: string;
-  description: string;
+
+export const metadata: Metadata = {
+  title: "Home | Access Realties",
+  description: "Discover Access Realties, creating premium commercial office spaces and modern business environments in the heart of Colombo."
 };
 
-const milestones: Milestone[] = [
-  {
-    year: "1998",
-    title: "Access Tower I Completed",
-    description:
-      "Access Realties completed Access Tower I, a 12-storey commercial office landmark in Union Place, Colombo.",
-  },
-  {
-    year: "2008",
-    title: "Joined Access Engineering PLC",
-    description:
-      "Access Realties became a subsidiary of Access Engineering PLC, strengthening its commercial real estate and property management presence in Sri Lanka.",
-  },
-  {
-    year: "2014",
-    title: "Access Tower II Development Begins",
-    description:
-      "Access Realties expanded its property portfolio with the development of Access Tower II, a modern Grade-A office space in Colombo.",
-  },
-  {
-    year: "2015/16",
-    title: "A Trusted Corporate Address",
-    description:
-      "Access Towers achieved 100% occupancy, reflecting strong demand for premium, professionally managed office space in Colombo.",
-  },
-  {
-    year: "2017",
-    title: "Access Tower II Opens",
-    description:
-      "Access Tower II commenced operations, adding Grade-A commercial office space to Colombo’s growing corporate skyline.",
-  },
-  {
-    year: "2021",
-    title: "Groundbreaking Ceremony – West Tower",
-    description:
-      "The beginning of a new chapter in Access’ Union Place development.",
-  },
-  {
-    year: "2023",
-    title: "Opening Ceremony – West Tower",
-    description:
-      "Adding 285 parking bays and integrated commercial space to Colombo’s urban landscape.",
-  },
-  {
-    year: "2026",
-    title: "A Landmark in Commercial Real Estate",
-    description:
-      "Access Towers continues to be recognized as a premium business address for modern organizations in the heart of Colombo.",
-  },
-];
-
-function MilestoneItem({ year, title, description }: Milestone) {
-  return (
-    <div className="col-md-3">
-      <h2>{year}</h2>
-      <h6>{title}</h6>
-      <p>{description}</p>
-    </div>
-  );
-}
 
 export default function Home() {
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const trackRef = useRef<HTMLDivElement>(null);
-  const [scrollProgress, setScrollProgress] = useState(0);
 
-  const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [startScrollLeft, setStartScrollLeft] = useState(0);
-
-  const [showModal, setShowModal] = useState(false);
-  const [modalContent, setModalContent] = useState<{ img: string; text: string; author: string }>({ img: "", text: "", author: "" });
-
-  const handleOpen = ({ img, text, author }: { img: string; text: string; author: string }) => {
-    setModalContent({ img, text, author });
-    setShowModal(true);
-  };
-
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShowModal(false);
-
-  const [activeReview, setActiveReview] = useState(null);
-
-  const handleScroll = () => {
-    if (scrollRef.current) {
-      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
-      const maxScroll = scrollWidth - clientWidth;
-      const progress = maxScroll > 0 ? (scrollLeft / maxScroll) * 100 : 0;
-      setScrollProgress(progress);
-    }
-  };
-  // Dragging Logic
-  useEffect(() => {
-    const handlePointerMove = (e: PointerEvent) => {
-      if (!isDragging || !scrollRef.current || !trackRef.current) return;
-
-      const deltaX = e.clientX - startX;
-      const trackWidth = trackRef.current.clientWidth;
-      const maxScroll = scrollRef.current.scrollWidth - scrollRef.current.clientWidth;
-
-      // Calculate how much the container should scroll based on mouse movement
-      const scrollDelta = (deltaX / trackWidth) * maxScroll;
-      scrollRef.current.scrollLeft = startScrollLeft + scrollDelta;
-    };
-
-    const handlePointerUp = () => {
-      setIsDragging(false);
-    };
-
-    if (isDragging) {
-      window.addEventListener("pointermove", handlePointerMove);
-      window.addEventListener("pointerup", handlePointerUp);
-    }
-
-    return () => {
-      window.removeEventListener("pointermove", handlePointerMove);
-      window.removeEventListener("pointerup", handlePointerUp);
-    };
-  }, [isDragging, startX, startScrollLeft]);
 
   return (
     <div>
       <section className="hero-sec">
 
         <div className="title-cont">
-          {/* <h6>Serviced Offices for Rent</h6> */}
-          {/* <h1>
-            Private Workspaces in the
-            Heart of Colombo
-          </h1> */}
           <h1>Private Workspaces in the
             Heart of Colombo</h1>
-          {/* <a href="#" className="btn-theme1 btn">Inquire Now</a> */}
           <OfficeInquiryForm />
         </div>
 
@@ -240,45 +116,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="milestornes-sec px-2">
-        <div className="container">
-          <h2 className="text-white text-uppercase">Milestones</h2>
 
-          {/* COMBINED INTO A SINGLE DIV */}
-          <div
-            className="milestones-row hide-native-scroll"
-            ref={scrollRef}
-            onScroll={handleScroll}
-            style={{ scrollBehavior: isDragging ? "auto" : "smooth" }}
-          >
-            {milestones.map((milestone, index) => (
-              <MilestoneItem
-                key={index}
-                year={milestone.year}
-                title={milestone.title}
-                description={milestone.description}
-              />
-            ))}
-          </div>
+      <Milestones />
 
-          {/* UPDATED TRACK AND THUMB WITH DRAG LOGIC */}
-          <div className="custom-scrollbar-track" ref={trackRef}>
-            <div
-              className={`custom-scrollbar-thumb ${isDragging ? "dragging" : ""}`}
-              style={{ left: `${scrollProgress}%` }}
-              onPointerDown={(e) => {
-                e.preventDefault();
-                setIsDragging(true);
-                setStartX(e.clientX);
-                if (scrollRef.current) {
-                  setStartScrollLeft(scrollRef.current.scrollLeft);
-                }
-              }}
-            >
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       <section className="facilities-sec">
         <div className="container">
@@ -305,152 +146,9 @@ export default function Home() {
 
       <Aminities />
 
+      <ReviewModals />
 
-      <section className="what-they-say">
-        <div className="container">
-          <div className="intro-cont">
-            <h2>What they Say</h2>
-          </div>
 
-          {/* Review 1 */}
-          <div className="row wht-thy-say-row justify-content-start">
-            <div className="col-md-6">
-              <div className="wht-thy-say-itm">
-                <div className="img-cont">
-                  <div className="logo-box">
-                    <Image src="/img/ob-4.png" alt="Insee cement" className="img-fluid" width={200} height={200} />
-                  </div>
-                </div>
-                <div className="info-cont info-cont-left">
-                  <h5>“CMS has been a tenant at Access Towers since 2012, and we have consistently enjoyed an excellent experience.”</h5>
-                  <p className="hide-mobile">
-                    The premises, security, cleanliness, safety, and building management have always met our expectations, supported by a courteous and responsive team.
-                  </p>
-                  <p>
-                    <button
-                      className="btn btn-link text-decoration-none text-danger p-0"
-                      onClick={() => handleOpen(
-                        {
-                          img: "/img/ob-4.png",
-                          text: "CMS has been a tenant at Access Towers since 2012, and we have consistently enjoyed an excellent experience. The premises, security, cleanliness, safety, and building management have always met our expectations, supported by a courteous and responsive team. The central location at Union Place is a significant advantage for both our staff and, particularly, our international clients visiting our offices. We are happy to recommend Access Towers to other organizations.",
-                          author: "Roshan Jayalath - Director – CMS"
-                        }
-                      )}
-                    >
-                      read more
-                    </button><br />
-                    — Roshan Jayalath - Director – CMS</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Review 2 */}
-          <div className="row wht-thy-say-row justify-content-end">
-            <div className="col-md-6">
-              <div className="wht-thy-say-itm">
-                <div className="img-cont ">
-                  <div className="logo-box">
-                    <Image src="/img/st-1.png" alt="Grant Thornton" className="img-fluid" width={200} height={200} />
-                  </div>
-                </div>
-                <div className="info-cont info-cont-right info-cont-left order-md-first">
-                  <h5>“We are very pleased with the office we have rented on the 24th floor at Access Tower 2.”</h5>
-                  <p className="hide-mobile">
-                    The building is perfectly located in the city, with easy access to multiple restaurants and shops.
-                  </p>
-                  <p>
-                    <button
-                      className="btn btn-link text-decoration-none text-danger p-0"
-                      onClick={() => handleOpen(
-                        {
-                          img: "/img/st-1.png",
-                          text: "We are very pleased with the office we have rented on the 24th floor at Access Tower 2. The building is perfectly located in the city, with easy access to multiple restaurants and shops. The facility is well maintained and clean.Most importantly the administrative and maintenance staff are very flexible and accommodating with a service oriented approach. We wish you all the best.",
-                          author: "Ruchi Gunawardene – Director – Brand Finance"
-                        }
-                      )}
-                    >
-                      read more
-                    </button><br />
-                    — Ruchi Gunawardene – Director – Brand Finance</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Review 3 */}
-          <div className="row wht-thy-say-row justify-content-start">
-            <div className="col-md-6">
-              <div className="wht-thy-say-itm">
-                <div className="img-cont">
-                  <div className="logo-box">
-                    <Image src="/img/t-1.jpg" alt="Insee cement" className="img-fluid" width={200} height={200} />
-                  </div>
-                </div>
-                <div className="info-cont info-cont-left">
-                  <h5>&ldquo;We are very pleased to secure a well-located office space at Access Towers
-                    <span className="inside-txt"> which has transformed our daily operations by boosting team productivity, reducing administrative burdens, and projecting a professional image.</span>
-                    &rdquo;</h5>
-                  {/* <p className="hide-mobile">
-                    Which has transformed our daily operations by boosting team productivity, reducing administrative burdens, and projecting a professional image.
-                  </p> */}
-                  <p>
-                    <br />
-                    — Ruwan Malawarage DGM - Human Resources & Administration</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section >
-
-      {/* 3. React Bootstrap Modal */}
-      < Modal
-        show={showModal}
-        onHide={handleClose}
-        size="lg"
-        centered
-        backdropClassName="custom-modal-backdrop"
-        contentClassName="border-0 shadow-lg custom-modal-content"
-      >
-        <Modal.Body className="p-5 position-relative">
-          {/* Close Button */}
-          <button
-            type="button"
-            className="btn-close btn-close-white position-absolute top-0 end-0 m-3"
-            onClick={handleClose}
-            aria-label="Close"
-          ></button>
-
-          {/* Modal Layout */}
-          <div className="custom-display align-items-center mt-3">
-            {/* Logo Area */}
-            <div className="align-items-center logo-box custom-modal-logo-box fit-mobile">
-              <Image
-                src={modalContent.img}
-                alt="Logo"
-                width={90}
-                height={90}
-                style={{ objectFit: 'contain' }}
-              />
-            </div>
-
-            {/* Vertical Divider */}
-            <div className="mx-4 custom-modal-divider"></div>
-
-            {/* Text Content */}
-            <div>
-              <p className="mb-4 custom-modal-text text-white">
-                {modalContent.text}
-              </p>
-              <p className="mb-0 fw-bold custom-modal-author text-white">
-                - {modalContent.author}
-              </p>
-            </div>
-          </div>
-        </Modal.Body>
-      </Modal >
-
-    </div >
+    </div>
   );
 }

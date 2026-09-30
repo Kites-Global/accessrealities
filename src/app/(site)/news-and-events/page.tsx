@@ -1,9 +1,13 @@
 import { prisma } from "@/lib/admin/db";
 import { mediaSrc } from "@/lib/admin/media";
 import NewsEventsGrid from "./NewsEventsGrid";
-
+import type { Metadata } from "next";
 export const dynamic = "force-dynamic";
 
+export const metadata: Metadata = {
+    title: "News & Events | Access Realties",
+    description: "Stay updated with the latest news, events and developments from Access Realties (Pvt) Ltd, shaping modern business environments in Colombo.",
+};
 export default async function NewsAndEventsPage() {
     const posts = await prisma.newsPost.findMany({
         where: { published: true },

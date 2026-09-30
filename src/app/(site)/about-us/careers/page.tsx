@@ -1,6 +1,12 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { prisma } from "@/lib/admin/db";
 import ApplicationForm from "./ApplicationForm";
+
+export const metadata: Metadata = {
+    title: "Careers | Access Realties",
+    description: "Explore career opportunities at Access Realties and build your future within one of Colombo’s leading commercial property environments.",
+};
 
 export const dynamic = "force-dynamic";
 

@@ -1,5 +1,12 @@
 import ExperienceGallery from "../../components/ExperienceGallery";
 import { FacilitiesInquiryForm } from "../../components/PopupForms";
+import type { Metadata } from "next";
+
+
+export const metadata: Metadata = {
+  title: "Experiences | Access Realties",
+  description: "Discover dining, wellness, business and lifestyle experiences designed to enhance everyday life at Access Towers in Colombo 02.",
+};
 
 interface Experience {
     title: string;
