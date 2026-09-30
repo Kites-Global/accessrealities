@@ -18,6 +18,7 @@ body {
   border-radius: 1rem;
   border: none;
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 .btn.btn-theme1:hover {
@@ -475,7 +476,6 @@ header {
                 padding: 0.3rem 2.3rem;
                 border-radius: 1rem;
                 font-size: 0.55rem;
-                text-transform: uppercase;
               }
             }
           }
@@ -810,10 +810,7 @@ footer {
     }
 
     .btn-theme1 {
-      padding: 0.3rem 3rem;
       margin-top: 0.3rem;
-      text-transform: uppercase;
-
       i {
         margin-left: 0.9rem;
       }
@@ -895,15 +892,8 @@ footer {
     }
 
     h6 {
-      /* text-transform: uppercase; */
       margin-bottom: 1.5rem;
       font-weight: 300;
-    }
-
-    .btn-theme1 {
-      padding: 0.3rem 3.5rem;
-      text-transform: uppercase;
-      margin-bottom: 2rem;
     }
   }
 }
@@ -1256,7 +1246,7 @@ footer {
     .btn-theme1 {
       width: 100%;
       border-radius: 0.5rem;
-      text-transform: uppercase;
+
       font-weight: 600;
       letter-spacing: 0.05rem;
       margin-bottom: 1.25rem;
@@ -1607,10 +1597,6 @@ footer {
   }
 
   .btn-theme1 {
-    text-transform: uppercase;
-    margin-top: auto;
-    padding: 0.4rem 1rem;
-    font-size: 0.75rem;
     align-self: flex-start;
   }
 
@@ -1658,12 +1644,12 @@ img {
   height: fit-content;
 }
 
-.btn-theme1 {
+/* .btn-theme1 {
   text-transform: uppercase;
   margin-top: auto;
   color: #ffffffcd;
   line-height: 1.2rem;
-}
+} */
 
 .card-date {
   font-size: 0.8rem;
@@ -1894,11 +1880,6 @@ h6 {
     line-height: 1.2rem;
   }
 
-  .news-events-card .btn-theme1 {
-    padding: 0.5rem 2.5rem;
-    font-size: 1rem;
-  }
-
   .tower-banner-carousel {
     .embla {
       .embla__slide {
@@ -2063,9 +2044,6 @@ h6 {
   }
 
   .btn-theme1 {
-    font-size: 0.95rem;
-    text-decoration: none;
-    transition: all 0.2s ease;
     display: inline-flex;
     align-items: center;
     justify-content: center;
