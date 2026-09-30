@@ -1308,13 +1308,13 @@ footer {
       padding: 2rem;
 
       .modal-body {
-        overflow-x: hidden;
         .modal-title {
           font-size: 1.2rem;
           color: white;
           text-align: center;
           margin-bottom: 1rem;
         }
+        overflow-x: hidden;
         /* padding: 0; */
         input,
         textarea,

@@ -61,10 +61,10 @@ export function OfficeInquiryForm() {
     return (
         <>
 
-            <Modal className="modal office-inquiry-modal" size={"lg"} centered  show={show} onHide={handleClose} tabIndex={-1}>
+            <Modal className="modal office-inquiry-modal" size={"lg"} centered show={show} onHide={handleClose} tabIndex={-1}>
                 <Modal.Dialog className="modal-form" scrollable>
                     <Modal.Header className="modal-header" >
-                        <CloseButton onClick={() => setShow(false)} />
+                        <CloseButton onClick={handleClose} />
                     </Modal.Header>
                     <Modal.Body >
                         <h5 className="modal-title">OFFICE RENTAL
@@ -164,12 +164,11 @@ export function FacilitiesInquiryForm() {
             <Modal className="modal" show={show} onHide={handleClose} tabIndex={-1}>
                 <Modal.Dialog className="modal-form">
                     <Modal.Header className="modal-header" >
-                        <h5 className="modal-title">FACILITIES & SERVICES
-                            INQUIRY</h5>
-
+                        <CloseButton onClick={handleClose} />
                     </Modal.Header>
                     <Modal.Body >
-
+                        <h5 className="modal-title">FACILITIES & SERVICES
+                            INQUIRY</h5>
                         <form onSubmit={handleSubmit}>
                             <input type="text" name="name" placeholder="Your name*" required />
                             <input type="tel" name="phone" placeholder="Your mobile number*" required />
@@ -305,12 +304,13 @@ export function DownloadFloorPlanForm({ tower }: { tower: Tower }) {
             >
                 <Modal.Dialog className="modal-form">
                     <Modal.Header className="modal-header">
-                        <h5 className="modal-title">
-                            DOWNLOAD FLOOR PLAN
-                        </h5>
+                        <CloseButton onClick={handleClose} />
                     </Modal.Header>
 
                     <Modal.Body>
+                        <h5 className="modal-title">
+                            DOWNLOAD FLOOR PLAN
+                        </h5>
                         <form onSubmit={handleSubmit}>
                             <input
                                 type="text"
@@ -401,11 +401,11 @@ export function WestTowerInquiryForm() {
             <Modal className="modal" show={show} onHide={handleClose} tabIndex={-1}>
                 <Modal.Dialog className="modal-form">
                     <Modal.Header className="modal-header" >
-                        <h5 className="modal-title">WEST TOWER
-                            INQUIRY</h5>
-
+                        <CloseButton onClick={handleClose} />
                     </Modal.Header>
                     <Modal.Body >
+                        <h5 className="modal-title">WEST TOWER
+                            INQUIRY</h5>
 
                         <form onSubmit={handleSubmit}>
                             <input type="text" name="name" placeholder="Your name*" required />
