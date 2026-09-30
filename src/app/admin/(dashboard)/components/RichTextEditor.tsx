@@ -7,27 +7,16 @@ import Image from "@tiptap/extension-image";
 import Placeholder from "@tiptap/extension-placeholder";
 import { uploadContentImage } from "@/lib/admin/actions/uploads";
 
-type ImageContext = "news" | "vacancy";
-
 type RichTextEditorProps = {
   name: string;
   defaultValue?: string;
   placeholder?: string;
-  imageContext?: ImageContext;
 };
 
-const CONTENT_IMAGE_LIMITS: Record<ImageContext, number> = {
-  news: 800 * 1024,
-  vacancy: 1024 * 1024,
-};
+const MAX_IMAGE_BYTES = 800 * 1024;
 
-export default function RichTextEditor({
-  name,
-  defaultValue,
-  placeholder,
-  imageContext = "news",
-}: RichTextEditorProps) {
-  const maxImageBytes = CONTENT_IMAGE_LIMITS[imageContext];
+export default function RichTextEditor({ name, defaultValue, placeholder }: RichTextEditorProps) {
+  const maxImageBytes = MAX_IMAGE_BYTES;
   const fileInputRef = useRef<HTMLInputElement>(null);
   const hiddenInputRef = useRef<HTMLInputElement>(null);
   const [isSource, setIsSource] = useState(false);
@@ -77,7 +66,6 @@ export default function RichTextEditor({
     }
     const formData = new FormData();
     formData.append("file", file);
-    formData.append("context", imageContext);
     const result = await uploadContentImage(formData);
     if ("url" in result) {
       editor.chain().focus().setImage({ src: result.url }).run();

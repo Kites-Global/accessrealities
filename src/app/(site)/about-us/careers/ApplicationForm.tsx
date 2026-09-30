@@ -5,7 +5,7 @@ import type ReCAPTCHA from "react-google-recaptcha"
 import { submitApplication } from "@/lib/admin/actions/applications"
 import { RecaptchaField } from "../../components/InquiryFormShared"
 
-type Vacancy = { id: string; title: string; location: string | null };
+type Vacancy = { id: string; title: string };
 
 function SubmitArea() {
     const { pending } = useFormStatus();
@@ -23,13 +23,7 @@ function SubmitArea() {
     );
 }
 
-export default function ApplicationForm({
-    vacancies,
-    selectedVacancyId,
-}: {
-    vacancies: Vacancy[];
-    selectedVacancyId: string;
-}) {
+export default function ApplicationForm({ vacancies }: { vacancies: Vacancy[] }) {
     const recaptchaRef = useRef<ReCAPTCHA>(null);
     const [captchaError, setCaptchaError] = useState("");
     const [fileName, setFileName] = useState("");
@@ -55,14 +49,13 @@ export default function ApplicationForm({
                 <div className="col-lg-8"><input name="email" type="email" required /></div>
                 <div className="col-lg-4"><label>Position applied for</label></div>
                 <div className="col-lg-8">
-                    <select name="vacancyId" defaultValue={selectedVacancyId} required>
+                    <select name="vacancyId" defaultValue="" required>
                         <option value="" disabled>
                             Select a position
                         </option>
                         {vacancies.map((v) => (
                             <option key={v.id} value={v.id}>
                                 {v.title}
-                                {v.location ? ` — ${v.location}` : ""}
                             </option>
                         ))}
                     </select>

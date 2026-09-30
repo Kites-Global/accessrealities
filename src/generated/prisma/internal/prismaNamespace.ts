@@ -783,8 +783,7 @@ export const VacancyScalarFieldEnum = {
   id: 'id',
   title: 'title',
   slug: 'slug',
-  location: 'location',
-  description: 'description',
+  documentUrl: 'documentUrl',
   isOpen: 'isOpen',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'

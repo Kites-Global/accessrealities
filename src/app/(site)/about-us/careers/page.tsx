@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { prisma } from "@/lib/admin/db";
+import { mediaSrc } from "@/lib/admin/media";
 import ApplicationForm from "./ApplicationForm";
 
 export const metadata: Metadata = {
@@ -10,22 +10,19 @@ export const metadata: Metadata = {
 
 export const dynamic = "force-dynamic";
 
-type SearchParams = { vacancy?: string; applied?: string };
+type SearchParams = { applied?: string };
 
 export default async function Careers({
     searchParams,
 }: {
     searchParams: Promise<SearchParams>;
-}) { 
-    const { vacancy, applied } = await searchParams;
+}) {
+    const { applied } = await searchParams;
 
     const vacancies = await prisma.vacancy.findMany({
         where: { isOpen: true },
         orderBy: { createdAt: "desc" },
     });
-
-    // Only honor the preselect if it's actually one of the open vacancies.
-    const selectedVacancyId = vacancies.some((v) => v.id === vacancy) ? vacancy! : "";
 
     return (
         <>
@@ -52,7 +49,7 @@ export default async function Careers({
                                         There are no open positions to apply for right now. Please check back later.
                                     </p>
                                 ) : (
-                                    <ApplicationForm vacancies={vacancies} selectedVacancyId={selectedVacancyId} />
+                                    <ApplicationForm vacancies={vacancies} />
                                 )}
                             </div>
                         </div>
@@ -61,10 +58,16 @@ export default async function Careers({
                                 <h3 className="sub-page-title">Available Vacancies</h3>
                                 <div className="vacancy-list">
                                     {vacancies.length > 0 ? vacancies.map((v) => (
-                                        <Link href={`/about-us/careers?vacancy=${v.id}#apply`} key={v.id} className="vacancy-itm">
-                                            <p>{v.title}{v.location ? ` — ${v.location}` : ""}</p>
+                                        <a
+                                            href={mediaSrc(v.documentUrl) ?? v.documentUrl}
+                                            key={v.id}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="vacancy-itm"
+                                        >
+                                            <p>{v.title}</p>
                                             <span>View</span>
-                                        </Link>
+                                        </a>
                                     )) : <p className="no-vacancy text-secondary mt-1">No vacancies available at the moment.</p>}
                                 </div>
                             </div>
