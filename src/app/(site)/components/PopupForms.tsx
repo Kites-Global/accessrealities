@@ -4,6 +4,8 @@ import { useRef, useState } from "react"
 import type ReCAPTCHA from "react-google-recaptcha"
 import { InquiryStatusMessage, RecaptchaField, submitInquiry, submitFloorPlanRequest, type InquiryStatus } from "./InquiryFormShared"
 import type { Tower } from "@/lib/floorPlans"
+import CloseButton from 'react-bootstrap/CloseButton';
+
 
 export function OfficeInquiryForm() {
     const [show, setShow] = useState(false);
@@ -58,15 +60,15 @@ export function OfficeInquiryForm() {
 
     return (
         <>
-            {/* home page form */}
-            <Modal className="modal" size={"lg"} show={show} onHide={handleClose} tabIndex={-1}>
+
+            <Modal className="modal office-inquiry-modal" size={"lg"} centered scrollable show={show} onHide={handleClose} tabIndex={-1}>
                 <Modal.Dialog className="modal-form">
                     <Modal.Header className="modal-header" >
-                        <h5 className="modal-title">OFFICE RENTAL
-                            INQUIRY</h5>
-
+                        <CloseButton onClick={() => setShow(false)} />
                     </Modal.Header>
                     <Modal.Body >
+                        <h5 className="modal-title">OFFICE RENTAL
+                            INQUIRY</h5>
 
                         <form onSubmit={handleSubmit} className="row">
                             <div className="col-md-6">
