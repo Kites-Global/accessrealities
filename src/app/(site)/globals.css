@@ -11,16 +11,16 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-.btn-theme1 {
-  background-color: var(--primary-color) !important;
-  color: var(--text-light) !important;
-  padding: 0.5rem 2.5rem !important;
-  border-radius: 1rem !important;
+.btn.btn-theme1 {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  padding: 0.5rem 2.5rem;
+  border-radius: 1rem;
   border: none;
   text-decoration: none;
 }
 
-.btn-theme1:hover {
+.btn.btn-theme1:hover {
   background-color: var(--primary-color-hover);
   color: var(--text-light);
 }
