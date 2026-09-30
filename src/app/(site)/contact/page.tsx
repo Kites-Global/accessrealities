@@ -1,4 +1,10 @@
+import type { Metadata } from "next";
 import ContactForm from "./ContactForm"
+
+export const metadata: Metadata = {
+    title: "Contact Us | Access Realties",
+    description: "Contact Access Realties for office space enquiries, facilities, tenant support and general assistance at Access Towers, Colombo.",
+};
 
 function Contact() {
     return (

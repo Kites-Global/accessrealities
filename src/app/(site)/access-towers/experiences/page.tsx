@@ -3,10 +3,10 @@ import { FacilitiesInquiryForm } from "../../components/PopupForms";
 import type { Metadata } from "next";
 
 
-export const metaData: Metadata = {
+export const metadata: Metadata = {
   title: "Experiences | Access Realties",
-  description: "Discover Access Realties, creating premium commercial office spaces and modern business environments in the heart of Colombo."
-}
+  description: "Discover dining, wellness, business and lifestyle experiences designed to enhance everyday life at Access Towers in Colombo 02.",
+};
 
 interface Experience {
     title: string;

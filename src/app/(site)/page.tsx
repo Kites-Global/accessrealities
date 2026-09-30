@@ -4,14 +4,13 @@ import Aminities from './components/Aminities';
 import { OfficeInquiryForm, VideoPopup } from "./components/PopupForms";
 import Milestones from "./components/Milestones";
 import ReviewModals from "./components/ReviewModals";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 
 
-export const metaData: Metadata = {
+export const metadata: Metadata = {
   title: "Home | Access Realties",
   description: "Discover Access Realties, creating premium commercial office spaces and modern business environments in the heart of Colombo."
-}
-
+};
 
 
 export default function Home() {

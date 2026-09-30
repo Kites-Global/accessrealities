@@ -14,7 +14,7 @@ body {
 .btn.btn-theme1 {
   background-color: var(--primary-color);
   color: var(--text-light);
-  padding: 0.5rem 2.5rem;
+  padding: 0.5rem 1.5rem;
   border-radius: 1rem;
   border: none;
   text-decoration: none;
@@ -554,21 +554,28 @@ header {
   }
 
   .amenity-row {
+    justify-content: center;
     .amenity-itm {
       text-align: center;
       color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       margin-bottom: 4rem;
 
       .img-cont {
-        padding: 0 7rem;
-        margin-bottom: 0.5rem;
-      }
-
-      .c-size {
-        display: block;
-        margin: 0 auto;
-        width: 80px;
-        height: auto;
+        width: 64px;
+        height: 64px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .c-size {
+          display: block;
+          margin: 0 auto;
+          height: 100%;
+          width: 100%;
+        }
       }
 
       h5 {
@@ -757,39 +764,7 @@ footer {
   background-image: url(/img/west-tower-banner-bg-1.jpg);
 }
 
-.west-tower-fearures {
-  padding: 3rem 0 1rem;
-  background-color: #000;
-  color: #fff;
 
-  h2 {
-    text-transform: uppercase;
-  }
-
-  .features-row {
-    margin-top: 3rem;
-    justify-content: center;
-
-    .feature-itm {
-      text-align: center;
-      margin-bottom: 5rem;
-
-      .c-size {
-        display: block;
-        margin: 0 auto;
-        width: 80px;
-        height: auto;
-      }
-
-      h5 {
-        text-transform: uppercase;
-        margin-top: 0.7rem;
-        font-size: 1rem;
-        font-weight: 500;
-      }
-    }
-  }
-}
 
 /* -- */
 
