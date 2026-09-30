@@ -32,7 +32,7 @@ export default async function NewsDetail({ params }: { params: Promise<{ id: str
                         <i className="bi bi-arrow-left"></i> Back to all news
                     </Link>
 
-                    <div className="row">
+                    <div className="row justify-content-center">
                         <div className="col-md-6 mb-4 mb-md-0">
                             <Image
                                 src={imageSrc || FALLBACK_IMAGE}
@@ -43,7 +43,7 @@ export default async function NewsDetail({ params }: { params: Promise<{ id: str
                             />
                         </div>
 
-                        <div className="col-md-6 px-md-4">
+                        <div className="col-md-12 px-md-4">
                             <p className="news-detail-date">{date}</p>
                             <h2>{post.title}</h2>
                             <div
