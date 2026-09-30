@@ -14,10 +14,11 @@ body {
 .btn.btn-theme1 {
   background-color: var(--primary-color);
   color: var(--text-light);
-  padding: 0.5rem 2.5rem;
+  padding: 0.5rem 1.5rem;
   border-radius: 1rem;
   border: none;
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 .btn.btn-theme1:hover {
@@ -475,7 +476,6 @@ header {
                 padding: 0.3rem 2.3rem;
                 border-radius: 1rem;
                 font-size: 0.55rem;
-                text-transform: uppercase;
               }
             }
           }
@@ -554,21 +554,28 @@ header {
   }
 
   .amenity-row {
+    justify-content: center;
     .amenity-itm {
       text-align: center;
       color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       margin-bottom: 4rem;
 
       .img-cont {
-        padding: 0 7rem;
-        margin-bottom: 0.5rem;
-      }
-
-      .c-size {
-        display: block;
-        margin: 0 auto;
-        width: 80px;
-        height: auto;
+        width: 64px;
+        height: 64px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .c-size {
+          display: block;
+          margin: 0 auto;
+          height: 100%;
+          width: 100%;
+        }
       }
 
       h5 {
@@ -757,39 +764,7 @@ footer {
   background-image: url(/img/west-tower-banner-bg-1.jpg);
 }
 
-.west-tower-fearures {
-  padding: 3rem 0 1rem;
-  background-color: #000;
-  color: #fff;
 
-  h2 {
-    text-transform: uppercase;
-  }
-
-  .features-row {
-    margin-top: 3rem;
-    justify-content: center;
-
-    .feature-itm {
-      text-align: center;
-      margin-bottom: 5rem;
-
-      .c-size {
-        display: block;
-        margin: 0 auto;
-        width: 80px;
-        height: auto;
-      }
-
-      h5 {
-        text-transform: uppercase;
-        margin-top: 0.7rem;
-        font-size: 1rem;
-        font-weight: 500;
-      }
-    }
-  }
-}
 
 /* -- */
 
@@ -810,10 +785,7 @@ footer {
     }
 
     .btn-theme1 {
-      padding: 0.3rem 3rem;
       margin-top: 0.3rem;
-      text-transform: uppercase;
-
       i {
         margin-left: 0.9rem;
       }
@@ -895,15 +867,8 @@ footer {
     }
 
     h6 {
-      /* text-transform: uppercase; */
       margin-bottom: 1.5rem;
       font-weight: 300;
-    }
-
-    .btn-theme1 {
-      padding: 0.3rem 3.5rem;
-      text-transform: uppercase;
-      margin-bottom: 2rem;
     }
   }
 }
@@ -1256,7 +1221,7 @@ footer {
     .btn-theme1 {
       width: 100%;
       border-radius: 0.5rem;
-      text-transform: uppercase;
+
       font-weight: 600;
       letter-spacing: 0.05rem;
       margin-bottom: 1.25rem;
@@ -1607,10 +1572,6 @@ footer {
   }
 
   .btn-theme1 {
-    text-transform: uppercase;
-    margin-top: auto;
-    padding: 0.4rem 1rem;
-    font-size: 0.75rem;
     align-self: flex-start;
   }
 
@@ -1658,12 +1619,12 @@ img {
   height: fit-content;
 }
 
-.btn-theme1 {
+/* .btn-theme1 {
   text-transform: uppercase;
   margin-top: auto;
   color: #ffffffcd;
   line-height: 1.2rem;
-}
+} */
 
 .card-date {
   font-size: 0.8rem;
@@ -1894,11 +1855,6 @@ h6 {
     line-height: 1.2rem;
   }
 
-  .news-events-card .btn-theme1 {
-    padding: 0.5rem 2.5rem;
-    font-size: 1rem;
-  }
-
   .tower-banner-carousel {
     .embla {
       .embla__slide {
@@ -2063,9 +2019,6 @@ h6 {
   }
 
   .btn-theme1 {
-    font-size: 0.95rem;
-    text-decoration: none;
-    transition: all 0.2s ease;
     display: inline-flex;
     align-items: center;
     justify-content: center;

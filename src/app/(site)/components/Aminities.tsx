@@ -80,13 +80,15 @@ export function AmenityItem({
     return (
         <div className={colClassName}>
             <div className={className}>
-                <Image
-                    src={icon}
-                    alt={alt || (typeof title === "string" ? title : "Amenity")}
-                    className="img-fluid c-size"
-                    width={100}
-                    height={100}
-                />
+                <div className="img-cont">
+                    <Image
+                        src={icon}
+                        alt={alt || (typeof title === "string" ? title : "Amenity")}
+                        className="img-fluid c-size"
+                        width={100}
+                        height={100}
+                    />
+                </div>
                 <h5>{title}</h5>
             </div>
         </div>

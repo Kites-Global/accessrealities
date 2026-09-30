@@ -1,8 +1,14 @@
+import type { Metadata } from "next";
 import Aminities from '../../components/Aminities';
 import Image from "next/image";
 import OurClient from "../../components/OurClients";
 import TowerCarousel from "../../components/TowerCarousel";
 import { DownloadFloorPlanForm } from "../../components/PopupForms";
+
+export const metadata: Metadata = {
+    title: "South Tower | Access Realties",
+    description: "Discover Access South Tower, a Grade-A commercial office tower offering premium workspaces and modern amenities in Colombo 02.",
+};
 
 const towerImages = [
     { src: "/img/gallery/1.jpg", alt: "1" },

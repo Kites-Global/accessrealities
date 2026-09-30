@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
+ 
+export const metadata: Metadata = {
+    title: "Our Journey | Access Realties",
+    description: "Discover Access Realties’ journey in shaping premium office spaces and modern business environments across Colombo.",
+};
+ 
 export default function OurJourney() {
     return (
         <>

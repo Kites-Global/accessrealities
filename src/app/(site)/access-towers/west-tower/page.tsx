@@ -1,8 +1,15 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import OurClient from "../../components/OurClients";
 import TowerCarousel from "../../components/TowerCarousel";
 import { WestTowerInquiryForm } from "../../components/PopupForms";
 import { AmenityIcon } from "../../components/Aminities";
+import Aminities from "../../components/Aminities";
+
+export const metadata: Metadata = {
+    title: "West Tower | Access Realties",
+    description: "Explore Access West Tower in Colombo, offering modern parking, retail and office spaces connected to the Access Towers complex.",
+};
 
 const westTowerFeatures = [
     {
@@ -146,23 +153,9 @@ export default function WestTower() {
             {/* Replaced Snapshot Banner */}
             <TowerCarousel images={towerImages} />
 
-            <div className="west-tower-fearures">
-                <div className="container">
-                    <h2>West Tower Features</h2>
-                    <p>Modern Commercial and Parking Infrastructure in the Heart of Colombo.</p>
+           
 
-                    <div className="row features-row">
-                        {westTowerFeatures.map((feature, index) => (
-                            <AmenityIcon
-                                key={index}
-                                icon={feature.icon}
-                                title={feature.title}
-                                alt={feature.alt}
-                            />
-                        ))}
-                    </div>
-                </div>
-            </div>
+             <Aminities items={westTowerFeatures}/>
 
             <main>
                 <OurClient clients={ourClients} />
