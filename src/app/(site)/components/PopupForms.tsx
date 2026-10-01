@@ -161,7 +161,7 @@ export function FacilitiesInquiryForm() {
     return (
         <>
 
-            <Modal className="modal" show={show} onHide={handleClose} tabIndex={-1}>
+            <Modal className="modal" show={show} centered onHide={handleClose} tabIndex={-1}>
                 <Modal.Dialog className="modal-form">
                     <Modal.Header className="modal-header" >
                         <CloseButton onClick={handleClose} />
@@ -301,6 +301,7 @@ export function DownloadFloorPlanForm({ tower }: { tower: Tower }) {
                 show={show}
                 onHide={handleClose}
                 tabIndex={-1}
+                centered
             >
                 <Modal.Dialog className="modal-form">
                     <Modal.Header className="modal-header">
@@ -398,7 +399,7 @@ export function WestTowerInquiryForm() {
     return (
         <>
 
-            <Modal className="modal" show={show} onHide={handleClose} tabIndex={-1}>
+            <Modal className="modal" centered show={show} onHide={handleClose} tabIndex={-1}>
                 <Modal.Dialog className="modal-form">
                     <Modal.Header className="modal-header" >
                         <CloseButton onClick={handleClose} />
