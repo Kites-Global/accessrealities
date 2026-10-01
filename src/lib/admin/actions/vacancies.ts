@@ -4,7 +4,9 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/admin/db";
 import { vacancySchema, slugify } from "@/lib/admin/validators";
-import { deleteUpload } from "@/lib/admin/storage";
+import { saveUpload, deleteUpload } from "@/lib/admin/storage";
+
+const MAX_DOCUMENT_BYTES = 5 * 1024 * 1024;
 
 async function uniqueVacancySlug(base: string, ignoreId?: string): Promise<string> {
   const root = base || "vacancy";
@@ -23,8 +25,6 @@ async function uniqueVacancySlug(base: string, ignoreId?: string): Promise<strin
 function parseVacancy(formData: FormData) {
   const parsed = vacancySchema.safeParse({
     title: formData.get("title"),
-    location: formData.get("location") || undefined,
-    description: formData.get("description"),
     isOpen: formData.get("isOpen") === "on",
   });
   if (!parsed.success) {
@@ -33,11 +33,29 @@ function parseVacancy(formData: FormData) {
   return parsed.data;
 }
 
-export async function createVacancy(formData: FormData) {
-  const data = parseVacancy(formData);
-  const slug = await uniqueVacancySlug(slugify(data.title));
+/** Returns the uploaded PDF, or null when none was chosen and that's allowed (editing without replacing it). */
+function parseDocument(formData: FormData, required: boolean): File | null {
+  const file = formData.get("document");
+  if (!(file instanceof File) || file.size === 0) {
+    if (required) throw new Error("Please attach the vacancy document (PDF)");
+    return null;
+  }
+  if (file.type !== "application/pdf") {
+    throw new Error("Document must be a PDF file");
+  }
+  if (file.size > MAX_DOCUMENT_BYTES) {
+    throw new Error(`Document must be under ${Math.round(MAX_DOCUMENT_BYTES / (1024 * 1024))}MB`);
+  }
+  return file;
+}
 
-  await prisma.vacancy.create({ data: { ...data, slug } });
+export async function createVacancy(formData: FormData) {
+  const { title } = parseVacancy(formData);
+  const document = parseDocument(formData, true);
+  const documentUrl = await saveUpload(document!, "vacancies");
+  const slug = await uniqueVacancySlug(slugify(title));
+
+  await prisma.vacancy.create({ data: { title, isOpen: true, slug, documentUrl } });
 
   revalidatePath("/admin/careers");
   revalidatePath("/about-us/careers");
@@ -46,12 +64,19 @@ export async function createVacancy(formData: FormData) {
 
 export async function updateVacancy(id: string, formData: FormData) {
   const data = parseVacancy(formData);
+  const document = parseDocument(formData, false);
   const existing = await prisma.vacancy.findUniqueOrThrow({ where: { id } });
 
   const newSlug = slugify(data.title);
   const slug = newSlug === existing.slug ? existing.slug : await uniqueVacancySlug(newSlug, id);
 
-  await prisma.vacancy.update({ where: { id }, data: { ...data, slug } });
+  let documentUrl = existing.documentUrl;
+  if (document) {
+    documentUrl = await saveUpload(document, "vacancies");
+    await deleteUpload(existing.documentUrl);
+  }
+
+  await prisma.vacancy.update({ where: { id }, data: { ...data, slug, documentUrl } });
 
   revalidatePath("/admin/careers");
   revalidatePath("/about-us/careers");
@@ -67,9 +92,11 @@ export async function setVacancyStatus(id: string, value: string) {
 }
 
 export async function deleteVacancy(id: string) {
+  const vacancy = await prisma.vacancy.findUniqueOrThrow({ where: { id } });
   const applications = await prisma.application.findMany({ where: { vacancyId: id } });
 
   await prisma.vacancy.delete({ where: { id } });
+  await deleteUpload(vacancy.documentUrl);
   await Promise.all(applications.map((a) => deleteUpload(a.cvUrl)));
 
   revalidatePath("/admin/careers");

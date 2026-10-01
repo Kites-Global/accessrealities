@@ -2,12 +2,7 @@
 
 import { saveUpload } from "@/lib/admin/storage";
 
-const CONTENT_IMAGE_LIMITS = {
-  news: 800 * 1024,
-  vacancy: 1024 * 1024,
-} as const;
-
-type ContentImageContext = keyof typeof CONTENT_IMAGE_LIMITS;
+const MAX_IMAGE_BYTES = 800 * 1024;
 
 export async function uploadContentImage(
   formData: FormData,
@@ -19,11 +14,8 @@ export async function uploadContentImage(
   if (!file.type.startsWith("image/")) {
     return { error: "File must be an image." };
   }
-
-  const context: ContentImageContext = formData.get("context") === "vacancy" ? "vacancy" : "news";
-  const maxBytes = CONTENT_IMAGE_LIMITS[context];
-  if (file.size > maxBytes) {
-    return { error: `Image must be under ${Math.round(maxBytes / 1024)}KB.` };
+  if (file.size > MAX_IMAGE_BYTES) {
+    return { error: `Image must be under ${Math.round(MAX_IMAGE_BYTES / 1024)}KB.` };
   }
 
   const url = await saveUpload(file, "content");

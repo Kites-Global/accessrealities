@@ -11,7 +11,7 @@ const PUBLIC_URL_BASE = process.env.S3_PUBLIC_URL_BASE;
 export const MEDIA_ROUTE = "/api/media";
 
 /** Folders under /api/media that anyone may read. Everything else needs an admin session. */
-export const PUBLIC_MEDIA_FOLDERS = ["news", "content"];
+export const PUBLIC_MEDIA_FOLDERS = ["news", "content", "vacancies"];
 
 function cdnBase(): string | null {
   return PUBLIC_URL_BASE ? PUBLIC_URL_BASE.replace(/\/$/, "") : null;

@@ -23,8 +23,6 @@ export function toDateInputValue(date: Date): string {
 
 export const vacancySchema = z.object({
   title: z.string().trim().min(1, "Title is required"),
-  location: z.string().trim().optional(),
-  description: z.string().trim().min(1, "Description is required"),
   isOpen: z.boolean().default(true),
 });
 

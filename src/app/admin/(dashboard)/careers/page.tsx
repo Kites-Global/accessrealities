@@ -9,16 +9,14 @@ export const dynamic = "force-dynamic";
 
 const PAGE_SIZE = 10;
 
-type SortKey = "title" | "location" | "isOpen" | "createdAt";
+type SortKey = "title" | "isOpen" | "createdAt";
 type Dir = "asc" | "desc";
-type Params = { q?: string; location?: string; sort?: string; dir?: string; page?: string };
+type Params = { q?: string; sort?: string; dir?: string; page?: string };
 
 function vacancyOrderBy(sort: SortKey, dir: Dir) {
   switch (sort) {
     case "title":
       return { title: dir };
-    case "location":
-      return { location: dir };
     case "isOpen":
       return { isOpen: dir };
     default:
@@ -46,17 +44,12 @@ export default async function AdminCareersListPage({
 }) {
   const params = await searchParams;
   const q = params.q?.trim() || "";
-  const location = params.location?.trim() || "";
-  const sort: SortKey =
-    params.sort === "title" || params.sort === "location" || params.sort === "isOpen"
-      ? params.sort
-      : "createdAt";
+  const sort: SortKey = params.sort === "title" || params.sort === "isOpen" ? params.sort : "createdAt";
   const dir: Dir = params.dir === "asc" ? "asc" : "desc";
   const page = Math.max(1, Number(params.page) || 1);
 
   const where = {
     ...(q ? { title: { contains: q } } : {}),
-    ...(location ? { location: { contains: location } } : {}),
   };
 
   const [vacancies, total] = await Promise.all([
@@ -83,13 +76,12 @@ export default async function AdminCareersListPage({
       <div className="admin-card">
         <form method="GET" className="admin-search-bar">
           <input type="text" name="q" defaultValue={q} placeholder="Search by title…" />
-          <input type="text" name="location" defaultValue={location} placeholder="Search by location…" />
           <input type="hidden" name="sort" value={sort} />
           <input type="hidden" name="dir" value={dir} />
           <button type="submit" className="admin-btn admin-btn-secondary">
             Search
           </button>
-          {(q || location) && (
+          {q && (
             <Link href="/admin/careers" className="admin-btn admin-btn-secondary">
               Clear
             </Link>
@@ -97,7 +89,7 @@ export default async function AdminCareersListPage({
         </form>
 
         {vacancies.length === 0 ? (
-          <p className="admin-empty">{q || location ? "No vacancies match your search." : "No vacancies yet."}</p>
+          <p className="admin-empty">{q ? "No vacancies match your search." : "No vacancies yet."}</p>
         ) : (
           <>
             <table className="admin-table">
@@ -105,9 +97,6 @@ export default async function AdminCareersListPage({
                 <tr>
                   <th>
                     <SortHeader label="Title" sortKey="title" params={params} />
-                  </th>
-                  <th>
-                    <SortHeader label="Location" sortKey="location" params={params} />
                   </th>
                   <th>
                     <SortHeader label="Status" sortKey="isOpen" params={params} />
@@ -119,7 +108,6 @@ export default async function AdminCareersListPage({
                 {vacancies.map((vacancy) => (
                   <tr key={vacancy.id}>
                     <td>{vacancy.title}</td>
-                    <td>{vacancy.location || "—"}</td>
                     <td>
                       <StatusToggle
                         id={vacancy.id}

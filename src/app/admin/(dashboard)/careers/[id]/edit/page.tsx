@@ -18,10 +18,11 @@ export default async function EditVacancyPage({ params }: { params: Promise<{ id
           action={updateVacancy.bind(null, vacancy.id)}
           defaultValues={{
             title: vacancy.title,
-            location: vacancy.location,
-            description: vacancy.description,
             isOpen: vacancy.isOpen,
           }}
+          currentDocumentUrl={vacancy.documentUrl}
+          showStatus
+          documentRequired={false}
           submitLabel="Save Changes"
         />
       </div>

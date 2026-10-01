@@ -4,7 +4,7 @@ import { randomUUID } from "node:crypto";
 import { publicUrlFor, keyFromPublicUrl } from "./media";
 import { floorPlanKey, type Tower } from "@/lib/floorPlans";
 
-export type UploadFolder = "news" | "cv" | "content";
+export type UploadFolder = "news" | "cv" | "content" | "vacancies";
 
 const REGION = process.env.AWS_REGION;
 const BUCKET = process.env.S3_BUCKET_NAME;

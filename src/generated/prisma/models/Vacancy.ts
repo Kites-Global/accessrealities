@@ -28,8 +28,7 @@ export type VacancyMinAggregateOutputType = {
   id: string | null
   title: string | null
   slug: string | null
-  location: string | null
-  description: string | null
+  documentUrl: string | null
   isOpen: boolean | null
   createdAt: Date | null
   updatedAt: Date | null
@@ -39,8 +38,7 @@ export type VacancyMaxAggregateOutputType = {
   id: string | null
   title: string | null
   slug: string | null
-  location: string | null
-  description: string | null
+  documentUrl: string | null
   isOpen: boolean | null
   createdAt: Date | null
   updatedAt: Date | null
@@ -50,8 +48,7 @@ export type VacancyCountAggregateOutputType = {
   id: number
   title: number
   slug: number
-  location: number
-  description: number
+  documentUrl: number
   isOpen: number
   createdAt: number
   updatedAt: number
@@ -63,8 +60,7 @@ export type VacancyMinAggregateInputType = {
   id?: true
   title?: true
   slug?: true
-  location?: true
-  description?: true
+  documentUrl?: true
   isOpen?: true
   createdAt?: true
   updatedAt?: true
@@ -74,8 +70,7 @@ export type VacancyMaxAggregateInputType = {
   id?: true
   title?: true
   slug?: true
-  location?: true
-  description?: true
+  documentUrl?: true
   isOpen?: true
   createdAt?: true
   updatedAt?: true
@@ -85,8 +80,7 @@ export type VacancyCountAggregateInputType = {
   id?: true
   title?: true
   slug?: true
-  location?: true
-  description?: true
+  documentUrl?: true
   isOpen?: true
   createdAt?: true
   updatedAt?: true
@@ -169,8 +163,7 @@ export type VacancyGroupByOutputType = {
   id: string
   title: string
   slug: string
-  location: string | null
-  description: string
+  documentUrl: string
   isOpen: boolean
   createdAt: Date
   updatedAt: Date
@@ -201,8 +194,7 @@ export type VacancyWhereInput = {
   id?: Prisma.StringFilter<"Vacancy"> | string
   title?: Prisma.StringFilter<"Vacancy"> | string
   slug?: Prisma.StringFilter<"Vacancy"> | string
-  location?: Prisma.StringNullableFilter<"Vacancy"> | string | null
-  description?: Prisma.StringFilter<"Vacancy"> | string
+  documentUrl?: Prisma.StringFilter<"Vacancy"> | string
   isOpen?: Prisma.BoolFilter<"Vacancy"> | boolean
   createdAt?: Prisma.DateTimeFilter<"Vacancy"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Vacancy"> | Date | string
@@ -213,8 +205,7 @@ export type VacancyOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   title?: Prisma.SortOrder
   slug?: Prisma.SortOrder
-  location?: Prisma.SortOrderInput | Prisma.SortOrder
-  description?: Prisma.SortOrder
+  documentUrl?: Prisma.SortOrder
   isOpen?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
@@ -228,8 +219,7 @@ export type VacancyWhereUniqueInput = Prisma.AtLeast<{
   OR?: Prisma.VacancyWhereInput[]
   NOT?: Prisma.VacancyWhereInput | Prisma.VacancyWhereInput[]
   title?: Prisma.StringFilter<"Vacancy"> | string
-  location?: Prisma.StringNullableFilter<"Vacancy"> | string | null
-  description?: Prisma.StringFilter<"Vacancy"> | string
+  documentUrl?: Prisma.StringFilter<"Vacancy"> | string
   isOpen?: Prisma.BoolFilter<"Vacancy"> | boolean
   createdAt?: Prisma.DateTimeFilter<"Vacancy"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Vacancy"> | Date | string
@@ -240,8 +230,7 @@ export type VacancyOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   title?: Prisma.SortOrder
   slug?: Prisma.SortOrder
-  location?: Prisma.SortOrderInput | Prisma.SortOrder
-  description?: Prisma.SortOrder
+  documentUrl?: Prisma.SortOrder
   isOpen?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
@@ -257,8 +246,7 @@ export type VacancyScalarWhereWithAggregatesInput = {
   id?: Prisma.StringWithAggregatesFilter<"Vacancy"> | string
   title?: Prisma.StringWithAggregatesFilter<"Vacancy"> | string
   slug?: Prisma.StringWithAggregatesFilter<"Vacancy"> | string
-  location?: Prisma.StringNullableWithAggregatesFilter<"Vacancy"> | string | null
-  description?: Prisma.StringWithAggregatesFilter<"Vacancy"> | string
+  documentUrl?: Prisma.StringWithAggregatesFilter<"Vacancy"> | string
   isOpen?: Prisma.BoolWithAggregatesFilter<"Vacancy"> | boolean
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Vacancy"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Vacancy"> | Date | string
@@ -268,8 +256,7 @@ export type VacancyCreateInput = {
   id?: string
   title: string
   slug: string
-  location?: string | null
-  description: string
+  documentUrl: string
   isOpen?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -280,8 +267,7 @@ export type VacancyUncheckedCreateInput = {
   id?: string
   title: string
   slug: string
-  location?: string | null
-  description: string
+  documentUrl: string
   isOpen?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -292,8 +278,7 @@ export type VacancyUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
   slug?: Prisma.StringFieldUpdateOperationsInput | string
-  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  description?: Prisma.StringFieldUpdateOperationsInput | string
+  documentUrl?: Prisma.StringFieldUpdateOperationsInput | string
   isOpen?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -304,8 +289,7 @@ export type VacancyUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
   slug?: Prisma.StringFieldUpdateOperationsInput | string
-  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  description?: Prisma.StringFieldUpdateOperationsInput | string
+  documentUrl?: Prisma.StringFieldUpdateOperationsInput | string
   isOpen?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -316,8 +300,7 @@ export type VacancyCreateManyInput = {
   id?: string
   title: string
   slug: string
-  location?: string | null
-  description: string
+  documentUrl: string
   isOpen?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -327,8 +310,7 @@ export type VacancyUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
   slug?: Prisma.StringFieldUpdateOperationsInput | string
-  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  description?: Prisma.StringFieldUpdateOperationsInput | string
+  documentUrl?: Prisma.StringFieldUpdateOperationsInput | string
   isOpen?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -338,8 +320,7 @@ export type VacancyUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
   slug?: Prisma.StringFieldUpdateOperationsInput | string
-  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  description?: Prisma.StringFieldUpdateOperationsInput | string
+  documentUrl?: Prisma.StringFieldUpdateOperationsInput | string
   isOpen?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -349,8 +330,7 @@ export type VacancyCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   title?: Prisma.SortOrder
   slug?: Prisma.SortOrder
-  location?: Prisma.SortOrder
-  description?: Prisma.SortOrder
+  documentUrl?: Prisma.SortOrder
   isOpen?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
@@ -360,8 +340,7 @@ export type VacancyMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   title?: Prisma.SortOrder
   slug?: Prisma.SortOrder
-  location?: Prisma.SortOrder
-  description?: Prisma.SortOrder
+  documentUrl?: Prisma.SortOrder
   isOpen?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
@@ -371,8 +350,7 @@ export type VacancyMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   title?: Prisma.SortOrder
   slug?: Prisma.SortOrder
-  location?: Prisma.SortOrder
-  description?: Prisma.SortOrder
+  documentUrl?: Prisma.SortOrder
   isOpen?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
@@ -401,8 +379,7 @@ export type VacancyCreateWithoutApplicationsInput = {
   id?: string
   title: string
   slug: string
-  location?: string | null
-  description: string
+  documentUrl: string
   isOpen?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -412,8 +389,7 @@ export type VacancyUncheckedCreateWithoutApplicationsInput = {
   id?: string
   title: string
   slug: string
-  location?: string | null
-  description: string
+  documentUrl: string
   isOpen?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -439,8 +415,7 @@ export type VacancyUpdateWithoutApplicationsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
   slug?: Prisma.StringFieldUpdateOperationsInput | string
-  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  description?: Prisma.StringFieldUpdateOperationsInput | string
+  documentUrl?: Prisma.StringFieldUpdateOperationsInput | string
   isOpen?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -450,8 +425,7 @@ export type VacancyUncheckedUpdateWithoutApplicationsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
   slug?: Prisma.StringFieldUpdateOperationsInput | string
-  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  description?: Prisma.StringFieldUpdateOperationsInput | string
+  documentUrl?: Prisma.StringFieldUpdateOperationsInput | string
   isOpen?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -492,8 +466,7 @@ export type VacancySelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   id?: boolean
   title?: boolean
   slug?: boolean
-  location?: boolean
-  description?: boolean
+  documentUrl?: boolean
   isOpen?: boolean
   createdAt?: boolean
   updatedAt?: boolean
@@ -505,8 +478,7 @@ export type VacancySelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exten
   id?: boolean
   title?: boolean
   slug?: boolean
-  location?: boolean
-  description?: boolean
+  documentUrl?: boolean
   isOpen?: boolean
   createdAt?: boolean
   updatedAt?: boolean
@@ -516,8 +488,7 @@ export type VacancySelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exten
   id?: boolean
   title?: boolean
   slug?: boolean
-  location?: boolean
-  description?: boolean
+  documentUrl?: boolean
   isOpen?: boolean
   createdAt?: boolean
   updatedAt?: boolean
@@ -527,14 +498,13 @@ export type VacancySelectScalar = {
   id?: boolean
   title?: boolean
   slug?: boolean
-  location?: boolean
-  description?: boolean
+  documentUrl?: boolean
   isOpen?: boolean
   createdAt?: boolean
   updatedAt?: boolean
 }
 
-export type VacancyOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "title" | "slug" | "location" | "description" | "isOpen" | "createdAt" | "updatedAt", ExtArgs["result"]["vacancy"]>
+export type VacancyOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "title" | "slug" | "documentUrl" | "isOpen" | "createdAt" | "updatedAt", ExtArgs["result"]["vacancy"]>
 export type VacancyInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   applications?: boolean | Prisma.Vacancy$applicationsArgs<ExtArgs>
   _count?: boolean | Prisma.VacancyCountOutputTypeDefaultArgs<ExtArgs>
@@ -551,8 +521,7 @@ export type $VacancyPayload<ExtArgs extends runtime.Types.Extensions.InternalArg
     id: string
     title: string
     slug: string
-    location: string | null
-    description: string
+    documentUrl: string
     isOpen: boolean
     createdAt: Date
     updatedAt: Date
@@ -983,8 +952,7 @@ export interface VacancyFieldRefs {
   readonly id: Prisma.FieldRef<"Vacancy", 'String'>
   readonly title: Prisma.FieldRef<"Vacancy", 'String'>
   readonly slug: Prisma.FieldRef<"Vacancy", 'String'>
-  readonly location: Prisma.FieldRef<"Vacancy", 'String'>
-  readonly description: Prisma.FieldRef<"Vacancy", 'String'>
+  readonly documentUrl: Prisma.FieldRef<"Vacancy", 'String'>
   readonly isOpen: Prisma.FieldRef<"Vacancy", 'Boolean'>
   readonly createdAt: Prisma.FieldRef<"Vacancy", 'DateTime'>
   readonly updatedAt: Prisma.FieldRef<"Vacancy", 'DateTime'>
