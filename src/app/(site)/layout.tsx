@@ -6,7 +6,11 @@ import BootstrapClient from "./components/BootstrapClient";
 import { Roboto } from "next/font/google";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import Script from "next/script";
 
+
+const GA_ID = process.env.GA_ID;
+const environment = process.env.NEXT_PUBLIC_ENV;
 
 
 const geistSans = Geist({
@@ -26,11 +30,6 @@ const roboto = Roboto(
   }
 )
 
-// export const metadata: Metadata = {
-//   title: "Access Realities",
-//   description: "Access Realities",
-// };
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -40,6 +39,25 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${roboto.variable}`}>
       <BootstrapClient />
+      <head>
+        {environment === "production" && GA_ID && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+              strategy="afterInteractive"
+            />
+
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`
+                      window.dataLayer = window.dataLayer || [];
+                      function gtag(){dataLayer.push(arguments);}
+                      gtag('js', new Date());
+                      gtag('config', '${GA_ID}');
+              `}
+            </Script>
+          </>
+        )}
+      </head>
       <body>
         <Navbar />
         {children}
