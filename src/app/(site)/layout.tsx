@@ -57,6 +57,10 @@ export default function RootLayout({
             </Script>
           </>
         )}
+
+        {environment !== "production" && (
+          <meta name="robots" content="noindex, nofollow"></meta>
+        )}
       </head>
       <body>
         <Navbar />
