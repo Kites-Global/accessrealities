@@ -309,7 +309,7 @@ header {
     flex-wrap: nowrap;
     max-width: 100%;
     overflow-x: scroll;
-    margin-bottom: 5.5rem;
+    padding-bottom: 3.5rem;
     gap: 1.5rem;
     scroll-behavior: smooth;
 
@@ -360,10 +360,10 @@ header {
 /* Custom Scrollbar Styles */
 .hide-native-scroll {
   --scrollbar-thumb: var(--primary-color);
-  --scrollbar-track: rgba(255, 255, 255, 0.123);
+  --scrollbar-track: rgba(51, 50, 50, 0.753);
 
   overflow-x: scroll;
-  scrollbar-width: thin;
+  scrollbar-width: thin !important;
   scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
 }
 
@@ -392,6 +392,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+
   .custom-scrollbar-track {
     position: relative;
     width: 80%;
@@ -2232,17 +2233,8 @@ h6 {
 
   .milestornes-sec {
     padding: 0;
-    height: 100vh;
+    height: 75vh;
   }
-
-  /* .hide-native-scroll {
-    scrollbar-width: none !important;
-    -ms-overflow-style: none !important;
-  }
-
-  .hide-native-scroll::-webkit-scrollbar {
-    display: none !important;
-  } */
 
   .facilities-sec {
     padding: 3rem 0;
