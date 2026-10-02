@@ -155,7 +155,7 @@ header {
     text-transform: uppercase;
 
     h1 {
-      font-size: 2.5rem;
+      font-size: 2rem;
       font-weight: 600;
       line-height: 2.3rem;
     }
@@ -2154,6 +2154,14 @@ h6 {
 
       .portal-link {
         background-color: var(--primary-color);
+      }
+    }
+  }
+
+  .hero-sec {
+    .title-cont {
+      h1 {
+        font-size: 2.5rem;
       }
     }
   }
