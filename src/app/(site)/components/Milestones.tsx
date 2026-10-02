@@ -140,19 +140,21 @@ function Milestones() {
                 </div>
 
                 {/* UPDATED TRACK AND THUMB WITH DRAG LOGIC */}
-                <div className="custom-scrollbar-track" ref={trackRef}>
-                    <div
-                        className={`custom-scrollbar-thumb ${isDragging ? "dragging" : ""}`}
-                        style={{ left: `${scrollProgress}%` }}
-                        onPointerDown={(e) => {
-                            e.preventDefault();
-                            setIsDragging(true);
-                            setStartX(e.clientX);
-                            if (scrollRef.current) {
-                                setStartScrollLeft(scrollRef.current.scrollLeft);
-                            }
-                        }}
-                    >
+                <div className= "custom-scrollbar-container">
+                    <div className="custom-scrollbar-track" ref={trackRef}>
+                        <div
+                            className={`custom-scrollbar-thumb ${isDragging ? "dragging" : ""}`}
+                            style={{ left: `${scrollProgress}%` }}
+                            onPointerDown={(e) => {
+                                e.preventDefault();
+                                setIsDragging(true);
+                                setStartX(e.clientX);
+                                if (scrollRef.current) {
+                                    setStartScrollLeft(scrollRef.current.scrollLeft);
+                                }
+                            }}
+                        >
+                        </div>
                     </div>
                 </div>
             </div>
