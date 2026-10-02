@@ -79,7 +79,7 @@ export default function Footer() {
                                         <Link href="tel:+94112302302"> +94 112 302 302 </Link>
                                     </div>
                                 </li>
-                                <li><i className="bi bi-envelope-fill"></i><Link href="mailto:fme@accessrealities.com"> fme@accessrealities.com </Link></li>
+                                <li><i className="bi bi-envelope-fill"></i><Link href="mailto:info@accessrealities.com"> info@accessrealities.com </Link></li>
                             </ul>
                             <div className="socialies">
                                 <Link href="https://www.linkedin.com/company/access-realties-pvt-org" target="_blank"><i className="bi bi-linkedin"></i></Link>
