@@ -50,7 +50,7 @@ export default function SouthTower() {
             <section className="south-page tower-page-banner">
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-9 intro-cont">
+                        <div className="col-lg-7 col-md-6 intro-cont">
                             <div className="intro-itm">
                                 <h1>South Tower</h1>
                                 <p>
@@ -66,18 +66,20 @@ export default function SouthTower() {
                                 </p>
                             </div>
                         </div>
-                        <div className="col-md-3">
-                            <div className="img-cont">
-                                <Image
-                                    src="/img/south-tower-fimg1.png"
-                                    alt="Access Realties"
-                                    className="img-fluid"
-                                    width={600}
-                                    height={800}
-                                />
-                                <DownloadFloorPlanForm tower="south" />
-                                {/* <a href="/pdf/10 FLOOR T2 (South Tower Floor Plan).pdf" target="_blank" rel="noopener noreferrer" className="btn-theme1 btn">Floor Plans</a> */}
-                                {/* <a href="/contact" className="btn-theme1 btn">Inquire Now</a> */}
+                        <div className="col-lg-4 col-md-6">
+                            <div className="inquiry-cont">
+                                <div className="img-cont">
+                                    <Image
+                                        src="/img/south-tower-fimg1.png"
+                                        alt="Access Realties"
+                                        className="img-fluid"
+                                        width={600}
+                                        height={800}
+                                    />
+                                    <DownloadFloorPlanForm tower="south" />
+                                    {/* <a href="/pdf/10 FLOOR T2 (South Tower Floor Plan).pdf" target="_blank" rel="noopener noreferrer" className="btn-theme1 btn">Floor Plans</a> */}
+                                    {/* <a href="/contact" className="btn-theme1 btn">Inquire Now</a> */}
+                                </div>
                             </div>
                         </div>
                     </div>

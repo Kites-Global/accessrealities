@@ -115,7 +115,7 @@ export default function WestTower() {
             <section className="west-page tower-page-banner">
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-9 intro-cont">
+                        <div className="col-lg-7 col-md-6 intro-cont">
                             <div className="intro-itm">
                                 <h1>West Tower</h1>
                                 <p>
@@ -132,18 +132,20 @@ export default function WestTower() {
                                 </p>
                             </div>
                         </div>
-                        <div className="col-md-3">
-                            <div className="img-cont">
-                                <Image
-                                    src="/img/west-tower-img1.webp"
-                                    alt="Access Realties"
-                                    className="img-fluid"
-                                    width={600}
-                                    height={800}
-                                />
-                                {/* <a href="#" className="btn-theme1 btn">Floor Plans</a> */}
-                                {/* <a href="#" className="btn-theme1 btn">Inquire Now</a> */}
-                                <WestTowerInquiryForm />
+                        <div className="col-lg-4 col-md-6">
+                            <div className="inquiry-cont">
+                                <div className="img-cont">
+                                    <Image
+                                        src="/img/west-tower-img1.webp"
+                                        alt="Access Realties"
+                                        className="img-fluid"
+                                        width={600}
+                                        height={800}
+                                    />
+                                    {/* <a href="#" className="btn-theme1 btn">Floor Plans</a> */}
+                                    {/* <a href="#" className="btn-theme1 btn">Inquire Now</a> */}
+                                    <WestTowerInquiryForm />
+                                </div>
                             </div>
                         </div>
                     </div>

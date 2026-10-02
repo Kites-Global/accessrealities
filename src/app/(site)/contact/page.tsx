@@ -39,9 +39,9 @@ function Contact() {
                                         <i className="bi bi-telephone-outbound-fill"></i>
                                         <p>+94 112 302 302</p>
                                     </a>
-                                    <a href="mailto:fme@accessrealties.com" className="contact-list-itm">
+                                    <a href="mailto:info@accessrealties.com" className="contact-list-itm">
                                         <i className="bi bi-envelope"></i>
-                                        <p>fme@accessrealties.com</p>
+                                        <p>info@accessrealties.com</p>
                                     </a>
                                     <a href="https://www.accessrealties.com" className="contact-list-itm">
                                         <i className="bi bi-globe"></i>

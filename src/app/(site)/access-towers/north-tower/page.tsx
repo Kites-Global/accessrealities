@@ -44,7 +44,7 @@ export default function NorthTower() {
             <section className="north-page tower-page-banner">
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-9 intro-cont">
+                        <div className="col-lg-7 col-md-6 intro-cont">
                             <div className="intro-itm">
                                 <h1>North Tower</h1>
                                 <p>
@@ -60,20 +60,22 @@ export default function NorthTower() {
                                 </p>
                             </div>
                         </div>
-                        <div className="col-md-3">
-                            <div className="img-cont">
-                                <Image
-                                    src="/img/north-tower-fimg1.png"
-                                    alt="Access Realties"
-                                    className="img-fluid"
-                                    width={600}
-                                    height={800}
-                                />
-                                <DownloadFloorPlanForm tower="north" />
-                                {/* <a href="#" rel="noopener noreferrer" className="btn-theme1 btn">
+                        <div className="col-lg-4 col-md-6">
+                            <div className="inquiry-cont">
+                                <div className="img-cont">
+                                    <Image
+                                        src="/img/north-tower-fimg1.png"
+                                        alt="Access Realties"
+                                        className="img-fluid"
+                                        width={600}
+                                        height={800}
+                                    />
+                                    <DownloadFloorPlanForm tower="north" />
+                                    {/* <a href="#" rel="noopener noreferrer" className="btn-theme1 btn">
                                     Floor Plans <i className="bi bi-cloud-download" aria-hidden="true"></i>
                                 </a> */}
-                                {/* <a href="/contact" className="btn-theme1 btn">Inquire Now</a> */}
+                                    {/* <a href="/contact" className="btn-theme1 btn">Inquire Now</a> */}
+                                </div>
                             </div>
                         </div>
                     </div>
