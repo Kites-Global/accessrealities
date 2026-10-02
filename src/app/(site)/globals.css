@@ -308,7 +308,8 @@ header {
     display: flex;
     flex-wrap: nowrap;
     max-width: 100%;
-    overflow-x: scroll;
+    overflow-x: scroll !important;
+    -webkit-overflow-scrolling: touch !important;
     padding-bottom: 3.5rem;
     gap: 1.5rem;
     scroll-behavior: smooth;
@@ -364,14 +365,14 @@ header {
 
   overflow-x: scroll;
   scrollbar-width: thin !important;
-  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track) !important;
 }
 
 .hide-native-scroll::-webkit-scrollbar {
-  display: block;
+  display: block !important;
   height: 8px;
   width: 8px;
-  background: var(--scrollbar-track);
+  background: var(--scrollbar-track) !important;
 }
 
 .hide-native-scroll::-webkit-scrollbar-track {
