@@ -10,13 +10,15 @@ export default function Footer() {
             <div className="container">
                 <div className="row">
                     <div className="col-md-2">
-                        <Image
-                            src="/img/logo.png"
-                            alt="Logo"
-                            className="img-fluid"
-                            width={250}
-                            height={100}
-                        />
+                        <div className="footer-logo-cont">
+                            <Image
+                                src="/img/logo.png"
+                                alt="Logo"
+                                className="img-fluid footer-logo"
+                                width={250}
+                                height={100}
+                            />
+                        </div>
                     </div>
                     <div className="col-md-8">
                         <div className="quick-links">
@@ -87,6 +89,9 @@ export default function Footer() {
                         </div>
 
                     </div>
+                </div>
+                <div className="credits">
+                    <p>Copyright &copy; {new Date().getFullYear()} Access Realties. All rights reserved. | Design and Developed By <a href="https://kites.global" target="_blank" rel="noopener noreferrer">Kites Global</a>.</p>
                 </div>
             </div>
         </footer>
