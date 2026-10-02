@@ -140,7 +140,7 @@ function Milestones() {
                 </div>
 
                 {/* UPDATED TRACK AND THUMB WITH DRAG LOGIC */}
-                <div className= "custom-scrollbar-container">
+                {/* <div className= "custom-scrollbar-container">
                     <div className="custom-scrollbar-track" ref={trackRef}>
                         <div
                             className={`custom-scrollbar-thumb ${isDragging ? "dragging" : ""}`}
@@ -156,7 +156,7 @@ function Milestones() {
                         >
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
         </section>
     )

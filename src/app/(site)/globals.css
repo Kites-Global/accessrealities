@@ -307,7 +307,8 @@ header {
     margin-top: 3rem;
     display: flex;
     flex-wrap: nowrap;
-    overflow-x: auto;
+    max-width: 100%;
+    overflow-x: scroll;
     margin-bottom: 5.5rem;
     gap: 1.5rem;
     scroll-behavior: smooth;
@@ -358,12 +359,33 @@ header {
 
 /* Custom Scrollbar Styles */
 .hide-native-scroll {
-  scrollbar-width: none !important;
-  -ms-overflow-style: none !important;
+  --scrollbar-thumb: var(--primary-color);
+  --scrollbar-track: rgba(255, 255, 255, 0.123);
+
+  overflow-x: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
 }
 
 .hide-native-scroll::-webkit-scrollbar {
-  display: none !important;
+  display: block;
+  height: 8px;
+  width: 8px;
+  background: var(--scrollbar-track);
+}
+
+.hide-native-scroll::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+  border-radius: 999px;
+}
+
+.hide-native-scroll::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+  border-radius: 999px;
+}
+
+.hide-native-scroll::-webkit-scrollbar-thumb:hover {
+  background-color: var(--primary-color-hover);
 }
 
 .custom-scrollbar-container {
@@ -2212,6 +2234,15 @@ h6 {
     padding: 0;
     height: 100vh;
   }
+
+  /* .hide-native-scroll {
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+
+  .hide-native-scroll::-webkit-scrollbar {
+    display: none !important;
+  } */
 
   .facilities-sec {
     padding: 3rem 0;
