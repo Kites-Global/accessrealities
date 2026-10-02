@@ -32,26 +32,25 @@ export default async function NewsDetail({ params }: { params: Promise<{ id: str
                         <i className="bi bi-arrow-left"></i> Back to all news
                     </Link>
 
-                    <div className="row justify-content-center">
-                        <div className="col-md-6 mb-4 mb-md-0">
-                            <Image
-                                src={imageSrc || FALLBACK_IMAGE}
-                                alt={post.title}
-                                className="img-fluid news-detail-img"
-                                width={imageSrc ? 640 : 850}
-                                height={imageSrc ? 427 : 567}
-                            />
-                        </div>
-
-                        <div className="col-md-12 px-md-4">
-                            <p className="news-detail-date">{date}</p>
-                            <h2>{post.title}</h2>
-                            <div
-                                className="news-detail-content"
-                                dangerouslySetInnerHTML={{ __html: post.content }}
-                            />
-                        </div>
+                    <div className="news-detail-banner">
+                        <Image
+                            src={imageSrc || FALLBACK_IMAGE}
+                            alt={post.title}
+                            className="img-fluid news-detail-img"
+                            width={imageSrc ? 640 : 850}
+                            height={imageSrc ? 427 : 567}
+                        />
                     </div>
+
+                    <div className="px-md-4">
+                        <p className="news-detail-date">{date}</p>
+                        <h2>{post.title}</h2>
+                        <div
+                            className="news-detail-content"
+                            dangerouslySetInnerHTML={{ __html: post.content }}
+                        />
+                    </div>
+
                 </div>
             </section>
         </>

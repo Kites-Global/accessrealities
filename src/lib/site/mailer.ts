@@ -4,7 +4,6 @@ import { towerLabel, type Tower } from "@/lib/floorPlans";
 
 const REGION = process.env.AWS_REGION;
 const FROM_EMAIL = process.env.SES_FROM_EMAIL;
-const TO_EMAIL = process.env.SES_TO_EMAIL;
 
 let client: SESClient | null = null;
 
@@ -34,14 +33,15 @@ function escapeHtml(value: string): string {
     .replace(/'/g, "&#39;");
 }
 
-/** Sends a notification email for a submitted inquiry form. Recipient/sender come from SES_TO_EMAIL / SES_FROM_EMAIL. */
+/** Sends a notification email for a submitted inquiry form. Sender comes from SES_FROM_EMAIL. */
 export async function sendInquiryEmail(options: {
+  to: string;
   subject: string;
   fields: Array<{ label: string; value: string }>;
   replyTo: string;
 }): Promise<void> {
-  if (!FROM_EMAIL || !TO_EMAIL) {
-    throw new Error("SES is not configured. Set SES_FROM_EMAIL and SES_TO_EMAIL.");
+  if (!FROM_EMAIL || !options.to) {
+    throw new Error("SES is not configured. Set SES_FROM_EMAIL and a recipient address.");
   }
 
   const rowsHtml = options.fields
@@ -55,7 +55,7 @@ export async function sendInquiryEmail(options: {
   await getClient().send(
     new SendEmailCommand({
       Source: FROM_EMAIL,
-      Destination: { ToAddresses: [TO_EMAIL] },
+      Destination: { ToAddresses: [options.to] },
       ReplyToAddresses: options.replyTo ? [options.replyTo] : undefined,
       Message: {
         Subject: { Data: options.subject, Charset: "UTF-8" },
@@ -84,13 +84,14 @@ function base64Wrapped(data: Buffer | string): string {
  * Uses SES's raw-message API since the structured SendEmailCommand has no attachment support.
  */
 export async function sendEmailWithAttachment(options: {
+  to: string;
   subject: string;
   fields: Array<{ label: string; value: string }>;
   replyTo: string;
   attachment: { filename: string; contentType: string; content: Buffer };
 }): Promise<void> {
-  if (!FROM_EMAIL || !TO_EMAIL) {
-    throw new Error("SES is not configured. Set SES_FROM_EMAIL and SES_TO_EMAIL.");
+  if (!FROM_EMAIL || !options.to) {
+    throw new Error("SES is not configured. Set SES_FROM_EMAIL and a recipient address.");
   }
 
   const bodyText = options.fields.map((f) => `${f.label}: ${f.value}`).join("\n");
@@ -99,7 +100,7 @@ export async function sendEmailWithAttachment(options: {
 
   const message = [
     `From: ${FROM_EMAIL}`,
-    `To: ${TO_EMAIL}`,
+    `To: ${options.to}`,
     `Reply-To: ${options.replyTo}`,
     `Subject: ${encodeHeaderValue(options.subject)}`,
     "MIME-Version: 1.0",
