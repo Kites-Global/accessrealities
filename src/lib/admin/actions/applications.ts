@@ -52,6 +52,7 @@ export async function submitApplication(formData: FormData) {
   // Nothing is persisted anywhere else, so a failed send here means the application is
   // lost — this must throw (not be swallowed) so the applicant sees the error and can retry.
   await sendEmailWithAttachment({
+    to: process.env.SES_HR_EMAIL ?? "",
     subject: `New Job Application - ${vacancy.title}`,
     fields: [
       { label: "Position", value: vacancy.title },

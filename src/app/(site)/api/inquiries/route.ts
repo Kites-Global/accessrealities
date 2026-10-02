@@ -81,6 +81,7 @@ export async function POST(request: Request) {
 
   try {
     await sendInquiryEmail({
+      to: process.env.SES_TO_EMAIL ?? "",
       subject: SUBJECTS[data.type],
       fields: buildFields(data),
       replyTo: data.email,
