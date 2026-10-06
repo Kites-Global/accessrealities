@@ -2192,15 +2192,12 @@ h6 {
         }
       }
 
-      h5 {
-        text-decoration: underline;
-      }
+     
     }
 
     .links-cont {
       display: flex;
       flex-direction: column;
-
 
       text-align: center;
 
@@ -2213,7 +2210,7 @@ h6 {
         padding: 0 2rem;
         border-top: 2px solid var(--primary-color);
         border-bottom: 2px solid var(--primary-color);
-         transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
       }
 
       .link-itm:first-child {
