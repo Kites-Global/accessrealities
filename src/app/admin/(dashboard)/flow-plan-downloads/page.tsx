@@ -35,7 +35,7 @@ export default async function FlowPlanDownloadsPage({
   return (
     <>
       <div className="admin-topbar">
-        <h1>Flow-plan downloads</h1>
+        <h1>Floor-plan downloads</h1>
       </div>
 
       <div className="admin-card">
