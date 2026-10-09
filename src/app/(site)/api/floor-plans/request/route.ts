@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { floorPlanRequestSchema } from "@/lib/site/validators";
 import { verifyRecaptcha } from "@/lib/site/recaptcha";
 import { sendFloorPlanLinkEmail } from "@/lib/site/mailer";
+import { prisma } from "@/lib/admin/db";
 import { signFloorPlanToken } from "@/lib/site/floorPlanToken";
 
 export const dynamic = "force-dynamic";
@@ -45,6 +46,15 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error("Failed to send floor plan link email", error);
     return NextResponse.json({ error: "Could not send the download link. Please try again later." }, { status: 500 });
+  }
+
+  try {
+    await prisma.floorPlanDownload.create({
+      data: { tower: data.tower, name: data.name, email: data.email },
+    });
+  } catch (error) {
+    // The email already went out; don't fail the request over a logging problem.
+    console.error("Failed to store floor plan download request", error);
   }
 
   return NextResponse.json({ ok: true });

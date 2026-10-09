@@ -38,6 +38,7 @@ export default function AdminDashboardLayout({
               <Link href="/admin/news">News &amp; Events</Link>
               <Link href="/admin/careers">Careers</Link>
               <Link href="/admin/floor-plans">Floor Plans</Link>
+              <Link href="/admin/flow-plan-downloads">Flow-plan downloads</Link>
               <Link href="/admin/settings">Settings</Link>
             </nav>
             <form action={logout}>
