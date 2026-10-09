@@ -61,3 +61,8 @@ export type Vacancy = Prisma.VacancyModel
  * 
  */
 export type Application = Prisma.ApplicationModel
+/**
+ * Model FloorPlanDownload
+ * 
+ */
+export type FloorPlanDownload = Prisma.FloorPlanDownloadModel

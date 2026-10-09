@@ -54,7 +54,8 @@ export const ModelName = {
   AdminUser: 'AdminUser',
   NewsPost: 'NewsPost',
   Vacancy: 'Vacancy',
-  Application: 'Application'
+  Application: 'Application',
+  FloorPlanDownload: 'FloorPlanDownload'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -121,6 +122,17 @@ export const ApplicationScalarFieldEnum = {
 } as const
 
 export type ApplicationScalarFieldEnum = (typeof ApplicationScalarFieldEnum)[keyof typeof ApplicationScalarFieldEnum]
+
+
+export const FloorPlanDownloadScalarFieldEnum = {
+  id: 'id',
+  tower: 'tower',
+  name: 'name',
+  email: 'email',
+  createdAt: 'createdAt'
+} as const
+
+export type FloorPlanDownloadScalarFieldEnum = (typeof FloorPlanDownloadScalarFieldEnum)[keyof typeof FloorPlanDownloadScalarFieldEnum]
 
 
 export const SortOrder = {
