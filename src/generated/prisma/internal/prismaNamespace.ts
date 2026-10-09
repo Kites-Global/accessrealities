@@ -400,7 +400,8 @@ export const ModelName = {
   AdminUser: 'AdminUser',
   NewsPost: 'NewsPost',
   Vacancy: 'Vacancy',
-  Application: 'Application'
+  Application: 'Application',
+  FloorPlanDownload: 'FloorPlanDownload'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -416,7 +417,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "adminUser" | "newsPost" | "vacancy" | "application"
+    modelProps: "adminUser" | "newsPost" | "vacancy" | "application" | "floorPlanDownload"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -716,6 +717,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    FloorPlanDownload: {
+      payload: Prisma.$FloorPlanDownloadPayload<ExtArgs>
+      fields: Prisma.FloorPlanDownloadFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.FloorPlanDownloadFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FloorPlanDownloadPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.FloorPlanDownloadFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FloorPlanDownloadPayload>
+        }
+        findFirst: {
+          args: Prisma.FloorPlanDownloadFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FloorPlanDownloadPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.FloorPlanDownloadFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FloorPlanDownloadPayload>
+        }
+        findMany: {
+          args: Prisma.FloorPlanDownloadFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FloorPlanDownloadPayload>[]
+        }
+        create: {
+          args: Prisma.FloorPlanDownloadCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FloorPlanDownloadPayload>
+        }
+        createMany: {
+          args: Prisma.FloorPlanDownloadCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.FloorPlanDownloadCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FloorPlanDownloadPayload>[]
+        }
+        delete: {
+          args: Prisma.FloorPlanDownloadDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FloorPlanDownloadPayload>
+        }
+        update: {
+          args: Prisma.FloorPlanDownloadUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FloorPlanDownloadPayload>
+        }
+        deleteMany: {
+          args: Prisma.FloorPlanDownloadDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.FloorPlanDownloadUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.FloorPlanDownloadUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FloorPlanDownloadPayload>[]
+        }
+        upsert: {
+          args: Prisma.FloorPlanDownloadUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FloorPlanDownloadPayload>
+        }
+        aggregate: {
+          args: Prisma.FloorPlanDownloadAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateFloorPlanDownload>
+        }
+        groupBy: {
+          args: Prisma.FloorPlanDownloadGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.FloorPlanDownloadGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.FloorPlanDownloadCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.FloorPlanDownloadCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -803,6 +878,17 @@ export const ApplicationScalarFieldEnum = {
 } as const
 
 export type ApplicationScalarFieldEnum = (typeof ApplicationScalarFieldEnum)[keyof typeof ApplicationScalarFieldEnum]
+
+
+export const FloorPlanDownloadScalarFieldEnum = {
+  id: 'id',
+  tower: 'tower',
+  name: 'name',
+  email: 'email',
+  createdAt: 'createdAt'
+} as const
+
+export type FloorPlanDownloadScalarFieldEnum = (typeof FloorPlanDownloadScalarFieldEnum)[keyof typeof FloorPlanDownloadScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -1009,6 +1095,7 @@ export type GlobalOmitConfig = {
   newsPost?: Prisma.NewsPostOmit
   vacancy?: Prisma.VacancyOmit
   application?: Prisma.ApplicationOmit
+  floorPlanDownload?: Prisma.FloorPlanDownloadOmit
 }
 
 /* Types for Logging */

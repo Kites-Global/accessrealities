@@ -58,3 +58,13 @@ model Application {
 
   @@index([vacancyId])
 }
+
+model FloorPlanDownload {
+  id        String   @id @default(cuid())
+  tower     String
+  name      String
+  email     String
+  createdAt DateTime @default(now())
+
+  @@index([createdAt])
+}
