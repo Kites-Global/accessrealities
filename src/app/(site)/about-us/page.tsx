@@ -11,13 +11,13 @@ function page() {
     const pages = [
         {
             title: "Access Realties",
-            imgSrc: "/img/about-us-parent.jpg",
+            imgSrc: "/img/about-us-parent.webp",
             imgAlt: "Access Realties",
             link: "/access-towers/west-tower"
         },
         {
             title: "Careers",
-            imgSrc: "/img/careers-parent.jpg",
+            imgSrc: "/img/careers-parent.webp",
             imgAlt: "Careers",
             link: "/access-towers/south-tower"
         },
