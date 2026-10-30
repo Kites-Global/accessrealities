@@ -33,7 +33,7 @@ export default function OurJourney() {
                         </div>
                         <div className="col-md-5 d-flex align-items-center justify-content-center">
                             <div className="img-cont">
-                                <img src="/img/our-journey-img1.png" alt="access tower" className="img-fluid" />
+                                <img src="/img/our-journey-img1.webp" alt="access tower" className="img-fluid" />
                             </div>
                         </div>
                         <div className="col-md-1"></div>

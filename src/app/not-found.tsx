@@ -21,7 +21,7 @@ export default function NotFound() {
             <div className="nf-page">
                 <div className="container">
                     <main className="nf-content">
-                        <Image src={"/img/logo-red.png"} alt="Access Realities" width={500} height={500} className="img-fluid access-logo"></Image>
+                        <Image src={"/img/logo-red.webp"} alt="Access Realities" width={500} height={500} className="img-fluid access-logo"></Image>
                         <div className="nf-code">404</div>
                         <h1 className="nf-title">Page Not Found</h1>
                         <p className="nf-desc">

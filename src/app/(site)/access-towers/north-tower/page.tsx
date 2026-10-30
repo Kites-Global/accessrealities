@@ -11,32 +11,32 @@ export const metadata: Metadata = {
 };
 
 const towerImages = [
-    { src: "/img/gallery/1.jpg", alt: "1" },
-    { src: "/img/gallery/2.jpg", alt: "2" },
-    { src: "/img/gallery/3.jpg", alt: "3" },
-    { src: "/img/gallery/4.jpg", alt: "4" },
-    { src: "/img/gallery/5.jpg", alt: "5" },
-    { src: "/img/gallery/6.jpg", alt: "6" },
-    { src: "/img/gallery/7.jpg", alt: "7" },
-    { src: "/img/gallery/8.jpg", alt: "8" },
-    { src: "/img/gallery/9.jpg", alt: "9" },
-    { src: "/img/gallery/10.jpg", alt: "10" },
+    { src: "/img/gallery/1.webp", alt: "1" },
+    { src: "/img/gallery/2.webp", alt: "2" },
+    { src: "/img/gallery/3.webp", alt: "3" },
+    { src: "/img/gallery/4.webp", alt: "4" },
+    { src: "/img/gallery/5.webp", alt: "5" },
+    { src: "/img/gallery/6.webp", alt: "6" },
+    { src: "/img/gallery/7.webp", alt: "7" },
+    { src: "/img/gallery/8.webp", alt: "8" },
+    { src: "/img/gallery/9.webp", alt: "9" },
+    { src: "/img/gallery/10.webp", alt: "10" },
 ];
 
 export default function NorthTower() {
     const ourClients = [
-        { id: 2, src: "/img/ob-2.jpg" },
+        { id: 2, src: "/img/ob-2.webp" },
         // { id: 3, src: "/img/ob-3.png" },
-        { id: 4, src: "/img/ob-4.png" },
-        { id: 5, src: "/img/ob-5.png" },
-        { id: 6, src: "/img/ob-6.png" },
-        { id: 1, src: "/img/ob-1.jpg" },
-        { id: 7, src: "/img/ob-2.jpg" },
+        { id: 4, src: "/img/ob-4.webp" },
+        { id: 5, src: "/img/ob-5.webp" },
+        { id: 6, src: "/img/ob-6.webp" },
+        { id: 1, src: "/img/ob-1.webp" },
+        { id: 7, src: "/img/ob-2.webp" },
         // { id: 8, src: "/img/ob-3.png" },
-        { id: 9, src: "/img/ob-4.png" },
-        { id: 10, src: "/img/ob-5.png" },
-        { id: 11, src: "/img/ob-6.png" },
-        { id: 12, src: "/img/ob-1.jpg" },
+        { id: 9, src: "/img/ob-4.webp" },
+        { id: 10, src: "/img/ob-5.webp" },
+        { id: 11, src: "/img/ob-6.webp" },
+        { id: 12, src: "/img/ob-1.webp" },
     ];
 
     return (
@@ -64,7 +64,7 @@ export default function NorthTower() {
                             <div className="inquiry-cont">
                                 <div className="img-cont">
                                     <Image
-                                        src="/img/north-tower-fimg1.png"
+                                        src="/img/north-tower-fimg1.webp"
                                         alt="Access Realties"
                                         className="img-fluid"
                                         width={600}

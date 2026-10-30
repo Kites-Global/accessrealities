@@ -13,19 +13,19 @@ function page() {
     const pages = [
         {
             title: "West Tower",
-            imgSrc: "/img/west-tower-parent.jpg",
+            imgSrc: "/img/west-tower-parent.webp",
             imgAlt: "West Tower",
             link: "/access-towers/west-tower"
         },
         {
             title: "South Tower",
-            imgSrc: "/img/south-tower-parent.jpg",
+            imgSrc: "/img/south-tower-parent.webp",
             imgAlt: "South Tower",
             link: "/access-towers/south-tower"
         },
         {
             title: "North Tower",
-            imgSrc: "/img/north-tower-parent.jpg",
+            imgSrc: "/img/north-tower-parent.webp",
             imgAlt: "North Tower",
             link: "/access-towers/north-tower"
         }

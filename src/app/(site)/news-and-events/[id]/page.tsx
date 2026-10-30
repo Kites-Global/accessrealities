@@ -6,7 +6,7 @@ import { mediaSrc } from "@/lib/admin/media";
 
 export const dynamic = "force-dynamic";
 
-const FALLBACK_IMAGE = "/img/news-events-img.jpg";
+const FALLBACK_IMAGE = "/img/news-events-img.webp";
 
 export default async function NewsDetail({ params }: { params: Promise<{ id: string }> }) {
     // The listing links by slug, but an id still resolves for older/bookmarked links.

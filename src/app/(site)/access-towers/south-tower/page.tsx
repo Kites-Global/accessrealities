@@ -11,38 +11,38 @@ export const metadata: Metadata = {
 };
 
 const towerImages = [
-    { src: "/img/gallery/1.jpg", alt: "1" },
-    { src: "/img/gallery/2.jpg", alt: "2" },
-    { src: "/img/gallery/3.jpg", alt: "3" },
-    { src: "/img/gallery/4.jpg", alt: "4" },
-    { src: "/img/gallery/5.jpg", alt: "5" },
-    { src: "/img/gallery/6.jpg", alt: "6" },
-    { src: "/img/gallery/7.jpg", alt: "7" },
-    { src: "/img/gallery/8.jpg", alt: "8" },
-    { src: "/img/gallery/9.jpg", alt: "9" },
-    { src: "/img/gallery/10.jpg", alt: "10" },
+    { src: "/img/gallery/1.webp", alt: "1" },
+    { src: "/img/gallery/2.webp", alt: "2" },
+    { src: "/img/gallery/3.webp", alt: "3" },
+    { src: "/img/gallery/4.webp", alt: "4" },
+    { src: "/img/gallery/5.webp", alt: "5" },
+    { src: "/img/gallery/6.webp", alt: "6" },
+    { src: "/img/gallery/7.webp", alt: "7" },
+    { src: "/img/gallery/8.webp", alt: "8" },
+    { src: "/img/gallery/9.webp", alt: "9" },
+    { src: "/img/gallery/10.webp", alt: "10" },
 
 ];
 
 export default function SouthTower() {
     const ourClients = [
-        { id: 1, src: "/img/st-1.png" },
-        { id: 2, src: "/img/st-2.png" },
-        { id: 3, src: "/img/st-3.png" },
-        { id: 4, src: "/img/st-4.png" },
-        { id: 5, src: "/img/st-5.png" },
-        { id: 6, src: "/img/st-6.png" },
-        { id: 7, src: "/img/st-7.png" },
-        { id: 8, src: "/img/st-8.png" },
-        { id: 9, src: "/img/st-9.png" },
-        { id: 10, src: "/img/st-10.png" },
-        { id: 11, src: "/img/st-11.png" },
-        { id: 12, src: "/img/st-12.png" },
-        { id: 13, src: "/img/st-13.png" },
-        { id: 14, src: "/img/st-14.png" },
-        { id: 15, src: "/img/st-15.png" },
-        { id: 16, src: "/img/st-16.png" },
-        { id: 17, src: "/img/st-17.png" },
+        { id: 1, src: "/img/st-1.webp" },
+        { id: 2, src: "/img/st-2.webp" },
+        { id: 3, src: "/img/st-3.webp" },
+        { id: 4, src: "/img/st-4.webp" },
+        { id: 5, src: "/img/st-5.webp" },
+        { id: 6, src: "/img/st-6.webp" },
+        { id: 7, src: "/img/st-7.webp" },
+        { id: 8, src: "/img/st-8.webp" },
+        { id: 9, src: "/img/st-9.webp" },
+        { id: 10, src: "/img/st-10.webp" },
+        { id: 11, src: "/img/st-11.webp" },
+        { id: 12, src: "/img/st-12.webp" },
+        { id: 13, src: "/img/st-13.webp" },
+        { id: 14, src: "/img/st-14.webp" },
+        { id: 15, src: "/img/st-15.webp" },
+        { id: 16, src: "/img/st-16.webp" },
+        { id: 17, src: "/img/st-17.webp" },
     ];
 
     return (
@@ -70,7 +70,7 @@ export default function SouthTower() {
                             <div className="inquiry-cont">
                                 <div className="img-cont">
                                     <Image
-                                        src="/img/south-tower-fimg1.png"
+                                        src="/img/south-tower-fimg1.webp"
                                         alt="Access Realties"
                                         className="img-fluid"
                                         width={600}
