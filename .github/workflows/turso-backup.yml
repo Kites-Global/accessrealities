@@ -1,0 +1,46 @@
+name: Turso backup
+
+on:
+  schedule:
+    - cron: "0 2 * * *" # daily at 02:00 UTC
+  workflow_dispatch:
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Turso CLI
+        run: |
+          curl -sSfL https://get.tur.so/install.sh | bash
+          echo "$HOME/.turso" >> $GITHUB_PATH
+
+      - name: Export database
+        env:
+          TURSO_API_TOKEN: ${{ secrets.TURSO_API_TOKEN }}
+        run: |
+          turso db export ${{ secrets.TURSO_DB_NAME }} --output-file backup.db
+          gzip backup.db
+
+      - name: Upload to S3
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: ${{ secrets.AWS_REGION }}
+        run: aws s3 cp backup.db.gz s3://${{ secrets.S3_BUCKET }}/turso/$(date +%F-%H%M).db.gz
+
+      - name: Keep only the latest 10 backups
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: ${{ secrets.AWS_REGION }}
+          BUCKET: ${{ secrets.S3_BUCKET }}
+        run: |
+          aws s3api list-objects-v2 --bucket "$BUCKET" --prefix turso/ \
+            --query 'sort_by(Contents,&LastModified)[:-10].Key' --output text \
+            | tr '\t' '\n' \
+            | while read -r key; do
+                if [ -n "$key" ] && [ "$key" != "None" ]; then
+                  echo "Deleting old backup: $key"
+                  aws s3 rm "s3://$BUCKET/$key"
+                fi
+              done
