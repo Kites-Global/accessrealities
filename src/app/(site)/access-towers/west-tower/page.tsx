@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 const westTowerFeatures = [
     {
-        icon: "/img/feature-icon-1.png",
+        icon: "/img/feature-icon-1.webp",
         title: (
             <>
                 Parking Capacity
@@ -24,7 +24,7 @@ const westTowerFeatures = [
         alt: "Parking Capacity for 300 Vehicles",
     },
     {
-        icon: "/img/feature-icon-2.png",
+        icon: "/img/feature-icon-2.webp",
         title: (
             <>
                 24/7 Monitored<br />
@@ -34,7 +34,7 @@ const westTowerFeatures = [
         alt: "24/7 Monitored Security",
     },
     {
-        icon: "/img/feature-icon-3.png",
+        icon: "/img/feature-icon-3.webp",
         title: (
             <>
                 Wide Dual-Lane <br />
@@ -44,7 +44,7 @@ const westTowerFeatures = [
         alt: "Wide Dual-Lane Entry & Exit",
     },
     {
-        icon: "/img/feature-icon-4.png",
+        icon: "/img/feature-icon-4.webp",
         title: (
             <>
                 SUV & Commercial<br />
@@ -54,7 +54,7 @@ const westTowerFeatures = [
         alt: "SUV & Commercial Vehicle Friendly",
     },
     {
-        icon: "/img/feature-icon-5.png",
+        icon: "/img/feature-icon-5.webp",
         title: (
             <>
                 Parking Availability<br />
@@ -64,7 +64,7 @@ const westTowerFeatures = [
         alt: "Parking Availability Indicators",
     },
     {
-        icon: "/img/feature-icon-6.png",
+        icon: "/img/feature-icon-6.webp",
         title: (
             <>
                 Digital Parking<br />
@@ -74,7 +74,7 @@ const westTowerFeatures = [
         alt: "Digital Parking Time-Stamping",
     },
     {
-        icon: "/img/feature-icon-7.png",
+        icon: "/img/feature-icon-7.webp",
         title: (
             <>
                 Direct Elevator Access<br />
@@ -86,28 +86,28 @@ const westTowerFeatures = [
 ];
 
 const towerImages = [
-    { src: "/img/west-1.jpg", alt: "1" },
-    { src: "/img/west-2.jpg", alt: "2" },
-    { src: "/img/west-3.jpg", alt: "3" },
-    { src: "/img/west-4.jpg", alt: "4" },
-    { src: "/img/west-5.jpg", alt: "5" },
+    { src: "/img/west-1.webp", alt: "1" },
+    { src: "/img/west-2.webp", alt: "2" },
+    { src: "/img/west-3.webp", alt: "3" },
+    { src: "/img/west-4.webp", alt: "4" },
+    { src: "/img/west-5.webp", alt: "5" },
     // { src: "/img/west-6.jpg", alt: "6" },
 ];
 
 export default function WestTower() {
     const ourClients = [
-        { id: 2, src: "/img/ob-2.jpg" },
+        { id: 2, src: "/img/ob-2.webp" },
         // { id: 3, src: "/img/ob-3.png" },
-        { id: 4, src: "/img/ob-4.png" },
-        { id: 5, src: "/img/ob-5.png" },
-        { id: 6, src: "/img/ob-6.png" },
-        { id: 1, src: "/img/ob-1.jpg" },
-        { id: 7, src: "/img/ob-2.jpg" },
+        { id: 4, src: "/img/ob-4.webp" },
+        { id: 5, src: "/img/ob-5.webp" },
+        { id: 6, src: "/img/ob-6.webp" },
+        { id: 1, src: "/img/ob-1.webp" },
+        { id: 7, src: "/img/ob-2.webp" },
         // { id: 8, src: "/img/ob-3.png" },
-        { id: 9, src: "/img/ob-4.png" },
-        { id: 10, src: "/img/ob-5.png" },
-        { id: 11, src: "/img/ob-6.png" },
-        { id: 12, src: "/img/ob-1.jpg" },
+        { id: 9, src: "/img/ob-4.webp" },
+        { id: 10, src: "/img/ob-5.webp" },
+        { id: 11, src: "/img/ob-6.webp" },
+        { id: 12, src: "/img/ob-1.webp" },
     ];
 
     return (

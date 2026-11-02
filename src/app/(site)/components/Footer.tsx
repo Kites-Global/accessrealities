@@ -12,7 +12,7 @@ export default function Footer() {
                     <div className="col-md-2">
                         <div className="footer-logo-cont">
                             <Image
-                                src="/img/logo.png"
+                                src="/img/logo.webp"
                                 alt="Logo"
                                 className="img-fluid footer-logo"
                                 width={250}

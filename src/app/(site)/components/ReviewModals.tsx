@@ -29,7 +29,7 @@ function ReviewModals() {
                             <div className="wht-thy-say-itm">
                                 <div className="img-cont">
                                     <div className="logo-box">
-                                        <Image src="/img/ob-4.png" alt="Insee cement" className="img-fluid" width={200} height={200} />
+                                        <Image src="/img/ob-4.webp" alt="Insee cement" className="img-fluid" width={200} height={200} />
                                     </div>
                                 </div>
                                 <div className="info-cont info-cont-left">
@@ -42,7 +42,7 @@ function ReviewModals() {
                                             className="btn btn-link text-decoration-none text-danger p-0"
                                             onClick={() => handleOpen(
                                                 {
-                                                    img: "/img/ob-4.png",
+                                                    img: "/img/ob-4.webp",
                                                     text: "CMS has been a tenant at Access Towers since 2012, and we have consistently enjoyed an excellent experience. The premises, security, cleanliness, safety, and building management have always met our expectations, supported by a courteous and responsive team. The central location at Union Place is a significant advantage for both our staff and, particularly, our international clients visiting our offices. We are happy to recommend Access Towers to other organizations.",
                                                     author: "Roshan Jayalath - Director – CMS"
                                                 }
@@ -62,7 +62,7 @@ function ReviewModals() {
                             <div className="wht-thy-say-itm">
                                 <div className="img-cont ">
                                     <div className="logo-box">
-                                        <Image src="/img/st-1.png" alt="Grant Thornton" className="img-fluid" width={200} height={200} />
+                                        <Image src="/img/st-1.webp" alt="Grant Thornton" className="img-fluid" width={200} height={200} />
                                     </div>
                                 </div>
                                 <div className="info-cont info-cont-right info-cont-left order-md-first">
@@ -75,7 +75,7 @@ function ReviewModals() {
                                             className="btn btn-link text-decoration-none text-danger p-0"
                                             onClick={() => handleOpen(
                                                 {
-                                                    img: "/img/st-1.png",
+                                                    img: "/img/st-1.webp",
                                                     text: "We are very pleased with the office we have rented on the 24th floor at Access Tower 2. The building is perfectly located in the city, with easy access to multiple restaurants and shops. The facility is well maintained and clean.Most importantly the administrative and maintenance staff are very flexible and accommodating with a service oriented approach. We wish you all the best.",
                                                     author: "Ruchi Gunawardene – Director – Brand Finance"
                                                 }
@@ -95,7 +95,7 @@ function ReviewModals() {
                             <div className="wht-thy-say-itm">
                                 <div className="img-cont">
                                     <div className="logo-box">
-                                        <Image src="/img/t-1.jpg" alt="Insee cement" className="img-fluid" width={200} height={200} />
+                                        <Image src="/img/t-1.webp" alt="Insee cement" className="img-fluid" width={200} height={200} />
                                     </div>
                                 </div>
                                 <div className="info-cont info-cont-left">

@@ -11,7 +11,7 @@ type NewsEventData = {
     imageUrl?: string | null;
 };
 
-const FALLBACK_IMAGE = "/img/news-events-img.jpg";
+const FALLBACK_IMAGE = "/img/news-events-img.webp";
 
 export default function NewsEvents({ data }: { data: NewsEventData }) {
     const textRef = useRef<HTMLParagraphElement>(null);

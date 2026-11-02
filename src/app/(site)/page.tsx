@@ -49,7 +49,7 @@ export default function Home() {
             <div className="col-md-5">
               <div className="img-cont">
                 <Image
-                  src="/img/about-access-sec-fimg.webp"
+                  src="/img/about-access-sec.webp"
                   alt="Access Realties"
                   className="img-fluid"
                   width={600}
@@ -80,7 +80,7 @@ export default function Home() {
             <div className="col-md-4">
               <div className="south-cont">
                 <Image
-                  src="/img/home-south-tower.jpg"
+                  src="/img/home-south-tower.webp"
                   alt="South Tower"
                   className="img-fluid"
                   width={800}
@@ -97,7 +97,7 @@ export default function Home() {
             <div className="col-md-4">
               <div className="north-cont">
                 <Image
-                  src="/img/home-north-tower.jpg"
+                  src="/img/home-north-tower.webp"
                   alt="North Tower"
                   className="img-fluid"
                   width={800}
