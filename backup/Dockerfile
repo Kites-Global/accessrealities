@@ -1,7 +1,7 @@
 FROM debian:bookworm-slim
 
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends bash curl ca-certificates gzip awscli \
+    && apt-get install -y --no-install-recommends bash curl ca-certificates gzip tar xz-utils awscli \
     && rm -rf /var/lib/apt/lists/*
 
 RUN curl -sSfL https://get.tur.so/install.sh | bash
