@@ -2,7 +2,7 @@ name: Turso backup
 
 on:
   schedule:
-    - cron: "0 2 * * *" # daily at 02:00 UTC
+    - cron: "11 17 * * *" # daily at 17:11 UTC
   workflow_dispatch:
 
 jobs:
