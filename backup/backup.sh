@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
-# Backs up the Turso DB to S3 and keeps only the newest $KEEP backups.
+# Dumps the Turso DB to SQL, uploads it to S3 and keeps only the newest $KEEP backups.
 set -euo pipefail
 
-: "${TURSO_API_TOKEN:?TURSO_API_TOKEN is not set}"
-: "${TURSO_DB_NAME:?TURSO_DB_NAME is not set}"
+: "${TURSO_DATABASE_URL:?TURSO_DATABASE_URL is not set}"
+: "${TURSO_AUTH_TOKEN:?TURSO_AUTH_TOKEN is not set}"
 : "${AWS_ACCESS_KEY_ID:?AWS_ACCESS_KEY_ID is not set}"
 : "${AWS_SECRET_ACCESS_KEY:?AWS_SECRET_ACCESS_KEY is not set}"
 : "${AWS_REGION:?AWS_REGION is not set}"
@@ -12,13 +12,13 @@ set -euo pipefail
 export AWS_DEFAULT_REGION="$AWS_REGION"
 KEEP="${KEEP:-10}"
 
-echo "Exporting $TURSO_DB_NAME ..."
-turso db export "$TURSO_DB_NAME" --output-file backup.db --overwrite
-gzip -f backup.db
+echo "Dumping database ..."
+node dump.mjs backup.sql
+gzip -f backup.sql
 
-KEY="turso/$(date -u +%F-%H%M).db.gz"
+KEY="turso/$(date -u +%F-%H%M).sql.gz"
 echo "Uploading to s3://$S3_BUCKET/$KEY ..."
-aws s3 cp backup.db.gz "s3://$S3_BUCKET/$KEY"
+aws s3 cp backup.sql.gz "s3://$S3_BUCKET/$KEY"
 
 echo "Keeping only the latest $KEEP backups ..."
 aws s3api list-objects-v2 --bucket "$S3_BUCKET" --prefix turso/ \
