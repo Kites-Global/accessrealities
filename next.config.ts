@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
   devIndicators: false,
   images: {
     remotePatterns: [{ protocol: "https", hostname: "*.s3.*.amazonaws.com" }],
-    maximumDiskCacheSize: 0,
+    // maximumDiskCacheSize: 0,
   },
 };
 export default nextConfig;
