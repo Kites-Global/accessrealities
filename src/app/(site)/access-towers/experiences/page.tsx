@@ -71,6 +71,7 @@ const experiencesData: Experience[] = [
             { src: "/img/experiences-kfc-1.webp", alt: "KFC" },
             { src: "/img/experiences-kfc-2.webp", alt: "KFC" },
             { src: "/img/experiences-kfc-3.webp", alt: "KFC" },
+            { src: "/img/experiences-kfc-4.webp", alt: "KFC" },
         ],
     },
     {

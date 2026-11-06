@@ -91,7 +91,9 @@ const towerImages = [
     { src: "/img/west-3.webp", alt: "3" },
     { src: "/img/west-4.webp", alt: "4" },
     { src: "/img/west-5.webp", alt: "5" },
-    // { src: "/img/west-6.jpg", alt: "6" },
+    { src: "/img/west-6.webp", alt: "6" },
+    { src: "/img/west-7.webp", alt: "7" },
+
 ];
 
 export default function WestTower() {
@@ -136,7 +138,7 @@ export default function WestTower() {
                             <div className="inquiry-cont">
                                 <div className="img-cont">
                                     <Image
-                                        src="/img/west-tower-img1.webp"
+                                        src="/img/west-tower-img.webp"
                                         alt="Access Realties"
                                         className="img-fluid"
                                         width={600}
