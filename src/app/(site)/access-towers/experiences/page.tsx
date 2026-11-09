@@ -43,6 +43,11 @@ const experiencesData: Experience[] = [
             { src: "/img/experiences-grind-2.webp", alt: "Grind" },
             { src: "/img/experiences-grind-3.webp", alt: "Grind" },
             { src: "/img/experiences-grind-4.webp", alt: "Grind" },
+            { src: "/img/experiences-grind-5.webp", alt: "Grind" },
+            { src: "/img/experiences-grind-6.webp", alt: "Grind" },
+            { src: "/img/experiences-grind-7.webp", alt: "Grind" },
+            { src: "/img/experiences-grind-8.webp", alt: "Grind" },
+            { src: "/img/experiences-grind-9.webp", alt: "Grind" },
         ],
     },
     {
