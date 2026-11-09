@@ -80,6 +80,7 @@ const facilitiesData: Facility[] = [
       { src: "/img/facility-car-1.webp", alt: "Car Parking" },
       { src: "/img/facility-car-2.webp", alt: "Car Parking" },
       { src: "/img/facility-car-3.webp", alt: "Car Parking" },
+      { src: "/img/facility-car-4.webp", alt: "Car Parking" },
     ],
     call: "+94 774 055 682",
     email: "fme@accessrealties.com",

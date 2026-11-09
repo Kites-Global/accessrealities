@@ -136,7 +136,6 @@ export default function Home() {
             <div className="col-md-11">
               <div className="facility-carousel-cont">
                 <EmblaCarousel />
-
               </div>
             </div>
           </div>
