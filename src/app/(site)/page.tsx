@@ -78,7 +78,7 @@ export default function Home() {
         <div className="container">
           <div className="row justify-content-between">
             <div className="col-md-4">
-              <div className="south-cont">
+              <div className="tower-cont">
                 <Image
                   src="/img/home-south-tower.webp"
                   alt="South Tower"
@@ -95,7 +95,7 @@ export default function Home() {
               </div>
             </div>
             <div className="col-md-4">
-              <div className="north-cont">
+              <div className="tower-cont">
                 <Image
                   src="/img/home-north-tower.webp"
                   alt="North Tower"
@@ -109,6 +109,22 @@ export default function Home() {
                   elevated business presence.
                 </p>
                 <a href="/access-towers/north-tower" className="btn">View tower</a>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="tower-cont">
+                <Image
+                  src="/img/home-west-tower.webp"
+                  alt="North Tower"
+                  className="img-fluid"
+                  width={800}
+                  height={400}
+                />
+                <h3>West Tower</h3>
+                <p>
+                An eight-storey commercial development integrating 300-vehicle parking, retail and office spaces through a strategic UDA partnership.
+                </p>
+                <a href="/access-towers/west-tower" className="btn">View tower</a>
               </div>
             </div>
           </div>
