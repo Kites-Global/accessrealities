@@ -240,13 +240,8 @@ header {
 
 .south-north-tower-sec {
   background-color: #fff;
-  background-image: url("/img/towers-bg-mobile.webp");
-  background-size: contain;
-  background-position: center bottom;
-  background-repeat: no-repeat;
-  height: auto;
-  min-height: 115vh;
-  padding-bottom: 200px;
+
+  /* padding-bottom: 200px; */
   padding-top: 3rem;
 
   .tower-cont {
@@ -291,6 +286,15 @@ header {
       }
     }
   }
+
+}
+.tower-bg-cont {
+  background-image: url("/img/towers-bg-mobile.webp");
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  height: auto;
+  min-height: 35vh;
 }
 
 .milestornes-sec {
@@ -1908,9 +1912,8 @@ h6 {
     flex: 0 0 16.666%;
   }
 
-
-  .south-north-tower-sec {
-    min-height: 90vh;
+  .tower-bg-cont {
+    min-height: 60vh;
   }
 
   .news-grid {
@@ -2323,8 +2326,8 @@ h6 {
     }
   }
 
-  .south-north-tower-sec {
-    min-height: 115vh;
+  .tower-bg-cont {
+    min-height: 90vh;
     background-image: url("/img/towers-bg.webp");
   }
 
