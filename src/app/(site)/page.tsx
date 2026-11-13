@@ -126,9 +126,8 @@ export default function Home() {
                 />
                 <h3>West Tower</h3>
                 <p>
-                  An eight-storey commercial development integrating 300-vehicle
-                  parking, retail and office spaces through a strategic UDA
-                  partnership.
+                  An eight-storey commercial development with 300-vehicle
+                  parking, retail and office spaces, in partnership with UDA.
                 </p>
                 <a href="/access-towers/west-tower" className="btn">
                   View tower
