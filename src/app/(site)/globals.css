@@ -245,13 +245,18 @@ header {
   background-position: center bottom;
   background-repeat: no-repeat;
   height: auto;
-  min-height: 100vh;
+  min-height: 115vh;
   padding-bottom: 200px;
   padding-top: 3rem;
 
-  .south-cont,
-  .north-cont {
-    margin-bottom: 2rem;
+  .tower-cont {
+    padding-bottom: 2rem;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 
     h3 {
       color: var(--primary-txt-color);
@@ -1903,6 +1908,11 @@ h6 {
     flex: 0 0 16.666%;
   }
 
+
+  .south-north-tower-sec {
+    min-height: 90vh;
+  }
+
   .news-grid {
     gap: 2rem;
   }
@@ -2314,6 +2324,7 @@ h6 {
   }
 
   .south-north-tower-sec {
+    min-height: 115vh;
     background-image: url("/img/towers-bg.webp");
   }
 
@@ -2379,13 +2390,8 @@ h6 {
   }
 
   .south-north-tower-sec {
-    .south-cont,
-    .north-cont {
-      margin-bottom: 0;
-    }
-
-    .south-cont {
-      text-align: right;
+    .tower-cont {
+      padding-bottom: 0;
     }
   }
 
