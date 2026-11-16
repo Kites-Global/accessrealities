@@ -240,18 +240,18 @@ header {
 
 .south-north-tower-sec {
   background-color: #fff;
-  background-image: url("/img/towers-bg-mobile.webp");
-  background-size: contain;
-  background-position: center bottom;
-  background-repeat: no-repeat;
-  height: auto;
-  min-height: 100vh;
-  padding-bottom: 200px;
+
+  /* padding-bottom: 200px; */
   padding-top: 3rem;
 
-  .south-cont,
-  .north-cont {
-    margin-bottom: 2rem;
+  .tower-cont {
+    padding-bottom: 2rem;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 
     h3 {
       color: var(--primary-txt-color);
@@ -286,6 +286,15 @@ header {
       }
     }
   }
+
+}
+.tower-bg-cont {
+  background-image: url("/img/towers-bg-mobile.webp");
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  height: auto;
+  min-height: 35vh;
 }
 
 .milestornes-sec {
@@ -1903,6 +1912,10 @@ h6 {
     flex: 0 0 16.666%;
   }
 
+  .tower-bg-cont {
+    min-height: 60vh;
+  }
+
   .news-grid {
     gap: 2rem;
   }
@@ -2313,7 +2326,8 @@ h6 {
     }
   }
 
-  .south-north-tower-sec {
+  .tower-bg-cont {
+    min-height: 90vh;
     background-image: url("/img/towers-bg.webp");
   }
 
@@ -2379,13 +2393,8 @@ h6 {
   }
 
   .south-north-tower-sec {
-    .south-cont,
-    .north-cont {
-      margin-bottom: 0;
-    }
-
-    .south-cont {
-      text-align: right;
+    .tower-cont {
+      padding-bottom: 0;
     }
   }
 
